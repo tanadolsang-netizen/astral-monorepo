@@ -1,0 +1,62 @@
+{
+  "Aldebaran": {
+    "th": "อัลเดบารัน",
+    "position": "Taurus 29°",
+    "meaning_en": "Fixed star Aldebaran (Taurus 29°): Royal star of abundance",
+    "meaning_th": "ดาวคงที่ อัลเดบารัน (Taurus 29°): Royal star of abundance"
+  },
+  "Regulus": {
+    "th": "เรกูลัส",
+    "position": "Leo 29°",
+    "meaning_en": "Fixed star Regulus (Leo 29°): Royal star of power",
+    "meaning_th": "ดาวคงที่ เรกูลัส (Leo 29°): Royal star of power"
+  },
+  "Antares": {
+    "th": "อันทาเรส",
+    "position": "Sagittarius 9°",
+    "meaning_en": "Fixed star Antares (Sagittarius 9°): Royal star of courage",
+    "meaning_th": "ดาวคงที่ อันทาเรส (Sagittarius 9°): Royal star of courage"
+  },
+  "Fomalhaut": {
+    "th": "โฟมอลฮอต",
+    "position": "Pisces 3°",
+    "meaning_en": "Fixed star Fomalhaut (Pisces 3°): Royal star of ambition",
+    "meaning_th": "ดาวคงที่ โฟมอลฮอต (Pisces 3°): Royal star of ambition"
+  },
+  "Spica": {
+    "th": "สปิกา",
+    "position": "Libra 23°",
+    "meaning_en": "Fixed star Spica (Libra 23°): Star of artistic talent",
+    "meaning_th": "ดาวคงที่ สปิกา (Libra 23°): Star of artistic talent"
+  },
+  "Sirius": {
+    "th": "ซิเรียส",
+    "position": "Cancer 13°",
+    "meaning_en": "Fixed star Sirius (Cancer 13°): Brightest star, fame",
+    "meaning_th": "ดาวคงที่ ซิเรียส (Cancer 13°): Brightest star, fame"
+  },
+  "Vega": {
+    "th": "เวกา",
+    "position": "Capricorn 15°",
+    "meaning_en": "Fixed star Vega (Capricorn 15°): Star of charisma",
+    "meaning_th": "ดาวคงที่ เวกา (Capricorn 15°): Star of charisma"
+  },
+  "Polaris": {
+    "th": "โพลาริส",
+    "position": "Virgo 28°",
+    "meaning_en": "Fixed star Polaris (Virgo 28°): Star of direction",
+    "meaning_th": "ดาวคงที่ โพลาริส (Virgo 28°): Star of direction"
+  },
+  "Betelgeuse": {
+    "th": "เบตเจลช์",
+    "position": "Gemini 28°",
+    "meaning_en": "Fixed star Betelgeuse (Gemini 28°): Star of leadership",
+    "meaning_th": "ดาวคงที่ เบตเจลช์ (Gemini 28°): Star of leadership"
+  },
+  "Rigel": {
+    "th": "ริเกล",
+    "position": "Sagittarius 16°",
+    "meaning_en": "Fixed star Rigel (Sagittarius 16°): Star of knowledge",
+    "meaning_th": "ดาวคงที่ ริเกล (Sagittarius 16°): Star of knowledge"
+  }
+}

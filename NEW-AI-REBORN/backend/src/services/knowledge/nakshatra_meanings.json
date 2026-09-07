@@ -1,0 +1,191 @@
+{
+  "Ashwini": {
+    "th": "อัศวินี",
+    "ruler": "Venus",
+    "ruler_th": "ศุกร์",
+    "meaning_en": "Nakshatra Ashwini (อัศวินี): ruled by Venus.",
+    "meaning_th": "นักษัตร Ashwini (อัศวินี): ปกครองโดย ศุกร์"
+  },
+  "Bharani": {
+    "th": "ภรณี",
+    "ruler": "Sun",
+    "ruler_th": "อาทิตย์",
+    "meaning_en": "Nakshatra Bharani (ภรณี): ruled by Sun.",
+    "meaning_th": "นักษัตร Bharani (ภรณี): ปกครองโดย อาทิตย์"
+  },
+  "Krittika": {
+    "th": "กฤติกา",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Krittika (กฤติกา): ruled by Moon.",
+    "meaning_th": "นักษัตร Krittika (กฤติกา): ปกครองโดย จันทร์"
+  },
+  "Rohini": {
+    "th": "โรหิณี",
+    "ruler": "Mars",
+    "ruler_th": "อังคาร",
+    "meaning_en": "Nakshatra Rohini (โรหิณี): ruled by Mars.",
+    "meaning_th": "นักษัตร Rohini (โรหิณี): ปกครองโดย อังคาร"
+  },
+  "Mrigashira": {
+    "th": "มฤคศิรา",
+    "ruler": "Rahu",
+    "ruler_th": "ราหู",
+    "meaning_en": "Nakshatra Mrigashira (มฤคศิรา): ruled by Rahu.",
+    "meaning_th": "นักษัตร Mrigashira (มฤคศิรา): ปกครองโดย ราหู"
+  },
+  "Ardra": {
+    "th": "อารทรา",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Ardra (อารทรา): ruled by Moon.",
+    "meaning_th": "นักษัตร Ardra (อารทรา): ปกครองโดย จันทร์"
+  },
+  "Punarvasu": {
+    "th": "ปุนรวสุ",
+    "ruler": "Jupiter",
+    "ruler_th": "พฤหัส",
+    "meaning_en": "Nakshatra Punarvasu (ปุนรวสุ): ruled by Jupiter.",
+    "meaning_th": "นักษัตร Punarvasu (ปุนรวสุ): ปกครองโดย พฤหัส"
+  },
+  "Pushya": {
+    "th": "ปุษยา",
+    "ruler": "Saturn",
+    "ruler_th": "เสาร์",
+    "meaning_en": "Nakshatra Pushya (ปุษยา): ruled by Saturn.",
+    "meaning_th": "นักษัตร Pushya (ปุษยา): ปกครองโดย เสาร์"
+  },
+  "Ashlesha": {
+    "th": "อาเศลษา",
+    "ruler": "Mercury",
+    "ruler_th": "พุธ",
+    "meaning_en": "Nakshatra Ashlesha (อาเศลษา): ruled by Mercury.",
+    "meaning_th": "นักษัตร Ashlesha (อาเศลษา): ปกครองโดย พุธ"
+  },
+  "Magha": {
+    "th": "มฆา",
+    "ruler": "Ketu",
+    "ruler_th": "เกตุ",
+    "meaning_en": "Nakshatra Magha (มฆา): ruled by Ketu.",
+    "meaning_th": "นักษัตร Magha (มฆา): ปกครองโดย เกตุ"
+  },
+  "Purva Phalguni": {
+    "th": "ปูรวาผลคุนี",
+    "ruler": "Venus",
+    "ruler_th": "ศุกร์",
+    "meaning_en": "Nakshatra Purva Phalguni (ปูรวาผลคุนี): ruled by Venus.",
+    "meaning_th": "นักษัตร Purva Phalguni (ปูรวาผลคุนี): ปกครองโดย ศุกร์"
+  },
+  "Uttara Phalguni": {
+    "th": "อุตตราผลคุนี",
+    "ruler": "Sun",
+    "ruler_th": "อาทิตย์",
+    "meaning_en": "Nakshatra Uttara Phalguni (อุตตราผลคุนี): ruled by Sun.",
+    "meaning_th": "นักษัตร Uttara Phalguni (อุตตราผลคุนี): ปกครองโดย อาทิตย์"
+  },
+  "Hasta": {
+    "th": "หัสตะ",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Hasta (หัสตะ): ruled by Moon.",
+    "meaning_th": "นักษัตร Hasta (หัสตะ): ปกครองโดย จันทร์"
+  },
+  "Chitra": {
+    "th": "จิตรา",
+    "ruler": "Mars",
+    "ruler_th": "อังคาร",
+    "meaning_en": "Nakshatra Chitra (จิตรา): ruled by Mars.",
+    "meaning_th": "นักษัตร Chitra (จิตรา): ปกครองโดย อังคาร"
+  },
+  "Swati": {
+    "th": "สวาติ",
+    "ruler": "Rahu",
+    "ruler_th": "ราหู",
+    "meaning_en": "Nakshatra Swati (สวาติ): ruled by Rahu.",
+    "meaning_th": "นักษัตร Swati (สวาติ): ปกครองโดย ราหู"
+  },
+  "Vishakha": {
+    "th": "วิษาขา",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Vishakha (วิษาขา): ruled by Moon.",
+    "meaning_th": "นักษัตร Vishakha (วิษาขา): ปกครองโดย จันทร์"
+  },
+  "Anuradha": {
+    "th": "อนุราธา",
+    "ruler": "Jupiter",
+    "ruler_th": "พฤหัส",
+    "meaning_en": "Nakshatra Anuradha (อนุราธา): ruled by Jupiter.",
+    "meaning_th": "นักษัตร Anuradha (อนุราธา): ปกครองโดย พฤหัส"
+  },
+  "Jyeshtha": {
+    "th": "เชื�า",
+    "ruler": "Saturn",
+    "ruler_th": "เสาร์",
+    "meaning_en": "Nakshatra Jyeshtha (เชื�า): ruled by Saturn.",
+    "meaning_th": "นักษัตร Jyeshtha (เชื�า): ปกครองโดย เสาร์"
+  },
+  "Mula": {
+    "th": "มูล",
+    "ruler": "Mercury",
+    "ruler_th": "พุธ",
+    "meaning_en": "Nakshatra Mula (มูล): ruled by Mercury.",
+    "meaning_th": "นักษัตร Mula (มูล): ปกครองโดย พุธ"
+  },
+  "Purva Ashadha": {
+    "th": "ปูรวาษาฑา",
+    "ruler": "Ketu",
+    "ruler_th": "เกตุ",
+    "meaning_en": "Nakshatra Purva Ashadha (ปูรวาษาฑา): ruled by Ketu.",
+    "meaning_th": "นักษัตร Purva Ashadha (ปูรวาษาฑา): ปกครองโดย เกตุ"
+  },
+  "Uttara Ashadha": {
+    "th": "อุตตราษาฑา",
+    "ruler": "Venus",
+    "ruler_th": "ศุกร์",
+    "meaning_en": "Nakshatra Uttara Ashadha (อุตตราษาฑา): ruled by Venus.",
+    "meaning_th": "นักษัตร Uttara Ashadha (อุตตราษาฑา): ปกครองโดย ศุกร์"
+  },
+  "Shravana": {
+    "th": "ศรวณะ",
+    "ruler": "Sun",
+    "ruler_th": "อาทิตย์",
+    "meaning_en": "Nakshatra Shravana (ศรวณะ): ruled by Sun.",
+    "meaning_th": "นักษัตร Shravana (ศรวณะ): ปกครองโดย อาทิตย์"
+  },
+  "Dhanishta": {
+    "th": "ธนิษฐา",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Dhanishta (ธนิษฐา): ruled by Moon.",
+    "meaning_th": "นักษัตร Dhanishta (ธนิษฐา): ปกครองโดย จันทร์"
+  },
+  "Shatabhisha": {
+    "th": "ษตภิษัก",
+    "ruler": "Mars",
+    "ruler_th": "อังคาร",
+    "meaning_en": "Nakshatra Shatabhisha (ษตภิษัก): ruled by Mars.",
+    "meaning_th": "นักษัตร Shatabhisha (ษตภิษัก): ปกครองโดย อังคาร"
+  },
+  "Purva Bhadrapada": {
+    "th": "ปูรวภทรปทา",
+    "ruler": "Rahu",
+    "ruler_th": "ราหู",
+    "meaning_en": "Nakshatra Purva Bhadrapada (ปูรวภทรปทา): ruled by Rahu.",
+    "meaning_th": "นักษัตร Purva Bhadrapada (ปูรวภทรปทา): ปกครองโดย ราหู"
+  },
+  "Uttara Bhadrapada": {
+    "th": "อุตตรภทรปทา",
+    "ruler": "Moon",
+    "ruler_th": "จันทร์",
+    "meaning_en": "Nakshatra Uttara Bhadrapada (อุตตรภทรปทา): ruled by Moon.",
+    "meaning_th": "นักษัตร Uttara Bhadrapada (อุตตรภทรปทา): ปกครองโดย จันทร์"
+  },
+  "Revati": {
+    "th": "เรวตี",
+    "ruler": "Jupiter",
+    "ruler_th": "พฤหัส",
+    "meaning_en": "Nakshatra Revati (เรวตี): ruled by Jupiter.",
+    "meaning_th": "นักษัตร Revati (เรวตี): ปกครองโดย พฤหัส"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git pull --ff-only >/tmp/vault-sync-pull.log 2>&1 || echo '{\"systemMessage\": \"⚠️ Vault auto-pull failed at session start — this machine may be behind. Check git status/log manually (see /tmp/vault-sync-pull.log).\"}'",
+            "statusMessage": "Syncing vault from remote..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "git push origin master >/tmp/vault-sync-push.log 2>&1 || echo '{\"systemMessage\": \"⚠️ Vault auto-push failed — commits are local-only on this machine. Run git push manually (see /tmp/vault-sync-push.log).\"}'",
+            "statusMessage": "Pushing vault to remote..."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,1502 @@
+{
+  "Sun conjunction Sun": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Sun"
+  },
+  "Sun sextile Sun": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Sun"
+  },
+  "Sun square Sun": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Sun"
+  },
+  "Sun trine Sun": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Sun"
+  },
+  "Sun opposition Sun": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Sun"
+  },
+  "Sun conjunction Moon": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Moon"
+  },
+  "Sun sextile Moon": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Moon"
+  },
+  "Sun square Moon": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Moon"
+  },
+  "Sun trine Moon": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Moon"
+  },
+  "Sun opposition Moon": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Moon"
+  },
+  "Sun conjunction Mercury": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Mercury"
+  },
+  "Sun sextile Mercury": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Sun square Mercury": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Mercury"
+  },
+  "Sun trine Mercury": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Mercury"
+  },
+  "Sun opposition Mercury": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Mercury"
+  },
+  "Sun conjunction Venus": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Venus"
+  },
+  "Sun sextile Venus": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Venus"
+  },
+  "Sun square Venus": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Venus"
+  },
+  "Sun trine Venus": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Venus"
+  },
+  "Sun opposition Venus": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Venus"
+  },
+  "Sun conjunction Mars": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Mars"
+  },
+  "Sun sextile Mars": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Mars"
+  },
+  "Sun square Mars": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Mars"
+  },
+  "Sun trine Mars": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Mars"
+  },
+  "Sun opposition Mars": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Mars"
+  },
+  "Sun conjunction Jupiter": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Jupiter"
+  },
+  "Sun sextile Jupiter": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Sun square Jupiter": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Jupiter"
+  },
+  "Sun trine Jupiter": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Sun opposition Jupiter": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Jupiter"
+  },
+  "Sun conjunction Saturn": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Saturn"
+  },
+  "Sun sextile Saturn": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Sun square Saturn": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Saturn"
+  },
+  "Sun trine Saturn": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Saturn"
+  },
+  "Sun opposition Saturn": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Saturn"
+  },
+  "Sun conjunction Uranus": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Uranus"
+  },
+  "Sun sextile Uranus": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Sun square Uranus": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Uranus"
+  },
+  "Sun trine Uranus": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Uranus"
+  },
+  "Sun opposition Uranus": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Uranus"
+  },
+  "Sun conjunction Neptune": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Neptune"
+  },
+  "Sun sextile Neptune": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Sun square Neptune": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Neptune"
+  },
+  "Sun trine Neptune": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Neptune"
+  },
+  "Sun opposition Neptune": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Neptune"
+  },
+  "Sun conjunction Pluto": {
+    "th": "คนแรก Sun ผสานพลัง คนสอง Pluto"
+  },
+  "Sun sextile Pluto": {
+    "th": "คนแรก Sun สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Sun square Pluto": {
+    "th": "คนแรก Sun เสี้ยว คนสอง Pluto"
+  },
+  "Sun trine Pluto": {
+    "th": "คนแรก Sun สามเหลี่ยม คนสอง Pluto"
+  },
+  "Sun opposition Pluto": {
+    "th": "คนแรก Sun ตรงข้าม คนสอง Pluto"
+  },
+  "Moon conjunction Sun": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Sun"
+  },
+  "Moon sextile Sun": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Sun"
+  },
+  "Moon square Sun": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Sun"
+  },
+  "Moon trine Sun": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Sun"
+  },
+  "Moon opposition Sun": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Sun"
+  },
+  "Moon conjunction Moon": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Moon"
+  },
+  "Moon sextile Moon": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Moon"
+  },
+  "Moon square Moon": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Moon"
+  },
+  "Moon trine Moon": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Moon"
+  },
+  "Moon opposition Moon": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Moon"
+  },
+  "Moon conjunction Mercury": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Mercury"
+  },
+  "Moon sextile Mercury": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Moon square Mercury": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Mercury"
+  },
+  "Moon trine Mercury": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Mercury"
+  },
+  "Moon opposition Mercury": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Mercury"
+  },
+  "Moon conjunction Venus": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Venus"
+  },
+  "Moon sextile Venus": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Venus"
+  },
+  "Moon square Venus": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Venus"
+  },
+  "Moon trine Venus": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Venus"
+  },
+  "Moon opposition Venus": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Venus"
+  },
+  "Moon conjunction Mars": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Mars"
+  },
+  "Moon sextile Mars": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Mars"
+  },
+  "Moon square Mars": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Mars"
+  },
+  "Moon trine Mars": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Mars"
+  },
+  "Moon opposition Mars": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Mars"
+  },
+  "Moon conjunction Jupiter": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Jupiter"
+  },
+  "Moon sextile Jupiter": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Moon square Jupiter": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Jupiter"
+  },
+  "Moon trine Jupiter": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Moon opposition Jupiter": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Jupiter"
+  },
+  "Moon conjunction Saturn": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Saturn"
+  },
+  "Moon sextile Saturn": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Moon square Saturn": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Saturn"
+  },
+  "Moon trine Saturn": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Saturn"
+  },
+  "Moon opposition Saturn": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Saturn"
+  },
+  "Moon conjunction Uranus": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Uranus"
+  },
+  "Moon sextile Uranus": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Moon square Uranus": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Uranus"
+  },
+  "Moon trine Uranus": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Uranus"
+  },
+  "Moon opposition Uranus": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Uranus"
+  },
+  "Moon conjunction Neptune": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Neptune"
+  },
+  "Moon sextile Neptune": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Moon square Neptune": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Neptune"
+  },
+  "Moon trine Neptune": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Neptune"
+  },
+  "Moon opposition Neptune": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Neptune"
+  },
+  "Moon conjunction Pluto": {
+    "th": "คนแรก Moon ผสานพลัง คนสอง Pluto"
+  },
+  "Moon sextile Pluto": {
+    "th": "คนแรก Moon สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Moon square Pluto": {
+    "th": "คนแรก Moon เสี้ยว คนสอง Pluto"
+  },
+  "Moon trine Pluto": {
+    "th": "คนแรก Moon สามเหลี่ยม คนสอง Pluto"
+  },
+  "Moon opposition Pluto": {
+    "th": "คนแรก Moon ตรงข้าม คนสอง Pluto"
+  },
+  "Mercury conjunction Sun": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Sun"
+  },
+  "Mercury sextile Sun": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Sun"
+  },
+  "Mercury square Sun": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Sun"
+  },
+  "Mercury trine Sun": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Sun"
+  },
+  "Mercury opposition Sun": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Sun"
+  },
+  "Mercury conjunction Moon": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Moon"
+  },
+  "Mercury sextile Moon": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Moon"
+  },
+  "Mercury square Moon": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Moon"
+  },
+  "Mercury trine Moon": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Moon"
+  },
+  "Mercury opposition Moon": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Moon"
+  },
+  "Mercury conjunction Mercury": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Mercury"
+  },
+  "Mercury sextile Mercury": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Mercury square Mercury": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Mercury"
+  },
+  "Mercury trine Mercury": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Mercury"
+  },
+  "Mercury opposition Mercury": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Mercury"
+  },
+  "Mercury conjunction Venus": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Venus"
+  },
+  "Mercury sextile Venus": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Venus"
+  },
+  "Mercury square Venus": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Venus"
+  },
+  "Mercury trine Venus": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Venus"
+  },
+  "Mercury opposition Venus": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Venus"
+  },
+  "Mercury conjunction Mars": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Mars"
+  },
+  "Mercury sextile Mars": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Mars"
+  },
+  "Mercury square Mars": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Mars"
+  },
+  "Mercury trine Mars": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Mars"
+  },
+  "Mercury opposition Mars": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Mars"
+  },
+  "Mercury conjunction Jupiter": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Jupiter"
+  },
+  "Mercury sextile Jupiter": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Mercury square Jupiter": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Jupiter"
+  },
+  "Mercury trine Jupiter": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Mercury opposition Jupiter": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Jupiter"
+  },
+  "Mercury conjunction Saturn": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Saturn"
+  },
+  "Mercury sextile Saturn": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Mercury square Saturn": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Saturn"
+  },
+  "Mercury trine Saturn": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Saturn"
+  },
+  "Mercury opposition Saturn": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Saturn"
+  },
+  "Mercury conjunction Uranus": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Uranus"
+  },
+  "Mercury sextile Uranus": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Mercury square Uranus": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Uranus"
+  },
+  "Mercury trine Uranus": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Uranus"
+  },
+  "Mercury opposition Uranus": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Uranus"
+  },
+  "Mercury conjunction Neptune": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Neptune"
+  },
+  "Mercury sextile Neptune": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Mercury square Neptune": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Neptune"
+  },
+  "Mercury trine Neptune": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Neptune"
+  },
+  "Mercury opposition Neptune": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Neptune"
+  },
+  "Mercury conjunction Pluto": {
+    "th": "คนแรก Mercury ผสานพลัง คนสอง Pluto"
+  },
+  "Mercury sextile Pluto": {
+    "th": "คนแรก Mercury สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Mercury square Pluto": {
+    "th": "คนแรก Mercury เสี้ยว คนสอง Pluto"
+  },
+  "Mercury trine Pluto": {
+    "th": "คนแรก Mercury สามเหลี่ยม คนสอง Pluto"
+  },
+  "Mercury opposition Pluto": {
+    "th": "คนแรก Mercury ตรงข้าม คนสอง Pluto"
+  },
+  "Venus conjunction Sun": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Sun"
+  },
+  "Venus sextile Sun": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Sun"
+  },
+  "Venus square Sun": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Sun"
+  },
+  "Venus trine Sun": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Sun"
+  },
+  "Venus opposition Sun": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Sun"
+  },
+  "Venus conjunction Moon": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Moon"
+  },
+  "Venus sextile Moon": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Moon"
+  },
+  "Venus square Moon": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Moon"
+  },
+  "Venus trine Moon": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Moon"
+  },
+  "Venus opposition Moon": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Moon"
+  },
+  "Venus conjunction Mercury": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Mercury"
+  },
+  "Venus sextile Mercury": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Venus square Mercury": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Mercury"
+  },
+  "Venus trine Mercury": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Mercury"
+  },
+  "Venus opposition Mercury": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Mercury"
+  },
+  "Venus conjunction Venus": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Venus"
+  },
+  "Venus sextile Venus": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Venus"
+  },
+  "Venus square Venus": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Venus"
+  },
+  "Venus trine Venus": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Venus"
+  },
+  "Venus opposition Venus": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Venus"
+  },
+  "Venus conjunction Mars": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Mars"
+  },
+  "Venus sextile Mars": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Mars"
+  },
+  "Venus square Mars": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Mars"
+  },
+  "Venus trine Mars": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Mars"
+  },
+  "Venus opposition Mars": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Mars"
+  },
+  "Venus conjunction Jupiter": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Jupiter"
+  },
+  "Venus sextile Jupiter": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Venus square Jupiter": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Jupiter"
+  },
+  "Venus trine Jupiter": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Venus opposition Jupiter": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Jupiter"
+  },
+  "Venus conjunction Saturn": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Saturn"
+  },
+  "Venus sextile Saturn": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Venus square Saturn": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Saturn"
+  },
+  "Venus trine Saturn": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Saturn"
+  },
+  "Venus opposition Saturn": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Saturn"
+  },
+  "Venus conjunction Uranus": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Uranus"
+  },
+  "Venus sextile Uranus": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Venus square Uranus": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Uranus"
+  },
+  "Venus trine Uranus": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Uranus"
+  },
+  "Venus opposition Uranus": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Uranus"
+  },
+  "Venus conjunction Neptune": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Neptune"
+  },
+  "Venus sextile Neptune": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Venus square Neptune": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Neptune"
+  },
+  "Venus trine Neptune": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Neptune"
+  },
+  "Venus opposition Neptune": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Neptune"
+  },
+  "Venus conjunction Pluto": {
+    "th": "คนแรก Venus ผสานพลัง คนสอง Pluto"
+  },
+  "Venus sextile Pluto": {
+    "th": "คนแรก Venus สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Venus square Pluto": {
+    "th": "คนแรก Venus เสี้ยว คนสอง Pluto"
+  },
+  "Venus trine Pluto": {
+    "th": "คนแรก Venus สามเหลี่ยม คนสอง Pluto"
+  },
+  "Venus opposition Pluto": {
+    "th": "คนแรก Venus ตรงข้าม คนสอง Pluto"
+  },
+  "Mars conjunction Sun": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Sun"
+  },
+  "Mars sextile Sun": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Sun"
+  },
+  "Mars square Sun": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Sun"
+  },
+  "Mars trine Sun": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Sun"
+  },
+  "Mars opposition Sun": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Sun"
+  },
+  "Mars conjunction Moon": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Moon"
+  },
+  "Mars sextile Moon": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Moon"
+  },
+  "Mars square Moon": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Moon"
+  },
+  "Mars trine Moon": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Moon"
+  },
+  "Mars opposition Moon": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Moon"
+  },
+  "Mars conjunction Mercury": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Mercury"
+  },
+  "Mars sextile Mercury": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Mars square Mercury": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Mercury"
+  },
+  "Mars trine Mercury": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Mercury"
+  },
+  "Mars opposition Mercury": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Mercury"
+  },
+  "Mars conjunction Venus": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Venus"
+  },
+  "Mars sextile Venus": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Venus"
+  },
+  "Mars square Venus": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Venus"
+  },
+  "Mars trine Venus": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Venus"
+  },
+  "Mars opposition Venus": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Venus"
+  },
+  "Mars conjunction Mars": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Mars"
+  },
+  "Mars sextile Mars": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Mars"
+  },
+  "Mars square Mars": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Mars"
+  },
+  "Mars trine Mars": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Mars"
+  },
+  "Mars opposition Mars": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Mars"
+  },
+  "Mars conjunction Jupiter": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Jupiter"
+  },
+  "Mars sextile Jupiter": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Mars square Jupiter": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Jupiter"
+  },
+  "Mars trine Jupiter": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Mars opposition Jupiter": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Jupiter"
+  },
+  "Mars conjunction Saturn": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Saturn"
+  },
+  "Mars sextile Saturn": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Mars square Saturn": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Saturn"
+  },
+  "Mars trine Saturn": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Saturn"
+  },
+  "Mars opposition Saturn": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Saturn"
+  },
+  "Mars conjunction Uranus": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Uranus"
+  },
+  "Mars sextile Uranus": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Mars square Uranus": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Uranus"
+  },
+  "Mars trine Uranus": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Uranus"
+  },
+  "Mars opposition Uranus": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Uranus"
+  },
+  "Mars conjunction Neptune": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Neptune"
+  },
+  "Mars sextile Neptune": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Mars square Neptune": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Neptune"
+  },
+  "Mars trine Neptune": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Neptune"
+  },
+  "Mars opposition Neptune": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Neptune"
+  },
+  "Mars conjunction Pluto": {
+    "th": "คนแรก Mars ผสานพลัง คนสอง Pluto"
+  },
+  "Mars sextile Pluto": {
+    "th": "คนแรก Mars สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Mars square Pluto": {
+    "th": "คนแรก Mars เสี้ยว คนสอง Pluto"
+  },
+  "Mars trine Pluto": {
+    "th": "คนแรก Mars สามเหลี่ยม คนสอง Pluto"
+  },
+  "Mars opposition Pluto": {
+    "th": "คนแรก Mars ตรงข้าม คนสอง Pluto"
+  },
+  "Jupiter conjunction Sun": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Sun"
+  },
+  "Jupiter sextile Sun": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Sun"
+  },
+  "Jupiter square Sun": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Sun"
+  },
+  "Jupiter trine Sun": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Sun"
+  },
+  "Jupiter opposition Sun": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Sun"
+  },
+  "Jupiter conjunction Moon": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Moon"
+  },
+  "Jupiter sextile Moon": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Moon"
+  },
+  "Jupiter square Moon": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Moon"
+  },
+  "Jupiter trine Moon": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Moon"
+  },
+  "Jupiter opposition Moon": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Moon"
+  },
+  "Jupiter conjunction Mercury": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Mercury"
+  },
+  "Jupiter sextile Mercury": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Jupiter square Mercury": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Mercury"
+  },
+  "Jupiter trine Mercury": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Mercury"
+  },
+  "Jupiter opposition Mercury": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Mercury"
+  },
+  "Jupiter conjunction Venus": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Venus"
+  },
+  "Jupiter sextile Venus": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Venus"
+  },
+  "Jupiter square Venus": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Venus"
+  },
+  "Jupiter trine Venus": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Venus"
+  },
+  "Jupiter opposition Venus": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Venus"
+  },
+  "Jupiter conjunction Mars": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Mars"
+  },
+  "Jupiter sextile Mars": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Mars"
+  },
+  "Jupiter square Mars": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Mars"
+  },
+  "Jupiter trine Mars": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Mars"
+  },
+  "Jupiter opposition Mars": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Mars"
+  },
+  "Jupiter conjunction Jupiter": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Jupiter"
+  },
+  "Jupiter sextile Jupiter": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Jupiter square Jupiter": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Jupiter"
+  },
+  "Jupiter trine Jupiter": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Jupiter opposition Jupiter": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Jupiter"
+  },
+  "Jupiter conjunction Saturn": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Saturn"
+  },
+  "Jupiter sextile Saturn": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Jupiter square Saturn": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Saturn"
+  },
+  "Jupiter trine Saturn": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Saturn"
+  },
+  "Jupiter opposition Saturn": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Saturn"
+  },
+  "Jupiter conjunction Uranus": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Uranus"
+  },
+  "Jupiter sextile Uranus": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Jupiter square Uranus": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Uranus"
+  },
+  "Jupiter trine Uranus": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Uranus"
+  },
+  "Jupiter opposition Uranus": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Uranus"
+  },
+  "Jupiter conjunction Neptune": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Neptune"
+  },
+  "Jupiter sextile Neptune": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Jupiter square Neptune": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Neptune"
+  },
+  "Jupiter trine Neptune": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Neptune"
+  },
+  "Jupiter opposition Neptune": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Neptune"
+  },
+  "Jupiter conjunction Pluto": {
+    "th": "คนแรก Jupiter ผสานพลัง คนสอง Pluto"
+  },
+  "Jupiter sextile Pluto": {
+    "th": "คนแรก Jupiter สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Jupiter square Pluto": {
+    "th": "คนแรก Jupiter เสี้ยว คนสอง Pluto"
+  },
+  "Jupiter trine Pluto": {
+    "th": "คนแรก Jupiter สามเหลี่ยม คนสอง Pluto"
+  },
+  "Jupiter opposition Pluto": {
+    "th": "คนแรก Jupiter ตรงข้าม คนสอง Pluto"
+  },
+  "Saturn conjunction Sun": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Sun"
+  },
+  "Saturn sextile Sun": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Sun"
+  },
+  "Saturn square Sun": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Sun"
+  },
+  "Saturn trine Sun": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Sun"
+  },
+  "Saturn opposition Sun": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Sun"
+  },
+  "Saturn conjunction Moon": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Moon"
+  },
+  "Saturn sextile Moon": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Moon"
+  },
+  "Saturn square Moon": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Moon"
+  },
+  "Saturn trine Moon": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Moon"
+  },
+  "Saturn opposition Moon": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Moon"
+  },
+  "Saturn conjunction Mercury": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Mercury"
+  },
+  "Saturn sextile Mercury": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Saturn square Mercury": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Mercury"
+  },
+  "Saturn trine Mercury": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Mercury"
+  },
+  "Saturn opposition Mercury": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Mercury"
+  },
+  "Saturn conjunction Venus": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Venus"
+  },
+  "Saturn sextile Venus": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Venus"
+  },
+  "Saturn square Venus": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Venus"
+  },
+  "Saturn trine Venus": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Venus"
+  },
+  "Saturn opposition Venus": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Venus"
+  },
+  "Saturn conjunction Mars": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Mars"
+  },
+  "Saturn sextile Mars": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Mars"
+  },
+  "Saturn square Mars": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Mars"
+  },
+  "Saturn trine Mars": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Mars"
+  },
+  "Saturn opposition Mars": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Mars"
+  },
+  "Saturn conjunction Jupiter": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Jupiter"
+  },
+  "Saturn sextile Jupiter": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Saturn square Jupiter": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Jupiter"
+  },
+  "Saturn trine Jupiter": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Saturn opposition Jupiter": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Jupiter"
+  },
+  "Saturn conjunction Saturn": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Saturn"
+  },
+  "Saturn sextile Saturn": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Saturn square Saturn": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Saturn"
+  },
+  "Saturn trine Saturn": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Saturn"
+  },
+  "Saturn opposition Saturn": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Saturn"
+  },
+  "Saturn conjunction Uranus": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Uranus"
+  },
+  "Saturn sextile Uranus": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Saturn square Uranus": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Uranus"
+  },
+  "Saturn trine Uranus": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Uranus"
+  },
+  "Saturn opposition Uranus": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Uranus"
+  },
+  "Saturn conjunction Neptune": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Neptune"
+  },
+  "Saturn sextile Neptune": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Saturn square Neptune": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Neptune"
+  },
+  "Saturn trine Neptune": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Neptune"
+  },
+  "Saturn opposition Neptune": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Neptune"
+  },
+  "Saturn conjunction Pluto": {
+    "th": "คนแรก Saturn ผสานพลัง คนสอง Pluto"
+  },
+  "Saturn sextile Pluto": {
+    "th": "คนแรก Saturn สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Saturn square Pluto": {
+    "th": "คนแรก Saturn เสี้ยว คนสอง Pluto"
+  },
+  "Saturn trine Pluto": {
+    "th": "คนแรก Saturn สามเหลี่ยม คนสอง Pluto"
+  },
+  "Saturn opposition Pluto": {
+    "th": "คนแรก Saturn ตรงข้าม คนสอง Pluto"
+  },
+  "Uranus conjunction Sun": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Sun"
+  },
+  "Uranus sextile Sun": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Sun"
+  },
+  "Uranus square Sun": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Sun"
+  },
+  "Uranus trine Sun": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Sun"
+  },
+  "Uranus opposition Sun": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Sun"
+  },
+  "Uranus conjunction Moon": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Moon"
+  },
+  "Uranus sextile Moon": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Moon"
+  },
+  "Uranus square Moon": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Moon"
+  },
+  "Uranus trine Moon": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Moon"
+  },
+  "Uranus opposition Moon": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Moon"
+  },
+  "Uranus conjunction Mercury": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Mercury"
+  },
+  "Uranus sextile Mercury": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Uranus square Mercury": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Mercury"
+  },
+  "Uranus trine Mercury": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Mercury"
+  },
+  "Uranus opposition Mercury": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Mercury"
+  },
+  "Uranus conjunction Venus": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Venus"
+  },
+  "Uranus sextile Venus": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Venus"
+  },
+  "Uranus square Venus": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Venus"
+  },
+  "Uranus trine Venus": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Venus"
+  },
+  "Uranus opposition Venus": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Venus"
+  },
+  "Uranus conjunction Mars": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Mars"
+  },
+  "Uranus sextile Mars": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Mars"
+  },
+  "Uranus square Mars": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Mars"
+  },
+  "Uranus trine Mars": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Mars"
+  },
+  "Uranus opposition Mars": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Mars"
+  },
+  "Uranus conjunction Jupiter": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Jupiter"
+  },
+  "Uranus sextile Jupiter": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Uranus square Jupiter": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Jupiter"
+  },
+  "Uranus trine Jupiter": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Uranus opposition Jupiter": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Jupiter"
+  },
+  "Uranus conjunction Saturn": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Saturn"
+  },
+  "Uranus sextile Saturn": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Uranus square Saturn": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Saturn"
+  },
+  "Uranus trine Saturn": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Saturn"
+  },
+  "Uranus opposition Saturn": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Saturn"
+  },
+  "Uranus conjunction Uranus": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Uranus"
+  },
+  "Uranus sextile Uranus": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Uranus square Uranus": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Uranus"
+  },
+  "Uranus trine Uranus": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Uranus"
+  },
+  "Uranus opposition Uranus": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Uranus"
+  },
+  "Uranus conjunction Neptune": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Neptune"
+  },
+  "Uranus sextile Neptune": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Uranus square Neptune": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Neptune"
+  },
+  "Uranus trine Neptune": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Neptune"
+  },
+  "Uranus opposition Neptune": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Neptune"
+  },
+  "Uranus conjunction Pluto": {
+    "th": "คนแรก Uranus ผสานพลัง คนสอง Pluto"
+  },
+  "Uranus sextile Pluto": {
+    "th": "คนแรก Uranus สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Uranus square Pluto": {
+    "th": "คนแรก Uranus เสี้ยว คนสอง Pluto"
+  },
+  "Uranus trine Pluto": {
+    "th": "คนแรก Uranus สามเหลี่ยม คนสอง Pluto"
+  },
+  "Uranus opposition Pluto": {
+    "th": "คนแรก Uranus ตรงข้าม คนสอง Pluto"
+  },
+  "Neptune conjunction Sun": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Sun"
+  },
+  "Neptune sextile Sun": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Sun"
+  },
+  "Neptune square Sun": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Sun"
+  },
+  "Neptune trine Sun": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Sun"
+  },
+  "Neptune opposition Sun": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Sun"
+  },
+  "Neptune conjunction Moon": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Moon"
+  },
+  "Neptune sextile Moon": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Moon"
+  },
+  "Neptune square Moon": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Moon"
+  },
+  "Neptune trine Moon": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Moon"
+  },
+  "Neptune opposition Moon": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Moon"
+  },
+  "Neptune conjunction Mercury": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Mercury"
+  },
+  "Neptune sextile Mercury": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Neptune square Mercury": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Mercury"
+  },
+  "Neptune trine Mercury": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Mercury"
+  },
+  "Neptune opposition Mercury": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Mercury"
+  },
+  "Neptune conjunction Venus": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Venus"
+  },
+  "Neptune sextile Venus": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Venus"
+  },
+  "Neptune square Venus": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Venus"
+  },
+  "Neptune trine Venus": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Venus"
+  },
+  "Neptune opposition Venus": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Venus"
+  },
+  "Neptune conjunction Mars": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Mars"
+  },
+  "Neptune sextile Mars": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Mars"
+  },
+  "Neptune square Mars": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Mars"
+  },
+  "Neptune trine Mars": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Mars"
+  },
+  "Neptune opposition Mars": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Mars"
+  },
+  "Neptune conjunction Jupiter": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Jupiter"
+  },
+  "Neptune sextile Jupiter": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Neptune square Jupiter": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Jupiter"
+  },
+  "Neptune trine Jupiter": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Neptune opposition Jupiter": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Jupiter"
+  },
+  "Neptune conjunction Saturn": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Saturn"
+  },
+  "Neptune sextile Saturn": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Neptune square Saturn": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Saturn"
+  },
+  "Neptune trine Saturn": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Saturn"
+  },
+  "Neptune opposition Saturn": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Saturn"
+  },
+  "Neptune conjunction Uranus": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Uranus"
+  },
+  "Neptune sextile Uranus": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Neptune square Uranus": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Uranus"
+  },
+  "Neptune trine Uranus": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Uranus"
+  },
+  "Neptune opposition Uranus": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Uranus"
+  },
+  "Neptune conjunction Neptune": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Neptune"
+  },
+  "Neptune sextile Neptune": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Neptune square Neptune": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Neptune"
+  },
+  "Neptune trine Neptune": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Neptune"
+  },
+  "Neptune opposition Neptune": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Neptune"
+  },
+  "Neptune conjunction Pluto": {
+    "th": "คนแรก Neptune ผสานพลัง คนสอง Pluto"
+  },
+  "Neptune sextile Pluto": {
+    "th": "คนแรก Neptune สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Neptune square Pluto": {
+    "th": "คนแรก Neptune เสี้ยว คนสอง Pluto"
+  },
+  "Neptune trine Pluto": {
+    "th": "คนแรก Neptune สามเหลี่ยม คนสอง Pluto"
+  },
+  "Neptune opposition Pluto": {
+    "th": "คนแรก Neptune ตรงข้าม คนสอง Pluto"
+  },
+  "Pluto conjunction Sun": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Sun"
+  },
+  "Pluto sextile Sun": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Sun"
+  },
+  "Pluto square Sun": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Sun"
+  },
+  "Pluto trine Sun": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Sun"
+  },
+  "Pluto opposition Sun": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Sun"
+  },
+  "Pluto conjunction Moon": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Moon"
+  },
+  "Pluto sextile Moon": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Moon"
+  },
+  "Pluto square Moon": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Moon"
+  },
+  "Pluto trine Moon": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Moon"
+  },
+  "Pluto opposition Moon": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Moon"
+  },
+  "Pluto conjunction Mercury": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Mercury"
+  },
+  "Pluto sextile Mercury": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Mercury"
+  },
+  "Pluto square Mercury": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Mercury"
+  },
+  "Pluto trine Mercury": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Mercury"
+  },
+  "Pluto opposition Mercury": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Mercury"
+  },
+  "Pluto conjunction Venus": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Venus"
+  },
+  "Pluto sextile Venus": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Venus"
+  },
+  "Pluto square Venus": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Venus"
+  },
+  "Pluto trine Venus": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Venus"
+  },
+  "Pluto opposition Venus": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Venus"
+  },
+  "Pluto conjunction Mars": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Mars"
+  },
+  "Pluto sextile Mars": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Mars"
+  },
+  "Pluto square Mars": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Mars"
+  },
+  "Pluto trine Mars": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Mars"
+  },
+  "Pluto opposition Mars": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Mars"
+  },
+  "Pluto conjunction Jupiter": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Jupiter"
+  },
+  "Pluto sextile Jupiter": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Jupiter"
+  },
+  "Pluto square Jupiter": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Jupiter"
+  },
+  "Pluto trine Jupiter": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Jupiter"
+  },
+  "Pluto opposition Jupiter": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Jupiter"
+  },
+  "Pluto conjunction Saturn": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Saturn"
+  },
+  "Pluto sextile Saturn": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Saturn"
+  },
+  "Pluto square Saturn": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Saturn"
+  },
+  "Pluto trine Saturn": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Saturn"
+  },
+  "Pluto opposition Saturn": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Saturn"
+  },
+  "Pluto conjunction Uranus": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Uranus"
+  },
+  "Pluto sextile Uranus": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Uranus"
+  },
+  "Pluto square Uranus": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Uranus"
+  },
+  "Pluto trine Uranus": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Uranus"
+  },
+  "Pluto opposition Uranus": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Uranus"
+  },
+  "Pluto conjunction Neptune": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Neptune"
+  },
+  "Pluto sextile Neptune": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Neptune"
+  },
+  "Pluto square Neptune": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Neptune"
+  },
+  "Pluto trine Neptune": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Neptune"
+  },
+  "Pluto opposition Neptune": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Neptune"
+  },
+  "Pluto conjunction Pluto": {
+    "th": "คนแรก Pluto ผสานพลัง คนสอง Pluto"
+  },
+  "Pluto sextile Pluto": {
+    "th": "คนแรก Pluto สุดสัปดาห์ คนสอง Pluto"
+  },
+  "Pluto square Pluto": {
+    "th": "คนแรก Pluto เสี้ยว คนสอง Pluto"
+  },
+  "Pluto trine Pluto": {
+    "th": "คนแรก Pluto สามเหลี่ยม คนสอง Pluto"
+  },
+  "Pluto opposition Pluto": {
+    "th": "คนแรก Pluto ตรงข้าม คนสอง Pluto"
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "Gaja Kesari": {
+    "th": "พญาช้าง — พฤหัสอยู่บ้านกลาง (kendra) จากจันทร์ → โชคดี มีปัญญา เกียรติยศ",
+    "en": "Gaja Kesari — Jupiter in kendra from Moon → fortunate, wise, honored",
+    "condition": "Jupiter in 1st/4th/7th/10th from Moon",
+    "result": "โชคลาภ ความรู้ เกียรติยศ ความสำเร็จ"
+  },
+  "Raja Yoga": {
+    "th": "ราชา — เจ้าแห่งบ้านตรีโกณ (trikona) และบ้านกลาง (kendra) → อำนาจ ความสำเร็จ เกียรติยศ",
+    "en": "Raja Yoga — ruler of trikona + kendra → power, success, honor",
+    "condition": "Ruler of 1/5/9 in kendra (1/4/7/10)",
+    "result": "อำนาจ ความสำเร็จ เกียรติยศ"
+  },
+  "Dhana Yoga": {
+    "th": "ธนะ — เจ้าแห่งบ้าน 2/11 แข็งแกร่ง → ความมั่งคั่ง ทรัพย์สิน",
+    "en": "Dhana Yoga — ruler of 2nd/11th strong → wealth, prosperity",
+    "condition": "Ruler of 2nd or 11th in own sign/exaltation",
+    "result": "ความมั่งคั่ง ทรัพย์สิน รายได้"
+  },
+  "Sanyasa": {
+    "th": "สันยาสะ — 4+ ดาวอยู่บ้านเดียว → สละโลก ด้านจิตวิญญาณ",
+    "en": "Sanyasa — 4+ planets in one house → renunciation, spirituality",
+    "condition": "4 or more planets in single house",
+    "result": "การสละโลก ด้านจิตวิญญาณ การบวช"
+  },
+  "Viparita Raja": {
+    "th": "วิปรีตราชา — เจ้าแห่งบ้าน 6/8/12 อยู่ในกันและกัน → จากปัญหาสู่ชัยชนะ",
+    "en": "Viparita Raja — rulers of 6/8/12 in each other's houses → from problems to victory",
+    "condition": "Rulers of 6/8/12 exchange houses",
+    "result": "จากปัญหาสู่ชัยชนะ การเปลี่ยนผ่าน"
+  },
+  "Neecha Bhanga": {
+    "th": "นีจะภังคะ — การยกเลิกความอ่ออ่อน → ฟื้นจากสถานะด้อย",
+    "en": "Neecha Bhanga — cancellation of debilitation → recovery from low status",
+    "condition": "Debilitated planet aspected by its ruler or Jupiter",
+    "result": "ฟื้นจากสถานะด้อย การเปลี่ยนผ่าน"
+  },
+  "Vesi Yoga": {
+    "th": "เวศี — ดาวอยู่บ้าน 2 จากอาทิตย์ → เป็นที่พึ่งของคน",
+    "en": "Vesi Yoga — non-luminaries in 2nd from Sun → supporter of others",
+    "condition": "Planet (not Sun/Moon) in 2nd from Sun",
+    "result": "เป็นที่พึ่ง ช่วยเหลือคนอื่น"
+  },
+  "Ubhachandra": {
+    "th": "อุบะจันทร์ — ดาวอยู่ทั้งสองข้างจันทร์ → มีบริวาร มีชื่อเสียง",
+    "en": "Ubhachandra — planets on both sides of Moon → famous, well-supported",
+    "condition": "Planets in 2nd and 12th from Moon",
+    "result": "มีบริวาร มีชื่อเสียง เกียรติยศ"
+  },
+  "Sunapha": {
+    "th": "สุนภ — ดาวอยู่บ้าน 2 จากจันทร์ → ความมั่งคั่ง ทรัพย์สิน",
+    "en": "Sunapha — planets in 2nd from Moon → wealth, prosperity",
+    "condition": "Planet in 2nd from Moon (excluding Sun/Rahu/Ketu)",
+    "result": "ความมั่งคั่ง ทรัพย์สิน รายได้"
+  },
+  "Anapha": {
+    "th": "อนภ — ดาวอยู่บ้าน 12 จากจันทร์ → สละ จิตวิญญาณ",
+    "en": "Anapha — planets in 12th from Moon → renunciation, spirituality",
+    "condition": "Planet in 12th from Moon (excluding Sun/Rahu/Ketu)",
+    "result": "การสละ ด้านจิตวิญญาณ"
+  }
+}

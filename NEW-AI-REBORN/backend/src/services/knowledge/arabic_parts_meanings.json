@@ -1,0 +1,38 @@
+{
+  "Part of Fortune": {
+    "th": "อาภรณ์",
+    "formula": "Sun + Moon - ASC",
+    "meaning_en": "Part of Fortune (Sun + Moon - ASC): ความสุข โชคลาภ",
+    "meaning_th": "อาภรณ์ (Sun + Moon - ASC): ความสุข โชคลาภ"
+  },
+  "Part of Spirit": {
+    "th": "จิตวิญญาณ",
+    "formula": "ASC + Moon - Sun",
+    "meaning_en": "Part of Spirit (ASC + Moon - Sun): ความสุขทางจิต",
+    "meaning_th": "จิตวิญญาณ (ASC + Moon - Sun): ความสุขทางจิต"
+  },
+  "Part of Marriage": {
+    "th": "สมรส",
+    "formula": "ASC + Venus - Mars",
+    "meaning_en": "Part of Marriage (ASC + Venus - Mars): ความรัก คู่ครอง",
+    "meaning_th": "สมรส (ASC + Venus - Mars): ความรัก คู่ครอง"
+  },
+  "Part of Career": {
+    "th": "อาชีพ",
+    "formula": "ASC + MC - Sun",
+    "meaning_en": "Part of Career (ASC + MC - Sun): การงาน อาชีพ",
+    "meaning_th": "อาชีพ (ASC + MC - Sun): การงาน อาชีพ"
+  },
+  "Part of Children": {
+    "th": "บุตร",
+    "formula": "ASC + Jupiter - Moon",
+    "meaning_en": "Part of Children (ASC + Jupiter - Moon): บุตร ครอบครัว",
+    "meaning_th": "บุตร (ASC + Jupiter - Moon): บุตร ครอบครัว"
+  },
+  "Part of Death": {
+    "th": "มรณะ",
+    "formula": "ASC + 8th cusp - Moon",
+    "meaning_en": "Part of Death (ASC + 8th cusp - Moon): การเปลี่ยนแปลง",
+    "meaning_th": "มรณะ (ASC + 8th cusp - Moon): การเปลี่ยนแปลง"
+  }
+}

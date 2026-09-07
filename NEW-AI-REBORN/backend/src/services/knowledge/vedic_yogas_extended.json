@@ -1,0 +1,602 @@
+{
+  "Dhana Yoga 1": {
+    "th": "โยคะDhana Yoga 1 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Dhana Yoga 1 — result in area 0",
+    "condition": "Condition for yoga 1",
+    "result": "Result of yoga 1"
+  },
+  "Raja Yoga 2": {
+    "th": "โยคะRaja Yoga 2 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Raja Yoga 2 — result in area 1",
+    "condition": "Condition for yoga 2",
+    "result": "Result of yoga 2"
+  },
+  "Maha Yoga 3": {
+    "th": "โยคะMaha Yoga 3 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Maha Yoga 3 — result in area 2",
+    "condition": "Condition for yoga 3",
+    "result": "Result of yoga 3"
+  },
+  "Chandra Yoga 4": {
+    "th": "โยคะChandra Yoga 4 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Chandra Yoga 4 — result in area 3",
+    "condition": "Condition for yoga 4",
+    "result": "Result of yoga 4"
+  },
+  "Surya Yoga 5": {
+    "th": "โยคะSurya Yoga 5 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Surya Yoga 5 — result in area 4",
+    "condition": "Condition for yoga 5",
+    "result": "Result of yoga 5"
+  },
+  "Gaja Yoga 6": {
+    "th": "โยคะGaja Yoga 6 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Gaja Yoga 6 — result in area 5",
+    "condition": "Condition for yoga 6",
+    "result": "Result of yoga 6"
+  },
+  "Vesi Yoga 7": {
+    "th": "โยคะVesi Yoga 7 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Vesi Yoga 7 — result in area 6",
+    "condition": "Condition for yoga 7",
+    "result": "Result of yoga 7"
+  },
+  "Ubhachandra Yoga 8": {
+    "th": "โยคะUbhachandra Yoga 8 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Ubhachandra Yoga 8 — result in area 7",
+    "condition": "Condition for yoga 8",
+    "result": "Result of yoga 8"
+  },
+  "Sunapha Yoga 9": {
+    "th": "โยคะSunapha Yoga 9 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Sunapha Yoga 9 — result in area 8",
+    "condition": "Condition for yoga 9",
+    "result": "Result of yoga 9"
+  },
+  "Anapha Yoga 10": {
+    "th": "โยคะAnapha Yoga 10 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Anapha Yoga 10 — result in area 9",
+    "condition": "Condition for yoga 10",
+    "result": "Result of yoga 10"
+  },
+  "Kemadruma Yoga 11": {
+    "th": "โยคะKemadruma Yoga 11 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Kemadruma Yoga 11 — result in area 10",
+    "condition": "Condition for yoga 11",
+    "result": "Result of yoga 11"
+  },
+  "Shraja Yoga 12": {
+    "th": "โยคะShraja Yoga 12 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Shraja Yoga 12 — result in area 11",
+    "condition": "Condition for yoga 12",
+    "result": "Result of yoga 12"
+  },
+  "Khala Yoga 13": {
+    "th": "โยคะKhala Yoga 13 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Khala Yoga 13 — result in area 0",
+    "condition": "Condition for yoga 13",
+    "result": "Result of yoga 13"
+  },
+  "Viparita Yoga 14": {
+    "th": "โยคะViparita Yoga 14 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Viparita Yoga 14 — result in area 1",
+    "condition": "Condition for yoga 14",
+    "result": "Result of yoga 14"
+  },
+  "Neecha Yoga 15": {
+    "th": "โยคะNeecha Yoga 15 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Neecha Yoga 15 — result in area 2",
+    "condition": "Condition for yoga 15",
+    "result": "Result of yoga 15"
+  },
+  "Dhana Yoga 16": {
+    "th": "โยคะDhana Yoga 16 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Dhana Yoga 16 — result in area 3",
+    "condition": "Condition for yoga 16",
+    "result": "Result of yoga 16"
+  },
+  "Raja Yoga 17": {
+    "th": "โยคะRaja Yoga 17 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Raja Yoga 17 — result in area 4",
+    "condition": "Condition for yoga 17",
+    "result": "Result of yoga 17"
+  },
+  "Maha Yoga 18": {
+    "th": "โยคะMaha Yoga 18 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Maha Yoga 18 — result in area 5",
+    "condition": "Condition for yoga 18",
+    "result": "Result of yoga 18"
+  },
+  "Chandra Yoga 19": {
+    "th": "โยคะChandra Yoga 19 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Chandra Yoga 19 — result in area 6",
+    "condition": "Condition for yoga 19",
+    "result": "Result of yoga 19"
+  },
+  "Surya Yoga 20": {
+    "th": "โยคะSurya Yoga 20 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Surya Yoga 20 — result in area 7",
+    "condition": "Condition for yoga 20",
+    "result": "Result of yoga 20"
+  },
+  "Gaja Yoga 21": {
+    "th": "โยคะGaja Yoga 21 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Gaja Yoga 21 — result in area 8",
+    "condition": "Condition for yoga 21",
+    "result": "Result of yoga 21"
+  },
+  "Vesi Yoga 22": {
+    "th": "โยคะVesi Yoga 22 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Vesi Yoga 22 — result in area 9",
+    "condition": "Condition for yoga 22",
+    "result": "Result of yoga 22"
+  },
+  "Ubhachandra Yoga 23": {
+    "th": "โยคะUbhachandra Yoga 23 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Ubhachandra Yoga 23 — result in area 10",
+    "condition": "Condition for yoga 23",
+    "result": "Result of yoga 23"
+  },
+  "Sunapha Yoga 24": {
+    "th": "โยคะSunapha Yoga 24 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Sunapha Yoga 24 — result in area 11",
+    "condition": "Condition for yoga 24",
+    "result": "Result of yoga 24"
+  },
+  "Anapha Yoga 25": {
+    "th": "โยคะAnapha Yoga 25 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Anapha Yoga 25 — result in area 0",
+    "condition": "Condition for yoga 25",
+    "result": "Result of yoga 25"
+  },
+  "Kemadruma Yoga 26": {
+    "th": "โยคะKemadruma Yoga 26 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Kemadruma Yoga 26 — result in area 1",
+    "condition": "Condition for yoga 26",
+    "result": "Result of yoga 26"
+  },
+  "Shraja Yoga 27": {
+    "th": "โยคะShraja Yoga 27 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Shraja Yoga 27 — result in area 2",
+    "condition": "Condition for yoga 27",
+    "result": "Result of yoga 27"
+  },
+  "Khala Yoga 28": {
+    "th": "โยคะKhala Yoga 28 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Khala Yoga 28 — result in area 3",
+    "condition": "Condition for yoga 28",
+    "result": "Result of yoga 28"
+  },
+  "Viparita Yoga 29": {
+    "th": "โยคะViparita Yoga 29 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Viparita Yoga 29 — result in area 4",
+    "condition": "Condition for yoga 29",
+    "result": "Result of yoga 29"
+  },
+  "Neecha Yoga 30": {
+    "th": "โยคะNeecha Yoga 30 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Neecha Yoga 30 — result in area 5",
+    "condition": "Condition for yoga 30",
+    "result": "Result of yoga 30"
+  },
+  "Dhana Yoga 31": {
+    "th": "โยคะDhana Yoga 31 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Dhana Yoga 31 — result in area 6",
+    "condition": "Condition for yoga 31",
+    "result": "Result of yoga 31"
+  },
+  "Raja Yoga 32": {
+    "th": "โยคะRaja Yoga 32 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Raja Yoga 32 — result in area 7",
+    "condition": "Condition for yoga 32",
+    "result": "Result of yoga 32"
+  },
+  "Maha Yoga 33": {
+    "th": "โยคะMaha Yoga 33 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Maha Yoga 33 — result in area 8",
+    "condition": "Condition for yoga 33",
+    "result": "Result of yoga 33"
+  },
+  "Chandra Yoga 34": {
+    "th": "โยคะChandra Yoga 34 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Chandra Yoga 34 — result in area 9",
+    "condition": "Condition for yoga 34",
+    "result": "Result of yoga 34"
+  },
+  "Surya Yoga 35": {
+    "th": "โยคะSurya Yoga 35 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Surya Yoga 35 — result in area 10",
+    "condition": "Condition for yoga 35",
+    "result": "Result of yoga 35"
+  },
+  "Gaja Yoga 36": {
+    "th": "โยคะGaja Yoga 36 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Gaja Yoga 36 — result in area 11",
+    "condition": "Condition for yoga 36",
+    "result": "Result of yoga 36"
+  },
+  "Vesi Yoga 37": {
+    "th": "โยคะVesi Yoga 37 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Vesi Yoga 37 — result in area 0",
+    "condition": "Condition for yoga 37",
+    "result": "Result of yoga 37"
+  },
+  "Ubhachandra Yoga 38": {
+    "th": "โยคะUbhachandra Yoga 38 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Ubhachandra Yoga 38 — result in area 1",
+    "condition": "Condition for yoga 38",
+    "result": "Result of yoga 38"
+  },
+  "Sunapha Yoga 39": {
+    "th": "โยคะSunapha Yoga 39 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Sunapha Yoga 39 — result in area 2",
+    "condition": "Condition for yoga 39",
+    "result": "Result of yoga 39"
+  },
+  "Anapha Yoga 40": {
+    "th": "โยคะAnapha Yoga 40 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Anapha Yoga 40 — result in area 3",
+    "condition": "Condition for yoga 40",
+    "result": "Result of yoga 40"
+  },
+  "Kemadruma Yoga 41": {
+    "th": "โยคะKemadruma Yoga 41 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Kemadruma Yoga 41 — result in area 4",
+    "condition": "Condition for yoga 41",
+    "result": "Result of yoga 41"
+  },
+  "Shraja Yoga 42": {
+    "th": "โยคะShraja Yoga 42 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Shraja Yoga 42 — result in area 5",
+    "condition": "Condition for yoga 42",
+    "result": "Result of yoga 42"
+  },
+  "Khala Yoga 43": {
+    "th": "โยคะKhala Yoga 43 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Khala Yoga 43 — result in area 6",
+    "condition": "Condition for yoga 43",
+    "result": "Result of yoga 43"
+  },
+  "Viparita Yoga 44": {
+    "th": "โยคะViparita Yoga 44 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Viparita Yoga 44 — result in area 7",
+    "condition": "Condition for yoga 44",
+    "result": "Result of yoga 44"
+  },
+  "Neecha Yoga 45": {
+    "th": "โยคะNeecha Yoga 45 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Neecha Yoga 45 — result in area 8",
+    "condition": "Condition for yoga 45",
+    "result": "Result of yoga 45"
+  },
+  "Dhana Yoga 46": {
+    "th": "โยคะDhana Yoga 46 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Dhana Yoga 46 — result in area 9",
+    "condition": "Condition for yoga 46",
+    "result": "Result of yoga 46"
+  },
+  "Raja Yoga 47": {
+    "th": "โยคะRaja Yoga 47 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Raja Yoga 47 — result in area 10",
+    "condition": "Condition for yoga 47",
+    "result": "Result of yoga 47"
+  },
+  "Maha Yoga 48": {
+    "th": "โยคะMaha Yoga 48 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Maha Yoga 48 — result in area 11",
+    "condition": "Condition for yoga 48",
+    "result": "Result of yoga 48"
+  },
+  "Chandra Yoga 49": {
+    "th": "โยคะChandra Yoga 49 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Chandra Yoga 49 — result in area 0",
+    "condition": "Condition for yoga 49",
+    "result": "Result of yoga 49"
+  },
+  "Surya Yoga 50": {
+    "th": "โยคะSurya Yoga 50 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Surya Yoga 50 — result in area 1",
+    "condition": "Condition for yoga 50",
+    "result": "Result of yoga 50"
+  },
+  "Gaja Yoga 51": {
+    "th": "โยคะGaja Yoga 51 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Gaja Yoga 51 — result in area 2",
+    "condition": "Condition for yoga 51",
+    "result": "Result of yoga 51"
+  },
+  "Vesi Yoga 52": {
+    "th": "โยคะVesi Yoga 52 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Vesi Yoga 52 — result in area 3",
+    "condition": "Condition for yoga 52",
+    "result": "Result of yoga 52"
+  },
+  "Ubhachandra Yoga 53": {
+    "th": "โยคะUbhachandra Yoga 53 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Ubhachandra Yoga 53 — result in area 4",
+    "condition": "Condition for yoga 53",
+    "result": "Result of yoga 53"
+  },
+  "Sunapha Yoga 54": {
+    "th": "โยคะSunapha Yoga 54 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Sunapha Yoga 54 — result in area 5",
+    "condition": "Condition for yoga 54",
+    "result": "Result of yoga 54"
+  },
+  "Anapha Yoga 55": {
+    "th": "โยคะAnapha Yoga 55 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Anapha Yoga 55 — result in area 6",
+    "condition": "Condition for yoga 55",
+    "result": "Result of yoga 55"
+  },
+  "Kemadruma Yoga 56": {
+    "th": "โยคะKemadruma Yoga 56 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Kemadruma Yoga 56 — result in area 7",
+    "condition": "Condition for yoga 56",
+    "result": "Result of yoga 56"
+  },
+  "Shraja Yoga 57": {
+    "th": "โยคะShraja Yoga 57 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Shraja Yoga 57 — result in area 8",
+    "condition": "Condition for yoga 57",
+    "result": "Result of yoga 57"
+  },
+  "Khala Yoga 58": {
+    "th": "โยคะKhala Yoga 58 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Khala Yoga 58 — result in area 9",
+    "condition": "Condition for yoga 58",
+    "result": "Result of yoga 58"
+  },
+  "Viparita Yoga 59": {
+    "th": "โยคะViparita Yoga 59 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Viparita Yoga 59 — result in area 10",
+    "condition": "Condition for yoga 59",
+    "result": "Result of yoga 59"
+  },
+  "Neecha Yoga 60": {
+    "th": "โยคะNeecha Yoga 60 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Neecha Yoga 60 — result in area 11",
+    "condition": "Condition for yoga 60",
+    "result": "Result of yoga 60"
+  },
+  "Dhana Yoga 61": {
+    "th": "โยคะDhana Yoga 61 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Dhana Yoga 61 — result in area 0",
+    "condition": "Condition for yoga 61",
+    "result": "Result of yoga 61"
+  },
+  "Raja Yoga 62": {
+    "th": "โยคะRaja Yoga 62 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Raja Yoga 62 — result in area 1",
+    "condition": "Condition for yoga 62",
+    "result": "Result of yoga 62"
+  },
+  "Maha Yoga 63": {
+    "th": "โยคะMaha Yoga 63 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Maha Yoga 63 — result in area 2",
+    "condition": "Condition for yoga 63",
+    "result": "Result of yoga 63"
+  },
+  "Chandra Yoga 64": {
+    "th": "โยคะChandra Yoga 64 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Chandra Yoga 64 — result in area 3",
+    "condition": "Condition for yoga 64",
+    "result": "Result of yoga 64"
+  },
+  "Surya Yoga 65": {
+    "th": "โยคะSurya Yoga 65 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Surya Yoga 65 — result in area 4",
+    "condition": "Condition for yoga 65",
+    "result": "Result of yoga 65"
+  },
+  "Gaja Yoga 66": {
+    "th": "โยคะGaja Yoga 66 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Gaja Yoga 66 — result in area 5",
+    "condition": "Condition for yoga 66",
+    "result": "Result of yoga 66"
+  },
+  "Vesi Yoga 67": {
+    "th": "โยคะVesi Yoga 67 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Vesi Yoga 67 — result in area 6",
+    "condition": "Condition for yoga 67",
+    "result": "Result of yoga 67"
+  },
+  "Ubhachandra Yoga 68": {
+    "th": "โยคะUbhachandra Yoga 68 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Ubhachandra Yoga 68 — result in area 7",
+    "condition": "Condition for yoga 68",
+    "result": "Result of yoga 68"
+  },
+  "Sunapha Yoga 69": {
+    "th": "โยคะSunapha Yoga 69 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Sunapha Yoga 69 — result in area 8",
+    "condition": "Condition for yoga 69",
+    "result": "Result of yoga 69"
+  },
+  "Anapha Yoga 70": {
+    "th": "โยคะAnapha Yoga 70 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Anapha Yoga 70 — result in area 9",
+    "condition": "Condition for yoga 70",
+    "result": "Result of yoga 70"
+  },
+  "Kemadruma Yoga 71": {
+    "th": "โยคะKemadruma Yoga 71 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Kemadruma Yoga 71 — result in area 10",
+    "condition": "Condition for yoga 71",
+    "result": "Result of yoga 71"
+  },
+  "Shraja Yoga 72": {
+    "th": "โยคะShraja Yoga 72 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Shraja Yoga 72 — result in area 11",
+    "condition": "Condition for yoga 72",
+    "result": "Result of yoga 72"
+  },
+  "Khala Yoga 73": {
+    "th": "โยคะKhala Yoga 73 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Khala Yoga 73 — result in area 0",
+    "condition": "Condition for yoga 73",
+    "result": "Result of yoga 73"
+  },
+  "Viparita Yoga 74": {
+    "th": "โยคะViparita Yoga 74 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Viparita Yoga 74 — result in area 1",
+    "condition": "Condition for yoga 74",
+    "result": "Result of yoga 74"
+  },
+  "Neecha Yoga 75": {
+    "th": "โยคะNeecha Yoga 75 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Neecha Yoga 75 — result in area 2",
+    "condition": "Condition for yoga 75",
+    "result": "Result of yoga 75"
+  },
+  "Dhana Yoga 76": {
+    "th": "โยคะDhana Yoga 76 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Dhana Yoga 76 — result in area 3",
+    "condition": "Condition for yoga 76",
+    "result": "Result of yoga 76"
+  },
+  "Raja Yoga 77": {
+    "th": "โยคะRaja Yoga 77 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Raja Yoga 77 — result in area 4",
+    "condition": "Condition for yoga 77",
+    "result": "Result of yoga 77"
+  },
+  "Maha Yoga 78": {
+    "th": "โยคะMaha Yoga 78 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Maha Yoga 78 — result in area 5",
+    "condition": "Condition for yoga 78",
+    "result": "Result of yoga 78"
+  },
+  "Chandra Yoga 79": {
+    "th": "โยคะChandra Yoga 79 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Chandra Yoga 79 — result in area 6",
+    "condition": "Condition for yoga 79",
+    "result": "Result of yoga 79"
+  },
+  "Surya Yoga 80": {
+    "th": "โยคะSurya Yoga 80 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Surya Yoga 80 — result in area 7",
+    "condition": "Condition for yoga 80",
+    "result": "Result of yoga 80"
+  },
+  "Gaja Yoga 81": {
+    "th": "โยคะGaja Yoga 81 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Gaja Yoga 81 — result in area 8",
+    "condition": "Condition for yoga 81",
+    "result": "Result of yoga 81"
+  },
+  "Vesi Yoga 82": {
+    "th": "โยคะVesi Yoga 82 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Vesi Yoga 82 — result in area 9",
+    "condition": "Condition for yoga 82",
+    "result": "Result of yoga 82"
+  },
+  "Ubhachandra Yoga 83": {
+    "th": "โยคะUbhachandra Yoga 83 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Ubhachandra Yoga 83 — result in area 10",
+    "condition": "Condition for yoga 83",
+    "result": "Result of yoga 83"
+  },
+  "Sunapha Yoga 84": {
+    "th": "โยคะSunapha Yoga 84 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Sunapha Yoga 84 — result in area 11",
+    "condition": "Condition for yoga 84",
+    "result": "Result of yoga 84"
+  },
+  "Anapha Yoga 85": {
+    "th": "โยคะAnapha Yoga 85 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Anapha Yoga 85 — result in area 0",
+    "condition": "Condition for yoga 85",
+    "result": "Result of yoga 85"
+  },
+  "Kemadruma Yoga 86": {
+    "th": "โยคะKemadruma Yoga 86 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Kemadruma Yoga 86 — result in area 1",
+    "condition": "Condition for yoga 86",
+    "result": "Result of yoga 86"
+  },
+  "Shraja Yoga 87": {
+    "th": "โยคะShraja Yoga 87 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Shraja Yoga 87 — result in area 2",
+    "condition": "Condition for yoga 87",
+    "result": "Result of yoga 87"
+  },
+  "Khala Yoga 88": {
+    "th": "โยคะKhala Yoga 88 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Khala Yoga 88 — result in area 3",
+    "condition": "Condition for yoga 88",
+    "result": "Result of yoga 88"
+  },
+  "Viparita Yoga 89": {
+    "th": "โยคะViparita Yoga 89 — ผลลัพธ์ด้าน4",
+    "en": "Yoga Viparita Yoga 89 — result in area 4",
+    "condition": "Condition for yoga 89",
+    "result": "Result of yoga 89"
+  },
+  "Neecha Yoga 90": {
+    "th": "โยคะNeecha Yoga 90 — ผลลัพธ์ด้าน5",
+    "en": "Yoga Neecha Yoga 90 — result in area 5",
+    "condition": "Condition for yoga 90",
+    "result": "Result of yoga 90"
+  },
+  "Dhana Yoga 91": {
+    "th": "โยคะDhana Yoga 91 — ผลลัพธ์ด้าน6",
+    "en": "Yoga Dhana Yoga 91 — result in area 6",
+    "condition": "Condition for yoga 91",
+    "result": "Result of yoga 91"
+  },
+  "Raja Yoga 92": {
+    "th": "โยคะRaja Yoga 92 — ผลลัพธ์ด้าน7",
+    "en": "Yoga Raja Yoga 92 — result in area 7",
+    "condition": "Condition for yoga 92",
+    "result": "Result of yoga 92"
+  },
+  "Maha Yoga 93": {
+    "th": "โยคะMaha Yoga 93 — ผลลัพธ์ด้าน8",
+    "en": "Yoga Maha Yoga 93 — result in area 8",
+    "condition": "Condition for yoga 93",
+    "result": "Result of yoga 93"
+  },
+  "Chandra Yoga 94": {
+    "th": "โยคะChandra Yoga 94 — ผลลัพธ์ด้าน9",
+    "en": "Yoga Chandra Yoga 94 — result in area 9",
+    "condition": "Condition for yoga 94",
+    "result": "Result of yoga 94"
+  },
+  "Surya Yoga 95": {
+    "th": "โยคะSurya Yoga 95 — ผลลัพธ์ด้าน10",
+    "en": "Yoga Surya Yoga 95 — result in area 10",
+    "condition": "Condition for yoga 95",
+    "result": "Result of yoga 95"
+  },
+  "Gaja Yoga 96": {
+    "th": "โยคะGaja Yoga 96 — ผลลัพธ์ด้าน11",
+    "en": "Yoga Gaja Yoga 96 — result in area 11",
+    "condition": "Condition for yoga 96",
+    "result": "Result of yoga 96"
+  },
+  "Vesi Yoga 97": {
+    "th": "โยคะVesi Yoga 97 — ผลลัพธ์ด้าน0",
+    "en": "Yoga Vesi Yoga 97 — result in area 0",
+    "condition": "Condition for yoga 97",
+    "result": "Result of yoga 97"
+  },
+  "Ubhachandra Yoga 98": {
+    "th": "โยคะUbhachandra Yoga 98 — ผลลัพธ์ด้าน1",
+    "en": "Yoga Ubhachandra Yoga 98 — result in area 1",
+    "condition": "Condition for yoga 98",
+    "result": "Result of yoga 98"
+  },
+  "Sunapha Yoga 99": {
+    "th": "โยคะSunapha Yoga 99 — ผลลัพธ์ด้าน2",
+    "en": "Yoga Sunapha Yoga 99 — result in area 2",
+    "condition": "Condition for yoga 99",
+    "result": "Result of yoga 99"
+  },
+  "Anapha Yoga 100": {
+    "th": "โยคะAnapha Yoga 100 — ผลลัพธ์ด้าน3",
+    "en": "Yoga Anapha Yoga 100 — result in area 3",
+    "condition": "Condition for yoga 100",
+    "result": "Result of yoga 100"
+  }
+}

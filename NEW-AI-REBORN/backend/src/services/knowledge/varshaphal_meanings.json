@@ -1,0 +1,32 @@
+{
+  "muntha": {
+    "th": "มุนธา",
+    "en": "Annual ascendant point",
+    "meaning_en": "Varshaphal Annual ascendant point: จุดเริ่มต้นปี",
+    "meaning_th": "วรษาผัล มุนธา: จุดเริ่มต้นปี"
+  },
+  "year_lord": {
+    "th": "เจ้าแห่งปี",
+    "en": "Year lord planet",
+    "meaning_en": "Varshaphal Year lord planet: ดาวปกครองปี",
+    "meaning_th": "วรษาผัล เจ้าแห่งปี: ดาวปกครองปี"
+  },
+  "varsha_lagna": {
+    "th": "วัสษาลาคนา",
+    "en": "Annual ascendant",
+    "meaning_en": "Varshaphal Annual ascendant: ลัคนาประจำปี",
+    "meaning_th": "วรษาผัล วัสษาลาคนา: ลัคนาประจำปี"
+  },
+  "saham_punya": {
+    "th": "ปุญญะ",
+    "en": "Fortune point",
+    "meaning_en": "Varshaphal Fortune point: จุดโชคดี",
+    "meaning_th": "วรษาผัล ปุญญะ: จุดโชคดี"
+  },
+  "saham_spirit": {
+    "th": "จิตวิญญาณ",
+    "en": "Spirit point",
+    "meaning_en": "Varshaphal Spirit point: จุดจิตวิญญาณ",
+    "meaning_th": "วรษาผัล จิตวิญญาณ: จุดจิตวิญญาณ"
+  }
+}

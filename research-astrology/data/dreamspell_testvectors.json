@@ -1,0 +1,97 @@
+{
+  "system": "Mayan Dreamspell (Arguelles) galactic signature - Kin / Solar Seal / Galactic Tone",
+  "verified_date": "2026-08-23",
+  "anchor": {
+    "date": "1987-07-26",
+    "jdn": 2447003,
+    "kin": 34,
+    "signature": "White Galactic Wizard",
+    "note": "Dreamspell epoch NS1.0.1.1. Confirmed by tortuga1320.com ('26 July 1987 (NS1.0.1.1 - Kin 34 - White Galactic Wizard)') and lawoftime.org materials."
+  },
+  "canonical_formula": "kin(date) = ((33 + counted_days) mod 260) + 1 where counted_days = (JDN(date) - JDN(1987-07-26)) MINUS number of Feb-29 leap days elapsed after the anchor (authentic Dreamspell: 29 Feb = '0.0 Hunab Ku', bears NO kin). seal=((kin-1)%20)+1 ; tone=((kin-1)%13)+1.",
+  "vectors": [
+    {
+      "date": "1997-05-19",
+      "kin": 236,
+      "seal": "Yellow Warrior",
+      "tone": "2 Lunar",
+      "raw_delta_days": 3585,
+      "leap_days_skipped": 3
+    },
+    {
+      "date": "1987-07-26",
+      "kin": 34,
+      "seal": "White Wizard",
+      "tone": "8 Galactic",
+      "raw_delta_days": 0,
+      "leap_days_skipped": 0
+    },
+    {
+      "date": "1988-07-25",
+      "kin": 138,
+      "seal": "White Mirror",
+      "tone": "8 Galactic",
+      "raw_delta_days": 365,
+      "leap_days_skipped": 1
+    },
+    {
+      "date": "1988-07-26",
+      "kin": 139,
+      "seal": "Blue Storm",
+      "tone": "9 Solar",
+      "raw_delta_days": 366,
+      "leap_days_skipped": 1
+    },
+    {
+      "date": "2026-08-23",
+      "kin": 257,
+      "seal": "Red Earth",
+      "tone": "10 Spectral",
+      "raw_delta_days": 14273,
+      "leap_days_skipped": 10
+    }
+  ],
+  "naive_continuous_count_vectors": [
+    {
+      "date": "1997-05-19",
+      "kin": 239,
+      "seal": "Blue Storm",
+      "tone": "5 Overtone"
+    },
+    {
+      "date": "1987-07-26",
+      "kin": 34,
+      "seal": "White Wizard",
+      "tone": "8 Galactic"
+    },
+    {
+      "date": "1988-07-25",
+      "kin": 139,
+      "seal": "Blue Storm",
+      "tone": "9 Solar"
+    },
+    {
+      "date": "1988-07-26",
+      "kin": 140,
+      "seal": "Yellow Sun",
+      "tone": "10 Spectral"
+    },
+    {
+      "date": "2026-08-23",
+      "kin": 7,
+      "seal": "Blue Hand",
+      "tone": "7 Resonant"
+    }
+  ],
+  "second_source_confirmed": false,
+  "second_source_note": "Cross-check RESULT: second sources do NOT confirm Kin 239 for 1997-05-19; they confirm the authentic rule gives Kin 236 Yellow Lunar Warrior. Kin 239 Blue Overtone Storm is what NAIVE continuous-count calculators give (the convention zodiacroots.com evidently uses). sacredtzolkin.com (classical GMT Tzolkin, different system by design) gives Kin 185 for the same date = exactly 54 less than naive Dreamspell, consistent with the known Dreamspell/classical divergence.",
+  "conflict": "[CONFLICT] Two coexisting conventions in the wild: (A) AUTHENTIC Law-of-Time/Dreamspell rule - Feb 29 has no signature; year bearers advance exactly +105 kin/year; confirmed by lawoftime.org official pocket calendar (26 July 2019 = Kin 14 White Magnetic Wizard; naive rule would say Kin 22), tortuga1320.com (Blue Lunar Storm Year starting 26 July 2020 = Kin 119; naive would say Kin 128; DOOT 25 July 2032 = Kin 78), Wikipedia 'Dreamspell' (Feb 29 always 0.0 Hunab Ku, not one of the 260 signatures). (B) NAIVE continuous-count calculators (incl. apparently zodiacroots.com) that let Feb 29 carry a kin. Values differ by +1 per elapsed leap day. RECOMMENDATION: ship convention A as canonical Dreamspell; keep B only behind an explicit 'web-calculator compatibility' flag if product parity with popular sites is desired. Final call flagged to CMD.",
+  "spec14_bug_status": "Original off-by-33 bug (205 vs 239) is REAL and fixed by the +33/Kin-34 epoch offset. ADDITIONALLY found: even offset-corrected arithmetic must skip Feb 29 to match authentic Dreamspell (239 -> 236 for M).",
+  "sources": [
+    "https://lawoftime.org/wp-content/uploads/1-Wizard-Year-Pocket-Calendar.pdf (official Foundation for the Law of Time: White Magnetic Wizard year, Kin 14, 26 July 2019)",
+    "https://en.wikipedia.org/wiki/Dreamspell (system structure; Feb 29 = 0.0 Hunab Ku, no galactic signature; 52-year perfect return)",
+    "https://tortuga1320.com/2019/08/07/white-magnetic-wizard-year-new-cycle-timelessness/ (epoch NS1.0.1.1 = 26 July 1987 = Kin 34; Kin 14 on 26 July 2019; DOOT 25 July 2032 = Kin 78)",
+    "https://tortuga1320.com/2020/07/27/blue-lunar-storm-year-crystal-prophecy/ (Blue Lunar Storm year from 26 July 2020 = Kin 119)",
+    "https://sacredtzolkin.com/ (classical-Tzolkin manual charts used as negative control: 1997-05-19 = Kin 185 classical, exactly 54 below naive Dreamspell)"
+  ]
+}

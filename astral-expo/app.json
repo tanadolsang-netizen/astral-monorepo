@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "Astral",
+    "slug": "astral",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#05050f"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#05050f"
+      },
+      "package": "com.astral.app"
+    },
+    "plugins": [
+      "expo-dev-client"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "3eb58c34-646d-4302-bfcc-0f06fd7a9fd3"
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "system": "Human Design Rave Mandala - ecliptic longitude to gate/line wheel",
+  "verified_date": "2026-08-23",
+  "anchor": {
+    "start_gate": 41,
+    "start_ecliptic_deg": 302.0,
+    "zodiac_label": "02°00′ Aquarius",
+    "note": "Gate 41 begins just past 2 deg Aquarius (satyori.com; Rave New Year ~Jan 22 when Sun reaches ~302 deg). Each gate spans 360/64 = 5.625 deg; each line 0.9375 deg."
+  },
+  "order": [
+    41,
+    19,
+    13,
+    49,
+    30,
+    55,
+    37,
+    63,
+    22,
+    36,
+    25,
+    17,
+    21,
+    51,
+    42,
+    3,
+    27,
+    24,
+    2,
+    23,
+    8,
+    20,
+    16,
+    35,
+    45,
+    12,
+    15,
+    52,
+    39,
+    53,
+    62,
+    56,
+    31,
+    33,
+    7,
+    4,
+    29,
+    59,
+    40,
+    64,
+    47,
+    6,
+    46,
+    18,
+    48,
+    57,
+    32,
+    50,
+    28,
+    44,
+    1,
+    43,
+    14,
+    34,
+    9,
+    5,
+    26,
+    11,
+    10,
+    58,
+    38,
+    54,
+    61,
+    60
+  ],
+  "gate_33_position": {
+    "index": 33,
+    "start_deg_ecliptic": 127.625,
+    "end_deg_ecliptic": 133.25,
+    "zodiac": "Leo 7°37′30″ – Leo 13°15′",
+    "confirmations": [
+      "thehumandesign.com/learn/gate-33.html states Gate 33 starts 7°37′ Leo (=127.625 deg, exactly index 33)",
+      "Sun transit sequence 31 -> 33 -> 7 -> 4 confirmed independently by jamielpalmer.com (Jul 25-Aug 16, 2022 logs) and yvettemayer.com (Jul-Aug 2024 posts)"
+    ]
+  },
+  "worked_example_rerun": [
+    {
+      "planet": "Sun",
+      "lon": 58.05,
+      "computed_gate": 8,
+      "computed_line": 4,
+      "computed": "8.4",
+      "spec_claimed": "24.4",
+      "match": false
+    },
+    {
+      "planet": "Moon",
+      "lon": 197.37,
+      "computed_gate": 57,
+      "computed_line": 3,
+      "computed": "57.3",
+      "spec_claimed": "12.4",
+      "match": false
+    },
+    {
+      "planet": "Venus",
+      "lon": 70.15,
+      "computed_gate": 16,
+      "computed_line": 5,
+      "computed": "16.5",
+      "spec_claimed": "2.3",
+      "match": false
+    },
+    {
+      "planet": "Mars",
+      "lon": 199.32,
+      "computed_gate": 57,
+      "computed_line": 5,
+      "computed": "57.5",
+      "spec_claimed": "15.1",
+      "match": false
+    },
+    {
+      "planet": "Jupiter",
+      "lon": 321.21,
+      "computed_gate": 49,
+      "computed_line": 3,
+      "computed": "49.3",
+      "spec_claimed": "42.3",
+      "match": false
+    },
+    {
+      "planet": "Saturn",
+      "lon": 16.08,
+      "computed_gate": 51,
+      "computed_line": 2,
+      "computed": "51.2",
+      "spec_claimed": "63.4",
+      "match": false
+    }
+  ],
+  "worked_example_verdict": "0/6 of spec 06 section 2 claimed outputs reproduce even with the verified wheel; the section-2 OUTPUT VALUES were wrong, not only the table. Machine-computed values from the verified wheel are now authoritative.",
+  "sources": [
+    "https://gethumandesign.com/docs/background/the-rave-mandala",
+    "https://satyori.com/human-design/human-design-gates-vs-i-ching-hexagrams",
+    "https://thehumandesign.com/learn/gate-33.html",
+    "https://www.jamielpalmer.com/tag/human-design-transits",
+    "https://www.yvettemayer.com/blog/human-design-gate-7"
+  ],
+  "verified_against": [
+    "gethumandesign.com: prints order prefix 41->19->13->49->30->55->37->63->22->36->25->17->21->51->42->3->... identical to this wheel; states 5.625 deg/gate and 0.9375 deg/line",
+    "satyori.com: 'sequence starts with Gate 41 just past 2 degrees of Aquarius'; fixed non-numerical order; same degree arithmetic",
+    "thehumandesign.com: Gate 33 = 7°37′ Leo start (matches index-33 slice 127.625-133.25 deg exactly)",
+    "jamielpalmer.com 2022 transit log: Sun in 31 (Jul25-30), 33 (Jul31-Aug5), 7 (Aug6-11), 4 (Aug12-16)",
+    "yvettemayer.com 2024 posts: Sun in 62 (Jul13), 56 (Jul19), 31 (Jul26), 33 (Jul30), 7 (Aug5), 4 (Aug12); Jan/Feb dates match wheel tail (60 then 41 then 19, 13, 30)"
+  ],
+  "conflicts": [
+    "[MINOR][CONFLICT-NOTE] gethumandesign.com prose says Gate 41 sits 'at the very end of Capricorn, right before 0 Aquarius' (~296-302 deg); satyori.com + the Rave New Year date (~Jan 22, Sun ~302 deg) support start AT 302 deg. 302 deg retained (2 independent anchors); prose imprecision recorded."
+  ]
+}

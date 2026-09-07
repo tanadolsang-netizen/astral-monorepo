@@ -1,0 +1,37 @@
+{
+  "Moon-Saturn": {
+    "name": "deprivation complex",
+    "th": "ความรู้สึกที่ว่าความต้องการทางอารมณ์ไม่เคยได้รับการตอบสนอง — เด็กที่เรียนรู้ว่าต้องแข็งแก่นเพราะคนรอบข้างไม่ได้มีให้",
+    "en": "The felt sense that emotional needs won't be met — the child who learned to be strong because no one was there.",
+    "fear": "กลัวจะเป็นภาระ กลัวจะร้องไห้แล้วไม่มีใครมาปลอบ",
+    "healing": "เรียนรู้ว่าคุณสามารถร้องไห้ได้ — การอ่อนแอไม่ใช่ความอ่อนแอ มันคือความกล้าหาญ"
+  },
+  "Sun-Saturn": {
+    "name": "father wound / authority complex",
+    "th": "ความรู้สึกที่ว่าตัวเองไม่ดีพอ — เด็กที่ต้องพิสูจน์ตลอดเวลาว่าตัวเองมีค่า",
+    "en": "The sense of never being good enough — the child who had to prove their worth constantly.",
+    "fear": "กลัวจะถูกตัดสิน กลัวจะล้มเหลวต่อหน้าคนอื่น",
+    "healing": "คุณไม่ต้องพิสูจน์อะไรอีกแล้ว — คุณค่าที่คุณเป็นอยู่ ไม่ใช่สิ่งที่คุณทำ"
+  },
+  "Mars-Saturn": {
+    "name": "inhibition complex",
+    "th": "ความขัดแย้งระหว่างความต้องการก้าวออกไปกับความกลัวถูกปฏิเสธ — เด็กที่เรียนรู้ว่าการแสดงออกคืออันตราย",
+    "en": "Conflict between the urge to act and fear of rejection — the child that learned expression is dangerous.",
+    "fear": "กลัวจะถูกปฏิเสธถ้าแสดงความต้องการ กลัวจะโง่ถ้าพูด",
+    "healing": "ความต้องการของคุณถูกต้องแล้ว — การพูดออกไปไม่ใช่การไร้วัฒนธรรม มันคือการเคารพตัวเอง"
+  },
+  "Venus-Pluto": {
+    "name": "fusion complex",
+    "th": "ความรักที่เต็มไปด้วยความรุนแรงและความกลัว — ความรักที่ต้องได้ทุกอย่างหรือไม่มีเลย",
+    "en": "Love charged with intensity and fear — love that must be all or nothing.",
+    "fear": "กลัวจะสูญเสียการควบคุมในความรัก กลัวจะถูกทรยศ",
+    "healing": "ความรักที่แท้จริไม่ต้องได้ทุกอย่าง — บางทีการปล่อยคือการถือ"
+  },
+  "Sun-Pluto": {
+    "name": "identity shadow complex",
+    "th": "ความลับเกี่ยวกับตัวตน — ส่วนที่คุณซ่อนจากโลกเพราะกลัวมันจะทำลายภาพลักษณ์",
+    "en": "Secrets about identity — the part you hide from the world because you fear it would destroy your image.",
+    "fear": "กลัวจะถูกค้นพบว่าแท้จริงแล้วเป็นใคร กลัวจะสูญเสียอำนาจ",
+    "healing": "ความจริงที่ซ่อนอยู่คือทรัพย์สินที่ถูกขัง — เมื่อปล่อยออกมา คุณจะกลับชาติมาเกิด"
+  }
+}

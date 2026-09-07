@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════════════════════════════
+   ASTRAL — 3D Scene Styles
+   Shared styles for all 3D scenes and their containers
+   ═══════════════════════════════════════════════════════════════ */
+
+.scene-canvas-host {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: auto;
+}
+
+.scene-canvas-host canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.scene-hint {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #c9a84c;
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  background: rgba(5, 3, 12, 0.7);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 20px;
+  pointer-events: none;
+  transition: opacity 0.6s ease;
+  opacity: 0.5;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Scene-specific view styling */
+.view .scene-wrap {
+  position: relative;
+  min-height: 400px;
+  height: 60vh;
+  margin-top: 20px;
+  background: radial-gradient(ellipse at center, #0d0820 0%, #05030c 70%);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.view .scene-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(5,3,12,0) 60%, rgba(5,3,12,0.8) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.view .scene-label {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+  color: #c9a84c;
+  font-family: 'Cinzel', 'Georgia', serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* Make scenes visible when view is active */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+  animation: fadeView 0.5s ease;
+}
+
+@keyframes fadeView {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scene responsiveness */
+@media (max-width: 768px) {
+  .view .scene-wrap {
+    height: 50vh;
+    min-height: 300px;
+  }
+  .scene-hint {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+}

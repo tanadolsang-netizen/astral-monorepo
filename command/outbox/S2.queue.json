@@ -1,0 +1,52 @@
+[
+  {
+    "id": "20260831-010004",
+    "title": "ออกแบบสะพาน deterministic ดวงคำนวณ↔reel (coarse↔fine) — เป้าความแม่นระดับขนลุก",
+    "body": "บริบทสำคัญ (standalone): นายท่านเจ้าของแอป Astral กำหนดหลักการวิทยาศาสตร์ดวงชะตา: 'ดวงคำนวณ (de421 ephemeris) และ reel/ไพ่/collective reading คือปรากฏการณ์เดียวกันในระดับความละเอียดต่างกัน (coarse↔fine) — ไม่ใช่ของจริง vs ของปลอม' เป้าหมายสูงสุดของนายท่าน: ระบบต้อง 'แม่นจนขนลุกที่สุด' คือ การอ่านต้องสืบเนื่องจากตำแหน่งดาวจริง ไม่ใช่สุ่ม\n\nสถานะโค้ดปัจจุบัน (ซิงก์จากดิกสก์):\n- src/services/reel_reading.py: ใช้ seed สุ่ม (seed=int(...)) เลือกไพ่ผ่าน draw_spread → การอ่านเป็นจับฉลาก ไม่สืบจากดวง\n- src/services/chart_service.py: compute_chart() คืน dict มี bodies[body,sign,degree,house], ascendant, aspects\n- src/services/composite_service.py: compute_composite(), compute_relationship_score()\n- build_couple_premium.py มีจุด chart echo เป็น stub ว่าง (pass) ทำอะไรไม่ได้\n- tarot_meanings_th.py มี th_card_name/th_card_meaning ครบ 78 ใบ\n\nภารกิจของคุณ (ออกแบบสถาปัตยกรรม ONLY — ห้ามเขียนโค้ดลง src): เขียนรายงานออกแบบลง C:/AI/workspace-scratch/apply_coarse_fine_design.md ประกอบส่วน:\n1. อัลกอริทึมแมป deterministic: จาก compute_chart() output (bodies, ascendant, aspects, element balance) → เลือกไพ่ + ธีมบทอ่าน อย่างไม่สุ่ม อธิบายฟังก์ชันแมปเชิงตัวเลข (เช่น ใช้ดาวเด่น/ธาตุ/บ้าน/Aspect เป็นตัวกำหนด seed เชิงโครงสร้าง ไม่ใช่ random.randint)\n2. ตารางแมปเสนอ (planetary config → archetype/card): อิงสัญลักษณ์ดั้งเดิม Rider-Waite-Smith เช่น Saturn แข็ง/คืนรอย → The Devil หรือ King of Cups reversed; Venus ในบ้าน 5 → The Empress; Mars ในบ้าน 8 → Tower/King of Wands; ดาวพฤหัสเด่น → Wheel of Fortune ฯลฯ เสนอได้กว้างแต่ต้องมีเหตุผลเชิงสัญลักษณ์\n3. การปรับ signature: reel_reading(name, spread, seed?, chart=None) ให้รับ chart จริง และเปลี่ยนพฤติกรรมจากสุ่มเป็นสืบเนื่อง (เมื่อมี chart ให้ derive จาก chart; ไม่มีคงสุ่มเดิมเพื่อ backward-compat)\n4. เกณฑ์คุณภาพ 'ขนลุก': (ก) ดวงเดียวกัน ⇒ อ่านซ้ำเหมือนเดิมทุกครั้ง (ก) บทอ่านสะท้อน transit/ตำแหน่งดาวจริง (ค) ไม่มีคำสุ่มในเนื้อหาหลัก (ง) checklist ตรวจความแม่นก่อน render\n5. แผน validate: วิธีทดสอบว่า 'landed' จริง — เช่น สร้างรายงานจากดวงนายท่าน (19 พ.ค. 2540 05:45 ชลบุรี) และดวง Mai (18 ส.ค. 2544 22:32 นนทบุรี) แล้วเทียบกับเหตุการณ์ที่เกิดจริงในชีวิต\n6. ประเมินความเสี่ยง (เช่น over-fitting, คลุมเครือเกินไป) + ข้อเสนอแนะลำดับให้ FORGE สร้างต่อ\n\nเมื่อเสร็จ รัน: python dispatch.py done ATLAS <id> '<สรุปสั้น>' และ report ATLAS '<สถานะ + path ของรายงาน>'\nห้ามเขียน/แก้ไฟล์ใน src/services เด็ดขาด — งานนี้คือออกแบบสถาปัตยกรรมเท่านั้น",
+    "priority": "high",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 01:00:04"
+  },
+  {
+    "id": "20260822-205415",
+    "title": "vault remote backup — push GitHub",
+    "body": "",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-22 20:54:15",
+    "result": "both repos pushed to GitHub private — obsidian-vault 9ae42ca + research-astrology fe536f6, remote==local verified"
+  },
+  {
+    "id": "20260823-122042",
+    "title": "QA pass specs 05/09/10/16 (re-issue — previous worker died on API timeout before writing)",
+    "body": "เพิ่ม section '## Implementation Notes (QA 2026-08-23)' ท้าย spec แต่ละฉบับ: (a) สูตร/ค่าคงที่ที่ engineer ต้องใช้ (b) ground-truth example เดียวด้วยดวง M 1997-05-19 05:45 Chonburi (c) กฎ graceful degradation · ห้ามแก้ของเดิม additive only · commit + push origin master",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:20:42",
+    "acked_at": "2026-08-23 12:27:08",
+    "result": "verified by CMD: FORGE c763e45 (157 tests) / ATLAS 459980f (4 specs QA notes)"
+  },
+  {
+    "id": "20260830-011138",
+    "title": "status request",
+    "body": "CMD requests current status report from ATLAS. Report: current progress%, active research work, blockers, and next deliverable. Reply immediately with division=ATLAS status=green|yellow|red progress=0-100 deliverable= blocker=",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-30 01:11:38"
+  },
+  {
+    "id": "20260823-123103",
+    "title": "Universe Phase 4 QA: specs 06/11/12/13/14/15/18 (queued)",
+    "body": "เพิ่ม Implementation Notes (QA 2026-08-23) ท้าย spec 06-human-design, 11-numerology, 12-iching, 13-ninestar-ki, 14-mayan-tzolkin, 15-cosmobiology, 18-tibetan-kalachakra — รูปแบบเดียวกับที่ทำ 05/09/10/16: (a) formulas/constants (b) ground truth M (c) graceful-degradation rule · additive only · commit+push",
+    "priority": "low",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:31:03",
+    "acked_at": "2026-08-23 14:49:31",
+    "result": "final '<complete>' — ATLAS part B closes remaining specs: QA notes (scope/formulas + M ground truth + degradation rule) appended ADDITIVELY to 06-human-design / 15-cosmobiology-midpoints / 18-tibetan-kalachakra. Findings: 06 gate wheel has 63 entries (Gate 33 missing), §2 examples 0/6 reproducible vs own table (+offset typo Jupiter 79.21→19.21) ⇒ NEEDS-DATA; Type-via-center-approximation fallback NOT reliable ⇒ return unavailable. 15 all midpoints/pictures reproduce (Sun/Moon 127.71, Ve/Ma 119.74, Su/Ve 64.10, Ve/Ju 15.68 wrap case; orbs 0.185/0.35/0.40/0.99); sidereal Sun-Moon demo 34.2+173.5 → 103.85 = Cancer 13.85 sidereal ✓ frame-shift consistent w/ tropical 127.71−23.85. 18 spec's own tibetan_year(1997)=Wood Ox male contradicts text Fire Ox female (=BaZi Ding-Chou ✓) ⇒ phase constants wrong; external data list pinned (Rabjung anchor, Losar, daily almanac constants, mewa table, parkha matrix). Commit 18c0f7c 'docs(atlas): QA notes specs 06/15/18' pushed origin master (rebased over part-A 9e85852)."
+  }
+]

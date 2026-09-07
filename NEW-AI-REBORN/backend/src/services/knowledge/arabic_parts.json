@@ -1,0 +1,202 @@
+{
+  "arabic_parts_overview": {
+    "name": "Arabic Parts",
+    "name_th": "อาหรับพาร์ทส์",
+    "description": "จุดคำนวณพิเศษในโหราศาสตร์ตะวันตก ใช้สูตรคำนวณจากตำแหน่งดวงดาวและลัคนา",
+    "description_en": "Special calculated points in Western astrology using formulas from planet positions and Ascendant",
+    "history": "มีต้นกำเนิดจากโหราศาสตร์อาหรับยุคกลาง ถูกนำเข้าสู่โหราศาสตร์ยุโรปโดยนักโหราศาสตร์ชาติฝรั่งเศสและเยอรมัน",
+    "history_en": "Originated in medieval Arabic astrology, introduced to European astrology by French and German astrologers"
+  },
+  "arabic_parts": {
+    "Part_of_Fortune": {
+      "name": "Part of Fortune",
+      "name_th": "อาภรณ์",
+      "symbol": "⊕",
+      "formula": "ASC + Moon - Sun (day chart) / ASC + Sun - Moon (night chart)",
+      "formula_th": "ลัคนา + จันทร์ - อาทิตย์ (วันเกิด) / ลัคนา + อาทิตย์ - จันทร์ (คืนเกิด)",
+      "meaning_th": "จุดที่คุณพบความสุขและโชคลาภง่ายที่สุด ความเจริญรุ่งเรือง",
+      "meaning_en": "Where you find happiness and prosperity most easily, flourishing",
+      "keywords": ["ความสุข", "โชคลาภ", "ความเจริญ", "ความพอใจ"],
+      "keywords_en": ["happiness", "prosperity", "flourishing", "contentment"],
+      "interpretation": "แสดงทิศทางที่คุณจะพบความสุขและความสำเร็จโดยธรรมชาติ บ้านที่ตกแสดงส่วนของชีวิตที่มีโชค",
+      "interpretation_en": "Shows direction where you find happiness and success naturally, house placement shows life area of fortune",
+      "rulership": "ราศีที่ Part of Fortune อยู่แสดงคุณภาพของความสุข",
+      "rulership_en": "Sign of Part of Fortune shows quality of happiness"
+    },
+    "Part_of_Spirit": {
+      "name": "Part of Spirit",
+      "name_th": "จิตวิญญาณ",
+      "symbol": "☉",
+      "formula": "ASC + Sun - Moon (day chart) / ASC + Moon - Sun (night chart)",
+      "formula_th": "ลัคนา + อาทิตย์ - จันทร์ (วันเกิด) / ลัคนา + จันทร์ - อาทิตย์ (คืนเกิด)",
+      "meaning_th": "จุดที่คุณพบความหมายและวัตถุประสงค์ชีวิต",
+      "meaning_en": "Where you find meaning and life purpose",
+      "keywords": ["จิตวิญญาณ", "วัตถุประสงค์", "ความหมาย", "ตัวตน"],
+      "keywords_en": ["spirit", "purpose", "meaning", "identity"],
+      "interpretation": "แสดงวัตถุประสงค์สูงสุดของชีวิต สิ่งที่ทำให้คุณรู้สึกมีคุณค่า",
+      "interpretation_en": "Shows highest life purpose, what makes you feel valuable",
+      "rulership": "ตรงข้ามกับ Part of Fortune เสมอ",
+      "rulership_en": "Always opposite Part of Fortune"
+    },
+    "Part_of_Marriage": {
+      "name": "Part of Marriage",
+      "name_th": "สมรส",
+      "symbol": "⚭",
+      "formula": "ASC + Venus - Jupiter",
+      "formula_th": "ลัคนา + ศุกร์ - พฤหัส",
+      "meaning_th": "ความสัมพันธ์และคู่ครองของคุณ การแต่งงาน",
+      "meaning_en": "Your relationships and spouse, marriage",
+      "keywords": ["ความรัก", "คู่ครอง", "การแต่งงาน", "สมรส"],
+      "keywords_en": ["love", "spouse", "marriage", "union"],
+      "interpretation": "แสดงลักษณะคู่ครองและวิธีที่คุณแสดงออกถึงความรัก บ้านที่ตกแสดงสถานการณ์การแต่งงาน",
+      "interpretation_en": "Shows spouse characteristics and how you express love, house placement shows marriage circumstances",
+      "rulership": "ดาวที่อยู่บนจุดนี้หรือบ้าน 7 แสดงลักษณะคู่ครอง",
+      "rulership_en": "Planet on this point or house 7 shows spouse characteristics"
+    },
+    "Part_of_Career": {
+      "name": "Part of Career",
+      "name_th": "อาชีพ",
+      "symbol": "⚙",
+      "formula": "ASC + MC - Sun",
+      "formula_th": "ลัคนา + MC - อาทิตย์",
+      "meaning_th": "การงานและตำแหน่งของคุณ ความสำเร็จทางสังคม",
+      "meaning_en": "Your career and position, social success",
+      "keywords": ["การงาน", "อาชีพ", "ตำแหน่ง", "ความสำเร็จ"],
+      "keywords_en": ["career", "profession", "position", "success"],
+      "interpretation": "แสดงทิศทางอาชีพที่น่าจะประสบความสำเร็จ และวิธีที่สังคมมองคุณ",
+      "interpretation_en": "Shows career direction likely to succeed and how society views you",
+      "rulership": "ราศีและบ้านที่ตกแสดงประเภทอาชีพ",
+      "rulership_en": "Sign and house placement show career type"
+    },
+    "Part_of_Children": {
+      "name": "Part of Children",
+      "name_th": "บุตร",
+      "symbol": "⚶",
+      "formula": "ASC + Jupiter - Moon",
+      "formula_th": "ลัคนา + พฤหัส - จันทร์",
+      "meaning_th": "บุตรและครอบครัวของคุณ ความสัมพันธ์กับเด็ก",
+      "meaning_en": "Your children and family, relationship with children",
+      "keywords": ["บุตร", "ครอบครัว", "เด็ก", "การเป็นพ่อแม่"],
+      "keywords_en": ["children", "family", "kids", "parenthood"],
+      "interpretation": "แสดงความสัมพันธ์กับบุตรและความเป็นพ่อแม่ จำนวนบุตรและสถานการณ์",
+      "interpretation_en": "Shows relationship with children and parenthood, number of children and circumstances",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงคุณภาพความเป็นพ่อแม่",
+      "rulership_en": "Planet on this point shows parenthood quality"
+    },
+    "Part_of_Death": {
+      "name": "Part of Death",
+      "name_th": "มรณะ",
+      "symbol": "☠",
+      "formula": "ASC + 8th cusp - Moon",
+      "formula_th": "ลัคนา + บ้าน 8 - จันทร์",
+      "meaning_th": "การเปลี่ยนแปลงครั้งใหญ่และการสิ้นสุด การแปรรูป",
+      "meaning_en": "Major transformation and endings, metamorphosis",
+      "keywords": ["การเปลี่ยนแปลง", "การสิ้นสุด", "การแปรรูป", "วิกฤต"],
+      "keywords_en": ["change", "endings", "transformation", "crisis"],
+      "interpretation": "แสดงการเปลี่ยนแปลงครั้งใหญ่ในชีวิต ไม่ใช่การตายทางร่างกาย แต่การแปรรูปภายใน",
+      "interpretation_en": "Shows major life changes, not physical death but inner transformation",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงวิธีการแปรรูป",
+      "rulership_en": "Planet on this point shows transformation method",
+      "caution": "ไม่ควรตีความว่าเป็นการตายทางร่างกาย แต่เป็นการเปลี่ยนแปลงครั้งใหญ่",
+      "caution_en": "Should not be interpreted as physical death but as major change"
+    },
+    "Part_of_Travel": {
+      "name": "Part of Travel",
+      "name_th": "การเดินทาง",
+      "symbol": "⚓",
+      "formula": "ASC + Jupiter - Saturn",
+      "formula_th": "ลัคนา + พฤหัส - เสาร์",
+      "meaning_th": "การเดินทางไกลและการย้ายถิ่น การศึกษาต่อต่างประเทศ",
+      "meaning_en": "Long journeys and relocation, studying abroad",
+      "keywords": ["การเดินทาง", "การย้ายถิ่น", "ต่างประเทศ", "การศึกษา"],
+      "keywords_en": ["travel", "relocation", "foreign", "education"],
+      "interpretation": "แสดงความสัมพันธ์กับการเดินทางไกลและการย้ายถิ่น บ้านที่ตกแสดงสถานการณ์",
+      "interpretation_en": "Shows relationship with long journeys and relocation, house placement shows circumstances",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงประเภทการเดินทาง",
+      "rulership_en": "Planet on this point shows travel type"
+    },
+    "Part_of_Catastrophe": {
+      "name": "Part of Catastrophe",
+      "name_th": "ภัยพิบัติ",
+      "symbol": "⚡",
+      "formula": "ASC + Saturn - Sun",
+      "formula_th": "ลัคนา + เสาร์ - อาทิตย์",
+      "meaning_th": "อันตรายและวิกฤตที่ต้องระวัง อุบัติเหตุ",
+      "meaning_en": "Dangers and crises to beware of, accidents",
+      "keywords": ["อันตราย", "วิกฤต", "อุบัติเหตุ", "ข้อจำกัด"],
+      "keywords_en": ["danger", "crisis", "accidents", "limitations"],
+      "interpretation": "แสดงจุดที่ต้องระวังอันตรายและวิกฤต ไม่ใช่สิ่งที่เกิดขึ้นแน่นอน",
+      "interpretation_en": "Shows points to beware of danger and crisis, not inevitable events",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงประเภทอันตราย",
+      "rulership_en": "Planet on this point shows danger type",
+      "caution": "ใช้เพื่อเตรียมตัวและระวัง ไม่ใช่การทำนายอนาคตที่หลีกเลี่ยงไม่ได้",
+      "caution_en": "Use for preparation and caution, not prediction of unavoidable future"
+    },
+    "Part_of_Treasure": {
+      "name": "Part of Treasure",
+      "name_th": "สมบัติ",
+      "symbol": "⚱",
+      "formula": "ASC + Jupiter - Venus",
+      "formula_th": "ลัคนา + พฤหัส - ศุกร์",
+      "meaning_th": "ความมั่งคั่งและมรดก ทรัพย์สิน",
+      "meaning_en": "Wealth and inheritance, property",
+      "keywords": ["ความมั่งคั่ง", "มรดก", "ทรัพย์สิน", "การเงิน"],
+      "keywords_en": ["wealth", "inheritance", "property", "finance"],
+      "interpretation": "แสดงแหล่งความมั่งคั่งและมรดกที่อาจได้รับ บ้านที่ตกแสดงวิธีได้มา",
+      "interpretation_en": "Shows sources of wealth and possible inheritance, house placement shows how to obtain",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงวิธีสะสมทรัพย์",
+      "rulership_en": "Planet on this point shows wealth accumulation method"
+    },
+    "Part_of_Servants": {
+      "name": "Part of Servants",
+      "name_th": "บริวาร",
+      "symbol": "⚒",
+      "formula": "ASC + Moon - Mercury",
+      "formula_th": "ลัคนา + จันทร์ - พุธ",
+      "meaning_th": "ลูกน้องและผู้ใต้บังคับบัญชา ความสัมพันธ์ในที่ทำงาน",
+      "meaning_en": "Subordinates and employees, workplace relationships",
+      "keywords": ["ลูกน้อง", "ผู้ใต้บังคับบัญชา", "ที่ทำงาน", "ความร่วมมือ"],
+      "keywords_en": ["subordinates", "employees", "workplace", "cooperation"],
+      "interpretation": "แสดงความสัมพันธ์กับลูกน้องและผู้ใต้บังคับบัญชา บ้านที่ตกแสดงสถานการณ์",
+      "interpretation_en": "Shows relationship with subordinates and employees, house placement shows circumstances",
+      "rulership": "ดาวที่อยู่บนจุดนี้แสดงคุณภาพลูกน้อง",
+      "rulership_en": "Planet on this point shows subordinate quality"
+    }
+  },
+  "calculation_notes": {
+    "day_night_rule": {
+      "name": "กฎการเกิดวัน/คืน",
+      "name_en": "Day/Night Birth Rule",
+      "description": "Part of Fortune และ Part of Spirit ต้องสลายสูตรสำหรับการเกิดกลางคืน (Sun ต่ำกว่า horizon)",
+      "description_en": "Part of Fortune and Part of Spirit must reverse formula for night birth (Sun below horizon)",
+      "day_birth": "Sun อยู่เหนือ horizon (บ้าน 7-12)",
+      "day_birth_en": "Sun above horizon (houses 7-12)",
+      "night_birth": "Sun อยู่ต่ำกว่า horizon (บ้าน 1-6)",
+      "night_birth_en": "Sun below horizon (houses 1-6)"
+    },
+    "formula_structure": {
+      "name": "โครงสร้างสูตร",
+      "name_en": "Formula Structure",
+      "description": "สูตรทั้งหมดใช้ ASC เป็นจุดเริ่มต้น แล้วบวกลบด้วยตำแหน่งดวงดาว",
+      "description_en": "All formulas use ASC as starting point, then add/subtract planet positions",
+      "example": "ASC + Moon - Sun = ASC + (Moon - Sun)",
+      "example_en": "ASC + Moon - Sun = ASC + (Moon - Sun)"
+    },
+    "interpretation_tips": {
+      "name": "เคล็ดลับการตีความ",
+      "name_en": "Interpretation Tips",
+      "tips": [
+        "ดูบ้านที่ Arabic Part ตก — แสดงส่วนของชีวิต",
+        "ดูราศีที่ Arabic Part ตก — แสดงคุณภาพ",
+        "ดูดาวที่อยู่บนหรือใกล้ Arabic Part — แสดงพลังงาน",
+        "เปรียบเทียบกับดาวเจ้าเรือนของราศีที่ตก"
+      ],
+      "tips_en": [
+        "Check house of Arabic Part — shows life area",
+        "Check sign of Arabic Part — shows quality",
+        "Check planet on or near Arabic Part — shows energy",
+        "Compare with ruler of sign placement"
+      ]
+    }
+  }
+}

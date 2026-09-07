@@ -1,0 +1,110 @@
+[
+  {
+    "id": "20260822-201335",
+    "to": "S1",
+    "unit": "FORGE 🔨 กองวิศวกรรม — backend NEW-AI-REBORN",
+    "title": "FIX: bazi_service near-cutoff line crashes",
+    "body": "บรรทัด near = abs((d.month, d.day) - _LICHUN) <= (0, 1) ลบ tuple กันไม่ได้ -> TypeError ทำ pytest พัง 15 ตัว · แก้เป็นการเทียบวันแยกฟิลด์ เช่น dist = abs((d.month - 2) * 40 + (d.day - 4)) <= 1 (หรือวิธีใดก็ได้ที่เทียบ (month,day) เป็นคู่) · DoD: uv run python -m pytest -q ผ่านทั้งชุด (รวม test_bazi + test_synastry_score) แล้ว git add -A && git commit -m 'fix: bazi lichun near-cutoff check + synastry scoring' และ report เข้า bus",
+    "priority": "high",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-22 20:13:35",
+    "acked_at": "2026-08-22 20:29:09",
+    "result": "fixed earlier via commit 3984990 (bazi lichun + synastry scoring) — verified 142 tests"
+  },
+  {
+    "id": "20260822-204540",
+    "title": "Unified Full Reading endpoint",
+    "body": "สร้าง GET /v1/fusion/full/{name}?lang=th — aggregator ที่ดึงของที่มีอยู่แล้วมาตอบครั้งเดียว: (1) fuse_daily จาก fusion_engine + profile จาก fusion_profile (2) synastry vs partner ถ้ามี profile คู่ใน store เช่น /v1/fusion/full/M?partner=mai → เรียก compute_synastry_profile (3) windows: compute_windows 7 วันข้างหน้า + top-1 shared window ถ้ามี partner · response shape: {person, today:{...fusion verdict}, compatibility:{dimensions, score}?, upcoming:{best_days:[top3], shared_best?}} · ห้ามแกะ engine เดิม — สร้าง service/aggregator ใหม่เรียกฟังก์ชันเดิม · tests: mock ไม่ต้องยิง ephemeris ซ้ำ ใช้ fixture ดวง M+Mai ground truth · DoD: pytest เขียวทั้งชุด + curl ยิงสดพอร์ต 8001 ได้ + git commit (local)",
+    "priority": "high",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-22 20:45:40",
+    "acked_at": "2026-08-22 20:46:57",
+    "result": "superseded by grand fusion work — fusion_full aggregator committed 007bdd8"
+  },
+  {
+    "id": "20260823-115243",
+    "title": "Universe Phase 2: activate grand/ modules to real computation",
+    "body": "ต่อยอด scaffold จาก 007bdd8 — modules ใน src/services/grand/ (varshaphal, ziwei, asteroids, fixed_stars) ตอนนี้คืน placeholder · ภารกิจ: (1) asteroids.py ใช้ DE421/skyfield เรียก Chiron+Ceres+Pallas+Juno+Vesta จริง (ถ้า de421.bsp ไม่มี body เหล่านั้น ให้ fallback ไป Swiss ephemeris pyswisseph หรือแจ้ง gracefully) (2) fixed_stars.py — Royal Stars (Aldebaran/Regulus/Antares/Fomalhaut) conj natal planets orb<=2° + Sabian symbol ของ Sun/Moon/ASC ตาม degree (3) varshaphal.py — Solar Return chart ปี 2026-2027 สำหรับ profile (วันเกิด+ปี target) → Muntha + year lord ตาม spec 16 (4) ziwei.py — เพียง Life Palace + Sui Po จาก lunar-python ที่มี (5) ผูกทุก module เข้า compute_grand_fusion extended section + tests ทุก module (ground truth M) · DoD: pytest green + commit local + curl /v1/fusion/grand/M ครบ section",
+    "priority": "high",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 11:52:43",
+    "acked_at": "2026-08-23 12:23:42",
+    "result": "verified by CMD: FORGE c763e45 (157 tests) / ATLAS 459980f (4 specs QA notes)"
+  },
+  {
+    "id": "20260822-205345",
+    "title": "ตัดสิน tilt basis: tarot tilted_toward basis",
+    "body": "",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-22 20:53:45",
+    "acked_at": "2026-08-22 20:59:31",
+    "result": "grand fusion engine + grand/ modules (varshaphal/ziwei/asteroids/fixed_stars) committed 007bdd8"
+  },
+  {
+    "id": "20260823-122929",
+    "title": "Universe Phase 3: frontend binding + CI gate (queued — start after phase 2 done)",
+    "body": "(1) CI gate: สร้าง .github/workflows/ci.yml รัน uv run pytest ทุก push/PR ต่อ NEW-AI-REBORN (2) frontend binding: หน้า demo เรียก /v1/fusion/full/M?partner=mai แสดง today+compatibility+upcoming ใน astral-expo (หรือ minimal HTML page ใน repo ถ้า expo ยังตั้งค่าไม่พร้อม) · DoD: CI ผ่านบน GitHub + demo render ได้",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:29:29",
+    "acked_at": "2026-08-23 14:17:48",
+    "result": "frontend_demo.html committed+pushed 771f882 · ci.yml HELD locally (needs gh auth workflow scope — interactive login required)"
+  },
+  {
+    "id": "20260823-150801",
+    "title": "Universe Phase 4: remaining sciences depth (re-issue with QA notes ready)",
+    "body": "สร้าง module จริง 7 ศาสตร์ใน src/services/grand/ — อ่าน QA notes ท้ายแต่ละ spec ก่อนเสมอ (459980f/9e85852/18c0f7c): (1) numerology.py — Life Path digit-sum (M=5) + Personal Year; spec 11 (2) iching.py — seeded cast primary per spec 12 + date fallback #formula, unit vector M|1997-05-19||hermes-v1 -> #11 Peace (3) ninestar_ki.py — year star formula (M=star 3); mark [VERIFY] constants as-is ห้ามเลือกข้าง (4) mayan_tzolkin.py — Kin epoch offset -34 บังคับ (M=Kin 239 Blue Storm tone 5); naive mod260 = bug class (5) cosmobiology.py — midpoint tree sorted pairs wrap handling orb<=2 scan/<=1 confirm; ground truth Sun-Moon M = Cancer 13.85 sidereal (6) human_design.py — Profile lines NEED gate table = return unavailable graceful; ห้าม implement center-approximation (7) kalachakra.py — ห้ามใช้ phase constants ตาม printed (ผิด); ถ้าไม่มี external data -> unavailable · ทุก module wire เข้า compute_grand_fusion extended + tests structure-only · DoD: pytest green + commit local + curl grand/M ครบ section",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 15:08:01",
+    "acked_at": "2026-08-23 15:09:00",
+    "result": "187 tests (+30), commit 0de9fe1, 7 modules wired — verified live by CMD"
+  },
+  {
+    "id": "20260823-155847",
+    "title": "Universe Phase 4.5: unlock human_design + kalachakra with verified data",
+    "body": "data พร้อมแล้วใน C:/AI/research-astrology/data/: hd_gate_wheel.json (64-gate order verified 5 sources), kalachakra_anchor.json (formula (Y-4)%60, 9 anchors, Losar note) · ภารกิจ: (1) human_design.py อัพเกรด — โหลด hd_gate_wheel.json แล้ว implement lon_to_gate_line + Profile lines (P-Sun/D-Sun line) ตาม QA notes ใน spec 06; Design moment = Sun -88° solar arc (~89.3d back, iterate ephemeris); Type/Authority ยัง NEEDS-DATA (channel table) -> คืน profile-only + status partial (2) kalachakra.py อัพเกรด — implement year element/animal/gender ด้วย formula ใหม่ (M=Fire-Ox female หลัง Losar 8 Feb 1997) + Sui Po-style parkha day number; Mewa/parkha names ยัง [VERIFY] -> คืน year-level only (3) tests อัพเดต ground truth จาก data files · DoD: pytest green + commit local + curl grand/M ยืนยัน 2 sections ไม่ unavailable แล้ว",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 15:58:47",
+    "acked_at": "2026-08-23 16:01:13",
+    "result": "Phase 4.5 done: human_design profile 8.4/30.6 (4/6) via verified wheel + design-moment ephemeris iteration, kalachakra Fire-Ox-female c17y11 parkha=4 via verified anchor; 211 passed 1 skipped; commit 7425fc4 local only"
+  },
+  {
+    "id": "20260830-011138",
+    "title": "status request",
+    "body": "CMD requests current status report from FORGE. Report: current progress%, active work items (PDF/tarot/lang-gate), blockers, and next deliverable. Reply immediately with division=FORGE status=green|yellow|red progress=0-100 deliverable= blocker=",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-30 01:11:38"
+  },
+  {
+    "id": "20260823-123050",
+    "title": "Universe Phase 4: remaining sciences depth (queued)",
+    "body": "(1) human_design.py จริง: Type (Manifestor/Generator/MG/Projector/Reflector) จาก defined centers, Authority, Profile (line Sun/Earth personality+design) — ใช้ ephemeris 88 วันก่อนเกิดสำหรับ design side (2) iching.py จริง: hexagram จาก birth date (King Wen number) + คำพยากรณ์สั้น TH (3) numerology.py จริง: Life Path + Personal Year 2026-2027 (4) ninestar_ki.py: เลขปี/เดือนตามระบบ 9 Star Ki (5) mayan_tzolkin.py: Kin จาก date + tone/seal (6) cosmobiology.py: midpoint trees สำคัญ (Sun/Moon/MC × planets) orb<=1° (7) kalachakra.py: element/day จาก Tibetan calendar rule · ทุก module: graceful degradation {'status':'unavailable','reason':..} + tests structure-only · DoD: pytest green + commit local",
+    "priority": "low",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:30:50",
+    "result": "superseded — all 7 sciences done across P4/P4.5/P4.7 (0de9fe1/7425fc4/a31a002)"
+  },
+  {
+    "id": "20260823-144517",
+    "title": "CI workflow activation (blocked on scope)",
+    "body": ".github/workflows/ci.yml เขียนไว้แล้ว (untracked) — push โดน OAuth workflow scope บล็อก · ทางแก้: user รัน 'gh auth refresh -h github.com -s workflow' interactively แล้ว CMD push ต่อ",
+    "priority": "low",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 14:45:17",
+    "result": "ci.yml pushed 7ed94d3 after workflow scope granted"
+  }
+]

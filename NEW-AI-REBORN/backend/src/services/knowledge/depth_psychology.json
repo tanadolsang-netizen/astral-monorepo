@@ -1,0 +1,92 @@
+{
+  "Sun": {
+    "archetype": "ego consciousness / developing Self",
+    "ego_task": "การเป็นตัวตนที่แท้จริง — เป็นฮีโร่เรื่องราวของตัวเอง",
+    "fear": "กลัวจะไม่มีคุณค่า กลัวถูกมองว่าไม่ดีพอ",
+    "desire": "ต้องการเป็นที่รู้จัก เป็นศูนย์กลาง ได้รับการยอมรับในฐานะตัวตน",
+    "shadow": "ความหยิ่ง ความเป็นส่วนตัวเกินไป การต้องเป็นเลิศเสมอ",
+    "individuation": "เรียนรู้ว่าคุณค่าไม่ต้องพิสูจน์ เป็นตัวเองได้โดยไม่ต้องแข่งขัน",
+    "th": "อาทิตย์คือตัวตนหลัก — สิ่งที่คุณกำลังพัฒนาในชีวิตนี้ คุณอยากเป็นใคร คุณกลัวจะถูกมองอย่างไร",
+    "en": "The Sun is your core identity — who you're becoming, what you fear being seen as, what you most deeply want to express."
+  },
+  "Moon": {
+    "archetype": "personal unconscious / mother complex",
+    "ego_task": "การรู้สึกปลอดภัย — การเลี้ยงดูตัวเองและคนรอบข้าง",
+    "fear": "กลัวจะถูกทอดทิ้ง กลัวว่าตัวเองจะไม่ได้รับความรักพอ",
+    "desire": "ต้องการถูกดูแล ถูกเข้าใจโดยไม่ต้องอธิบาย",
+    "shadow": "ความอ่อนไหวเกินไป การกลืนไปกับอารมณ์คนอื่น",
+    "individuation": "เรียนรู้เลี้ยงดูตัวเองก่อน จึงจะรักคนอื่นได้อย่างมั่นคง",
+    "th": "ดวงจันทร์คืออารมณ์ลึก — ความต้องการความปลอดภัย ความรู้สึกที่ซ่อนอยู่เบื้องหลังรอยยิ้ม คุณกลัวการสูญเสียแบบไหน",
+    "en": "The Moon is your emotional body — what makes you feel safe, what you fear losing, how you nurture and need to be nurtured."
+  },
+  "Saturn": {
+    "archetype": "the Shadow / senex / father complex",
+    "ego_task": "การสร้างโครงสร้าง — การรับผิดชอบและเผชิญกับขีดจำกัด",
+    "fear": "กลัวจะล้มเหลว กลัวว่าตัวเองไม่ดีพอ กลัวถูกตัดสิน",
+    "desire": "ต้องการได้รับการยอมรับว่าพยายามมากพอแล้ว",
+    "shadow": "ความเข้มงวดกับตัวเอง ความรู้สึกผิดที่ยังไม่หายไป",
+    "individuation": "เรียนรู้ว่าขีดจำกัดคือครู ความอดทนคือพลัง คุณไม่ต้องพิสูจน์อะไรอีกแล้ว",
+    "th": "เสาร์คือเงาของคุณ — สิ่งที่คุณกลัวมากที่สุดในชีวิต จุดที่รู้สึกว่าตัวเองไม่มีค่า แต่ก็คือบทเรียนที่คุณมาเรียนรู้",
+    "en": "Saturn is your Shadow — what you fear most, where you feel not enough, and the life lesson you're here to master."
+  },
+  "Venus": {
+    "archetype": "the Lover / anima",
+    "ego_task": "การรักและถูกรัก — การเชื่อมโยงกับคนอื่น",
+    "fear": "กลัวจะไม่น่ารัก กลัวจะถูกปฏิเสธ",
+    "desire": "ต้องการถูกต้มต๋อย ถูกมองว่าสวย/หล่อ ถูกรักตามรูปแบบที่คุณอยากได้",
+    "shadow": "การแลกเปลี่ยนความรักกับความปลอดภัย การอยู่ในความสัมพันธ์ที่ไม่ดีเพราะกลัวโดดเดี่ยว",
+    "individuation": "รักตัวเองก่อนจะรักคนอื่น — ความรักที่แท้จริงไม่ต้องแลก",
+    "th": "ศุกร์คือความรัก — คุณอยากถูกรักแบบไหน คุณกลัวการสูญเสียความรักอย่างไร คุณคุ้มค่ากับความรักหรือเปล่า",
+    "en": "Venus is how you love and want to be loved — your fears of unworthiness, what you trade for security, your deepest relationship patterns."
+  },
+  "Mars": {
+    "archetype": "the Warrior / animus",
+    "ego_task": "การต่อสู้ — การผลักดันและปกป้องตัวเอง",
+    "fear": "กลัวจะอ่อนแอ กลัวจะแพ้ กลัวแสดงความโกรธ",
+    "desire": "ต้องการเป็นผู้นำ เป็นคนที่ฟังได้ ทำให้เกิดความเปลี่ยนแปลง",
+    "shadow": "ความก้าวร้าวที่ซ่อนอยู่ ความโกรธที่กดทับ",
+    "individuation": "ความโกรธคือพลัง ไม่ใช่ศัตรู — เรียนรู้แสดงออกอย่างสร้างสรรค์",
+    "th": "อังคารคือพลังการต่อสู้ — คุณใช้พลังอย่างไร คุณกลัวการสู้หรือกลัวชนะ คุณซ่อนความโกรธไว้ไหน",
+    "en": "Mars is your fighting force — how you assert, what you fear (losing, being weak, showing anger), and where your real power lives."
+  },
+  "Jupiter": {
+    "archetype": "the Sage / the Benefic",
+    "ego_task": "การเติบโต — การหาความหมายและขยายขอบเขต",
+    "fear": "กลัวจะจำกัด กลัวไม่มีความหมาย",
+    "desire": "ต้องการเรียนรู้ เดินทาง มีประสบการณ์กว้าง",
+    "shadow": "ความโลภเกินไป การขยายตัวเกินขีดจำกัด",
+    "individuation": "เรียนรู้ว่าพลังที่แท้จริงมาจากความเข้าใจ ไม่ใช่จำนวน",
+    "th": "พฤหัสคือการเติบโต — คุณอยากไปไกลแค่ไหน คุณกลัวการคงที่หรือกลัวการเปลี่ยน คุณเชื่ออะไรเกี่ยวกับโชคลาภ",
+    "en": "Jupiter is your growth edge — how far you want to go, your fear of stagnation, your beliefs about abundance and meaning."
+  },
+  "Uranus": {
+    "archetype": "Promethean / the Rebel",
+    "ego_task": "การปลดปล่อย — การแตกออกจากข้อจำกัด",
+    "fear": "กลัวจะถูกควบคุม กลัวความเป็นเสมอภาค",
+    "desire": "ต้องการอิสระสันติ เป็นเอกลักษณ์โดยไม่ถูกตัดสิน",
+    "shadow": "ความโดดเดี่ยวจากการเป็นต่างคน ความหลงผิดในความเป็นอิสระ",
+    "individuation": "อิสระที่แท้จริงคือการเลือกได้ ไม่ใช่การหนี",
+    "th": "ยูรานัสคือความปฏิวัติภายใน — คุณกลัวการถูกควบคุมแบบไหน คุณอยากเปลี่ยนแปลงอะไรในชีวิต คุณเหนื่อยกับการเป็นคนเดิมหรือยัง",
+    "en": "Uranus is your inner rebel — what you fear being controlled by, what you need to break free from, your path to authentic individuality."
+  },
+  "Neptune": {
+    "archetype": "the Mystic / the Dissolver",
+    "ego_task": "การละลาย — การเชื่อมต่อกับสิ่งที่ใหญ่กว่า",
+    "fear": "กลัวจะสับสน กลัวจะหลงทาง กลัวจะไม่มีขอบเขต",
+    "desire": "ต้องการความหมายลึกกว่าชีวิตประจำวัน ต้องการเห็นอะไรที่มากกว่ารูปธรรม",
+    "shadow": "ความหลงผิด การหนีความจริง การกลืนไปกับฝัน",
+    "individuation": "ความศักดิ์สิทธิ์ไม่ได้อยู่ข้างนอก — มันอยู่ในการมีชีวิตอย่างมีสติ",
+    "th": "เนปจูนคือขอบเขตที่ละลาย — คุณกลัวการสูญเสียตัวตนหรืออยากหลุดจากมัน คุณหลงผิดง่ายแค่ไหน คุณหนีความจริงไปไหน",
+    "en": "Neptune is where boundaries dissolve — your fears of losing yourself, your longing for transcendence, your capacity for both illusion and genuine spirituality."
+  },
+  "Pluto": {
+    "archetype": "the Shadow / the Transformer",
+    "ego_task": "การแปรรูป — การเผชิญกับสิ่งที่ซ่อนอยู่และกลับชาติมาเกิด",
+    "fear": "กลัวจะสูญสิ้นไปโดยไม่รู้ตัว กลัวจะต้องเปลี่ยน",
+    "desire": "ต้องการความจริงลึกๆ ต้องการเข้าใจว่าเบื้องหลังมีอะไร",
+    "shadow": "ความคลั่งไคล้ในการควบคุม ความลับที่ทำร้ายตัวเอง",
+    "individuation": "การยอมจำนนคือพลังสูงสุด — ปล่อยให้สิ่งเก่าตาย สิ่งใหม่จึงเกิด",
+    "th": "พลูโตคือความลับที่ซ่อนอยู่ — คุณกลัวการเปลี่ยนแปลงแบบไหน อะไรที่คุณทำร้ายตัวเองเพราะความลับ คุณพร้อมกลับชาติมาเกิดแล้วหรือยัง",
+    "en": "Pluto is your hidden shadow — what you fear transforming, what you secretly do to yourself, and your capacity for rebirth."
+  }
+}

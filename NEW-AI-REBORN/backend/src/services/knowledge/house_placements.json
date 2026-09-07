@@ -1,0 +1,362 @@
+{
+  "Sun in House 1": {
+    "th": "Sun ในบ้านที่ 1"
+  },
+  "Sun in House 2": {
+    "th": "Sun ในบ้านที่ 2"
+  },
+  "Sun in House 3": {
+    "th": "Sun ในบ้านที่ 3"
+  },
+  "Sun in House 4": {
+    "th": "Sun ในบ้านที่ 4"
+  },
+  "Sun in House 5": {
+    "th": "Sun ในบ้านที่ 5"
+  },
+  "Sun in House 6": {
+    "th": "Sun ในบ้านที่ 6"
+  },
+  "Sun in House 7": {
+    "th": "Sun ในบ้านที่ 7"
+  },
+  "Sun in House 8": {
+    "th": "Sun ในบ้านที่ 8"
+  },
+  "Sun in House 9": {
+    "th": "Sun ในบ้านที่ 9"
+  },
+  "Sun in House 10": {
+    "th": "Sun ในบ้านที่ 10"
+  },
+  "Sun in House 11": {
+    "th": "Sun ในบ้านที่ 11"
+  },
+  "Sun in House 12": {
+    "th": "Sun ในบ้านที่ 12"
+  },
+  "Moon in House 1": {
+    "th": "Moon ในบ้านที่ 1"
+  },
+  "Moon in House 2": {
+    "th": "Moon ในบ้านที่ 2"
+  },
+  "Moon in House 3": {
+    "th": "Moon ในบ้านที่ 3"
+  },
+  "Moon in House 4": {
+    "th": "Moon ในบ้านที่ 4"
+  },
+  "Moon in House 5": {
+    "th": "Moon ในบ้านที่ 5"
+  },
+  "Moon in House 6": {
+    "th": "Moon ในบ้านที่ 6"
+  },
+  "Moon in House 7": {
+    "th": "Moon ในบ้านที่ 7"
+  },
+  "Moon in House 8": {
+    "th": "Moon ในบ้านที่ 8"
+  },
+  "Moon in House 9": {
+    "th": "Moon ในบ้านที่ 9"
+  },
+  "Moon in House 10": {
+    "th": "Moon ในบ้านที่ 10"
+  },
+  "Moon in House 11": {
+    "th": "Moon ในบ้านที่ 11"
+  },
+  "Moon in House 12": {
+    "th": "Moon ในบ้านที่ 12"
+  },
+  "Mercury in House 1": {
+    "th": "Mercury ในบ้านที่ 1"
+  },
+  "Mercury in House 2": {
+    "th": "Mercury ในบ้านที่ 2"
+  },
+  "Mercury in House 3": {
+    "th": "Mercury ในบ้านที่ 3"
+  },
+  "Mercury in House 4": {
+    "th": "Mercury ในบ้านที่ 4"
+  },
+  "Mercury in House 5": {
+    "th": "Mercury ในบ้านที่ 5"
+  },
+  "Mercury in House 6": {
+    "th": "Mercury ในบ้านที่ 6"
+  },
+  "Mercury in House 7": {
+    "th": "Mercury ในบ้านที่ 7"
+  },
+  "Mercury in House 8": {
+    "th": "Mercury ในบ้านที่ 8"
+  },
+  "Mercury in House 9": {
+    "th": "Mercury ในบ้านที่ 9"
+  },
+  "Mercury in House 10": {
+    "th": "Mercury ในบ้านที่ 10"
+  },
+  "Mercury in House 11": {
+    "th": "Mercury ในบ้านที่ 11"
+  },
+  "Mercury in House 12": {
+    "th": "Mercury ในบ้านที่ 12"
+  },
+  "Venus in House 1": {
+    "th": "Venus ในบ้านที่ 1"
+  },
+  "Venus in House 2": {
+    "th": "Venus ในบ้านที่ 2"
+  },
+  "Venus in House 3": {
+    "th": "Venus ในบ้านที่ 3"
+  },
+  "Venus in House 4": {
+    "th": "Venus ในบ้านที่ 4"
+  },
+  "Venus in House 5": {
+    "th": "Venus ในบ้านที่ 5"
+  },
+  "Venus in House 6": {
+    "th": "Venus ในบ้านที่ 6"
+  },
+  "Venus in House 7": {
+    "th": "Venus ในบ้านที่ 7"
+  },
+  "Venus in House 8": {
+    "th": "Venus ในบ้านที่ 8"
+  },
+  "Venus in House 9": {
+    "th": "Venus ในบ้านที่ 9"
+  },
+  "Venus in House 10": {
+    "th": "Venus ในบ้านที่ 10"
+  },
+  "Venus in House 11": {
+    "th": "Venus ในบ้านที่ 11"
+  },
+  "Venus in House 12": {
+    "th": "Venus ในบ้านที่ 12"
+  },
+  "Mars in House 1": {
+    "th": "Mars ในบ้านที่ 1"
+  },
+  "Mars in House 2": {
+    "th": "Mars ในบ้านที่ 2"
+  },
+  "Mars in House 3": {
+    "th": "Mars ในบ้านที่ 3"
+  },
+  "Mars in House 4": {
+    "th": "Mars ในบ้านที่ 4"
+  },
+  "Mars in House 5": {
+    "th": "Mars ในบ้านที่ 5"
+  },
+  "Mars in House 6": {
+    "th": "Mars ในบ้านที่ 6"
+  },
+  "Mars in House 7": {
+    "th": "Mars ในบ้านที่ 7"
+  },
+  "Mars in House 8": {
+    "th": "Mars ในบ้านที่ 8"
+  },
+  "Mars in House 9": {
+    "th": "Mars ในบ้านที่ 9"
+  },
+  "Mars in House 10": {
+    "th": "Mars ในบ้านที่ 10"
+  },
+  "Mars in House 11": {
+    "th": "Mars ในบ้านที่ 11"
+  },
+  "Mars in House 12": {
+    "th": "Mars ในบ้านที่ 12"
+  },
+  "Jupiter in House 1": {
+    "th": "Jupiter ในบ้านที่ 1"
+  },
+  "Jupiter in House 2": {
+    "th": "Jupiter ในบ้านที่ 2"
+  },
+  "Jupiter in House 3": {
+    "th": "Jupiter ในบ้านที่ 3"
+  },
+  "Jupiter in House 4": {
+    "th": "Jupiter ในบ้านที่ 4"
+  },
+  "Jupiter in House 5": {
+    "th": "Jupiter ในบ้านที่ 5"
+  },
+  "Jupiter in House 6": {
+    "th": "Jupiter ในบ้านที่ 6"
+  },
+  "Jupiter in House 7": {
+    "th": "Jupiter ในบ้านที่ 7"
+  },
+  "Jupiter in House 8": {
+    "th": "Jupiter ในบ้านที่ 8"
+  },
+  "Jupiter in House 9": {
+    "th": "Jupiter ในบ้านที่ 9"
+  },
+  "Jupiter in House 10": {
+    "th": "Jupiter ในบ้านที่ 10"
+  },
+  "Jupiter in House 11": {
+    "th": "Jupiter ในบ้านที่ 11"
+  },
+  "Jupiter in House 12": {
+    "th": "Jupiter ในบ้านที่ 12"
+  },
+  "Saturn in House 1": {
+    "th": "Saturn ในบ้านที่ 1"
+  },
+  "Saturn in House 2": {
+    "th": "Saturn ในบ้านที่ 2"
+  },
+  "Saturn in House 3": {
+    "th": "Saturn ในบ้านที่ 3"
+  },
+  "Saturn in House 4": {
+    "th": "Saturn ในบ้านที่ 4"
+  },
+  "Saturn in House 5": {
+    "th": "Saturn ในบ้านที่ 5"
+  },
+  "Saturn in House 6": {
+    "th": "Saturn ในบ้านที่ 6"
+  },
+  "Saturn in House 7": {
+    "th": "Saturn ในบ้านที่ 7"
+  },
+  "Saturn in House 8": {
+    "th": "Saturn ในบ้านที่ 8"
+  },
+  "Saturn in House 9": {
+    "th": "Saturn ในบ้านที่ 9"
+  },
+  "Saturn in House 10": {
+    "th": "Saturn ในบ้านที่ 10"
+  },
+  "Saturn in House 11": {
+    "th": "Saturn ในบ้านที่ 11"
+  },
+  "Saturn in House 12": {
+    "th": "Saturn ในบ้านที่ 12"
+  },
+  "Uranus in House 1": {
+    "th": "Uranus ในบ้านที่ 1"
+  },
+  "Uranus in House 2": {
+    "th": "Uranus ในบ้านที่ 2"
+  },
+  "Uranus in House 3": {
+    "th": "Uranus ในบ้านที่ 3"
+  },
+  "Uranus in House 4": {
+    "th": "Uranus ในบ้านที่ 4"
+  },
+  "Uranus in House 5": {
+    "th": "Uranus ในบ้านที่ 5"
+  },
+  "Uranus in House 6": {
+    "th": "Uranus ในบ้านที่ 6"
+  },
+  "Uranus in House 7": {
+    "th": "Uranus ในบ้านที่ 7"
+  },
+  "Uranus in House 8": {
+    "th": "Uranus ในบ้านที่ 8"
+  },
+  "Uranus in House 9": {
+    "th": "Uranus ในบ้านที่ 9"
+  },
+  "Uranus in House 10": {
+    "th": "Uranus ในบ้านที่ 10"
+  },
+  "Uranus in House 11": {
+    "th": "Uranus ในบ้านที่ 11"
+  },
+  "Uranus in House 12": {
+    "th": "Uranus ในบ้านที่ 12"
+  },
+  "Neptune in House 1": {
+    "th": "Neptune ในบ้านที่ 1"
+  },
+  "Neptune in House 2": {
+    "th": "Neptune ในบ้านที่ 2"
+  },
+  "Neptune in House 3": {
+    "th": "Neptune ในบ้านที่ 3"
+  },
+  "Neptune in House 4": {
+    "th": "Neptune ในบ้านที่ 4"
+  },
+  "Neptune in House 5": {
+    "th": "Neptune ในบ้านที่ 5"
+  },
+  "Neptune in House 6": {
+    "th": "Neptune ในบ้านที่ 6"
+  },
+  "Neptune in House 7": {
+    "th": "Neptune ในบ้านที่ 7"
+  },
+  "Neptune in House 8": {
+    "th": "Neptune ในบ้านที่ 8"
+  },
+  "Neptune in House 9": {
+    "th": "Neptune ในบ้านที่ 9"
+  },
+  "Neptune in House 10": {
+    "th": "Neptune ในบ้านที่ 10"
+  },
+  "Neptune in House 11": {
+    "th": "Neptune ในบ้านที่ 11"
+  },
+  "Neptune in House 12": {
+    "th": "Neptune ในบ้านที่ 12"
+  },
+  "Pluto in House 1": {
+    "th": "Pluto ในบ้านที่ 1"
+  },
+  "Pluto in House 2": {
+    "th": "Pluto ในบ้านที่ 2"
+  },
+  "Pluto in House 3": {
+    "th": "Pluto ในบ้านที่ 3"
+  },
+  "Pluto in House 4": {
+    "th": "Pluto ในบ้านที่ 4"
+  },
+  "Pluto in House 5": {
+    "th": "Pluto ในบ้านที่ 5"
+  },
+  "Pluto in House 6": {
+    "th": "Pluto ในบ้านที่ 6"
+  },
+  "Pluto in House 7": {
+    "th": "Pluto ในบ้านที่ 7"
+  },
+  "Pluto in House 8": {
+    "th": "Pluto ในบ้านที่ 8"
+  },
+  "Pluto in House 9": {
+    "th": "Pluto ในบ้านที่ 9"
+  },
+  "Pluto in House 10": {
+    "th": "Pluto ในบ้านที่ 10"
+  },
+  "Pluto in House 11": {
+    "th": "Pluto ในบ้านที่ 11"
+  },
+  "Pluto in House 12": {
+    "th": "Pluto ในบ้านที่ 12"
+  }
+}

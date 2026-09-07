@@ -1,0 +1,26 @@
+{
+  "Sun conjunction Sun": {
+    "th": "คุณเข้ากันดี เข้าใจกันทันที",
+    "dynamic": "harmonious"
+  },
+  "Sun square Sun": {
+    "th": "คุณต่างมุมมอง อาจขัดแย้งกัน",
+    "dynamic": "challenging"
+  },
+  "Venus conjunct Mars": {
+    "th": "เคมีรักเข้ากัน ดึงดูดแรง",
+    "dynamic": "harmonious"
+  },
+  "Moon trine Moon": {
+    "th": "เข้าใจอารมณ์กัน อบอุ่น",
+    "dynamic": "harmonious"
+  },
+  "Saturn square Venus": {
+    "th": "ความรักอาจมีอุปสรรค ต้องทำงาน",
+    "dynamic": "challenging"
+  },
+  "Jupiter conjunct Sun": {
+    "th": "คนนี้ช่วยเสริมพลังให้คุณ",
+    "dynamic": "harmonious"
+  }
+}

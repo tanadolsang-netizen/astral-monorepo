@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Astral | ดวงดาวจะบอกอะไรคุณ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@200;300;400;500;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #05030d;
+    --glass: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.14);
+    --accent: #8b7bff;
+    --accent-2: #4fd1ff;
+    --gold: #ffd479;
+    --text: #f7f3ff;
+    --muted: #b9a9d6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Noto Sans Thai", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    cursor: none;
+  }
+  @media (pointer: coarse) { body { cursor: auto; } }
+
+  /* Animated sky + aurora */
+  #sky { position: fixed; inset: 0; z-index: -3; }
+  .aurora {
+    position: fixed; inset: -20%;
+    z-index: -2;
+    background:
+      radial-gradient(40% 50% at 20% 30%, rgba(139,123,255,0.25), transparent 70%),
+      radial-gradient(45% 55% at 80% 20%, rgba(79,209,255,0.18), transparent 70%),
+      radial-gradient(50% 60% at 60% 80%, rgba(255,122,199,0.14), transparent 70%);
+    filter: blur(40px);
+    animation: drift 18s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+  @keyframes drift {
+    0% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(4%, -3%) scale(1.1); }
+    100% { transform: translate(-3%, 4%) scale(1.05); }
+  }
+  .grain {
+    position: fixed; inset: 0; z-index: -1; opacity: 0.05; pointer-events: none;
+    background-image: radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size: 3px 3px;
+  }
+
+  /* Custom cursor glow */
+  .cursor {
+    position: fixed; top: 0; left: 0; width: 22px; height: 22px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(139,123,255,0.9), rgba(79,209,255,0.2) 60%, transparent 70%);
+    transform: translate(-50%, -50%); pointer-events: none; z-index: 9999;
+    mix-blend-mode: screen; transition: width 0.2s, height 0.2s;
+  }
+  .cursor.hover { width: 54px; height: 54px; }
+
+  .wrap { position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* Brand bar */
+  .brandbar {
+    display: flex; align-items: center; gap: 14px; padding: 26px 0;
+    opacity: 0; transform: translateY(-20px);
+  }
+  .brandbar .logo {
+    font-weight: 800; font-size: 24px; letter-spacing: 3px;
+    background: linear-gradient(120deg, #fff, var(--accent-2));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .brandbar .divider { width: 1px; height: 22px; background: var(--glass-border); }
+  .brandbar .tag { color: var(--muted); font-size: 15px; }
+
+  /* Hero */
+  .hero { padding: 14vh 0 9vh; text-align: center; }
+  .pill {
+    display: inline-block; padding: 7px 18px; border-radius: 999px; font-size: 13px;
+    border: 1px solid var(--glass-border); background: var(--glass); color: var(--accent-2);
+    margin-bottom: 26px; backdrop-filter: blur(10px); opacity: 0; transform: translateY(20px);
+    letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: clamp(38px, 7vw, 78px); font-weight: 800; line-height: 1.08;
+    opacity: 0; transform: translateY(40px);
+  }
+  .hero h1 .g {
+    background: linear-gradient(120deg, #fff 10%, var(--accent) 50%, var(--accent-2) 90%);
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 24px rgba(139,123,255,0.5));
+  }
+  .hero p {
+    margin-top: 22px; color: var(--muted); font-size: clamp(15px, 2.1vw, 20px);
+    max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7;
+    opacity: 0; transform: translateY(30px);
+  }
+  .cta { margin-top: 42px; display: inline-flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+    opacity: 0; transform: translateY(30px); }
+  .btn {
+    padding: 14px 34px; border-radius: 999px; font-size: 15px; font-weight: 600;
+    cursor: pointer; border: 1px solid var(--glass-border); background: var(--glass);
+    color: var(--text); backdrop-filter: blur(14px); text-decoration: none;
+    position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  }
+  .btn::after {
+    content: ""; position: absolute; inset: 0; border-radius: 999px; padding: 1px;
+    background: linear-gradient(120deg, var(--accent), var(--accent-2), var(--gold));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity 0.3s;
+  }
+  .btn.primary {
+    background: linear-gradient(120deg, var(--accent), var(--accent-2));
+    color: #0b0618; font-weight: 800; border: none;
+    box-shadow: 0 0 36px rgba(139,123,255,0.5);
+    animation: pulse 3.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 36px rgba(139,123,255,0.4); }
+    50% { box-shadow: 0 0 60px rgba(79,209,255,0.7); }
+  }
+  .btn:hover { transform: translateY(-3px) scale(1.03); }
+  .btn:hover::after { opacity: 1; }
+  .btn.primary:hover { box-shadow: 0 0 80px rgba(79,209,255,0.9); }
+
+  /* Section title */
+  .sec-title { text-align: center; margin: 6vh 0 4vh; opacity: 0; transform: translateY(30px); }
+  .sec-title h2 { font-size: clamp(26px, 4vw, 42px); font-weight: 700; }
+  .sec-title h2 .g {
+    background: linear-gradient(120deg, var(--accent-2), var(--gold));
+    -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .sec-title p { color: var(--muted); margin-top: 10px; }
+
+  /* Glass cards with 3D tilt */
+  .cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 22px; padding: 20px 0 12vh; perspective: 1200px;
+  }
+  .card {
+    background: var(--glass); border: 1px solid var(--glass-border); border-radius: 22px;
+    padding: 30px; backdrop-filter: blur(16px); position: relative; overflow: hidden;
+    transform-style: preserve-3d; transition: transform 0.15s ease, border-color 0.3s;
+    opacity: 0; transform: translateY(50px);
+  }
+  .card::before {
+    content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity 0.4s;
+    background: radial-gradient(350px circle at var(--mx,50%) var(--my,50%), rgba(139,123,255,0.18), transparent 60%);
+  }
+  .card:hover { border-color: var(--accent); transform: translateY(-8px); }
+  .card:hover::before { opacity: 1; }
+  .card .ic {
+    font-size: 36px; display: inline-block; transition: transform 0.4s;
+    filter: drop-shadow(0 0 12px rgba(79,209,255,0.5));
+  }
+  .card:hover .ic { transform: scale(1.2) rotate(-6deg); }
+  .card h3 { margin: 16px 0 10px; font-size: 21px; font-weight: 700; transform: translateZ(30px); }
+  .card p { color: var(--muted); font-size: 14px; line-height: 1.7; transform: translateZ(20px); }
+
+  /* Marquee strip */
+  .marquee {
+    overflow: hidden; white-space: nowrap; border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border); padding: 18px 0; margin: 4vh 0;
+    -webkit-mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .marquee div { display: inline-block; animation: scroll 22s linear infinite; }
+  .marquee span { font-size: 22px; font-weight: 700; margin: 0 28px; color: var(--muted); }
+  .marquee span .g { color: var(--accent-2); }
+  @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  footer { text-align: center; color: var(--muted); font-size: 13px; padding: 30px 0 60px; opacity: 0; }
+
+  .float { animation: float 6s ease-in-out infinite; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+</style>
+</head>
+<body>
+<div id="sky"></div>
+<div class="aurora"></div>
+<div class="grain"></div>
+<div class="cursor" id="cursor"></div>
+
+<div class="wrap">
+  <div class="brandbar" id="brandbar">
+    <span class="logo">Astral</span>
+    <span class="divider"></span>
+    <span class="tag">ดวงดาวจะบอกอะไรคุณ</span>
+  </div>
+
+  <section class="hero">
+    <span class="pill" id="pill">✦ Planetarium-grade astrology</span>
+    <h1 id="h1">ดูดวงครบวงจร<br />ใต้ท้องฟ้าดาว<span class="g">นับล้าน</span></h1>
+    <p id="sub">ดวงชะตา นาตาล ซีนาสตรี เวดิก มูฮูร์ตะ และชีวิตคุณ — อ่านด้วยภาษาไทยธรรมชาติ พร้อมรายงาน PDF พรีเมียมระดับโลก</p>
+    <div class="cta" id="cta">
+      <a class="btn primary" href="/natal">เริ่มดูดวง</a>
+      <a class="btn" href="/synastry">ดูความเข้ากัน</a>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div>
+      <span>ดวงชะตา <span class="g">✦</span> ซีนาสตรี <span class="g">✦</span> เวดิก <span class="g">✦</span> มูฮูร์ตะ <span class="g">✦</span> ไพ่ทาโรต์ <span class="g">✦</span> ชีวิตคุณ <span class="g">✦</span> ดวงชะตา <span class="g">✦</span> ซีนาสตรี <span class="g">✦</span> เวดิก <span class="g">✦</span> มูฮูร์ตะ <span class="g">✦</span> ไพ่ทาโรต์ <span class="g">✦</span> ชีวิตคุณ <span class="g">✦</span> </span>
+    </div>
+  </div>
+
+  <div class="sec-title" id="sectitle">
+    <h2>บริการ<span class="g"> ดูดวง</span> ครบทุกมิติ</h2>
+    <p>เลือกสิ่งที่คุณอยากรู้ — ทุกอย่างคำนวณจากตำราโบราณ ร้อยเรียงเป็นภาษาที่เข้าใจง่าย</p>
+  </div>
+
+  <section class="cards" id="cards">
+    <div class="card">
+      <div class="ic float">🌟</div>
+      <h3>ดวงชะตา</h3>
+      <p>แผนที่ดาววันเกิดคุณ ทั้งระบบ Tropical และ Sidereal พร้อมตีความภาษาไทยลึกซึ้ง</p>
+    </div>
+    <div class="card">
+      <div class="ic float">💞</div>
+      <h3>ดูคู่</h3>
+      <p>ซีนาสตรีเทียบสองดวง ดูความเข้ากันของคุณกับคนพิเศษแบบกราฟิกชัดเจน</p>
+    </div>
+    <div class="card">
+      <div class="ic float">🪐</div>
+      <h3>เวดิก</h3>
+      <p>โหราศาสตร์อินเดียตามระบบ Sidereal ดูจากมุมมองอายุร้าชและดาวเคราะห์ตัวพ่อ</p>
+    </div>
+    <div class="card">
+      <div class="ic float">⏳</div>
+      <h3>มูฮูร์ตะ</h3>
+      <p>เลือกเวลามงคลสำหรับงานสำคัญ ตามตำราโบราณที่ส่งต่อกันมานับพันปี</p>
+    </div>
+    <div class="card">
+      <div class="ic float">🔮</div>
+      <h3>ไพ่ทาโรต์</h3>
+      <p>เปิดไพ่ 78 ใบจากสำนัก Sola-Busca ตีความด้วยเสียงโหรที่พูดจริงไม่เลื่อนลอย</p>
+    </div>
+    <div class="card">
+      <div class="ic float">🌌</div>
+      <h3>ชีวิตคุณ</h3>
+      <p>ติดตามดาวเคลื่อนที่ผ่านชีวิตคุณ แจ้งเตือนช่วงเวลาสำคัญรายวันรายปี</p>
+    </div>
+  </section>
+
+  <footer id="footer">Astral · ดูดวงภาษาไทยและอังกฤษ · ท้องฟ้าดาวระดับ planetarium</footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.clouds.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+  // ---- Vanta planetarium sky ----
+  if (window.VANTA && window.VANTA.CLOUDS) {
+    VANTA.CLOUDS({
+      el: "#sky", mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200, minWidth: 200,
+      backgroundColor: 0x05030d, skyColor: 0x080818, cloudColor: 0x241646,
+      cloudShadowColor: 0x05020f, sunColor: 0x6a5cff, sunGlareColor: 0x4fd1ff,
+      sunlightColor: 0x8b7bff, speed: 0.8,
+    });
+  } else {
+    document.getElementById("sky").style.background =
+      "radial-gradient(circle at 50% 0%, #1a0b2e 0%, #05030d 70%)";
+  }
+
+  // ---- Custom cursor ----
+  const cur = document.getElementById("cursor");
+  window.addEventListener("mousemove", (e) => {
+    cur.style.left = e.clientX + "px"; cur.style.top = e.clientY + "px";
+  });
+  document.querySelectorAll("a, .btn, .card").forEach((el) => {
+    el.addEventListener("mouseenter", () => cur.classList.add("hover"));
+    el.addEventListener("mouseleave", () => cur.classList.remove("hover"));
+  });
+
+  // ---- Card spotlight follow ----
+  document.querySelectorAll(".card").forEach((c) => {
+    c.addEventListener("mousemove", (e) => {
+      const r = c.getBoundingClientRect();
+      c.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      c.style.setProperty("--my", (e.clientY - r.top) + "px");
+      const rx = ((e.clientY - r.top) / r.height - 0.5) * -10;
+      const ry = ((e.clientX - r.left) / r.width - 0.5) * 10;
+      c.style.transform = `translateY(-8px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    c.addEventListener("mouseleave", () => { c.style.transform = ""; });
+  });
+
+  // ---- GSAP entrance + scroll animations ----
+  if (window.gsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
+    tl.to("#brandbar", { opacity: 1, y: 0, duration: 0.8 })
+      .to("#pill", { opacity: 1, y: 0, duration: 0.6 }, "-=0.3")
+      .to("#h1", { opacity: 1, y: 0, duration: 0.9 }, "-=0.3")
+      .to("#sub", { opacity: 1, y: 0, duration: 0.7 }, "-=0.5")
+      .to("#cta", { opacity: 1, y: 0, duration: 0.7 }, "-=0.4");
+
+    gsap.to("#sectitle", {
+      opacity: 1, y: 0, duration: 0.9,
+      scrollTrigger: { trigger: "#sectitle", start: "top 80%" },
+    });
+    gsap.to(".card", {
+      opacity: 1, y: 0, duration: 0.8, stagger: 0.12,
+      scrollTrigger: { trigger: "#cards", start: "top 78%" },
+    });
+    gsap.to("#footer", {
+      opacity: 1, duration: 1,
+      scrollTrigger: { trigger: "#footer", start: "top 95%" },
+    });
+    // Parallax hero text on scroll
+    gsap.to(".hero", {
+      y: -60, opacity: 0.6, ease: "none",
+      scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true },
+    });
+  } else {
+    // Fallback: show everything
+    ["#brandbar","#pill","#h1","#sub","#cta","#sectitle",".card","#footer"]
+      .forEach((s) => { const e = document.querySelector(s); if (e) { e.style.opacity = 1; e.style.transform = "none"; } });
+  }
+</script>
+</body>
+</html>

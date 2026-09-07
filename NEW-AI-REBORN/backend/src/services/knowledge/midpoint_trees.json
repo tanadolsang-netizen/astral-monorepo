@@ -1,0 +1,273 @@
+{
+  "midpoint_methods": {
+    "direct": {
+      "name": "Midpoint โดยตรง",
+      "name_en": "Direct Midpoint",
+      "description": "จุดกลางระหว่างดวงดาวสองดวง คำนวณโดยเฉลี่ยความยาวเชิงมุม",
+      "description_en": "Point halfway between two celestial bodies, calculated by averaging their ecliptic longitudes",
+      "formula": "midpoint = (body1_longitude + body2_longitude) / 2",
+      "formula_note": "หากผลต่างมากกว่า 180° ให้บวก 360° ก่อนหาร",
+      "formula_note_en": "If difference > 180°, add 360° before dividing"
+    },
+    "indirect": {
+      "name": "Midpoint โดยอ้อม",
+      "name_en": "Indirect Midpoint",
+      "description": "ดาวอีกดวงหนึ่งตกลงบนจุดกลางระหว่างสองดวง สร้างพลังงานร่วม",
+      "description_en": "A third planet falls on the midpoint of two others, creating combined energy",
+      "formula": "planet X at midpoint of A and B when X ≈ (A + B) / 2",
+      "interpretation": "ดาวที่ตกลงบนจุดกลางคือตัวกระตุ้นและแสดงให้เห็นถึงความสัมพันธ์",
+      "interpretation_en": "The planet on the midpoint activates and reveals the relationship"
+    }
+  },
+  "major_midpoints": {
+    "Sun/Moon": {
+      "name": "Sun/Moon",
+      "name_th": "อาทิตย์/จันทร์",
+      "keywords": [
+        "ความสมดุล",
+        "ครอบครัว",
+        "พ่อแม่",
+        "ความสัมพันธ์"
+      ],
+      "keywords_en": [
+        "balance",
+        "family",
+        "parents",
+        "relationships"
+      ],
+      "meaning_th": "จุดกลางอาทิตย์/จันทร์ — ความสมดุลระหว่างตัวตนกับอารมณ์ ความสัมพันธ์กับพ่อแม่",
+      "meaning_en": "Sun/Moon midpoint — balance of identity and emotions, parental relationship",
+      "interpretation": "แสดงความสัมพันธ์ระหว่างพ่อแม่ ความสมดุลลมหายใจภายใน และความต้องการทางอารมณ์",
+      "interpretation_en": "Shows parental relationship, inner balance, and emotional needs"
+    },
+    "Asc/MC": {
+      "name": "Asc/MC",
+      "name_th": "ลัคนา/MC",
+      "keywords": [
+        "การงาน",
+        "ภาพลักษณ์",
+        "อาชีพ",
+        "ตัวตน"
+      ],
+      "keywords_en": [
+        "career",
+        "image",
+        "profession",
+        "identity"
+      ],
+      "meaning_th": "จุดกลางลัคนา/MC — ความสัมพันธ์ระหว่างตัวตนกับการงาน ภาพลักษณ์กับอาชีพ",
+      "meaning_en": "Asc/MC midpoint — relationship between self and career, image and profession",
+      "interpretation": "แสดงวิธีที่ตัวตนและอาชีพเชื่อมโยงกัน วิธีที่โลกเห็นคุณกับวิธีที่คุณทำงาน",
+      "interpretation_en": "Shows how self and career connect, how world sees you vs how you work"
+    },
+    "Jupiter/Saturn": {
+      "name": "Jupiter/Saturn",
+      "name_th": "พฤหัส/เสาร์",
+      "keywords": [
+        "โชค",
+        "บทเรียน",
+        "การเติบโต",
+        "วินัย"
+      ],
+      "keywords_en": [
+        "fortune",
+        "lessons",
+        "growth",
+        "discipline"
+      ],
+      "meaning_th": "จุดกลางพฤหัส/เสาร์ — ความสัมพันธ์ระหว่างการเติบโตกับวินัย โชคกับบทเรียน",
+      "meaning_en": "Jupiter/Saturn midpoint — growth vs discipline, fortune vs lessons",
+      "interpretation": "แสดงวิธีที่โชคลาภและความยากลำบากเกิดขึ้นพร้อมกัน บทเรียนที่ต้องเรียนรู้ผ่านการเติบโต",
+      "interpretation_en": "Shows how fortune and hardship coexist, lessons learned through growth"
+    },
+    "Venus/Mars": {
+      "name": "Venus/Mars",
+      "name_th": "ศุกร์/อังคาร",
+      "keywords": [
+        "ความรัก",
+        "พลัง",
+        "เพศ",
+        "ความสัมพันธ์"
+      ],
+      "keywords_en": [
+        "love",
+        "power",
+        "sexuality",
+        "relationships"
+      ],
+      "meaning_th": "จุดกลางศุกร์/อังคาร — ความสัมพันธ์ระหว่างความรักกับพลัง ความสัมพันธ์เพศ",
+      "meaning_en": "Venus/Mars midpoint — love vs power, sexual dynamics",
+      "interpretation": "แสดงพลศาสตร์ทางเพศ เพศลักษณะในความสัมพันธ์ และวิธีแสดงออกถึงความต้องการ",
+      "interpretation_en": "Shows sexual dynamics, gender expression in relationships, and desire expression"
+    },
+    "Uranus/Pluto": {
+      "name": "Uranus/Pluto",
+      "name_th": "ยูรานัส/พลูโต",
+      "keywords": [
+        "การเปลี่ยนแปลง",
+        "ปฏิวัติ",
+        "แปรรูป",
+        "วิกฤต"
+      ],
+      "keywords_en": [
+        "change",
+        "revolution",
+        "transformation",
+        "crisis"
+      ],
+      "meaning_th": "จุดกลางยูรานัส/พลูโต — ความปฏิวัติกับการแปรรูป การเปลี่ยนแปลงครั้งใหญ่",
+      "meaning_en": "Uranus/Pluto midpoint — revolution and transformation, major life changes",
+      "interpretation": "แสดงการเปลี่ยนแปลงครั้งใหญ่ในชีวิต การปฏิวัติและการแปรรูปภายใน",
+      "interpretation_en": "Shows major life changes, revolution and inner transformation"
+    },
+    "Sun/Mercury": {
+      "name": "Sun/Mercury",
+      "name_th": "อาทิตย์/พุธ",
+      "keywords": "ความคิด การสื่อสาร การเรียนรู้ ตระหนักรู้",
+      "keywords_en": [
+        "thought",
+        "communication",
+        "learning",
+        "awareness"
+      ],
+      "meaning_th": "จุดกลางอาทิตย์/พุธ — การบูรณาการระหว่างตัวตนกับความคิด",
+      "meaning_en": "Sun/Mercury midpoint — integration of self and mind",
+      "interpretation": "แสดงวิธีคิดที่สอดคล้องกับตัวตน การสื่อสารที่แสดงออกถึงตัวตน",
+      "interpretation_en": "Shows thinking aligned with identity, communication expressing self"
+    },
+    "Moon/Mercury": {
+      "name": "Moon/Mercury",
+      "name_th": "จันทร์/พุธ",
+      "keywords": [
+        "อารมณ์",
+        "ความคิด",
+        "สัญชาตญาณ",
+        "การเขียน"
+      ],
+      "keywords_en": [
+        "emotion",
+        "thought",
+        "instinct",
+        "writing"
+      ],
+      "meaning_th": "จุดกลางจันทร์/พุธ — อารมณ์และความคิดเชื่อมโยงกัน",
+      "meaning_en": "Moon/Mercury midpoint — emotions and thoughts linked",
+      "interpretation": "แสดงสัญชาตญาณและการเขียนเชิงอารมณ์",
+      "interpretation_en": "Shows instincts and emotional writing"
+    },
+    "Venus/Jupiter": {
+      "name": "Venus/Jupiter",
+      "name_th": "ศุกร์/พฤหัส",
+      "keywords": [
+        "ความสุข",
+        "ความมั่งคั่ง",
+        "ศิลปะ",
+        "โชคดี"
+      ],
+      "keywords_en": [
+        "happiness",
+        "wealth",
+        "art",
+        "luck"
+      ],
+      "meaning_th": "จุดกลางศุกร์/พฤหัส — ความสุขและโชคลาภ",
+      "meaning_en": "Venus/Jupiter midpoint — happiness and prosperity",
+      "interpretation": "แสดงความสุขจากศิลปะและความมั่งคั่ง",
+      "interpretation_en": "Shows happiness from art and prosperity"
+    },
+    "Mars/Saturn": {
+      "name": "Mars/Saturn",
+      "name_th": "อังคาร/เสาร์",
+      "keywords": [
+        "ความขัดแย้ง",
+        "วินัย",
+        "อุปสรรค",
+        "การทำงาน"
+      ],
+      "keywords_en": [
+        "conflict",
+        "discipline",
+        "obstacles",
+        "work"
+      ],
+      "meaning_th": "จุดกลางอังคาร/เสาร์ — พลังและข้อจำกัดผสานกัน",
+      "meaning_en": "Mars/Saturn midpoint — power and limitations merge",
+      "interpretation": "แสดงความขัดแย้งระหว่างการกระทำและข้อจำกัด",
+      "interpretation_en": "Shows conflict between action and limitations"
+    },
+    "Neptune/Pluto": {
+      "name": "Neptune/Pluto",
+      "name_th": "เนปจูน/พลูโต",
+      "keywords": [
+        "การแปรรูป",
+        "จินตนาการ",
+        "วิวัฒนาการ",
+        "ศักดิ์สิทธิ์"
+      ],
+      "keywords_en": [
+        "transformation",
+        "imagination",
+        "evolution",
+        "sacred"
+      ],
+      "meaning_th": "จุดกลางเนปจูน/พลูโต — การแปรรูปเชิงจิตวิญญาณ",
+      "meaning_en": "Neptune/Pluto midpoint — spiritual transformation",
+      "interpretation": "แสดงการเปลี่ยนแปลงเชิงจิตวิญญาณและจินตนาการ",
+      "interpretation_en": "Shows spiritual transformation and imagination"
+    }
+  },
+  "interpretation_guidelines": {
+    "direct_midpoint": {
+      "name": "การตีความ Midpoint โดยตรง",
+      "name_en": "Direct Midpoint Interpretation",
+      "rules": [
+        "ดูว่ามีดาวใดตกลงบนจุดกลางหรือใกล้เคียง (orb ≤ 1°)",
+        "ดาวที่ตกลงบนจุดกลางคือตัวกระตุ้นและแสดงพลังงานร่วม",
+        "บ้านที่จุดกลางอยู่แสดงส่วนของชีวิที่มีเหตุการณ์",
+        "ราศีที่จุดกลางอยู่แสดงคุณภาพของพลังงาน"
+      ],
+      "rules_en": [
+        "Check if any planet falls on the midpoint (orb ≤ 1°)",
+        "The planet on the midpoint activates and shows combined energy",
+        "The house of the midpoint shows life area of events",
+        "The sign of the midpoint shows quality of energy"
+      ]
+    },
+    "indirect_midpoint": {
+      "name": "การตีความ Midpoint โดยอ้อม",
+      "name_en": "Indirect Midpoint Interpretation",
+      "rules": [
+        "เมื่อดาว X อยู่บนจุดกลาง A/B ดาว X เป็นตัวแทนของพลังงาน A และ B",
+        "ดอร์บ (การเอียง) ไม่ควรเกิน 1-2°",
+        "การเกิดจุดกลางร่วมกับดาวใหญ่ (Jupiter, Saturn, Uranus, Neptune, Pluto) สำคัญมาก",
+        "จุดกลางถูกกระตุ้นโดยดาวเคลื่อนที่ (transit) หรือดาวหมุน (progression)"
+      ],
+      "rules_en": [
+        "When planet X is at A/B midpoint, X represents combined A and B energy",
+        "Orb should not exceed 1-2°",
+        "Midpoints with Jupiter, Saturn, Uranus, Neptune, Pluto are highly significant",
+        "Midpoints are activated by transits or progressions"
+      ]
+    },
+    "planetary_midpoints": {
+      "name": "Midpoint ตามดาว",
+      "name_en": "Midpoints by Planet",
+      "Sun": "รัศมี พลังชีวิต อำนาจ ความคิด",
+      "Moon": "อารมณ์ สัญชาตญาณ ความต้องการ",
+      "Mercury": "ความคิด การสื่อสาร การเรียนรู้",
+      "Venus": "ความรัก ความสุข ความงาม",
+      "Mars": "พลัง การกระทำ ความตั้งใจ",
+      "Jupiter": "การเติบโต โชคลาภ ธรรมะ",
+      "Saturn": "ข้อจำกัด วินัย บทเรียน",
+      "Uranus": "การเปลี่ยนแปลง ปฏิวัติ อิสรภาพ",
+      "Neptune": "จินตนาการ ศักดิ์สิทธิ์ การหลอน",
+      "Pluto": "การแปรรูป พลังซ่อน ความตายและการเกิดใหม่"
+    },
+    "notes": {
+      "accuracy": "Midpoint ถูกใช้ในโหราศาสตร์ยุโรปและ cosmobiology โดยเฉพาะ ต้องใช้เวลาชั่วโมงที่แม่นยำ",
+      "accuracy_en": "Midpoints are used in European astrology and cosmobiology, requiring exact birth time",
+      "orb": "ออร์บที่ยอมรับคือ 1° สำหรับ midpoint โดยตรง และ 2° สำหรับ midpoint โดยอ้อม",
+      "orb_en": "Accepted orb is 1° for direct and 2° for indirect midpoints"
+    }
+  }
+}

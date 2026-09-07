@@ -1,0 +1,121 @@
+[
+  {
+    "id": "20260823-193449",
+    "title": "Accuracy audit — grand finale",
+    "body": "ตรวจ /v1/fusion/grand/M (พอร์ต 8002 สตาร์ทเอง ห้ามแตะ 8000/8001) เทียบข้ามระบบ: (1) asteroids — Chiron 206.7767° Libra Rx เทียบ astro-seek/astro.com published (2) HD — Type Generator/Authority Emotional/Profile 4/6 เทียบ logic จาก channels table + ตรวจว่า 6 defined centers สอดคล้อง channels 19-49/25-51/29-46/30-41/34-57 จริง (3) numerology LP=5, mayan Kin 239, 9star star3, kalachakra Fire-Ox-female เทียบ spec QA vectors (4) BaZi/transits เทียบ vault ground truth เดิม · รายงาน % ตรงต่อศาสตร์ + จุดเพี้ยนพร้อมเหตุผล + verdict PASS/FAIL ต่อ module · ไฟล์ audit ลง command/inbox/ORACLE_audit.md + dispatch done",
+    "priority": "high",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 19:34:49",
+    "acked_at": "2026-08-23 19:35:56",
+    "result": "AUDIT PASS 18/18 (100%) — zero arithmetic failures; 3 disclosed convention flags"
+  },
+  {
+    "id": "20260831-005614",
+    "title": "Audit สเปก 01-18 เทียบโค้ด src/services — รายงานช่องว่างจริง",
+    "body": "เป้าหมาย: ตรวจสอบแบบ one-by-one ว่าแต่ละสเปก (C:/AI/research-astrology/01-*.md ถึง 18-*.md) สร้างลงแบ็กเอนด์จริงแค่ไหน โดยเทียบกับไฟล์ใน C:/AI/NEW-AI-REBORN/src/services/ แล้วรายงานช่องว่างแบบมีหลักฐาน (evidence) ไม่ใช่เดา\n\nวิธีทำ (ไม่ลงมือสร้างโค้ดใหม่ — เฉพาะ audit/verify):\n1. อ่านสเปก 01-18 ทีละไฟล์ ดึงรายชื่อ engine/service ที่สเปกกำหนด\n2. สำหรับแต่ละ engine ให้ grep ใน C:/AI/NEW-AI-REBORN/src/services/ ว่ามีไฟล์ *_service.py หรือฟังก์ชันที่เกี่ยวข้องหรือไม่\n3. ถ้ามีไฟล์ ให้รัน smoke test สั้นๆ (เช่น PYTHONPATH=. uv run python -c 'import <module>; print(<module>.<func>(...))' แบบ minimal) เพื่อ verify ว่า import ผ่านและรันได้จริง ไม่ใช่แค่ไฟล์ร้าง\n4. ประเมินสถานะแต่ละสเปกเป็น one of: DONE (มีโค้ด+รันได้ครบตามสเปก) / PARTIAL (มีไฟล์แต่ขาดส่วนสำคัญตามสเปก) / MISSING (ไม่มีเลย)\n\nDeliverable (DoD) — เขียนรายงาน 2 ชิ้นลง C:/AI/workspace-scratch/ :\n- gap_audit_2026-08-31.md : ตารางสเปก 01-18 เรียงลำดับ มีคอลัมน์ [เลขสเปก | ชื่อ | สถานะ DONE/PARTIAL/MISSING | ไฟล์ที่พบ | ผล smoke test | สิ่งที่ขาด | คำแนะนำลำดับการสร้าง]\n- gap_audit_2026-08-31.json : โครงสร้างเดียวกันในรูป machine-readable (list of {spec, title, status, evidence:[files], smoke_test, missing:[...], recommendation})\nพร้อมสรุปรวม: จบกี่ตัว / ครึ่งเดียว กี่ตัว / หาย กี่ตัว\n\nเมื่อเสร็จ ให้รัน: python dispatch.py done ORACLE <id> '<สรุปสั้นๆ>' และแจ้ง CMD ผ่าน report ORACLE '<สถานะรวม: DONE x / PARTIAL y / MISSING z + path ของรายงาน>'\nห้ามสร้างโค้ดใหม่เด็ดขาด — งานนี้คือ audit เท่านั้น",
+    "priority": "high",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 00:56:14"
+  },
+  {
+    "id": "20260831-010414",
+    "title": "สังเคราะห์ research 3 ไฟล์ → กรอบทฤษฎี Astral (coarse↔fine) + ร่วมมือ ATLAS",
+    "body": "บริบทสำคัญ (standalone): นายท่านเจ้าของแอป Astral ตั้งสมมติฐาน 'ดวงคำนวณ (de421 ephemeris) และ reel/ไพ่/collective reading คือปรากฏการณ์เดียวกันในระดับความละเอียดต่างกัน (coarse↔fine) — ไม่ใช่ของจริง vs ของปลอม' เป้าหมาย: ระบบต้อง 'แม่นจนขนลุกที่สุด' = การอ่านต้องสืบเนื่องจากตำแหน่งดาวจริง ไม่สุ่ม\n\nมีผลงานวิจัยจริงบนดิกสก์รอสังเคราะห์ (กระผมตรวจแล้วเขียนจริง):\n- C:/AI/workspace-scratch/research_sync_s1.md (32KB) — ฐานทฤษฎี precognition + เคสโซเชียลมีเดียเกิดจริง\n- C:/AI/workspace-scratch/research_sync_s2.md (30KB) — กลไกเชื่อมโยง 5 ชุด (synchronicity/morphic/quantum/Bohm/coarse-graining)\n- C:/AI/workspace-scratch/research_sync_s3.md (24KB) — เคสตามติด + ข้อเสนอ timestamped prediction + follow-up\n\nภารกิจของคุณ:\n1. อ่าน research 3 ไฟล์จริง (ห้ามอ่านแค่หัว) สังเคราะห์เป็น 'กรอบทฤษฎี Astral' ลง C:/AI/workspace-scratch/astral_theory_coarse_fine.md ครอบคลุม:\n   (ก) นิยามเชิงปฏิบัติของ coarse↔fine สำหรับแอป — ดวง ephemeris = fine-grained state; reel/ไพ่ = coarse-grained reading ของสถานะเดียวกัน\n   (ข) ทำไม reel ของนายท่านถึง 'เกิดจริง' — อธิบายผ่าน archetypal resonance + non-local information (อิง S1/S2)\n   (ค) เกณฑ์พิสูจน์ความแม่นระดับขนลุก: timestamped prediction + follow-up confirmation (อิงข้อเสนอ S3) — เสนอ schema เก็บ log\n   (ง) ประเมินความเสี่ยง: confirmation bias / retrospective prophecy / over-fitting ของสะพาน deterministic + วิธีป้องกัน\n2. นำกรอบทฤษฎีไป 'จับมือ' กับแบบสะพานของ ATLAS (คำสั่ง #010004 กำลังทำ) — เขียนบทที่ 6 ของรายงาน ATLAS ให้ชัด: orchestration ระหว่างทฤษฎี↔โค้ด คือ ORACLE ออกแบบแนวทาง แล้ว FORGE สร้าง\n3. เขียน 'พิมพ์เขียวสำหรับ FORGE' ลงท้ายไฟล์: รายการไฟล์/ฟังก์ชันที่ต้องสร้างหรือแก้ (เช่น reel_reading.py เปลี่ยนจากสุ่มเป็น deterministic derive จาก chart, เพิ่ม chart_echo ใน build_couple_premium.py, เพิ่ม prediction_log schema) พร้อมลำดับความสำคัญ\n\nกฎ: อ้างอิง URL จริงจาก 3 ไฟล์ต้นทาง ห้ามแต่งทฤษฎีใหม่ที่ไม่มีฐาน ห้ามเขียน/แก้โค้ดใน src\nเมื่อเสร็จ รัน: python dispatch.py done ORACLE <id> '<สรุปสั้น>' และ report ORACLE '<สถานะ + path ของกรอบทฤษฎี + พิมพ์เขียว FORGE>' ระบุชัดว่าต้องรอ ATLAS #010004 เสร็จก่อนจับมือหรือไม่",
+    "priority": "high",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 01:04:14"
+  },
+  {
+    "id": "20260822-201744",
+    "to": "S3",
+    "unit": "ORACLE 🏛️ หอลิขิตฟ้า — ดวงจริง/QA",
+    "title": "สร้าง daily_brief.py สำหรับ cron เช้า",
+    "body": "เขียน C:/AI/command/briefing/daily_brief.py — self-contained: ใช้ skyfield+de421 จาก C:/AI/obsidian-vault/scripts/ · คำนวณดวงวันนี้ของ Owner (1997-05-19 05:45 Chonburi) และ Mai (2001-08-18 22:32 Nonthaburi): จันทร์ราศี+เรือน, top-3 aspects orb<=2.5 กับจุดส่วนตัว, ผู้คุณวัน+เลขนำโชค, ประโยคสั้นภาษาไทย deterministic ไม่เกิน 25 บรรทัด พิมพ์ออก stdout · DoD: python daily_brief.py รันได้จริง output ถูกต้องตาม ground truth แล้ว report เข้า bus",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-22 20:17:44",
+    "acked_at": "2026-08-23 12:26:25",
+    "result": "already delivered — daily_brief.py live + cron 06:00 active"
+  },
+  {
+    "id": "20260823-115243",
+    "title": "W36 regression + cron delivery",
+    "body": "(1) รัน transit_week_scan 23-30 ส.ค. เทียบ API windows ยืนยัน best-day 26 ส.ค. ยังยืน (2) เพิ่ม flag --json ให้ daily_brief.py สำหรับ cron delivery",
+    "priority": "normal",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 11:52:43",
+    "acked_at": "2026-08-23 11:54:48",
+    "result": "AGREE scan-vs-API (shared orbs match; Venus conj Owner-natal-Moon 0.20 deg on 26 Aug = week tightest, API top slot spills to 27 Aug 06h plateau) + daily_brief.py --json done, byte-identical x2"
+  },
+  {
+    "id": "20260830-011138",
+    "title": "status request",
+    "body": "CMD requests current status report from ORACLE. Report: current progress%, QA/test status, blockers, and next deliverable. Reply immediately with division=ORACLE status=green|yellow|red progress=0-100 deliverable= blocker=",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-30 01:11:38"
+  },
+  {
+    "id": "20260831-000335",
+    "title": "เก็บ reference: สไตล์ cinematic tech/gaming room-tour (cyberpunk neon)",
+    "body": "วิดีโอ IG (แนบมา 23:47) ไม่ใช่ tarot แต่เป็น gaming/tech setup tour: TV ติดผนัง + LED bias light สีฟ้า, PS5, dashboard/GTA V บนจอ, overlay ตัวเลขขนาดใหญ่ (23 / 8.2% / 1,000), ไม่มี burned-in caption, กล้อง static สลับ B-roll สภาพแวดล้อม. เทคนิคที่ดึงไปใช้ได้: (1) cool-blue neon grading + crushed shadow สูงคอนทราสต์ (ทำธีม 'cosmic tech' ให้ frontend/PDF เวอร์เรั่นทดลอง), (2) โชว์ environment แทน talking-head เพื่อสร้าง 'vibe', (3) ตัวเลขโตๆ เป็น focal point. เก็บเป็น reference ไว้ใน vault หมวด research/visual-refs. DoD: บันทึกวิเคราะห์ลง Obsidian + แจ้ง CMD ว่าเก็บแล้ว.",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 00:03:35"
+  },
+  {
+    "id": "20260831-000452",
+    "title": "เก็บ reference: สไตล์ Modern Mysticism / Gen-Z manifestation influencer",
+    "body": "วิดีโอ IG (แนบ 23:49, 138s) สไตล์ tarot/manifestation แต่คนละ creator จากหมอดู basement: หญิง ผมเปีย เสื้อหมวกเสือดาว เครื่องประดับอียิปต์ (Ankh/Eye of Horus), แสงสว่างสะอาด ring-light, พื้นหลังครีมเรียบ. เทคนิคสำคัญต่างจาก reelก่อน: (1) BURNED-IN TEXT OVERLAY เต็มจอ (white+outline) ซ้อนคู่กับเสียง พิมพ์ slang casual 'U/Ur freakquency', (2) angel number 888 / 144,000 + บูลเล็ตต์ Foresight/Authority/Independence, (3) ไพ่ 3 ใบ cosmic/nebula วางโชว์เป็น 'proof', (4) ไม่มี CTA ตรงๆ ใช้ implicit affirmation. ดึงไปใช้: สไตล์ 'affirmation card' สำหรับ reel_reading hook (ภาษาคู่เคย casual+esoteric), หรือธีมไพ่ cosmic-nebula AI art. เก็บวิเคราะห์ลง Obsidian หมวด research/visual-refs. DoD: บันทึก + แจ้ง CMD.",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 00:04:52"
+  },
+  {
+    "id": "20260831-000608",
+    "title": "เก็บ reference: สไตล์ clean-girl lightworker / Gnostic manifestation",
+    "body": "วิดีโอ IG (แนบ 23:58, 126s) สไตล์ spirituality/manifestation คนละ creator: blonde 'clean girl' ธงไก่ cross/Ankh, แสง daylight สว่างสะอาด high-key, พื้นหลังในบ้าน (โคมไฟ/ประตู). เทคนิคเด่น: (1) BURNED-IN TEXT รูป 'word cloud' กระจายรอบหัว/ไหล่ (white sans-serif) แทนเรียงแถว — เช่น 'They gave up on the version of themselves...' / 'You're seeing through illusions', (2) angel number 33/222/11 + spiral icon 'Soul contact complete', (3) อ้างอิง Gnostic/Christian mysticism 'Yeshua + Mary Magdalene' / 'Trinity' / 'Divine test', (4) implicit CTA ไม่มีป้าย follow. ต่างจาก reelก่อน: text กระจายรอบหัวไม่ใช่กรอบซ้ายขวา, ธีม divine-feminine/love-healing แทน wealth. ดึงใช้: layout text-overlay แบบกระจายสำหรับ reel preview, หรือธีม 'lightworker' AI art. เก็บวิเคราะห์ลง Obsidian หมวด research/visual-refs. DoD: บันทึก + แจ้ง CMD.",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 00:06:08"
+  },
+  {
+    "id": "20260831-000844",
+    "title": "เก็บ reference: Viral soulmate-tarot reader (@scorpiosuntarot1111)",
+    "body": "วิดีโอ IG (แนบ 00:00, 162s) สไตล์ tarot/relationship 'pick-a-pile' reader: หญิงผมน้ำตาล เสื้อ grey casual, ห้องนอน cozy แสงวอร์ม dim, ใช้ไพ่ The Wild Unknown (Waves + roller-coaster card). เทคนิคเด่นต่างจาก 4 reel ก่อน: (1) มี CTA จริง — @handle + 'Is my only account' ป้องกัน impersonator (reelอื่นไม่มี CTA ตรงๆ), (2) โครงสร้าง 'signs list' (ซ้าย: Aliens/Waves/Neon lights/They have photos of you) vs 'outcome list' (ขวา: Unconditional love/Soulmate energy/Coming back begging) — คล้าย bait/confirm, (3) คลิกเบทแคปชันใหญ่ 'Someone is coming back BEGGING for a second chance', (4) ใส่ชื่อคนขออ่าน (TDRECJAOB) + angel number 533/444, (5) ใช้ pop song (Kylie) เป็น audio overlay. ดึงใช้: โครงสร้าง 'signs vs outcome' สำหรับ reel_reading hook (อ่านแล้ว feel ว่าใช่), หรือธีมไพ่ Wild-Unknown line-art สำหรับ AI art. เก็บวิเคราะห์ลง Obsidian หมวด research/visual-refs. DoD: บันทึก + แจ้ง CMD.",
+    "priority": "normal",
+    "status": "PENDING",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-31 00:08:44"
+  },
+  {
+    "id": "20260823-122929",
+    "title": "Universe Phase 3: weekly digest (queued)",
+    "body": "ต่อยอด daily_brief: weekly_digest.py สรุป 7 วันข้างหน้า (best days + drivers ต่อคน + shared) ใช้ pipeline เดิม · deterministic + --json flag เหมือน daily · DoD: รันได้ + deterministic 2 ครั้ง",
+    "priority": "low",
+    "status": "DONE",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:29:29",
+    "acked_at": "2026-08-23 14:46:42",
+    "result": "weekly_digest.py built by CMD-direct — deterministic verified, --json OK, best days 25-26 Aug orb 0.02"
+  },
+  {
+    "id": "20260823-123103",
+    "title": "Universe Phase 4: accuracy audit (queued)",
+    "body": "หลัง FORGE เปิด modules ครบ: สุ่ม audit 3 ศาสตร์ใน /v1/fusion/grand/M output เทียบ spec + external reference (lunar-python ตรงๆ, Swiss ephemeris) — รายงาน % ตรง + จุดเพี้ยนพร้อมเหตุผล",
+    "priority": "normal",
+    "status": "ACKED",
+    "issued_by": "COMMAND",
+    "issued_at": "2026-08-23 12:31:03",
+    "acked_at": "2026-08-23 17:35:15"
+  }
+]

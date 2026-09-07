@@ -1,0 +1,4 @@
+# C:/AI — .gitignore
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,362 @@
+{
+  "Sun in Aries": {
+    "th": "Sun ในราศีAries"
+  },
+  "Sun in Taurus": {
+    "th": "Sun ในราศีTaurus"
+  },
+  "Sun in Gemini": {
+    "th": "Sun ในราศีGemini"
+  },
+  "Sun in Cancer": {
+    "th": "Sun ในราศีCancer"
+  },
+  "Sun in Leo": {
+    "th": "Sun ในราศีLeo"
+  },
+  "Sun in Virgo": {
+    "th": "Sun ในราศีVirgo"
+  },
+  "Sun in Libra": {
+    "th": "Sun ในราศีLibra"
+  },
+  "Sun in Scorpio": {
+    "th": "Sun ในราศีScorpio"
+  },
+  "Sun in Sagittarius": {
+    "th": "Sun ในราศีSagittarius"
+  },
+  "Sun in Capricorn": {
+    "th": "Sun ในราศีCapricorn"
+  },
+  "Sun in Aquarius": {
+    "th": "Sun ในราศีAquarius"
+  },
+  "Sun in Pisces": {
+    "th": "Sun ในราศีPisces"
+  },
+  "Moon in Aries": {
+    "th": "Moon ในราศีAries"
+  },
+  "Moon in Taurus": {
+    "th": "Moon ในราศีTaurus"
+  },
+  "Moon in Gemini": {
+    "th": "Moon ในราศีGemini"
+  },
+  "Moon in Cancer": {
+    "th": "Moon ในราศีCancer"
+  },
+  "Moon in Leo": {
+    "th": "Moon ในราศีLeo"
+  },
+  "Moon in Virgo": {
+    "th": "Moon ในราศีVirgo"
+  },
+  "Moon in Libra": {
+    "th": "Moon ในราศีLibra"
+  },
+  "Moon in Scorpio": {
+    "th": "Moon ในราศีScorpio"
+  },
+  "Moon in Sagittarius": {
+    "th": "Moon ในราศีSagittarius"
+  },
+  "Moon in Capricorn": {
+    "th": "Moon ในราศีCapricorn"
+  },
+  "Moon in Aquarius": {
+    "th": "Moon ในราศีAquarius"
+  },
+  "Moon in Pisces": {
+    "th": "Moon ในราศีPisces"
+  },
+  "Mercury in Aries": {
+    "th": "Mercury ในราศีAries"
+  },
+  "Mercury in Taurus": {
+    "th": "Mercury ในราศีTaurus"
+  },
+  "Mercury in Gemini": {
+    "th": "Mercury ในราศีGemini"
+  },
+  "Mercury in Cancer": {
+    "th": "Mercury ในราศีCancer"
+  },
+  "Mercury in Leo": {
+    "th": "Mercury ในราศีLeo"
+  },
+  "Mercury in Virgo": {
+    "th": "Mercury ในราศีVirgo"
+  },
+  "Mercury in Libra": {
+    "th": "Mercury ในราศีLibra"
+  },
+  "Mercury in Scorpio": {
+    "th": "Mercury ในราศีScorpio"
+  },
+  "Mercury in Sagittarius": {
+    "th": "Mercury ในราศีSagittarius"
+  },
+  "Mercury in Capricorn": {
+    "th": "Mercury ในราศีCapricorn"
+  },
+  "Mercury in Aquarius": {
+    "th": "Mercury ในราศีAquarius"
+  },
+  "Mercury in Pisces": {
+    "th": "Mercury ในราศีPisces"
+  },
+  "Venus in Aries": {
+    "th": "Venus ในราศีAries"
+  },
+  "Venus in Taurus": {
+    "th": "Venus ในราศีTaurus"
+  },
+  "Venus in Gemini": {
+    "th": "Venus ในราศีGemini"
+  },
+  "Venus in Cancer": {
+    "th": "Venus ในราศีCancer"
+  },
+  "Venus in Leo": {
+    "th": "Venus ในราศีLeo"
+  },
+  "Venus in Virgo": {
+    "th": "Venus ในราศีVirgo"
+  },
+  "Venus in Libra": {
+    "th": "Venus ในราศีLibra"
+  },
+  "Venus in Scorpio": {
+    "th": "Venus ในราศีScorpio"
+  },
+  "Venus in Sagittarius": {
+    "th": "Venus ในราศีSagittarius"
+  },
+  "Venus in Capricorn": {
+    "th": "Venus ในราศีCapricorn"
+  },
+  "Venus in Aquarius": {
+    "th": "Venus ในราศีAquarius"
+  },
+  "Venus in Pisces": {
+    "th": "Venus ในราศีPisces"
+  },
+  "Mars in Aries": {
+    "th": "Mars ในราศีAries"
+  },
+  "Mars in Taurus": {
+    "th": "Mars ในราศีTaurus"
+  },
+  "Mars in Gemini": {
+    "th": "Mars ในราศีGemini"
+  },
+  "Mars in Cancer": {
+    "th": "Mars ในราศีCancer"
+  },
+  "Mars in Leo": {
+    "th": "Mars ในราศีLeo"
+  },
+  "Mars in Virgo": {
+    "th": "Mars ในราศีVirgo"
+  },
+  "Mars in Libra": {
+    "th": "Mars ในราศีLibra"
+  },
+  "Mars in Scorpio": {
+    "th": "Mars ในราศีScorpio"
+  },
+  "Mars in Sagittarius": {
+    "th": "Mars ในราศีSagittarius"
+  },
+  "Mars in Capricorn": {
+    "th": "Mars ในราศีCapricorn"
+  },
+  "Mars in Aquarius": {
+    "th": "Mars ในราศีAquarius"
+  },
+  "Mars in Pisces": {
+    "th": "Mars ในราศีPisces"
+  },
+  "Jupiter in Aries": {
+    "th": "Jupiter ในราศีAries"
+  },
+  "Jupiter in Taurus": {
+    "th": "Jupiter ในราศีTaurus"
+  },
+  "Jupiter in Gemini": {
+    "th": "Jupiter ในราศีGemini"
+  },
+  "Jupiter in Cancer": {
+    "th": "Jupiter ในราศีCancer"
+  },
+  "Jupiter in Leo": {
+    "th": "Jupiter ในราศีLeo"
+  },
+  "Jupiter in Virgo": {
+    "th": "Jupiter ในราศีVirgo"
+  },
+  "Jupiter in Libra": {
+    "th": "Jupiter ในราศีLibra"
+  },
+  "Jupiter in Scorpio": {
+    "th": "Jupiter ในราศีScorpio"
+  },
+  "Jupiter in Sagittarius": {
+    "th": "Jupiter ในราศีSagittarius"
+  },
+  "Jupiter in Capricorn": {
+    "th": "Jupiter ในราศีCapricorn"
+  },
+  "Jupiter in Aquarius": {
+    "th": "Jupiter ในราศีAquarius"
+  },
+  "Jupiter in Pisces": {
+    "th": "Jupiter ในราศีPisces"
+  },
+  "Saturn in Aries": {
+    "th": "Saturn ในราศีAries"
+  },
+  "Saturn in Taurus": {
+    "th": "Saturn ในราศีTaurus"
+  },
+  "Saturn in Gemini": {
+    "th": "Saturn ในราศีGemini"
+  },
+  "Saturn in Cancer": {
+    "th": "Saturn ในราศีCancer"
+  },
+  "Saturn in Leo": {
+    "th": "Saturn ในราศีLeo"
+  },
+  "Saturn in Virgo": {
+    "th": "Saturn ในราศีVirgo"
+  },
+  "Saturn in Libra": {
+    "th": "Saturn ในราศีLibra"
+  },
+  "Saturn in Scorpio": {
+    "th": "Saturn ในราศีScorpio"
+  },
+  "Saturn in Sagittarius": {
+    "th": "Saturn ในราศีSagittarius"
+  },
+  "Saturn in Capricorn": {
+    "th": "Saturn ในราศีCapricorn"
+  },
+  "Saturn in Aquarius": {
+    "th": "Saturn ในราศีAquarius"
+  },
+  "Saturn in Pisces": {
+    "th": "Saturn ในราศีPisces"
+  },
+  "Uranus in Aries": {
+    "th": "Uranus ในราศีAries"
+  },
+  "Uranus in Taurus": {
+    "th": "Uranus ในราศีTaurus"
+  },
+  "Uranus in Gemini": {
+    "th": "Uranus ในราศีGemini"
+  },
+  "Uranus in Cancer": {
+    "th": "Uranus ในราศีCancer"
+  },
+  "Uranus in Leo": {
+    "th": "Uranus ในราศีLeo"
+  },
+  "Uranus in Virgo": {
+    "th": "Uranus ในราศีVirgo"
+  },
+  "Uranus in Libra": {
+    "th": "Uranus ในราศีLibra"
+  },
+  "Uranus in Scorpio": {
+    "th": "Uranus ในราศีScorpio"
+  },
+  "Uranus in Sagittarius": {
+    "th": "Uranus ในราศีSagittarius"
+  },
+  "Uranus in Capricorn": {
+    "th": "Uranus ในราศีCapricorn"
+  },
+  "Uranus in Aquarius": {
+    "th": "Uranus ในราศีAquarius"
+  },
+  "Uranus in Pisces": {
+    "th": "Uranus ในราศีPisces"
+  },
+  "Neptune in Aries": {
+    "th": "Neptune ในราศีAries"
+  },
+  "Neptune in Taurus": {
+    "th": "Neptune ในราศีTaurus"
+  },
+  "Neptune in Gemini": {
+    "th": "Neptune ในราศีGemini"
+  },
+  "Neptune in Cancer": {
+    "th": "Neptune ในราศีCancer"
+  },
+  "Neptune in Leo": {
+    "th": "Neptune ในราศีLeo"
+  },
+  "Neptune in Virgo": {
+    "th": "Neptune ในราศีVirgo"
+  },
+  "Neptune in Libra": {
+    "th": "Neptune ในราศีLibra"
+  },
+  "Neptune in Scorpio": {
+    "th": "Neptune ในราศีScorpio"
+  },
+  "Neptune in Sagittarius": {
+    "th": "Neptune ในราศีSagittarius"
+  },
+  "Neptune in Capricorn": {
+    "th": "Neptune ในราศีCapricorn"
+  },
+  "Neptune in Aquarius": {
+    "th": "Neptune ในราศีAquarius"
+  },
+  "Neptune in Pisces": {
+    "th": "Neptune ในราศีPisces"
+  },
+  "Pluto in Aries": {
+    "th": "Pluto ในราศีAries"
+  },
+  "Pluto in Taurus": {
+    "th": "Pluto ในราศีTaurus"
+  },
+  "Pluto in Gemini": {
+    "th": "Pluto ในราศีGemini"
+  },
+  "Pluto in Cancer": {
+    "th": "Pluto ในราศีCancer"
+  },
+  "Pluto in Leo": {
+    "th": "Pluto ในราศีLeo"
+  },
+  "Pluto in Virgo": {
+    "th": "Pluto ในราศีVirgo"
+  },
+  "Pluto in Libra": {
+    "th": "Pluto ในราศีLibra"
+  },
+  "Pluto in Scorpio": {
+    "th": "Pluto ในราศีScorpio"
+  },
+  "Pluto in Sagittarius": {
+    "th": "Pluto ในราศีSagittarius"
+  },
+  "Pluto in Capricorn": {
+    "th": "Pluto ในราศีCapricorn"
+  },
+  "Pluto in Aquarius": {
+    "th": "Pluto ในราศีAquarius"
+  },
+  "Pluto in Pisces": {
+    "th": "Pluto ในราศีPisces"
+  }
+}

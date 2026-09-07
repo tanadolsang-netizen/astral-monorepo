@@ -1,0 +1,134 @@
+{
+ "_meta": {
+  "purpose": "ATLAS blocker 1 - offline Swiss Ephemeris computation of Chiron + Ceres/Pallas/Juno/Vesta via pyswisseph",
+  "engine_verified": "pyswisseph 2.10.03 (Swiss Ephemeris), local run 2026-08-23",
+  "repo_local_ephe_dir": "C:/AI/research-astrology/ephe (files already present, sizes match GitHub byte-for-byte)"
+ },
+ "files_needed": [
+  {
+   "file": "seas_18.se1",
+   "role": "MAIN ASTEROIDS: Ceres(1), Pallas(2), Juno(3), Vesta(4), 2060 Chiron, 5145 Pholus - this single file covers ALL FIVE target bodies",
+   "coverage": "1800 CE - 2399 CE",
+   "size_bytes": 223004,
+   "url": "https://github.com/aloistr/swisseph/raw/master/ephe/seas_18.se1"
+  },
+  {
+   "file": "sepl_18.se1",
+   "role": "planets Sun..Pluto (needed for solar position -> geocentric asteroid positions, and all planetary work)",
+   "coverage": "1800 CE - 2399 CE",
+   "size_bytes": 484061,
+   "url": "https://github.com/aloistr/swisseph/raw/master/ephe/sepl_18.se1"
+  },
+  {
+   "file": "semo_18.se1",
+   "role": "Moon (app charts need Moon)",
+   "coverage": "1800 CE - 2399 CE",
+   "size_bytes": 1304771,
+   "url": "https://github.com/aloistr/swisseph/raw/master/ephe/semo_18.se1"
+  }
+ ],
+ "sizes": {
+  "total_mb_for_1800_2400": 1.92,
+  "per_file_mb": {
+   "seas_18.se1": 0.213,
+   "sepl_18.se1": 0.462,
+   "semo_18.se1": 1.244
+  }
+ },
+ "download_urls": {
+  "official_github_dir": "https://github.com/aloistr/swisseph/tree/master/ephe",
+  "raw_pattern": "https://github.com/aloistr/swisseph/raw/master/ephe/<FILE>",
+  "astro_com_ftp_readme": "https://www.astro.com/ftp/swisseph/",
+  "astro_com_ephe_page": "https://www.astro.com/ftp/swisseph/ephe/",
+  "dropbox_all_numbered_asteroids": "https://www.dropbox.com/scl/fo/y3naz62gy6f6qfrhquu7u/h?rlkey=ejltdhb262zglm7eo6yfj2940&dl=0 (folder 'all_ast': >620,000 numbered asteroids, 600-year files 1500-2099, ~29 GB)",
+  "dropbox_long_named_asteroids": "same Dropbox link, folder 'long_ast': >24,000 named asteroids, 6000-year files 3000 BCE-2999 CE (~11 GB)"
+ },
+ "naming_scheme_other_asteroids": {
+  "verified_quote_source": "doc/swisseph.htm section 2.3.1 in aloistr/swisseph repo",
+  "long_files": "se<NNNNN>.se1 e.g. se00433.se1 = asteroid no. 433 (Eros); cover 3000 BCE - 3000 CE",
+  "short_files": "same name with embedded 's', e.g. se00433s.se1; cover 1500 - 2100 CE (readme says 1500-2099)",
+  "directory_rule": "asteroid files must sit in subdirectories named ast<N> where N = asteroid number // 1000 (ast0..ast623); sepl*/semo*/seas* stay directly in the ephe path",
+  "note": "individual ast*.se1 files are NOT in the GitHub ephe dir (only seas_/sepl_/semo_ series + astlistn.md index); they come from astro.com ftp / Dropbox"
+ },
+ "body_constants": {
+  "chiron": {
+   "swiseph_id": 15,
+   "pyswisseph": "swe.CHIRON",
+   "verified_live": true,
+   "lives_in": "seas_18.se1",
+   "computable_range": "700 CE - 4650 CE (Saturn close encounters limit orbit beyond)"
+  },
+  "pholus": {
+   "swiseph_id": 16,
+   "pyswisseph": "swe.PHOLUS",
+   "lives_in": "seas_18.se1"
+  },
+  "ceres": {
+   "swiseph_id": 10001,
+   "pyswisseph_alias": "swe.CERES (=17)",
+   "formula": "swe.AST_OFFSET + 1",
+   "verified_live": "calc_ut(jd,17) == calc_ut(jd,10001)"
+  },
+  "pallas": {
+   "swiseph_id": 10002,
+   "pyswisseph_alias": "swe.PALLAS (=18)",
+   "formula": "swe.AST_OFFSET + 2"
+  },
+  "juno": {
+   "swiseph_id": 10003,
+   "pyswisseph_alias": "swe.JUNO (=19)",
+   "formula": "swe.AST_OFFSET + 3"
+  },
+  "vesta": {
+   "swiseph_id": 10004,
+   "pyswisseph_alias": "swe.VESTA (=20)",
+   "formula": "swe.AST_OFFSET + 4"
+  },
+  "ast_offset": {
+   "value": 10000,
+   "pyswisseph_name": "swe.AST_OFFSET (C: SE_AST_OFFSET)",
+   "verified_live": true
+  },
+  "any_numbered_asteroid_usage": "swe.calc_ut(jd_ut, 10000 + catalog_number)"
+ },
+ "set_ephe_path_usage": {
+  "code": "import swisseph as swe\nswe.set_ephe_path(r'C:/AI/research-astrology/ephe')\njd_ut = swe.julday(1997, 5, 19, 5 + 45/60 - 7.0)   # local->UT handled manually\npos, ret = swe.calc_ut(jd_ut, swe.CHIRON, swe.FLG_SWIEPH | swe.FLG_SPEED)\npos2, _ = swe.calc_ut(jd_ut, swe.AST_OFFSET + 4, swe.FLG_SWIEPH | swe.FLG_SPEED)  # Vesta",
+  "default_search_path_note": "without set_ephe_path SE searches \\sweph\\ephe (Win) or .:/users/ephe2/:/users/ephe/ (Unix); ';' is the Windows path separator, ':' or ';' on Linux",
+  "working_reference_impl": "verify_asteroids.py in this repo (runs green against these three files)"
+ },
+ "skyfield_confirmation": {
+  "de421_has_no_asteroids_or_chiron": true,
+  "evidence": "Skyfield docs (rhodesmill.org/skyfield/planets.html) print DE421's complete segment list: targets 1-9 barycenters, SUN(10), MOON(301), EARTH(399), EM BARYCENTER(3), MERCURY(199), VENUS(299), MARS(499). No asteroid or centaur segments exist.",
+  "quote": "\"Segments from kernel file 'de421.bsp': JD 2414864.50 - JD 2471184.50 (1899-07-28 through 2053-10-08) 0 -> 1 ... 0 -> 10 SUN 3 -> 301 MOON 3 -> 399 EARTH ...\"",
+  "workaround_if_skyfield_needed": "only via external JPL HORIZONS-generated SPK files + third-party spktype01/spktype21 libs (skyfield docs demo exactly this for Chiron, target 2002060). Recommendation: use Swiss Ephemeris for these bodies.",
+  "source_url": "https://rhodesmill.org/skyfield/planets.html"
+ },
+ "chiron_ground_truth": {
+  "subject": "M (chart M in this repo)",
+  "birth_local": "1997-05-19 05:45 ICT (+07:00), Chonburi 13.36N 100.98E",
+  "birth_ut": "1997-05-18 22:45 UT",
+  "jd_ut": 2450587.447917,
+  "chiron_abs_deg": 206.7767,
+  "chiron_position": "26°46'36\" Libra R",
+  "chiron_speed_deg_day": -0.05803,
+  "also_noon_ut_1997_05_19": {
+   "jd_ut": 2450588.0,
+   "abs_deg": 206.7449
+  },
+  "cross_checks": [
+   "astro-seek birth-chart page rendered for the identical instant prints 'Universal Time (UT/GMT): 18 May 1997 - 22:45' and Julian date 2450587.4479167 - matches our swe.julday to 7 digits (https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/?narozeni_den=18&narozeni_mesic=5&narozeni_rok=1997&narozeni_hodina=22&narozeni_minuta=45&narozeni_timezone_form=0&narozeni_timezone_dst_form=0)",
+   "cafeastrology.com/chironsignstables.html ingress table: 'Apr 4, 1997 11:50 AM Chiron Rx enters Libra' and 'Sep 2, 1997 11:24 PM Chiron enters Scorpio' -> on the birth date Chiron was retrograde in Libra (brackets our 26deg46 Libra Rx)",
+   "prior repo anchor (vault serennu interpolation, verify_asteroids.py header): '~26deg55 Libra Rx' - consistent within interpolation tolerance (~9 arcmin over its monthly window)"
+  ],
+  "assertion_hint": "absorb |calc - 206.7767| < 0.01 deg at jd_ut 2450587.447917"
+ },
+ "sources": [
+  "https://github.com/aloistr/swisseph/tree/master/doc (doc/swisseph.htm section 2.3 'Asteroids' / 2.3.1 'Asteroid ephemeris files')",
+  "https://github.com/aloistr/swisseph/tree/master/ephe (live dir listing via gh api 2026-08-23: seas/sepl/semo _00-_168 series, sizes verified via HTTP Content-Length)",
+  "https://www.astro.com/ftp/swisseph/ (official readme, last update 20 Sep 2023: download locations + ast<N> directory rule)",
+  "https://rhodesmill.org/skyfield/planets.html (DE421 target list)",
+  "https://pyswisseph.readthedocs.io (constants CHIRON/CERES/... exposed since 2.10; verified live locally)",
+  "https://cafeastrology.com/chironsignstables.html",
+  "https://horoscopes.astro-seek.com/calculate-birth-chart-horoscope-online/"
+ ]
+}

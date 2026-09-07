@@ -1,0 +1,74 @@
+{
+  "Life": {
+    "th": "วังLife",
+    "branch": "子",
+    "meaning_en": "Ziwei Life Palace (子): Life area of life.",
+    "meaning_th": "วังLife (子): เส้นทางชีวิตด้านLife"
+  },
+  "Siblings": {
+    "th": "วังSiblings",
+    "branch": "丑",
+    "meaning_en": "Ziwei Siblings Palace (丑): Life area of siblings.",
+    "meaning_th": "วังSiblings (丑): เส้นทางชีวิตด้านSiblings"
+  },
+  "Spouse": {
+    "th": "วังSpouse",
+    "branch": "寅",
+    "meaning_en": "Ziwei Spouse Palace (寅): Life area of spouse.",
+    "meaning_th": "วังSpouse (寅): เส้นทางชีวิตด้านSpouse"
+  },
+  "Children": {
+    "th": "วังChildren",
+    "branch": "卯",
+    "meaning_en": "Ziwei Children Palace (卯): Life area of children.",
+    "meaning_th": "วังChildren (卯): เส้นทางชีวิตด้านChildren"
+  },
+  "Wealth": {
+    "th": "วังWealth",
+    "branch": "辰",
+    "meaning_en": "Ziwei Wealth Palace (辰): Life area of wealth.",
+    "meaning_th": "วังWealth (辰): เส้นทางชีวิตด้านWealth"
+  },
+  "Health": {
+    "th": "วังHealth",
+    "branch": "巳",
+    "meaning_en": "Ziwei Health Palace (巳): Life area of health.",
+    "meaning_th": "วังHealth (巳): เส้นทางชีวิตด้านHealth"
+  },
+  "Career": {
+    "th": "วังCareer",
+    "branch": "午",
+    "meaning_en": "Ziwei Career Palace (午): Life area of career.",
+    "meaning_th": "วังCareer (午): เส้นทางชีวิตด้านCareer"
+  },
+  "Friends": {
+    "th": "วังFriends",
+    "branch": "未",
+    "meaning_en": "Ziwei Friends Palace (未): Life area of friends.",
+    "meaning_th": "วังFriends (未): เส้นทางชีวิตด้านFriends"
+  },
+  "Parents": {
+    "th": "วังParents",
+    "branch": "申",
+    "meaning_en": "Ziwei Parents Palace (申): Life area of parents.",
+    "meaning_th": "วังParents (申): เส้นทางชีวิตด้านParents"
+  },
+  "Property": {
+    "th": "วังProperty",
+    "branch": "酉",
+    "meaning_en": "Ziwei Property Palace (酉): Life area of property.",
+    "meaning_th": "วังProperty (酉): เส้นทางชีวิตด้านProperty"
+  },
+  "Virtue": {
+    "th": "วังVirtue",
+    "branch": "戌",
+    "meaning_en": "Ziwei Virtue Palace (戌): Life area of virtue.",
+    "meaning_th": "วังVirtue (戌): เส้นทางชีวิตด้านVirtue"
+  },
+  "Migration": {
+    "th": "วังMigration",
+    "branch": "亥",
+    "meaning_en": "Ziwei Migration Palace (亥): Life area of migration.",
+    "meaning_th": "วังMigration (亥): เส้นทางชีวิตด้านMigration"
+  }
+}

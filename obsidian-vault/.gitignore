@@ -1,0 +1,14 @@
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Local REST API plugin: data.json holds a live API key + TLS private key
+.obsidian/plugins/obsidian-local-rest-api/data.json
+
+# Claude Code local permission overrides — machine-specific, not shared
+.claude/settings.local.json
+
+# skyfield ephemeris data (auto-downloaded ~17MB by scripts/transit_now.py, regenerable)
+*.bsp
+
+# Python bytecode cache
+__pycache__/

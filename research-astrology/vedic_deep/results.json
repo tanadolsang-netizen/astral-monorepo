@@ -1,0 +1,177 @@
+{
+ "positions": {
+  "Sun": 34.1941,
+  "Moon": 173.517,
+  "Mercury": 9.5187,
+  "Venus": 46.2893,
+  "Mars": 145.4601,
+  "Jupiter": 297.3539,
+  "Saturn": 352.2266,
+  "Rahu": 151.93,
+  "Ketu": 331.93,
+  "Lagna": 32.1403
+ },
+ "ayanamsa": 23.8205,
+ "nakshatra": {
+  "name": "Chitra",
+  "pada": 1,
+  "lord": "Mars",
+  "elapsed_frac": 0.013773
+ },
+ "vimshottari": [
+  {
+   "lord": "Mars",
+   "start": "1997-05-18 22:45",
+   "end": "2004-04-13 11:35"
+  },
+  {
+   "lord": "Rahu",
+   "start": "2004-04-13 11:35",
+   "end": "2022-04-13 23:35"
+  },
+  {
+   "lord": "Jupiter",
+   "start": "2022-04-13 23:35",
+   "end": "2038-04-13 23:35"
+  },
+  {
+   "lord": "Saturn",
+   "start": "2038-04-13 23:35",
+   "end": "2057-04-13 17:35"
+  },
+  {
+   "lord": "Mercury",
+   "start": "2057-04-13 17:35",
+   "end": "2074-04-13 23:35"
+  },
+  {
+   "lord": "Ketu",
+   "start": "2074-04-13 23:35",
+   "end": "2081-04-13 17:35"
+  },
+  {
+   "lord": "Venus",
+   "start": "2081-04-13 17:35",
+   "end": "2101-04-14 17:35"
+  },
+  {
+   "lord": "Sun",
+   "start": "2101-04-14 17:35",
+   "end": "2107-04-15 05:35"
+  },
+  {
+   "lord": "Moon",
+   "start": "2107-04-15 05:35",
+   "end": "2117-04-14 17:35"
+  },
+  {
+   "lord": "Mars",
+   "start": "2117-04-14 17:35",
+   "end": "2124-04-14 11:35"
+  },
+  {
+   "lord": "Rahu",
+   "start": "2124-04-14 11:35",
+   "end": "2142-04-14 23:35"
+  },
+  {
+   "lord": "Jupiter",
+   "start": "2142-04-14 23:35",
+   "end": "2158-04-14 23:35"
+  }
+ ],
+ "current": {
+  "md": "Jupiter",
+  "md_range": [
+   "2022-04-13 23:35",
+   "2038-04-13 23:35"
+  ],
+  "ad": "Jupiter/Saturn",
+  "ad_range": [
+   "2024-06-01 04:23",
+   "2026-12-13 11:35"
+  ],
+  "pd": "Jupiter/Saturn/Jupiter",
+  "pd_range": [
+   "2026-08-12 02:38",
+   "2026-12-13 11:35"
+  ]
+ },
+ "d9": {
+  "Sun": "Aquarius",
+  "Moon": "Leo",
+  "Mars": "Scorpio",
+  "Mercury": "Gemini",
+  "Jupiter": "Virgo",
+  "Venus": "Taurus",
+  "Saturn": "Capricorn",
+  "Rahu": "Capricorn",
+  "Ketu": "Cancer",
+  "Lagna": "Capricorn"
+ },
+ "karakas": {
+  "7": [
+   [
+    "AK",
+    "Jupiter",
+    27.35
+   ],
+   [
+    "Amatyakaraka",
+    "Mars",
+    25.46
+   ],
+   [
+    "Bhratrukaraka",
+    "Moon",
+    23.52
+   ],
+   [
+    "Matrukaraka",
+    "Saturn",
+    22.23
+   ],
+   [
+    "Putrakaraka",
+    "Venus",
+    16.29
+   ],
+   [
+    "Gnatikaraka",
+    "Mercury",
+    9.52
+   ],
+   [
+    "Darakaraka",
+    "Sun",
+    4.19
+   ]
+  ],
+  "AK": "Jupiter",
+  "Karakamsha": "Virgo",
+  "DK": "Sun",
+  "note_8scheme_AK": "Rahu",
+  "rahu_adj_deg": 28.07
+ },
+ "sav": {
+  "Aries": 20,
+  "Taurus": 26,
+  "Gemini": 32,
+  "Cancer": 28,
+  "Leo": 29,
+  "Virgo": 26,
+  "Libra": 28,
+  "Scorpio": 29,
+  "Sagittarius": 28,
+  "Capricorn": 27,
+  "Aquarius": 32,
+  "Pisces": 32
+ },
+ "sav_total": 337,
+ "saturn": {
+  "now": "Pisces  19.924\u00b0",
+  "rel_from_moon": 6,
+  "retro": true,
+  "leo_entry": "2036-08-28 00:00"
+ }
+}

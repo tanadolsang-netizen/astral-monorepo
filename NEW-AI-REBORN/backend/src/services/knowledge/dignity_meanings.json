@@ -1,0 +1,302 @@
+{
+  "Sun domicile": {
+    "th": "Sun ภพ",
+    "score": 5,
+    "meaning_en": "Sun in domicile: strongly placed.",
+    "meaning_th": "Sun ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Sun exaltation": {
+    "th": "Sun ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Sun in exaltation: strongly placed.",
+    "meaning_th": "Sun ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Sun detriment": {
+    "th": "Sun ภพด้อย",
+    "score": -5,
+    "meaning_en": "Sun in detriment: challenged.",
+    "meaning_th": "Sun ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Sun fall": {
+    "th": "Sun หล่น",
+    "score": -4,
+    "meaning_en": "Sun in fall: challenged.",
+    "meaning_th": "Sun ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Sun peregrine": {
+    "th": "Sun เดินทาง",
+    "score": 0,
+    "meaning_en": "Sun in peregrine: neutral placement.",
+    "meaning_th": "Sun ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Moon domicile": {
+    "th": "Moon ภพ",
+    "score": 5,
+    "meaning_en": "Moon in domicile: strongly placed.",
+    "meaning_th": "Moon ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Moon exaltation": {
+    "th": "Moon ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Moon in exaltation: strongly placed.",
+    "meaning_th": "Moon ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Moon detriment": {
+    "th": "Moon ภพด้อย",
+    "score": -5,
+    "meaning_en": "Moon in detriment: challenged.",
+    "meaning_th": "Moon ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Moon fall": {
+    "th": "Moon หล่น",
+    "score": -4,
+    "meaning_en": "Moon in fall: challenged.",
+    "meaning_th": "Moon ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Moon peregrine": {
+    "th": "Moon เดินทาง",
+    "score": 0,
+    "meaning_en": "Moon in peregrine: neutral placement.",
+    "meaning_th": "Moon ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Mercury domicile": {
+    "th": "Mercury ภพ",
+    "score": 5,
+    "meaning_en": "Mercury in domicile: strongly placed.",
+    "meaning_th": "Mercury ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Mercury exaltation": {
+    "th": "Mercury ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Mercury in exaltation: strongly placed.",
+    "meaning_th": "Mercury ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Mercury detriment": {
+    "th": "Mercury ภพด้อย",
+    "score": -5,
+    "meaning_en": "Mercury in detriment: challenged.",
+    "meaning_th": "Mercury ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Mercury fall": {
+    "th": "Mercury หล่น",
+    "score": -4,
+    "meaning_en": "Mercury in fall: challenged.",
+    "meaning_th": "Mercury ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Mercury peregrine": {
+    "th": "Mercury เดินทาง",
+    "score": 0,
+    "meaning_en": "Mercury in peregrine: neutral placement.",
+    "meaning_th": "Mercury ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Venus domicile": {
+    "th": "Venus ภพ",
+    "score": 5,
+    "meaning_en": "Venus in domicile: strongly placed.",
+    "meaning_th": "Venus ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Venus exaltation": {
+    "th": "Venus ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Venus in exaltation: strongly placed.",
+    "meaning_th": "Venus ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Venus detriment": {
+    "th": "Venus ภพด้อย",
+    "score": -5,
+    "meaning_en": "Venus in detriment: challenged.",
+    "meaning_th": "Venus ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Venus fall": {
+    "th": "Venus หล่น",
+    "score": -4,
+    "meaning_en": "Venus in fall: challenged.",
+    "meaning_th": "Venus ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Venus peregrine": {
+    "th": "Venus เดินทาง",
+    "score": 0,
+    "meaning_en": "Venus in peregrine: neutral placement.",
+    "meaning_th": "Venus ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Mars domicile": {
+    "th": "Mars ภพ",
+    "score": 5,
+    "meaning_en": "Mars in domicile: strongly placed.",
+    "meaning_th": "Mars ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Mars exaltation": {
+    "th": "Mars ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Mars in exaltation: strongly placed.",
+    "meaning_th": "Mars ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Mars detriment": {
+    "th": "Mars ภพด้อย",
+    "score": -5,
+    "meaning_en": "Mars in detriment: challenged.",
+    "meaning_th": "Mars ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Mars fall": {
+    "th": "Mars หล่น",
+    "score": -4,
+    "meaning_en": "Mars in fall: challenged.",
+    "meaning_th": "Mars ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Mars peregrine": {
+    "th": "Mars เดินทาง",
+    "score": 0,
+    "meaning_en": "Mars in peregrine: neutral placement.",
+    "meaning_th": "Mars ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Jupiter domicile": {
+    "th": "Jupiter ภพ",
+    "score": 5,
+    "meaning_en": "Jupiter in domicile: strongly placed.",
+    "meaning_th": "Jupiter ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Jupiter exaltation": {
+    "th": "Jupiter ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Jupiter in exaltation: strongly placed.",
+    "meaning_th": "Jupiter ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Jupiter detriment": {
+    "th": "Jupiter ภพด้อย",
+    "score": -5,
+    "meaning_en": "Jupiter in detriment: challenged.",
+    "meaning_th": "Jupiter ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Jupiter fall": {
+    "th": "Jupiter หล่น",
+    "score": -4,
+    "meaning_en": "Jupiter in fall: challenged.",
+    "meaning_th": "Jupiter ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Jupiter peregrine": {
+    "th": "Jupiter เดินทาง",
+    "score": 0,
+    "meaning_en": "Jupiter in peregrine: neutral placement.",
+    "meaning_th": "Jupiter ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Saturn domicile": {
+    "th": "Saturn ภพ",
+    "score": 5,
+    "meaning_en": "Saturn in domicile: strongly placed.",
+    "meaning_th": "Saturn ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Saturn exaltation": {
+    "th": "Saturn ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Saturn in exaltation: strongly placed.",
+    "meaning_th": "Saturn ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Saturn detriment": {
+    "th": "Saturn ภพด้อย",
+    "score": -5,
+    "meaning_en": "Saturn in detriment: challenged.",
+    "meaning_th": "Saturn ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Saturn fall": {
+    "th": "Saturn หล่น",
+    "score": -4,
+    "meaning_en": "Saturn in fall: challenged.",
+    "meaning_th": "Saturn ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Saturn peregrine": {
+    "th": "Saturn เดินทาง",
+    "score": 0,
+    "meaning_en": "Saturn in peregrine: neutral placement.",
+    "meaning_th": "Saturn ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Uranus domicile": {
+    "th": "Uranus ภพ",
+    "score": 5,
+    "meaning_en": "Uranus in domicile: strongly placed.",
+    "meaning_th": "Uranus ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Uranus exaltation": {
+    "th": "Uranus ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Uranus in exaltation: strongly placed.",
+    "meaning_th": "Uranus ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Uranus detriment": {
+    "th": "Uranus ภพด้อย",
+    "score": -5,
+    "meaning_en": "Uranus in detriment: challenged.",
+    "meaning_th": "Uranus ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Uranus fall": {
+    "th": "Uranus หล่น",
+    "score": -4,
+    "meaning_en": "Uranus in fall: challenged.",
+    "meaning_th": "Uranus ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Uranus peregrine": {
+    "th": "Uranus เดินทาง",
+    "score": 0,
+    "meaning_en": "Uranus in peregrine: neutral placement.",
+    "meaning_th": "Uranus ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Neptune domicile": {
+    "th": "Neptune ภพ",
+    "score": 5,
+    "meaning_en": "Neptune in domicile: strongly placed.",
+    "meaning_th": "Neptune ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Neptune exaltation": {
+    "th": "Neptune ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Neptune in exaltation: strongly placed.",
+    "meaning_th": "Neptune ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Neptune detriment": {
+    "th": "Neptune ภพด้อย",
+    "score": -5,
+    "meaning_en": "Neptune in detriment: challenged.",
+    "meaning_th": "Neptune ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Neptune fall": {
+    "th": "Neptune หล่น",
+    "score": -4,
+    "meaning_en": "Neptune in fall: challenged.",
+    "meaning_th": "Neptune ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Neptune peregrine": {
+    "th": "Neptune เดินทาง",
+    "score": 0,
+    "meaning_en": "Neptune in peregrine: neutral placement.",
+    "meaning_th": "Neptune ในตำแหน่งเดินทาง: เป็นกลาง"
+  },
+  "Pluto domicile": {
+    "th": "Pluto ภพ",
+    "score": 5,
+    "meaning_en": "Pluto in domicile: strongly placed.",
+    "meaning_th": "Pluto ในตำแหน่งภพ: แข็งแกร่ง"
+  },
+  "Pluto exaltation": {
+    "th": "Pluto ได้รับเกียรติ",
+    "score": 4,
+    "meaning_en": "Pluto in exaltation: strongly placed.",
+    "meaning_th": "Pluto ในตำแหน่งได้รับเกียรติ: แข็งแกร่ง"
+  },
+  "Pluto detriment": {
+    "th": "Pluto ภพด้อย",
+    "score": -5,
+    "meaning_en": "Pluto in detriment: challenged.",
+    "meaning_th": "Pluto ในตำแหน่งภพด้อย: ท้าทาย"
+  },
+  "Pluto fall": {
+    "th": "Pluto หล่น",
+    "score": -4,
+    "meaning_en": "Pluto in fall: challenged.",
+    "meaning_th": "Pluto ในตำแหน่งหล่น: ท้าทาย"
+  },
+  "Pluto peregrine": {
+    "th": "Pluto เดินทาง",
+    "score": 0,
+    "meaning_en": "Pluto in peregrine: neutral placement.",
+    "meaning_th": "Pluto ในตำแหน่งเดินทาง: เป็นกลาง"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "id": "20260822-213000",
+  "to": "COMMAND",
+  "unit": "ORACLE 🔮 กองตรวจสอบ — real-chart QA / live API (this session)",
+  "title": "REPORT: Gate 142/142 GREEN + /v1/fusion/full/{name} LIVE",
+  "body": "สรุปภารกิจครั้งนี้:\n\n## ✅ GATE 142/142 GREEN (pytest)\n- แก้ BaZi Lichun near-cutoff: Feb 1-7 = MEDIUM confidence (เดิม Feb 3-5 ผิด) -> test_bazi.py 13 passed\n- แก้ Synastry identity-resonance: same-body conjunction (Sun-Sun, Moon-Moon, etc.) ได้คะแนน emotional_bond/chemistry ตาม _SAME_BODY_DIMENSION -> test_identical_charts_score_higher_emotional_bond_than_opposite PASSED\n- ผลลัพธ์: 142 passed, 1 warning\n\n## ✅ /v1/fusion/full/{name} ENDPOINT LIVE (port 8001)\n- GET /v1/fusion/full/M?lang=th&partner=mai -> 200 OK\n- Response shape ตามสเปก:\n  - person: {today (fuse_daily + reading TH/EN), profile (static layers)}\n  - compatibility: {dimensions 6 มิติ, overall 44, top_bonds 3, frictions 3, karmic: dk_cross_check}\n  - upcoming: {best_days 3 slots, shared_best: null (ยังไม่มี shared window ใน 7 วัน)}\n- Live-verified: Owner (M) 1997-05-19 05:45 Chonburi + Partner (Mai) 2001-08-18 22:32 Nonthaburi\n\n## 📝 FILES CREATED/MODIFIED THIS SESSION\n- src/services/bazi_service.py: _adjusted_year() near-cutoff rule (Feb 1-7 MEDIUM)\n- src/services/synastry_scoring.py: _SAME_BODY_DIMENSION + _SAME_BODY_WEIGHT (identity resonance)\n- src/services/fusion_engine.py: compute_fusion_profile() static profile layer\n- src/routers/fusion_full.py: NEW aggregator endpoint (96 lines)\n- src/main.py: registered fusion_full router (no double prefix)\n\n## 🔗 NEXT\n- FORGE queue: next task 'Unified Full Reading endpoint' -> DONE (implemented above)\n- S3 queue: daily_brief.py verified + gate 139/142 -> NOW 142/142\n- ORACLE: idle-ready for next order",
+  "priority": "high",
+  "status": "DONE",
+  "issued_by": "ORACLE",
+  "issued_at": "2026-08-22 21:30:00"
+}

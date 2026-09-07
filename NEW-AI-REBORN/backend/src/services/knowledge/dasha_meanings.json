@@ -1,0 +1,56 @@
+{
+  "Sun": {
+    "th": "มหาฑาชา Sun",
+    "period_years": 6,
+    "meaning_en": "Mahadasha of Sun (6 years): Major life cycle emphasizing Sun themes.",
+    "meaning_th": "มหาฑาชา Sun (6 ปี): วงจรชีวิตหลักที่เน้นธรรมะSun"
+  },
+  "Moon": {
+    "th": "มหาฑาชา Moon",
+    "period_years": 10,
+    "meaning_en": "Mahadasha of Moon (10 years): Major life cycle emphasizing Moon themes.",
+    "meaning_th": "มหาฑาชา Moon (10 ปี): วงจรชีวิตหลักที่เน้นธรรมะMoon"
+  },
+  "Mars": {
+    "th": "มหาฑาชา Mars",
+    "period_years": 7,
+    "meaning_en": "Mahadasha of Mars (7 years): Major life cycle emphasizing Mars themes.",
+    "meaning_th": "มหาฑาชา Mars (7 ปี): วงจรชีวิตหลักที่เน้นธรรมะMars"
+  },
+  "Rahu": {
+    "th": "มหาฑาชา Rahu",
+    "period_years": 18,
+    "meaning_en": "Mahadasha of Rahu (18 years): Major life cycle emphasizing Rahu themes.",
+    "meaning_th": "มหาฑาชา Rahu (18 ปี): วงจรชีวิตหลักที่เน้นธรรมะRahu"
+  },
+  "Jupiter": {
+    "th": "มหาฑาชา Jupiter",
+    "period_years": 16,
+    "meaning_en": "Mahadasha of Jupiter (16 years): Major life cycle emphasizing Jupiter themes.",
+    "meaning_th": "มหาฑาชา Jupiter (16 ปี): วงจรชีวิตหลักที่เน้นธรรมะJupiter"
+  },
+  "Saturn": {
+    "th": "มหาฑาชา Saturn",
+    "period_years": 19,
+    "meaning_en": "Mahadasha of Saturn (19 years): Major life cycle emphasizing Saturn themes.",
+    "meaning_th": "มหาฑาชา Saturn (19 ปี): วงจรชีวิตหลักที่เน้นธรรมะSaturn"
+  },
+  "Mercury": {
+    "th": "มหาฑาชา Mercury",
+    "period_years": 17,
+    "meaning_en": "Mahadasha of Mercury (17 years): Major life cycle emphasizing Mercury themes.",
+    "meaning_th": "มหาฑาชา Mercury (17 ปี): วงจรชีวิตหลักที่เน้นธรรมะMercury"
+  },
+  "Venus": {
+    "th": "มหาฑาชา Venus",
+    "period_years": 20,
+    "meaning_en": "Mahadasha of Venus (20 years): Major life cycle emphasizing Venus themes.",
+    "meaning_th": "มหาฑาชา Venus (20 ปี): วงจรชีวิตหลักที่เน้นธรรมะVenus"
+  },
+  "Ketu": {
+    "th": "มหาฑาชา Ketu",
+    "period_years": 7,
+    "meaning_en": "Mahadasha of Ketu (7 years): Major life cycle emphasizing Ketu themes.",
+    "meaning_th": "มหาฑาชา Ketu (7 ปี): วงจรชีวิตหลักที่เน้นธรรมะKetu"
+  }
+}

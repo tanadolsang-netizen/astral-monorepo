@@ -1,0 +1,28 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]: คำนวณจากดาราศาสตร์จริง (JPL DE421)
+    - heading "Astro Deep" [level=1] [ref=e7]
+    - paragraph [ref=e8]: ดวงเชิงลึกทั้งระบบสากลและสายพระเวท — กำลังดาว (dignity), sect, Navamsha/Vargottama, Ashtakavarga, Jaimini Chara Karakas ครบในที่เดียว ลึกกว่าแอปโหราศาสตร์ทั่วไปที่มีแค่ราศีอาทิตย์/จันทร์/ลัคนา
+  - generic [ref=e9]:
+    - heading "ข้อมูลวันเกิด" [level=2] [ref=e10]
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - generic [ref=e16]: ชื่อ
+        - textbox "ชื่อ" [ref=e17]: Owner
+      - generic [ref=e18]:
+        - generic [ref=e19]: วันเกิด (YYYY-MM-DD)
+        - textbox "วันเกิด (YYYY-MM-DD)" [ref=e20]: 1997-05-19
+      - generic [ref=e21]:
+        - generic [ref=e22]: เวลาเกิด (HH:MM)
+        - textbox "เวลาเกิด (HH:MM)" [ref=e23]: 05:45
+      - generic [ref=e24]:
+        - generic [ref=e25]: Time zone (ชั่วโมงจาก UTC)
+        - spinbutton "Time zone (ชั่วโมงจาก UTC)" [ref=e26]: "7"
+      - generic [ref=e27]:
+        - generic [ref=e28]: ละติจูด
+        - spinbutton "ละติจูด" [ref=e29]: "13.36"
+      - generic [ref=e30]:
+        - generic [ref=e31]: ลองจิจูด
+        - spinbutton "ลองจิจูด" [ref=e32]: "100.98"
+      - button "คำนวณดวง" [ref=e34] [cursor=pointer]
+  - contentinfo [ref=e35]: ตำแหน่งดาว = ดาราศาสตร์จริง (skyfield / JPL DE421) · การตีความ = กรอบโหราศาสตร์ดั้งเดิม ไม่ใช่ข้อเท็จจริงทางวิทยาศาสตร์

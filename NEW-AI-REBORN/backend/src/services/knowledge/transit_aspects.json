@@ -1,0 +1,1502 @@
+{
+  "transit Sun conjunction natal Sun": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Sun sextile natal Sun": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Sun square natal Sun": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Sun trine natal Sun": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Sun opposition natal Sun": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Sun conjunction natal Moon": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Sun sextile natal Moon": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Sun square natal Moon": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Sun trine natal Moon": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Sun opposition natal Moon": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Sun conjunction natal Mercury": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Sun sextile natal Mercury": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Sun square natal Mercury": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Sun trine natal Mercury": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Sun opposition natal Mercury": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Sun conjunction natal Venus": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Sun sextile natal Venus": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Sun square natal Venus": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Sun trine natal Venus": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Sun opposition natal Venus": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Sun conjunction natal Mars": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Sun sextile natal Mars": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Sun square natal Mars": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Sun trine natal Mars": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Sun opposition natal Mars": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Sun conjunction natal Jupiter": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Sun sextile natal Jupiter": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Sun square natal Jupiter": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Sun trine natal Jupiter": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Sun opposition natal Jupiter": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Sun conjunction natal Saturn": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Sun sextile natal Saturn": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Sun square natal Saturn": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Sun trine natal Saturn": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Sun opposition natal Saturn": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Sun conjunction natal Uranus": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Sun sextile natal Uranus": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Sun square natal Uranus": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Sun trine natal Uranus": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Sun opposition natal Uranus": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Sun conjunction natal Neptune": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Sun sextile natal Neptune": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Sun square natal Neptune": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Sun trine natal Neptune": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Sun opposition natal Neptune": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Sun conjunction natal Pluto": {
+    "th": "ดวงโคจร Sun ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Sun sextile natal Pluto": {
+    "th": "ดวงโคจร Sun สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Sun square natal Pluto": {
+    "th": "ดวงโคจร Sun เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Sun trine natal Pluto": {
+    "th": "ดวงโคจร Sun สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Sun opposition natal Pluto": {
+    "th": "ดวงโคจร Sun ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Moon conjunction natal Sun": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Moon sextile natal Sun": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Moon square natal Sun": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Moon trine natal Sun": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Moon opposition natal Sun": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Moon conjunction natal Moon": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Moon sextile natal Moon": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Moon square natal Moon": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Moon trine natal Moon": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Moon opposition natal Moon": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Moon conjunction natal Mercury": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Moon sextile natal Mercury": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Moon square natal Mercury": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Moon trine natal Mercury": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Moon opposition natal Mercury": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Moon conjunction natal Venus": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Moon sextile natal Venus": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Moon square natal Venus": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Moon trine natal Venus": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Moon opposition natal Venus": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Moon conjunction natal Mars": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Moon sextile natal Mars": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Moon square natal Mars": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Moon trine natal Mars": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Moon opposition natal Mars": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Moon conjunction natal Jupiter": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Moon sextile natal Jupiter": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Moon square natal Jupiter": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Moon trine natal Jupiter": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Moon opposition natal Jupiter": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Moon conjunction natal Saturn": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Moon sextile natal Saturn": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Moon square natal Saturn": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Moon trine natal Saturn": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Moon opposition natal Saturn": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Moon conjunction natal Uranus": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Moon sextile natal Uranus": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Moon square natal Uranus": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Moon trine natal Uranus": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Moon opposition natal Uranus": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Moon conjunction natal Neptune": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Moon sextile natal Neptune": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Moon square natal Neptune": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Moon trine natal Neptune": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Moon opposition natal Neptune": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Moon conjunction natal Pluto": {
+    "th": "ดวงโคจร Moon ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Moon sextile natal Pluto": {
+    "th": "ดวงโคจร Moon สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Moon square natal Pluto": {
+    "th": "ดวงโคจร Moon เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Moon trine natal Pluto": {
+    "th": "ดวงโคจร Moon สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Moon opposition natal Pluto": {
+    "th": "ดวงโคจร Moon ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Mercury conjunction natal Sun": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Mercury sextile natal Sun": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Mercury square natal Sun": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Mercury trine natal Sun": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Mercury opposition natal Sun": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Mercury conjunction natal Moon": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Mercury sextile natal Moon": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Mercury square natal Moon": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Mercury trine natal Moon": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Mercury opposition natal Moon": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Mercury conjunction natal Mercury": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Mercury sextile natal Mercury": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Mercury square natal Mercury": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Mercury trine natal Mercury": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Mercury opposition natal Mercury": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Mercury conjunction natal Venus": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Mercury sextile natal Venus": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Mercury square natal Venus": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Mercury trine natal Venus": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Mercury opposition natal Venus": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Mercury conjunction natal Mars": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Mercury sextile natal Mars": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Mercury square natal Mars": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Mercury trine natal Mars": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Mercury opposition natal Mars": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Mercury conjunction natal Jupiter": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Mercury sextile natal Jupiter": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Mercury square natal Jupiter": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Mercury trine natal Jupiter": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Mercury opposition natal Jupiter": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Mercury conjunction natal Saturn": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Mercury sextile natal Saturn": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Mercury square natal Saturn": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Mercury trine natal Saturn": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Mercury opposition natal Saturn": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Mercury conjunction natal Uranus": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Mercury sextile natal Uranus": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Mercury square natal Uranus": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Mercury trine natal Uranus": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Mercury opposition natal Uranus": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Mercury conjunction natal Neptune": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Mercury sextile natal Neptune": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Mercury square natal Neptune": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Mercury trine natal Neptune": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Mercury opposition natal Neptune": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Mercury conjunction natal Pluto": {
+    "th": "ดวงโคจร Mercury ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Mercury sextile natal Pluto": {
+    "th": "ดวงโคจร Mercury สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Mercury square natal Pluto": {
+    "th": "ดวงโคจร Mercury เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Mercury trine natal Pluto": {
+    "th": "ดวงโคจร Mercury สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Mercury opposition natal Pluto": {
+    "th": "ดวงโคจร Mercury ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Venus conjunction natal Sun": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Venus sextile natal Sun": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Venus square natal Sun": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Venus trine natal Sun": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Venus opposition natal Sun": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Venus conjunction natal Moon": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Venus sextile natal Moon": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Venus square natal Moon": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Venus trine natal Moon": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Venus opposition natal Moon": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Venus conjunction natal Mercury": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Venus sextile natal Mercury": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Venus square natal Mercury": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Venus trine natal Mercury": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Venus opposition natal Mercury": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Venus conjunction natal Venus": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Venus sextile natal Venus": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Venus square natal Venus": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Venus trine natal Venus": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Venus opposition natal Venus": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Venus conjunction natal Mars": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Venus sextile natal Mars": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Venus square natal Mars": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Venus trine natal Mars": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Venus opposition natal Mars": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Venus conjunction natal Jupiter": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Venus sextile natal Jupiter": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Venus square natal Jupiter": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Venus trine natal Jupiter": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Venus opposition natal Jupiter": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Venus conjunction natal Saturn": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Venus sextile natal Saturn": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Venus square natal Saturn": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Venus trine natal Saturn": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Venus opposition natal Saturn": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Venus conjunction natal Uranus": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Venus sextile natal Uranus": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Venus square natal Uranus": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Venus trine natal Uranus": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Venus opposition natal Uranus": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Venus conjunction natal Neptune": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Venus sextile natal Neptune": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Venus square natal Neptune": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Venus trine natal Neptune": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Venus opposition natal Neptune": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Venus conjunction natal Pluto": {
+    "th": "ดวงโคจร Venus ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Venus sextile natal Pluto": {
+    "th": "ดวงโคจร Venus สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Venus square natal Pluto": {
+    "th": "ดวงโคจร Venus เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Venus trine natal Pluto": {
+    "th": "ดวงโคจร Venus สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Venus opposition natal Pluto": {
+    "th": "ดวงโคจร Venus ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Mars conjunction natal Sun": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Mars sextile natal Sun": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Mars square natal Sun": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Mars trine natal Sun": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Mars opposition natal Sun": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Mars conjunction natal Moon": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Mars sextile natal Moon": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Mars square natal Moon": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Mars trine natal Moon": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Mars opposition natal Moon": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Mars conjunction natal Mercury": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Mars sextile natal Mercury": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Mars square natal Mercury": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Mars trine natal Mercury": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Mars opposition natal Mercury": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Mars conjunction natal Venus": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Mars sextile natal Venus": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Mars square natal Venus": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Mars trine natal Venus": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Mars opposition natal Venus": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Mars conjunction natal Mars": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Mars sextile natal Mars": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Mars square natal Mars": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Mars trine natal Mars": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Mars opposition natal Mars": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Mars conjunction natal Jupiter": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Mars sextile natal Jupiter": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Mars square natal Jupiter": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Mars trine natal Jupiter": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Mars opposition natal Jupiter": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Mars conjunction natal Saturn": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Mars sextile natal Saturn": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Mars square natal Saturn": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Mars trine natal Saturn": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Mars opposition natal Saturn": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Mars conjunction natal Uranus": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Mars sextile natal Uranus": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Mars square natal Uranus": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Mars trine natal Uranus": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Mars opposition natal Uranus": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Mars conjunction natal Neptune": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Mars sextile natal Neptune": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Mars square natal Neptune": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Mars trine natal Neptune": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Mars opposition natal Neptune": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Mars conjunction natal Pluto": {
+    "th": "ดวงโคจร Mars ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Mars sextile natal Pluto": {
+    "th": "ดวงโคจร Mars สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Mars square natal Pluto": {
+    "th": "ดวงโคจร Mars เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Mars trine natal Pluto": {
+    "th": "ดวงโคจร Mars สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Mars opposition natal Pluto": {
+    "th": "ดวงโคจร Mars ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Jupiter conjunction natal Sun": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Jupiter sextile natal Sun": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Jupiter square natal Sun": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Jupiter trine natal Sun": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Jupiter opposition natal Sun": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Jupiter conjunction natal Moon": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Jupiter sextile natal Moon": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Jupiter square natal Moon": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Jupiter trine natal Moon": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Jupiter opposition natal Moon": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Jupiter conjunction natal Mercury": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Jupiter sextile natal Mercury": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Jupiter square natal Mercury": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Jupiter trine natal Mercury": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Jupiter opposition natal Mercury": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Jupiter conjunction natal Venus": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Jupiter sextile natal Venus": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Jupiter square natal Venus": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Jupiter trine natal Venus": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Jupiter opposition natal Venus": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Jupiter conjunction natal Mars": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Jupiter sextile natal Mars": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Jupiter square natal Mars": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Jupiter trine natal Mars": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Jupiter opposition natal Mars": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Jupiter conjunction natal Jupiter": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Jupiter sextile natal Jupiter": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Jupiter square natal Jupiter": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Jupiter trine natal Jupiter": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Jupiter opposition natal Jupiter": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Jupiter conjunction natal Saturn": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Jupiter sextile natal Saturn": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Jupiter square natal Saturn": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Jupiter trine natal Saturn": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Jupiter opposition natal Saturn": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Jupiter conjunction natal Uranus": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Jupiter sextile natal Uranus": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Jupiter square natal Uranus": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Jupiter trine natal Uranus": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Jupiter opposition natal Uranus": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Jupiter conjunction natal Neptune": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Jupiter sextile natal Neptune": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Jupiter square natal Neptune": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Jupiter trine natal Neptune": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Jupiter opposition natal Neptune": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Jupiter conjunction natal Pluto": {
+    "th": "ดวงโคจร Jupiter ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Jupiter sextile natal Pluto": {
+    "th": "ดวงโคจร Jupiter สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Jupiter square natal Pluto": {
+    "th": "ดวงโคจร Jupiter เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Jupiter trine natal Pluto": {
+    "th": "ดวงโคจร Jupiter สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Jupiter opposition natal Pluto": {
+    "th": "ดวงโคจร Jupiter ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Saturn conjunction natal Sun": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Saturn sextile natal Sun": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Saturn square natal Sun": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Saturn trine natal Sun": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Saturn opposition natal Sun": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Saturn conjunction natal Moon": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Saturn sextile natal Moon": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Saturn square natal Moon": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Saturn trine natal Moon": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Saturn opposition natal Moon": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Saturn conjunction natal Mercury": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Saturn sextile natal Mercury": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Saturn square natal Mercury": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Saturn trine natal Mercury": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Saturn opposition natal Mercury": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Saturn conjunction natal Venus": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Saturn sextile natal Venus": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Saturn square natal Venus": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Saturn trine natal Venus": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Saturn opposition natal Venus": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Saturn conjunction natal Mars": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Saturn sextile natal Mars": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Saturn square natal Mars": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Saturn trine natal Mars": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Saturn opposition natal Mars": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Saturn conjunction natal Jupiter": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Saturn sextile natal Jupiter": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Saturn square natal Jupiter": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Saturn trine natal Jupiter": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Saturn opposition natal Jupiter": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Saturn conjunction natal Saturn": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Saturn sextile natal Saturn": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Saturn square natal Saturn": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Saturn trine natal Saturn": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Saturn opposition natal Saturn": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Saturn conjunction natal Uranus": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Saturn sextile natal Uranus": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Saturn square natal Uranus": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Saturn trine natal Uranus": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Saturn opposition natal Uranus": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Saturn conjunction natal Neptune": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Saturn sextile natal Neptune": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Saturn square natal Neptune": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Saturn trine natal Neptune": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Saturn opposition natal Neptune": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Saturn conjunction natal Pluto": {
+    "th": "ดวงโคจร Saturn ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Saturn sextile natal Pluto": {
+    "th": "ดวงโคจร Saturn สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Saturn square natal Pluto": {
+    "th": "ดวงโคจร Saturn เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Saturn trine natal Pluto": {
+    "th": "ดวงโคจร Saturn สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Saturn opposition natal Pluto": {
+    "th": "ดวงโคจร Saturn ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Uranus conjunction natal Sun": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Uranus sextile natal Sun": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Uranus square natal Sun": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Uranus trine natal Sun": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Uranus opposition natal Sun": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Uranus conjunction natal Moon": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Uranus sextile natal Moon": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Uranus square natal Moon": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Uranus trine natal Moon": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Uranus opposition natal Moon": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Uranus conjunction natal Mercury": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Uranus sextile natal Mercury": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Uranus square natal Mercury": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Uranus trine natal Mercury": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Uranus opposition natal Mercury": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Uranus conjunction natal Venus": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Uranus sextile natal Venus": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Uranus square natal Venus": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Uranus trine natal Venus": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Uranus opposition natal Venus": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Uranus conjunction natal Mars": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Uranus sextile natal Mars": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Uranus square natal Mars": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Uranus trine natal Mars": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Uranus opposition natal Mars": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Uranus conjunction natal Jupiter": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Uranus sextile natal Jupiter": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Uranus square natal Jupiter": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Uranus trine natal Jupiter": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Uranus opposition natal Jupiter": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Uranus conjunction natal Saturn": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Uranus sextile natal Saturn": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Uranus square natal Saturn": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Uranus trine natal Saturn": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Uranus opposition natal Saturn": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Uranus conjunction natal Uranus": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Uranus sextile natal Uranus": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Uranus square natal Uranus": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Uranus trine natal Uranus": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Uranus opposition natal Uranus": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Uranus conjunction natal Neptune": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Uranus sextile natal Neptune": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Uranus square natal Neptune": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Uranus trine natal Neptune": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Uranus opposition natal Neptune": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Uranus conjunction natal Pluto": {
+    "th": "ดวงโคจร Uranus ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Uranus sextile natal Pluto": {
+    "th": "ดวงโคจร Uranus สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Uranus square natal Pluto": {
+    "th": "ดวงโคจร Uranus เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Uranus trine natal Pluto": {
+    "th": "ดวงโคจร Uranus สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Uranus opposition natal Pluto": {
+    "th": "ดวงโคจร Uranus ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Neptune conjunction natal Sun": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Neptune sextile natal Sun": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Neptune square natal Sun": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Neptune trine natal Sun": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Neptune opposition natal Sun": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Neptune conjunction natal Moon": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Neptune sextile natal Moon": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Neptune square natal Moon": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Neptune trine natal Moon": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Neptune opposition natal Moon": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Neptune conjunction natal Mercury": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Neptune sextile natal Mercury": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Neptune square natal Mercury": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Neptune trine natal Mercury": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Neptune opposition natal Mercury": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Neptune conjunction natal Venus": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Neptune sextile natal Venus": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Neptune square natal Venus": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Neptune trine natal Venus": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Neptune opposition natal Venus": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Neptune conjunction natal Mars": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Neptune sextile natal Mars": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Neptune square natal Mars": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Neptune trine natal Mars": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Neptune opposition natal Mars": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Neptune conjunction natal Jupiter": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Neptune sextile natal Jupiter": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Neptune square natal Jupiter": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Neptune trine natal Jupiter": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Neptune opposition natal Jupiter": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Neptune conjunction natal Saturn": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Neptune sextile natal Saturn": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Neptune square natal Saturn": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Neptune trine natal Saturn": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Neptune opposition natal Saturn": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Neptune conjunction natal Uranus": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Neptune sextile natal Uranus": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Neptune square natal Uranus": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Neptune trine natal Uranus": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Neptune opposition natal Uranus": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Neptune conjunction natal Neptune": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Neptune sextile natal Neptune": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Neptune square natal Neptune": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Neptune trine natal Neptune": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Neptune opposition natal Neptune": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Neptune conjunction natal Pluto": {
+    "th": "ดวงโคจร Neptune ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Neptune sextile natal Pluto": {
+    "th": "ดวงโคจร Neptune สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Neptune square natal Pluto": {
+    "th": "ดวงโคจร Neptune เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Neptune trine natal Pluto": {
+    "th": "ดวงโคจร Neptune สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Neptune opposition natal Pluto": {
+    "th": "ดวงโคจร Neptune ตรงข้าม ดวงเกิด Pluto"
+  },
+  "transit Pluto conjunction natal Sun": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Sun"
+  },
+  "transit Pluto sextile natal Sun": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Sun"
+  },
+  "transit Pluto square natal Sun": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Sun"
+  },
+  "transit Pluto trine natal Sun": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Sun"
+  },
+  "transit Pluto opposition natal Sun": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Sun"
+  },
+  "transit Pluto conjunction natal Moon": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Moon"
+  },
+  "transit Pluto sextile natal Moon": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Moon"
+  },
+  "transit Pluto square natal Moon": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Moon"
+  },
+  "transit Pluto trine natal Moon": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Moon"
+  },
+  "transit Pluto opposition natal Moon": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Moon"
+  },
+  "transit Pluto conjunction natal Mercury": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Mercury"
+  },
+  "transit Pluto sextile natal Mercury": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Mercury"
+  },
+  "transit Pluto square natal Mercury": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Mercury"
+  },
+  "transit Pluto trine natal Mercury": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Mercury"
+  },
+  "transit Pluto opposition natal Mercury": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Mercury"
+  },
+  "transit Pluto conjunction natal Venus": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Venus"
+  },
+  "transit Pluto sextile natal Venus": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Venus"
+  },
+  "transit Pluto square natal Venus": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Venus"
+  },
+  "transit Pluto trine natal Venus": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Venus"
+  },
+  "transit Pluto opposition natal Venus": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Venus"
+  },
+  "transit Pluto conjunction natal Mars": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Mars"
+  },
+  "transit Pluto sextile natal Mars": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Mars"
+  },
+  "transit Pluto square natal Mars": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Mars"
+  },
+  "transit Pluto trine natal Mars": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Mars"
+  },
+  "transit Pluto opposition natal Mars": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Mars"
+  },
+  "transit Pluto conjunction natal Jupiter": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Jupiter"
+  },
+  "transit Pluto sextile natal Jupiter": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Jupiter"
+  },
+  "transit Pluto square natal Jupiter": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Jupiter"
+  },
+  "transit Pluto trine natal Jupiter": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Jupiter"
+  },
+  "transit Pluto opposition natal Jupiter": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Jupiter"
+  },
+  "transit Pluto conjunction natal Saturn": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Saturn"
+  },
+  "transit Pluto sextile natal Saturn": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Saturn"
+  },
+  "transit Pluto square natal Saturn": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Saturn"
+  },
+  "transit Pluto trine natal Saturn": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Saturn"
+  },
+  "transit Pluto opposition natal Saturn": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Saturn"
+  },
+  "transit Pluto conjunction natal Uranus": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Uranus"
+  },
+  "transit Pluto sextile natal Uranus": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Uranus"
+  },
+  "transit Pluto square natal Uranus": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Uranus"
+  },
+  "transit Pluto trine natal Uranus": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Uranus"
+  },
+  "transit Pluto opposition natal Uranus": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Uranus"
+  },
+  "transit Pluto conjunction natal Neptune": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Neptune"
+  },
+  "transit Pluto sextile natal Neptune": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Neptune"
+  },
+  "transit Pluto square natal Neptune": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Neptune"
+  },
+  "transit Pluto trine natal Neptune": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Neptune"
+  },
+  "transit Pluto opposition natal Neptune": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Neptune"
+  },
+  "transit Pluto conjunction natal Pluto": {
+    "th": "ดวงโคจร Pluto ผสานพลัง ดวงเกิด Pluto"
+  },
+  "transit Pluto sextile natal Pluto": {
+    "th": "ดวงโคจร Pluto สุดสัปดาห์ ดวงเกิด Pluto"
+  },
+  "transit Pluto square natal Pluto": {
+    "th": "ดวงโคจร Pluto เสี้ยว ดวงเกิด Pluto"
+  },
+  "transit Pluto trine natal Pluto": {
+    "th": "ดวงโคจร Pluto สามเหลี่ยม ดวงเกิด Pluto"
+  },
+  "transit Pluto opposition natal Pluto": {
+    "th": "ดวงโคจร Pluto ตรงข้าม ดวงเกิด Pluto"
+  }
+}

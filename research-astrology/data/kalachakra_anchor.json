@@ -1,0 +1,130 @@
+{
+  "system": "Tibetan Rabjung (rab byung) 60-year cycle - element x animal x gender",
+  "verified_date": "2026-08-23",
+  "epoch_rule": {
+    "epoch_year": 1027,
+    "first_rabjung_year_1": {
+      "element": "Fire",
+      "animal": "Hare",
+      "gender": "female",
+      "tibetan": "me mo yos"
+    },
+    "note": "Year 1 of Rabjung cycle 1 = 1027 CE = FIRE-FEMALE-HARE. This is the pivotal fix: the commonly transcribed 'starts Wood-Male-Tiger' belongs to the Chinese sexagenary (mekhor) convention, not the Rabjung count. Laufer (1911) confirms Tibetan chronologies designate the first year of the first cycle 'fire-hare' and fixes 1027 (not Csoma's 1026) as epoch."
+  },
+  "formula": {
+    "chinese_style_index": "i = (Y - 4) mod 60   # i=0 -> Wood-Male-Mouse (Jia-Zi equivalent)",
+    "elements_order": [
+      "Wood",
+      "Fire",
+      "Earth",
+      "Iron",
+      "Water"
+    ],
+    "element": "elements[i//2 % 5]   # two years per element",
+    "animals_order": [
+      "Mouse",
+      "Ox",
+      "Tiger",
+      "Hare",
+      "Dragon",
+      "Snake",
+      "Horse",
+      "Sheep",
+      "Monkey",
+      "Bird",
+      "Dog",
+      "Pig"
+    ],
+    "animal": "animals[i % 12]",
+    "gender": "'male' if i%2==0 else 'female'",
+    "rabjung_numbering": "cycle m = (Y-1027)//60 + 1 ; year-in-cycle n = ((Y-1027) mod 60) + 1 ; year 1 of every cycle = Fire-Female-Hare",
+    "janson_reference_formulas": "Y = 60m + n + 966 ; n = (Y - 1026) amod 60 (Svante Janson, arXiv:1401.6285 eq 4.1-4.2)"
+  },
+  "year_1997_result": {
+    "gregorian_year": 1997,
+    "element": "Fire",
+    "animal": "Ox",
+    "gender": "female",
+    "rabjung": "17th cycle, year 11",
+    "bazi_cross_check": "Ding-Chou (ding-chou, Yin-Fire Ox) - MATCH: element Fire, animal Ox, polarity yin/female all agree",
+    "losar_1997_phugpa": "1997-02-08 (Janson Table 1); M born 1997-05-19 is after Losar so the label applies cleanly"
+  },
+  "test_vectors": [
+    {
+      "year": 1027,
+      "expected": "Fire-female-Hare (cycle 1 year 1)",
+      "computed": "Fire Hare female c1y1",
+      "match": true
+    },
+    {
+      "year": 1935,
+      "expected": "Wood-Pig (Dalai Lama's birth year, b. Jul 1935 > Losar)",
+      "computed": "Wood Pig female",
+      "match": true
+    },
+    {
+      "year": 1959,
+      "expected": "Earth-Pig (matches Chinese Ji-Hai)",
+      "computed": "Earth Pig female",
+      "match": true
+    },
+    {
+      "year": 1987,
+      "expected": "Fire-Rabbit/Hare, 17th Rabjung begins (Janson: 'last cycle thus started 1987')",
+      "computed": "Fire Hare female c17y1",
+      "match": true
+    },
+    {
+      "year": 1991,
+      "expected": "Iron-Sheep (Janson Table 1: Losar 15/2/1991 Iron-Sheep)",
+      "computed": "Iron Sheep female",
+      "match": true
+    },
+    {
+      "year": 1997,
+      "expected": "Fire-Ox (Janson Table 1: Losar 8/2/1997 Fire-Ox)",
+      "computed": "Fire Ox female",
+      "match": true
+    },
+    {
+      "year": 2008,
+      "expected": "Earth-Mouse (sa pho byi)",
+      "computed": "Earth Mouse male",
+      "match": true
+    },
+    {
+      "year": 2021,
+      "expected": "Iron-Ox (Tibetan Nuns Project: Losar Feb 12 2021 starts Iron Ox 2148)",
+      "computed": "Iron Ox female",
+      "match": true
+    },
+    {
+      "year": 2026,
+      "expected": "Fire-Horse (TNP: Losar Feb 18 2026 starts Fire Horse 2153; Janson Table 1 agrees)",
+      "computed": "Fire Horse male",
+      "match": true
+    }
+  ],
+  "rejected_formulas": [
+    {
+      "formula": "spec 18 pseudocode verbatim: idx=(Y-1027)%60 with element[] starting Wood and animal[] starting Hare",
+      "gives_1997": "Wood-Ox male",
+      "verdict": "WRONG phase - fails every known anchor"
+    },
+    {
+      "formula": "mission-cited '(Y-1026) mod 60' interpreted with sequence starting Wood-Male-Tiger",
+      "gives_1997": "Wood-Ox male (pos 11 from WMT)",
+      "verdict": "WRONG - same broken phase; WMT is the Chinese mekhor start, not Rabjung"
+    }
+  ],
+  "losar_note": "A Rabjung year label attaches to the Tibetan year that BEGINS at Losar (Feb 4 - Mar 5 window in the 20th c., drifting later; Phugpa calendar). Gregorian dates before Losar belong to the PREVIOUS element/animal/gender label. Exact mapping needs a Losar date table (e.g., Janson Table 1 / almanac); without it, degrade Jan-mid-Feb lookups to approximate/unavailable per spec 18 degradation rule.",
+  "sources": [
+    "https://arxiv.org/abs/1401.6285 (Svante Janson, 'Tibetan calendar mathematics' - epoch, formulas 4.1/4.2, Table 1 Losar dates incl. 8/2/1997 Fire-Ox, year-name tables)",
+    "https://chinesehsc.org/downloads/laufer/laufer_application_of_tibetan_sexagenary_cycle.pdf (B. Laufer 1911 - first year of first cycle is fire-hare; epoch 1027 not 1026)",
+    "https://hermetic.ch/cal_stud/tib_year.htm (independent conversion formulas anchored at 1027)",
+    "https://tnp.org/tag/tibetan-calendar (Tibetan Nuns Project - observed year names/Losar dates: Iron Ox 2021, Fire Horse 2026, animal+element orders)",
+    "https://github.com/buda-base/tibetan-dates-js (BDRC production code - conventions: Rabjung year 1 numbered 1, sequences start at Rabbit/Fire)",
+    "https://edharmalib.com/ebiblio/enarticles/enar036 ('Rabjuns are sixty-year cycles, the beginning of which is considered to be the year 1027 (Fire-W-Hare)... in rabjun the calculation comes from the Fire-Hare, while the mekors are counted from the Tree-Rat')"
+  ],
+  "conflicts": []
+}

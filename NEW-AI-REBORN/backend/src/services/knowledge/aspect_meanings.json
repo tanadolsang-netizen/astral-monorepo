@@ -1,0 +1,1352 @@
+{
+  "Sun conjunction Moon": {
+    "th": "Sun ผสานพลัง Moon"
+  },
+  "Sun sextile Moon": {
+    "th": "Sun สุดสัปดาห์ Moon"
+  },
+  "Sun square Moon": {
+    "th": "Sun เสี้ยว Moon"
+  },
+  "Sun trine Moon": {
+    "th": "Sun สามเหลี่ยม Moon"
+  },
+  "Sun opposition Moon": {
+    "th": "Sun ตรงข้าม Moon"
+  },
+  "Sun conjunction Mercury": {
+    "th": "Sun ผสานพลัง Mercury"
+  },
+  "Sun sextile Mercury": {
+    "th": "Sun สุดสัปดาห์ Mercury"
+  },
+  "Sun square Mercury": {
+    "th": "Sun เสี้ยว Mercury"
+  },
+  "Sun trine Mercury": {
+    "th": "Sun สามเหลี่ยม Mercury"
+  },
+  "Sun opposition Mercury": {
+    "th": "Sun ตรงข้าม Mercury"
+  },
+  "Sun conjunction Venus": {
+    "th": "Sun ผสานพลัง Venus"
+  },
+  "Sun sextile Venus": {
+    "th": "Sun สุดสัปดาห์ Venus"
+  },
+  "Sun square Venus": {
+    "th": "Sun เสี้ยว Venus"
+  },
+  "Sun trine Venus": {
+    "th": "Sun สามเหลี่ยม Venus"
+  },
+  "Sun opposition Venus": {
+    "th": "Sun ตรงข้าม Venus"
+  },
+  "Sun conjunction Mars": {
+    "th": "Sun ผสานพลัง Mars"
+  },
+  "Sun sextile Mars": {
+    "th": "Sun สุดสัปดาห์ Mars"
+  },
+  "Sun square Mars": {
+    "th": "Sun เสี้ยว Mars"
+  },
+  "Sun trine Mars": {
+    "th": "Sun สามเหลี่ยม Mars"
+  },
+  "Sun opposition Mars": {
+    "th": "Sun ตรงข้าม Mars"
+  },
+  "Sun conjunction Jupiter": {
+    "th": "Sun ผสานพลัง Jupiter"
+  },
+  "Sun sextile Jupiter": {
+    "th": "Sun สุดสัปดาห์ Jupiter"
+  },
+  "Sun square Jupiter": {
+    "th": "Sun เสี้ยว Jupiter"
+  },
+  "Sun trine Jupiter": {
+    "th": "Sun สามเหลี่ยม Jupiter"
+  },
+  "Sun opposition Jupiter": {
+    "th": "Sun ตรงข้าม Jupiter"
+  },
+  "Sun conjunction Saturn": {
+    "th": "Sun ผสานพลัง Saturn"
+  },
+  "Sun sextile Saturn": {
+    "th": "Sun สุดสัปดาห์ Saturn"
+  },
+  "Sun square Saturn": {
+    "th": "Sun เสี้ยว Saturn"
+  },
+  "Sun trine Saturn": {
+    "th": "Sun สามเหลี่ยม Saturn"
+  },
+  "Sun opposition Saturn": {
+    "th": "Sun ตรงข้าม Saturn"
+  },
+  "Sun conjunction Uranus": {
+    "th": "Sun ผสานพลัง Uranus"
+  },
+  "Sun sextile Uranus": {
+    "th": "Sun สุดสัปดาห์ Uranus"
+  },
+  "Sun square Uranus": {
+    "th": "Sun เสี้ยว Uranus"
+  },
+  "Sun trine Uranus": {
+    "th": "Sun สามเหลี่ยม Uranus"
+  },
+  "Sun opposition Uranus": {
+    "th": "Sun ตรงข้าม Uranus"
+  },
+  "Sun conjunction Neptune": {
+    "th": "Sun ผสานพลัง Neptune"
+  },
+  "Sun sextile Neptune": {
+    "th": "Sun สุดสัปดาห์ Neptune"
+  },
+  "Sun square Neptune": {
+    "th": "Sun เสี้ยว Neptune"
+  },
+  "Sun trine Neptune": {
+    "th": "Sun สามเหลี่ยม Neptune"
+  },
+  "Sun opposition Neptune": {
+    "th": "Sun ตรงข้าม Neptune"
+  },
+  "Sun conjunction Pluto": {
+    "th": "Sun ผสานพลัง Pluto"
+  },
+  "Sun sextile Pluto": {
+    "th": "Sun สุดสัปดาห์ Pluto"
+  },
+  "Sun square Pluto": {
+    "th": "Sun เสี้ยว Pluto"
+  },
+  "Sun trine Pluto": {
+    "th": "Sun สามเหลี่ยม Pluto"
+  },
+  "Sun opposition Pluto": {
+    "th": "Sun ตรงข้าม Pluto"
+  },
+  "Moon conjunction Sun": {
+    "th": "Moon ผสานพลัง Sun"
+  },
+  "Moon sextile Sun": {
+    "th": "Moon สุดสัปดาห์ Sun"
+  },
+  "Moon square Sun": {
+    "th": "Moon เสี้ยว Sun"
+  },
+  "Moon trine Sun": {
+    "th": "Moon สามเหลี่ยม Sun"
+  },
+  "Moon opposition Sun": {
+    "th": "Moon ตรงข้าม Sun"
+  },
+  "Moon conjunction Mercury": {
+    "th": "Moon ผสานพลัง Mercury"
+  },
+  "Moon sextile Mercury": {
+    "th": "Moon สุดสัปดาห์ Mercury"
+  },
+  "Moon square Mercury": {
+    "th": "Moon เสี้ยว Mercury"
+  },
+  "Moon trine Mercury": {
+    "th": "Moon สามเหลี่ยม Mercury"
+  },
+  "Moon opposition Mercury": {
+    "th": "Moon ตรงข้าม Mercury"
+  },
+  "Moon conjunction Venus": {
+    "th": "Moon ผสานพลัง Venus"
+  },
+  "Moon sextile Venus": {
+    "th": "Moon สุดสัปดาห์ Venus"
+  },
+  "Moon square Venus": {
+    "th": "Moon เสี้ยว Venus"
+  },
+  "Moon trine Venus": {
+    "th": "Moon สามเหลี่ยม Venus"
+  },
+  "Moon opposition Venus": {
+    "th": "Moon ตรงข้าม Venus"
+  },
+  "Moon conjunction Mars": {
+    "th": "Moon ผสานพลัง Mars"
+  },
+  "Moon sextile Mars": {
+    "th": "Moon สุดสัปดาห์ Mars"
+  },
+  "Moon square Mars": {
+    "th": "Moon เสี้ยว Mars"
+  },
+  "Moon trine Mars": {
+    "th": "Moon สามเหลี่ยม Mars"
+  },
+  "Moon opposition Mars": {
+    "th": "Moon ตรงข้าม Mars"
+  },
+  "Moon conjunction Jupiter": {
+    "th": "Moon ผสานพลัง Jupiter"
+  },
+  "Moon sextile Jupiter": {
+    "th": "Moon สุดสัปดาห์ Jupiter"
+  },
+  "Moon square Jupiter": {
+    "th": "Moon เสี้ยว Jupiter"
+  },
+  "Moon trine Jupiter": {
+    "th": "Moon สามเหลี่ยม Jupiter"
+  },
+  "Moon opposition Jupiter": {
+    "th": "Moon ตรงข้าม Jupiter"
+  },
+  "Moon conjunction Saturn": {
+    "th": "Moon ผสานพลัง Saturn"
+  },
+  "Moon sextile Saturn": {
+    "th": "Moon สุดสัปดาห์ Saturn"
+  },
+  "Moon square Saturn": {
+    "th": "Moon เสี้ยว Saturn"
+  },
+  "Moon trine Saturn": {
+    "th": "Moon สามเหลี่ยม Saturn"
+  },
+  "Moon opposition Saturn": {
+    "th": "Moon ตรงข้าม Saturn"
+  },
+  "Moon conjunction Uranus": {
+    "th": "Moon ผสานพลัง Uranus"
+  },
+  "Moon sextile Uranus": {
+    "th": "Moon สุดสัปดาห์ Uranus"
+  },
+  "Moon square Uranus": {
+    "th": "Moon เสี้ยว Uranus"
+  },
+  "Moon trine Uranus": {
+    "th": "Moon สามเหลี่ยม Uranus"
+  },
+  "Moon opposition Uranus": {
+    "th": "Moon ตรงข้าม Uranus"
+  },
+  "Moon conjunction Neptune": {
+    "th": "Moon ผสานพลัง Neptune"
+  },
+  "Moon sextile Neptune": {
+    "th": "Moon สุดสัปดาห์ Neptune"
+  },
+  "Moon square Neptune": {
+    "th": "Moon เสี้ยว Neptune"
+  },
+  "Moon trine Neptune": {
+    "th": "Moon สามเหลี่ยม Neptune"
+  },
+  "Moon opposition Neptune": {
+    "th": "Moon ตรงข้าม Neptune"
+  },
+  "Moon conjunction Pluto": {
+    "th": "Moon ผสานพลัง Pluto"
+  },
+  "Moon sextile Pluto": {
+    "th": "Moon สุดสัปดาห์ Pluto"
+  },
+  "Moon square Pluto": {
+    "th": "Moon เสี้ยว Pluto"
+  },
+  "Moon trine Pluto": {
+    "th": "Moon สามเหลี่ยม Pluto"
+  },
+  "Moon opposition Pluto": {
+    "th": "Moon ตรงข้าม Pluto"
+  },
+  "Mercury conjunction Sun": {
+    "th": "Mercury ผสานพลัง Sun"
+  },
+  "Mercury sextile Sun": {
+    "th": "Mercury สุดสัปดาห์ Sun"
+  },
+  "Mercury square Sun": {
+    "th": "Mercury เสี้ยว Sun"
+  },
+  "Mercury trine Sun": {
+    "th": "Mercury สามเหลี่ยม Sun"
+  },
+  "Mercury opposition Sun": {
+    "th": "Mercury ตรงข้าม Sun"
+  },
+  "Mercury conjunction Moon": {
+    "th": "Mercury ผสานพลัง Moon"
+  },
+  "Mercury sextile Moon": {
+    "th": "Mercury สุดสัปดาห์ Moon"
+  },
+  "Mercury square Moon": {
+    "th": "Mercury เสี้ยว Moon"
+  },
+  "Mercury trine Moon": {
+    "th": "Mercury สามเหลี่ยม Moon"
+  },
+  "Mercury opposition Moon": {
+    "th": "Mercury ตรงข้าม Moon"
+  },
+  "Mercury conjunction Venus": {
+    "th": "Mercury ผสานพลัง Venus"
+  },
+  "Mercury sextile Venus": {
+    "th": "Mercury สุดสัปดาห์ Venus"
+  },
+  "Mercury square Venus": {
+    "th": "Mercury เสี้ยว Venus"
+  },
+  "Mercury trine Venus": {
+    "th": "Mercury สามเหลี่ยม Venus"
+  },
+  "Mercury opposition Venus": {
+    "th": "Mercury ตรงข้าม Venus"
+  },
+  "Mercury conjunction Mars": {
+    "th": "Mercury ผสานพลัง Mars"
+  },
+  "Mercury sextile Mars": {
+    "th": "Mercury สุดสัปดาห์ Mars"
+  },
+  "Mercury square Mars": {
+    "th": "Mercury เสี้ยว Mars"
+  },
+  "Mercury trine Mars": {
+    "th": "Mercury สามเหลี่ยม Mars"
+  },
+  "Mercury opposition Mars": {
+    "th": "Mercury ตรงข้าม Mars"
+  },
+  "Mercury conjunction Jupiter": {
+    "th": "Mercury ผสานพลัง Jupiter"
+  },
+  "Mercury sextile Jupiter": {
+    "th": "Mercury สุดสัปดาห์ Jupiter"
+  },
+  "Mercury square Jupiter": {
+    "th": "Mercury เสี้ยว Jupiter"
+  },
+  "Mercury trine Jupiter": {
+    "th": "Mercury สามเหลี่ยม Jupiter"
+  },
+  "Mercury opposition Jupiter": {
+    "th": "Mercury ตรงข้าม Jupiter"
+  },
+  "Mercury conjunction Saturn": {
+    "th": "Mercury ผสานพลัง Saturn"
+  },
+  "Mercury sextile Saturn": {
+    "th": "Mercury สุดสัปดาห์ Saturn"
+  },
+  "Mercury square Saturn": {
+    "th": "Mercury เสี้ยว Saturn"
+  },
+  "Mercury trine Saturn": {
+    "th": "Mercury สามเหลี่ยม Saturn"
+  },
+  "Mercury opposition Saturn": {
+    "th": "Mercury ตรงข้าม Saturn"
+  },
+  "Mercury conjunction Uranus": {
+    "th": "Mercury ผสานพลัง Uranus"
+  },
+  "Mercury sextile Uranus": {
+    "th": "Mercury สุดสัปดาห์ Uranus"
+  },
+  "Mercury square Uranus": {
+    "th": "Mercury เสี้ยว Uranus"
+  },
+  "Mercury trine Uranus": {
+    "th": "Mercury สามเหลี่ยม Uranus"
+  },
+  "Mercury opposition Uranus": {
+    "th": "Mercury ตรงข้าม Uranus"
+  },
+  "Mercury conjunction Neptune": {
+    "th": "Mercury ผสานพลัง Neptune"
+  },
+  "Mercury sextile Neptune": {
+    "th": "Mercury สุดสัปดาห์ Neptune"
+  },
+  "Mercury square Neptune": {
+    "th": "Mercury เสี้ยว Neptune"
+  },
+  "Mercury trine Neptune": {
+    "th": "Mercury สามเหลี่ยม Neptune"
+  },
+  "Mercury opposition Neptune": {
+    "th": "Mercury ตรงข้าม Neptune"
+  },
+  "Mercury conjunction Pluto": {
+    "th": "Mercury ผสานพลัง Pluto"
+  },
+  "Mercury sextile Pluto": {
+    "th": "Mercury สุดสัปดาห์ Pluto"
+  },
+  "Mercury square Pluto": {
+    "th": "Mercury เสี้ยว Pluto"
+  },
+  "Mercury trine Pluto": {
+    "th": "Mercury สามเหลี่ยม Pluto"
+  },
+  "Mercury opposition Pluto": {
+    "th": "Mercury ตรงข้าม Pluto"
+  },
+  "Venus conjunction Sun": {
+    "th": "Venus ผสานพลัง Sun"
+  },
+  "Venus sextile Sun": {
+    "th": "Venus สุดสัปดาห์ Sun"
+  },
+  "Venus square Sun": {
+    "th": "Venus เสี้ยว Sun"
+  },
+  "Venus trine Sun": {
+    "th": "Venus สามเหลี่ยม Sun"
+  },
+  "Venus opposition Sun": {
+    "th": "Venus ตรงข้าม Sun"
+  },
+  "Venus conjunction Moon": {
+    "th": "Venus ผสานพลัง Moon"
+  },
+  "Venus sextile Moon": {
+    "th": "Venus สุดสัปดาห์ Moon"
+  },
+  "Venus square Moon": {
+    "th": "Venus เสี้ยว Moon"
+  },
+  "Venus trine Moon": {
+    "th": "Venus สามเหลี่ยม Moon"
+  },
+  "Venus opposition Moon": {
+    "th": "Venus ตรงข้าม Moon"
+  },
+  "Venus conjunction Mercury": {
+    "th": "Venus ผสานพลัง Mercury"
+  },
+  "Venus sextile Mercury": {
+    "th": "Venus สุดสัปดาห์ Mercury"
+  },
+  "Venus square Mercury": {
+    "th": "Venus เสี้ยว Mercury"
+  },
+  "Venus trine Mercury": {
+    "th": "Venus สามเหลี่ยม Mercury"
+  },
+  "Venus opposition Mercury": {
+    "th": "Venus ตรงข้าม Mercury"
+  },
+  "Venus conjunction Mars": {
+    "th": "Venus ผสานพลัง Mars"
+  },
+  "Venus sextile Mars": {
+    "th": "Venus สุดสัปดาห์ Mars"
+  },
+  "Venus square Mars": {
+    "th": "Venus เสี้ยว Mars"
+  },
+  "Venus trine Mars": {
+    "th": "Venus สามเหลี่ยม Mars"
+  },
+  "Venus opposition Mars": {
+    "th": "Venus ตรงข้าม Mars"
+  },
+  "Venus conjunction Jupiter": {
+    "th": "Venus ผสานพลัง Jupiter"
+  },
+  "Venus sextile Jupiter": {
+    "th": "Venus สุดสัปดาห์ Jupiter"
+  },
+  "Venus square Jupiter": {
+    "th": "Venus เสี้ยว Jupiter"
+  },
+  "Venus trine Jupiter": {
+    "th": "Venus สามเหลี่ยม Jupiter"
+  },
+  "Venus opposition Jupiter": {
+    "th": "Venus ตรงข้าม Jupiter"
+  },
+  "Venus conjunction Saturn": {
+    "th": "Venus ผสานพลัง Saturn"
+  },
+  "Venus sextile Saturn": {
+    "th": "Venus สุดสัปดาห์ Saturn"
+  },
+  "Venus square Saturn": {
+    "th": "Venus เสี้ยว Saturn"
+  },
+  "Venus trine Saturn": {
+    "th": "Venus สามเหลี่ยม Saturn"
+  },
+  "Venus opposition Saturn": {
+    "th": "Venus ตรงข้าม Saturn"
+  },
+  "Venus conjunction Uranus": {
+    "th": "Venus ผสานพลัง Uranus"
+  },
+  "Venus sextile Uranus": {
+    "th": "Venus สุดสัปดาห์ Uranus"
+  },
+  "Venus square Uranus": {
+    "th": "Venus เสี้ยว Uranus"
+  },
+  "Venus trine Uranus": {
+    "th": "Venus สามเหลี่ยม Uranus"
+  },
+  "Venus opposition Uranus": {
+    "th": "Venus ตรงข้าม Uranus"
+  },
+  "Venus conjunction Neptune": {
+    "th": "Venus ผสานพลัง Neptune"
+  },
+  "Venus sextile Neptune": {
+    "th": "Venus สุดสัปดาห์ Neptune"
+  },
+  "Venus square Neptune": {
+    "th": "Venus เสี้ยว Neptune"
+  },
+  "Venus trine Neptune": {
+    "th": "Venus สามเหลี่ยม Neptune"
+  },
+  "Venus opposition Neptune": {
+    "th": "Venus ตรงข้าม Neptune"
+  },
+  "Venus conjunction Pluto": {
+    "th": "Venus ผสานพลัง Pluto"
+  },
+  "Venus sextile Pluto": {
+    "th": "Venus สุดสัปดาห์ Pluto"
+  },
+  "Venus square Pluto": {
+    "th": "Venus เสี้ยว Pluto"
+  },
+  "Venus trine Pluto": {
+    "th": "Venus สามเหลี่ยม Pluto"
+  },
+  "Venus opposition Pluto": {
+    "th": "Venus ตรงข้าม Pluto"
+  },
+  "Mars conjunction Sun": {
+    "th": "Mars ผสานพลัง Sun"
+  },
+  "Mars sextile Sun": {
+    "th": "Mars สุดสัปดาห์ Sun"
+  },
+  "Mars square Sun": {
+    "th": "Mars เสี้ยว Sun"
+  },
+  "Mars trine Sun": {
+    "th": "Mars สามเหลี่ยม Sun"
+  },
+  "Mars opposition Sun": {
+    "th": "Mars ตรงข้าม Sun"
+  },
+  "Mars conjunction Moon": {
+    "th": "Mars ผสานพลัง Moon"
+  },
+  "Mars sextile Moon": {
+    "th": "Mars สุดสัปดาห์ Moon"
+  },
+  "Mars square Moon": {
+    "th": "Mars เสี้ยว Moon"
+  },
+  "Mars trine Moon": {
+    "th": "Mars สามเหลี่ยม Moon"
+  },
+  "Mars opposition Moon": {
+    "th": "Mars ตรงข้าม Moon"
+  },
+  "Mars conjunction Mercury": {
+    "th": "Mars ผสานพลัง Mercury"
+  },
+  "Mars sextile Mercury": {
+    "th": "Mars สุดสัปดาห์ Mercury"
+  },
+  "Mars square Mercury": {
+    "th": "Mars เสี้ยว Mercury"
+  },
+  "Mars trine Mercury": {
+    "th": "Mars สามเหลี่ยม Mercury"
+  },
+  "Mars opposition Mercury": {
+    "th": "Mars ตรงข้าม Mercury"
+  },
+  "Mars conjunction Venus": {
+    "th": "Mars ผสานพลัง Venus"
+  },
+  "Mars sextile Venus": {
+    "th": "Mars สุดสัปดาห์ Venus"
+  },
+  "Mars square Venus": {
+    "th": "Mars เสี้ยว Venus"
+  },
+  "Mars trine Venus": {
+    "th": "Mars สามเหลี่ยม Venus"
+  },
+  "Mars opposition Venus": {
+    "th": "Mars ตรงข้าม Venus"
+  },
+  "Mars conjunction Jupiter": {
+    "th": "Mars ผสานพลัง Jupiter"
+  },
+  "Mars sextile Jupiter": {
+    "th": "Mars สุดสัปดาห์ Jupiter"
+  },
+  "Mars square Jupiter": {
+    "th": "Mars เสี้ยว Jupiter"
+  },
+  "Mars trine Jupiter": {
+    "th": "Mars สามเหลี่ยม Jupiter"
+  },
+  "Mars opposition Jupiter": {
+    "th": "Mars ตรงข้าม Jupiter"
+  },
+  "Mars conjunction Saturn": {
+    "th": "Mars ผสานพลัง Saturn"
+  },
+  "Mars sextile Saturn": {
+    "th": "Mars สุดสัปดาห์ Saturn"
+  },
+  "Mars square Saturn": {
+    "th": "Mars เสี้ยว Saturn"
+  },
+  "Mars trine Saturn": {
+    "th": "Mars สามเหลี่ยม Saturn"
+  },
+  "Mars opposition Saturn": {
+    "th": "Mars ตรงข้าม Saturn"
+  },
+  "Mars conjunction Uranus": {
+    "th": "Mars ผสานพลัง Uranus"
+  },
+  "Mars sextile Uranus": {
+    "th": "Mars สุดสัปดาห์ Uranus"
+  },
+  "Mars square Uranus": {
+    "th": "Mars เสี้ยว Uranus"
+  },
+  "Mars trine Uranus": {
+    "th": "Mars สามเหลี่ยม Uranus"
+  },
+  "Mars opposition Uranus": {
+    "th": "Mars ตรงข้าม Uranus"
+  },
+  "Mars conjunction Neptune": {
+    "th": "Mars ผสานพลัง Neptune"
+  },
+  "Mars sextile Neptune": {
+    "th": "Mars สุดสัปดาห์ Neptune"
+  },
+  "Mars square Neptune": {
+    "th": "Mars เสี้ยว Neptune"
+  },
+  "Mars trine Neptune": {
+    "th": "Mars สามเหลี่ยม Neptune"
+  },
+  "Mars opposition Neptune": {
+    "th": "Mars ตรงข้าม Neptune"
+  },
+  "Mars conjunction Pluto": {
+    "th": "Mars ผสานพลัง Pluto"
+  },
+  "Mars sextile Pluto": {
+    "th": "Mars สุดสัปดาห์ Pluto"
+  },
+  "Mars square Pluto": {
+    "th": "Mars เสี้ยว Pluto"
+  },
+  "Mars trine Pluto": {
+    "th": "Mars สามเหลี่ยม Pluto"
+  },
+  "Mars opposition Pluto": {
+    "th": "Mars ตรงข้าม Pluto"
+  },
+  "Jupiter conjunction Sun": {
+    "th": "Jupiter ผสานพลัง Sun"
+  },
+  "Jupiter sextile Sun": {
+    "th": "Jupiter สุดสัปดาห์ Sun"
+  },
+  "Jupiter square Sun": {
+    "th": "Jupiter เสี้ยว Sun"
+  },
+  "Jupiter trine Sun": {
+    "th": "Jupiter สามเหลี่ยม Sun"
+  },
+  "Jupiter opposition Sun": {
+    "th": "Jupiter ตรงข้าม Sun"
+  },
+  "Jupiter conjunction Moon": {
+    "th": "Jupiter ผสานพลัง Moon"
+  },
+  "Jupiter sextile Moon": {
+    "th": "Jupiter สุดสัปดาห์ Moon"
+  },
+  "Jupiter square Moon": {
+    "th": "Jupiter เสี้ยว Moon"
+  },
+  "Jupiter trine Moon": {
+    "th": "Jupiter สามเหลี่ยม Moon"
+  },
+  "Jupiter opposition Moon": {
+    "th": "Jupiter ตรงข้าม Moon"
+  },
+  "Jupiter conjunction Mercury": {
+    "th": "Jupiter ผสานพลัง Mercury"
+  },
+  "Jupiter sextile Mercury": {
+    "th": "Jupiter สุดสัปดาห์ Mercury"
+  },
+  "Jupiter square Mercury": {
+    "th": "Jupiter เสี้ยว Mercury"
+  },
+  "Jupiter trine Mercury": {
+    "th": "Jupiter สามเหลี่ยม Mercury"
+  },
+  "Jupiter opposition Mercury": {
+    "th": "Jupiter ตรงข้าม Mercury"
+  },
+  "Jupiter conjunction Venus": {
+    "th": "Jupiter ผสานพลัง Venus"
+  },
+  "Jupiter sextile Venus": {
+    "th": "Jupiter สุดสัปดาห์ Venus"
+  },
+  "Jupiter square Venus": {
+    "th": "Jupiter เสี้ยว Venus"
+  },
+  "Jupiter trine Venus": {
+    "th": "Jupiter สามเหลี่ยม Venus"
+  },
+  "Jupiter opposition Venus": {
+    "th": "Jupiter ตรงข้าม Venus"
+  },
+  "Jupiter conjunction Mars": {
+    "th": "Jupiter ผสานพลัง Mars"
+  },
+  "Jupiter sextile Mars": {
+    "th": "Jupiter สุดสัปดาห์ Mars"
+  },
+  "Jupiter square Mars": {
+    "th": "Jupiter เสี้ยว Mars"
+  },
+  "Jupiter trine Mars": {
+    "th": "Jupiter สามเหลี่ยม Mars"
+  },
+  "Jupiter opposition Mars": {
+    "th": "Jupiter ตรงข้าม Mars"
+  },
+  "Jupiter conjunction Saturn": {
+    "th": "Jupiter ผสานพลัง Saturn"
+  },
+  "Jupiter sextile Saturn": {
+    "th": "Jupiter สุดสัปดาห์ Saturn"
+  },
+  "Jupiter square Saturn": {
+    "th": "Jupiter เสี้ยว Saturn"
+  },
+  "Jupiter trine Saturn": {
+    "th": "Jupiter สามเหลี่ยม Saturn"
+  },
+  "Jupiter opposition Saturn": {
+    "th": "Jupiter ตรงข้าม Saturn"
+  },
+  "Jupiter conjunction Uranus": {
+    "th": "Jupiter ผสานพลัง Uranus"
+  },
+  "Jupiter sextile Uranus": {
+    "th": "Jupiter สุดสัปดาห์ Uranus"
+  },
+  "Jupiter square Uranus": {
+    "th": "Jupiter เสี้ยว Uranus"
+  },
+  "Jupiter trine Uranus": {
+    "th": "Jupiter สามเหลี่ยม Uranus"
+  },
+  "Jupiter opposition Uranus": {
+    "th": "Jupiter ตรงข้าม Uranus"
+  },
+  "Jupiter conjunction Neptune": {
+    "th": "Jupiter ผสานพลัง Neptune"
+  },
+  "Jupiter sextile Neptune": {
+    "th": "Jupiter สุดสัปดาห์ Neptune"
+  },
+  "Jupiter square Neptune": {
+    "th": "Jupiter เสี้ยว Neptune"
+  },
+  "Jupiter trine Neptune": {
+    "th": "Jupiter สามเหลี่ยม Neptune"
+  },
+  "Jupiter opposition Neptune": {
+    "th": "Jupiter ตรงข้าม Neptune"
+  },
+  "Jupiter conjunction Pluto": {
+    "th": "Jupiter ผสานพลัง Pluto"
+  },
+  "Jupiter sextile Pluto": {
+    "th": "Jupiter สุดสัปดาห์ Pluto"
+  },
+  "Jupiter square Pluto": {
+    "th": "Jupiter เสี้ยว Pluto"
+  },
+  "Jupiter trine Pluto": {
+    "th": "Jupiter สามเหลี่ยม Pluto"
+  },
+  "Jupiter opposition Pluto": {
+    "th": "Jupiter ตรงข้าม Pluto"
+  },
+  "Saturn conjunction Sun": {
+    "th": "Saturn ผสานพลัง Sun"
+  },
+  "Saturn sextile Sun": {
+    "th": "Saturn สุดสัปดาห์ Sun"
+  },
+  "Saturn square Sun": {
+    "th": "Saturn เสี้ยว Sun"
+  },
+  "Saturn trine Sun": {
+    "th": "Saturn สามเหลี่ยม Sun"
+  },
+  "Saturn opposition Sun": {
+    "th": "Saturn ตรงข้าม Sun"
+  },
+  "Saturn conjunction Moon": {
+    "th": "Saturn ผสานพลัง Moon"
+  },
+  "Saturn sextile Moon": {
+    "th": "Saturn สุดสัปดาห์ Moon"
+  },
+  "Saturn square Moon": {
+    "th": "Saturn เสี้ยว Moon"
+  },
+  "Saturn trine Moon": {
+    "th": "Saturn สามเหลี่ยม Moon"
+  },
+  "Saturn opposition Moon": {
+    "th": "Saturn ตรงข้าม Moon"
+  },
+  "Saturn conjunction Mercury": {
+    "th": "Saturn ผสานพลัง Mercury"
+  },
+  "Saturn sextile Mercury": {
+    "th": "Saturn สุดสัปดาห์ Mercury"
+  },
+  "Saturn square Mercury": {
+    "th": "Saturn เสี้ยว Mercury"
+  },
+  "Saturn trine Mercury": {
+    "th": "Saturn สามเหลี่ยม Mercury"
+  },
+  "Saturn opposition Mercury": {
+    "th": "Saturn ตรงข้าม Mercury"
+  },
+  "Saturn conjunction Venus": {
+    "th": "Saturn ผสานพลัง Venus"
+  },
+  "Saturn sextile Venus": {
+    "th": "Saturn สุดสัปดาห์ Venus"
+  },
+  "Saturn square Venus": {
+    "th": "Saturn เสี้ยว Venus"
+  },
+  "Saturn trine Venus": {
+    "th": "Saturn สามเหลี่ยม Venus"
+  },
+  "Saturn opposition Venus": {
+    "th": "Saturn ตรงข้าม Venus"
+  },
+  "Saturn conjunction Mars": {
+    "th": "Saturn ผสานพลัง Mars"
+  },
+  "Saturn sextile Mars": {
+    "th": "Saturn สุดสัปดาห์ Mars"
+  },
+  "Saturn square Mars": {
+    "th": "Saturn เสี้ยว Mars"
+  },
+  "Saturn trine Mars": {
+    "th": "Saturn สามเหลี่ยม Mars"
+  },
+  "Saturn opposition Mars": {
+    "th": "Saturn ตรงข้าม Mars"
+  },
+  "Saturn conjunction Jupiter": {
+    "th": "Saturn ผสานพลัง Jupiter"
+  },
+  "Saturn sextile Jupiter": {
+    "th": "Saturn สุดสัปดาห์ Jupiter"
+  },
+  "Saturn square Jupiter": {
+    "th": "Saturn เสี้ยว Jupiter"
+  },
+  "Saturn trine Jupiter": {
+    "th": "Saturn สามเหลี่ยม Jupiter"
+  },
+  "Saturn opposition Jupiter": {
+    "th": "Saturn ตรงข้าม Jupiter"
+  },
+  "Saturn conjunction Uranus": {
+    "th": "Saturn ผสานพลัง Uranus"
+  },
+  "Saturn sextile Uranus": {
+    "th": "Saturn สุดสัปดาห์ Uranus"
+  },
+  "Saturn square Uranus": {
+    "th": "Saturn เสี้ยว Uranus"
+  },
+  "Saturn trine Uranus": {
+    "th": "Saturn สามเหลี่ยม Uranus"
+  },
+  "Saturn opposition Uranus": {
+    "th": "Saturn ตรงข้าม Uranus"
+  },
+  "Saturn conjunction Neptune": {
+    "th": "Saturn ผสานพลัง Neptune"
+  },
+  "Saturn sextile Neptune": {
+    "th": "Saturn สุดสัปดาห์ Neptune"
+  },
+  "Saturn square Neptune": {
+    "th": "Saturn เสี้ยว Neptune"
+  },
+  "Saturn trine Neptune": {
+    "th": "Saturn สามเหลี่ยม Neptune"
+  },
+  "Saturn opposition Neptune": {
+    "th": "Saturn ตรงข้าม Neptune"
+  },
+  "Saturn conjunction Pluto": {
+    "th": "Saturn ผสานพลัง Pluto"
+  },
+  "Saturn sextile Pluto": {
+    "th": "Saturn สุดสัปดาห์ Pluto"
+  },
+  "Saturn square Pluto": {
+    "th": "Saturn เสี้ยว Pluto"
+  },
+  "Saturn trine Pluto": {
+    "th": "Saturn สามเหลี่ยม Pluto"
+  },
+  "Saturn opposition Pluto": {
+    "th": "Saturn ตรงข้าม Pluto"
+  },
+  "Uranus conjunction Sun": {
+    "th": "Uranus ผสานพลัง Sun"
+  },
+  "Uranus sextile Sun": {
+    "th": "Uranus สุดสัปดาห์ Sun"
+  },
+  "Uranus square Sun": {
+    "th": "Uranus เสี้ยว Sun"
+  },
+  "Uranus trine Sun": {
+    "th": "Uranus สามเหลี่ยม Sun"
+  },
+  "Uranus opposition Sun": {
+    "th": "Uranus ตรงข้าม Sun"
+  },
+  "Uranus conjunction Moon": {
+    "th": "Uranus ผสานพลัง Moon"
+  },
+  "Uranus sextile Moon": {
+    "th": "Uranus สุดสัปดาห์ Moon"
+  },
+  "Uranus square Moon": {
+    "th": "Uranus เสี้ยว Moon"
+  },
+  "Uranus trine Moon": {
+    "th": "Uranus สามเหลี่ยม Moon"
+  },
+  "Uranus opposition Moon": {
+    "th": "Uranus ตรงข้าม Moon"
+  },
+  "Uranus conjunction Mercury": {
+    "th": "Uranus ผสานพลัง Mercury"
+  },
+  "Uranus sextile Mercury": {
+    "th": "Uranus สุดสัปดาห์ Mercury"
+  },
+  "Uranus square Mercury": {
+    "th": "Uranus เสี้ยว Mercury"
+  },
+  "Uranus trine Mercury": {
+    "th": "Uranus สามเหลี่ยม Mercury"
+  },
+  "Uranus opposition Mercury": {
+    "th": "Uranus ตรงข้าม Mercury"
+  },
+  "Uranus conjunction Venus": {
+    "th": "Uranus ผสานพลัง Venus"
+  },
+  "Uranus sextile Venus": {
+    "th": "Uranus สุดสัปดาห์ Venus"
+  },
+  "Uranus square Venus": {
+    "th": "Uranus เสี้ยว Venus"
+  },
+  "Uranus trine Venus": {
+    "th": "Uranus สามเหลี่ยม Venus"
+  },
+  "Uranus opposition Venus": {
+    "th": "Uranus ตรงข้าม Venus"
+  },
+  "Uranus conjunction Mars": {
+    "th": "Uranus ผสานพลัง Mars"
+  },
+  "Uranus sextile Mars": {
+    "th": "Uranus สุดสัปดาห์ Mars"
+  },
+  "Uranus square Mars": {
+    "th": "Uranus เสี้ยว Mars"
+  },
+  "Uranus trine Mars": {
+    "th": "Uranus สามเหลี่ยม Mars"
+  },
+  "Uranus opposition Mars": {
+    "th": "Uranus ตรงข้าม Mars"
+  },
+  "Uranus conjunction Jupiter": {
+    "th": "Uranus ผสานพลัง Jupiter"
+  },
+  "Uranus sextile Jupiter": {
+    "th": "Uranus สุดสัปดาห์ Jupiter"
+  },
+  "Uranus square Jupiter": {
+    "th": "Uranus เสี้ยว Jupiter"
+  },
+  "Uranus trine Jupiter": {
+    "th": "Uranus สามเหลี่ยม Jupiter"
+  },
+  "Uranus opposition Jupiter": {
+    "th": "Uranus ตรงข้าม Jupiter"
+  },
+  "Uranus conjunction Saturn": {
+    "th": "Uranus ผสานพลัง Saturn"
+  },
+  "Uranus sextile Saturn": {
+    "th": "Uranus สุดสัปดาห์ Saturn"
+  },
+  "Uranus square Saturn": {
+    "th": "Uranus เสี้ยว Saturn"
+  },
+  "Uranus trine Saturn": {
+    "th": "Uranus สามเหลี่ยม Saturn"
+  },
+  "Uranus opposition Saturn": {
+    "th": "Uranus ตรงข้าม Saturn"
+  },
+  "Uranus conjunction Neptune": {
+    "th": "Uranus ผสานพลัง Neptune"
+  },
+  "Uranus sextile Neptune": {
+    "th": "Uranus สุดสัปดาห์ Neptune"
+  },
+  "Uranus square Neptune": {
+    "th": "Uranus เสี้ยว Neptune"
+  },
+  "Uranus trine Neptune": {
+    "th": "Uranus สามเหลี่ยม Neptune"
+  },
+  "Uranus opposition Neptune": {
+    "th": "Uranus ตรงข้าม Neptune"
+  },
+  "Uranus conjunction Pluto": {
+    "th": "Uranus ผสานพลัง Pluto"
+  },
+  "Uranus sextile Pluto": {
+    "th": "Uranus สุดสัปดาห์ Pluto"
+  },
+  "Uranus square Pluto": {
+    "th": "Uranus เสี้ยว Pluto"
+  },
+  "Uranus trine Pluto": {
+    "th": "Uranus สามเหลี่ยม Pluto"
+  },
+  "Uranus opposition Pluto": {
+    "th": "Uranus ตรงข้าม Pluto"
+  },
+  "Neptune conjunction Sun": {
+    "th": "Neptune ผสานพลัง Sun"
+  },
+  "Neptune sextile Sun": {
+    "th": "Neptune สุดสัปดาห์ Sun"
+  },
+  "Neptune square Sun": {
+    "th": "Neptune เสี้ยว Sun"
+  },
+  "Neptune trine Sun": {
+    "th": "Neptune สามเหลี่ยม Sun"
+  },
+  "Neptune opposition Sun": {
+    "th": "Neptune ตรงข้าม Sun"
+  },
+  "Neptune conjunction Moon": {
+    "th": "Neptune ผสานพลัง Moon"
+  },
+  "Neptune sextile Moon": {
+    "th": "Neptune สุดสัปดาห์ Moon"
+  },
+  "Neptune square Moon": {
+    "th": "Neptune เสี้ยว Moon"
+  },
+  "Neptune trine Moon": {
+    "th": "Neptune สามเหลี่ยม Moon"
+  },
+  "Neptune opposition Moon": {
+    "th": "Neptune ตรงข้าม Moon"
+  },
+  "Neptune conjunction Mercury": {
+    "th": "Neptune ผสานพลัง Mercury"
+  },
+  "Neptune sextile Mercury": {
+    "th": "Neptune สุดสัปดาห์ Mercury"
+  },
+  "Neptune square Mercury": {
+    "th": "Neptune เสี้ยว Mercury"
+  },
+  "Neptune trine Mercury": {
+    "th": "Neptune สามเหลี่ยม Mercury"
+  },
+  "Neptune opposition Mercury": {
+    "th": "Neptune ตรงข้าม Mercury"
+  },
+  "Neptune conjunction Venus": {
+    "th": "Neptune ผสานพลัง Venus"
+  },
+  "Neptune sextile Venus": {
+    "th": "Neptune สุดสัปดาห์ Venus"
+  },
+  "Neptune square Venus": {
+    "th": "Neptune เสี้ยว Venus"
+  },
+  "Neptune trine Venus": {
+    "th": "Neptune สามเหลี่ยม Venus"
+  },
+  "Neptune opposition Venus": {
+    "th": "Neptune ตรงข้าม Venus"
+  },
+  "Neptune conjunction Mars": {
+    "th": "Neptune ผสานพลัง Mars"
+  },
+  "Neptune sextile Mars": {
+    "th": "Neptune สุดสัปดาห์ Mars"
+  },
+  "Neptune square Mars": {
+    "th": "Neptune เสี้ยว Mars"
+  },
+  "Neptune trine Mars": {
+    "th": "Neptune สามเหลี่ยม Mars"
+  },
+  "Neptune opposition Mars": {
+    "th": "Neptune ตรงข้าม Mars"
+  },
+  "Neptune conjunction Jupiter": {
+    "th": "Neptune ผสานพลัง Jupiter"
+  },
+  "Neptune sextile Jupiter": {
+    "th": "Neptune สุดสัปดาห์ Jupiter"
+  },
+  "Neptune square Jupiter": {
+    "th": "Neptune เสี้ยว Jupiter"
+  },
+  "Neptune trine Jupiter": {
+    "th": "Neptune สามเหลี่ยม Jupiter"
+  },
+  "Neptune opposition Jupiter": {
+    "th": "Neptune ตรงข้าม Jupiter"
+  },
+  "Neptune conjunction Saturn": {
+    "th": "Neptune ผสานพลัง Saturn"
+  },
+  "Neptune sextile Saturn": {
+    "th": "Neptune สุดสัปดาห์ Saturn"
+  },
+  "Neptune square Saturn": {
+    "th": "Neptune เสี้ยว Saturn"
+  },
+  "Neptune trine Saturn": {
+    "th": "Neptune สามเหลี่ยม Saturn"
+  },
+  "Neptune opposition Saturn": {
+    "th": "Neptune ตรงข้าม Saturn"
+  },
+  "Neptune conjunction Uranus": {
+    "th": "Neptune ผสานพลัง Uranus"
+  },
+  "Neptune sextile Uranus": {
+    "th": "Neptune สุดสัปดาห์ Uranus"
+  },
+  "Neptune square Uranus": {
+    "th": "Neptune เสี้ยว Uranus"
+  },
+  "Neptune trine Uranus": {
+    "th": "Neptune สามเหลี่ยม Uranus"
+  },
+  "Neptune opposition Uranus": {
+    "th": "Neptune ตรงข้าม Uranus"
+  },
+  "Neptune conjunction Pluto": {
+    "th": "Neptune ผสานพลัง Pluto"
+  },
+  "Neptune sextile Pluto": {
+    "th": "Neptune สุดสัปดาห์ Pluto"
+  },
+  "Neptune square Pluto": {
+    "th": "Neptune เสี้ยว Pluto"
+  },
+  "Neptune trine Pluto": {
+    "th": "Neptune สามเหลี่ยม Pluto"
+  },
+  "Neptune opposition Pluto": {
+    "th": "Neptune ตรงข้าม Pluto"
+  },
+  "Pluto conjunction Sun": {
+    "th": "Pluto ผสานพลัง Sun"
+  },
+  "Pluto sextile Sun": {
+    "th": "Pluto สุดสัปดาห์ Sun"
+  },
+  "Pluto square Sun": {
+    "th": "Pluto เสี้ยว Sun"
+  },
+  "Pluto trine Sun": {
+    "th": "Pluto สามเหลี่ยม Sun"
+  },
+  "Pluto opposition Sun": {
+    "th": "Pluto ตรงข้าม Sun"
+  },
+  "Pluto conjunction Moon": {
+    "th": "Pluto ผสานพลัง Moon"
+  },
+  "Pluto sextile Moon": {
+    "th": "Pluto สุดสัปดาห์ Moon"
+  },
+  "Pluto square Moon": {
+    "th": "Pluto เสี้ยว Moon"
+  },
+  "Pluto trine Moon": {
+    "th": "Pluto สามเหลี่ยม Moon"
+  },
+  "Pluto opposition Moon": {
+    "th": "Pluto ตรงข้าม Moon"
+  },
+  "Pluto conjunction Mercury": {
+    "th": "Pluto ผสานพลัง Mercury"
+  },
+  "Pluto sextile Mercury": {
+    "th": "Pluto สุดสัปดาห์ Mercury"
+  },
+  "Pluto square Mercury": {
+    "th": "Pluto เสี้ยว Mercury"
+  },
+  "Pluto trine Mercury": {
+    "th": "Pluto สามเหลี่ยม Mercury"
+  },
+  "Pluto opposition Mercury": {
+    "th": "Pluto ตรงข้าม Mercury"
+  },
+  "Pluto conjunction Venus": {
+    "th": "Pluto ผสานพลัง Venus"
+  },
+  "Pluto sextile Venus": {
+    "th": "Pluto สุดสัปดาห์ Venus"
+  },
+  "Pluto square Venus": {
+    "th": "Pluto เสี้ยว Venus"
+  },
+  "Pluto trine Venus": {
+    "th": "Pluto สามเหลี่ยม Venus"
+  },
+  "Pluto opposition Venus": {
+    "th": "Pluto ตรงข้าม Venus"
+  },
+  "Pluto conjunction Mars": {
+    "th": "Pluto ผสานพลัง Mars"
+  },
+  "Pluto sextile Mars": {
+    "th": "Pluto สุดสัปดาห์ Mars"
+  },
+  "Pluto square Mars": {
+    "th": "Pluto เสี้ยว Mars"
+  },
+  "Pluto trine Mars": {
+    "th": "Pluto สามเหลี่ยม Mars"
+  },
+  "Pluto opposition Mars": {
+    "th": "Pluto ตรงข้าม Mars"
+  },
+  "Pluto conjunction Jupiter": {
+    "th": "Pluto ผสานพลัง Jupiter"
+  },
+  "Pluto sextile Jupiter": {
+    "th": "Pluto สุดสัปดาห์ Jupiter"
+  },
+  "Pluto square Jupiter": {
+    "th": "Pluto เสี้ยว Jupiter"
+  },
+  "Pluto trine Jupiter": {
+    "th": "Pluto สามเหลี่ยม Jupiter"
+  },
+  "Pluto opposition Jupiter": {
+    "th": "Pluto ตรงข้าม Jupiter"
+  },
+  "Pluto conjunction Saturn": {
+    "th": "Pluto ผสานพลัง Saturn"
+  },
+  "Pluto sextile Saturn": {
+    "th": "Pluto สุดสัปดาห์ Saturn"
+  },
+  "Pluto square Saturn": {
+    "th": "Pluto เสี้ยว Saturn"
+  },
+  "Pluto trine Saturn": {
+    "th": "Pluto สามเหลี่ยม Saturn"
+  },
+  "Pluto opposition Saturn": {
+    "th": "Pluto ตรงข้าม Saturn"
+  },
+  "Pluto conjunction Uranus": {
+    "th": "Pluto ผสานพลัง Uranus"
+  },
+  "Pluto sextile Uranus": {
+    "th": "Pluto สุดสัปดาห์ Uranus"
+  },
+  "Pluto square Uranus": {
+    "th": "Pluto เสี้ยว Uranus"
+  },
+  "Pluto trine Uranus": {
+    "th": "Pluto สามเหลี่ยม Uranus"
+  },
+  "Pluto opposition Uranus": {
+    "th": "Pluto ตรงข้าม Uranus"
+  },
+  "Pluto conjunction Neptune": {
+    "th": "Pluto ผสานพลัง Neptune"
+  },
+  "Pluto sextile Neptune": {
+    "th": "Pluto สุดสัปดาห์ Neptune"
+  },
+  "Pluto square Neptune": {
+    "th": "Pluto เสี้ยว Neptune"
+  },
+  "Pluto trine Neptune": {
+    "th": "Pluto สามเหลี่ยม Neptune"
+  },
+  "Pluto opposition Neptune": {
+    "th": "Pluto ตรงข้าม Neptune"
+  }
+}

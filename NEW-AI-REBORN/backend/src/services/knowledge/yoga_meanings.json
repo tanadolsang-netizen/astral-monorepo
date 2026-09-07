@@ -1,0 +1,56 @@
+{
+  "Gaja Kesari": {
+    "th": "พญาช้าง",
+    "condition": "Jupiter in kendra from Moon",
+    "meaning_en": "Yoga Gaja Kesari: Jupiter in kendra from Moon → โชคดี มีปัญญา เกียรติยศ",
+    "meaning_th": "โยคะ พญาช้าง: Jupiter in kendra from Moon → โชคดี มีปัญญา เกียรติยศ"
+  },
+  "Raja Yoga": {
+    "th": "ราชา",
+    "condition": "Ruler of trikona + kendra",
+    "meaning_en": "Yoga Raja Yoga: Ruler of trikona + kendra → อำนาจ ความสำเร็จ เกียรติยศ",
+    "meaning_th": "โยคะ ราชา: Ruler of trikona + kendra → อำนาจ ความสำเร็จ เกียรติยศ"
+  },
+  "Kemadruma": {
+    "th": "เขมดรุมา",
+    "condition": "No planet in 2nd/12th from Moon",
+    "meaning_en": "Yoga Kemadruma: No planet in 2nd/12th from Moon → เหนื่อยยาก ขาดความสุข",
+    "meaning_th": "โยคะ เขมดรุมา: No planet in 2nd/12th from Moon → เหนื่อยยาก ขาดความสุข"
+  },
+  "Viparita Raja": {
+    "th": "วิปรีตราชา",
+    "condition": "6th/8th/12th lords in each other's houses",
+    "meaning_en": "Yoga Viparita Raja: 6th/8th/12th lords in each other's houses → จากปัญหาสู่ชัยชนะ",
+    "meaning_th": "โยคะ วิปรีตราชา: 6th/8th/12th lords in each other's houses → จากปัญหาสู่ชัยชนะ"
+  },
+  "Neecha Bhanga": {
+    "th": "นีจะภังคะ",
+    "condition": "Cancellation of debilitation",
+    "meaning_en": "Yoga Neecha Bhanga: Cancellation of debilitation → ฟื้นจากสถานะด้อย",
+    "meaning_th": "โยคะ นีจะภังคะ: Cancellation of debilitation → ฟื้นจากสถานะด้อย"
+  },
+  "Dhana Yoga": {
+    "th": "ธนะ",
+    "condition": "2nd/11th lords strong",
+    "meaning_en": "Yoga Dhana Yoga: 2nd/11th lords strong → ความมั่งคั่ง ทรัพย์สิน",
+    "meaning_th": "โยคะ ธนะ: 2nd/11th lords strong → ความมั่งคั่ง ทรัพย์สิน"
+  },
+  "Sanyasa": {
+    "th": "สันยาสะ",
+    "condition": "4+ planets in one house",
+    "meaning_en": "Yoga Sanyasa: 4+ planets in one house → สละโลก ด้านจิตวิญญาณ",
+    "meaning_th": "โยคะ สันยาสะ: 4+ planets in one house → สละโลก ด้านจิตวิญญาณ"
+  },
+  "Vesi Yoga": {
+    "th": "เวศี",
+    "condition": "Non-luminaries in 2nd from Sun",
+    "meaning_en": "Yoga Vesi Yoga: Non-luminaries in 2nd from Sun → เป็นที่พึ่งของคน",
+    "meaning_th": "โยคะ เวศี: Non-luminaries in 2nd from Sun → เป็นที่พึ่งของคน"
+  },
+  "Ubhachandra": {
+    "th": "อุบะจันทร์",
+    "condition": "Both sides of Moon occupied",
+    "meaning_en": "Yoga Ubhachandra: Both sides of Moon occupied → มีบริวาร มีชื่อเสียง",
+    "meaning_th": "โยคะ อุบะจันทร์: Both sides of Moon occupied → มีบริวาร มีชื่อเสียง"
+  }
+}

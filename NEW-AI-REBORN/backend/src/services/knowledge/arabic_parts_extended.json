@@ -1,0 +1,272 @@
+{
+  "Part of Fortune": {
+    "th": "ส่วนFortune — ความหมายด้านFortune",
+    "en": "Part of Fortune — meaning related to Fortune",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Spirit": {
+    "th": "ส่วนSpirit — ความหมายด้านSpirit",
+    "en": "Part of Spirit — meaning related to Spirit",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Marriage": {
+    "th": "ส่วนMarriage — ความหมายด้านMarriage",
+    "en": "Part of Marriage — meaning related to Marriage",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Career": {
+    "th": "ส่วนCareer — ความหมายด้านCareer",
+    "en": "Part of Career — meaning related to Career",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of Children": {
+    "th": "ส่วนChildren — ความหมายด้านChildren",
+    "en": "Part of Children — meaning related to Children",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of Death": {
+    "th": "ส่วนDeath — ความหมายด้านDeath",
+    "en": "Part of Death — meaning related to Death",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Travel": {
+    "th": "ส่วนTravel — ความหมายด้านTravel",
+    "en": "Part of Travel — meaning related to Travel",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Catastrophe": {
+    "th": "ส่วนCatastrophe — ความหมายด้านCatastrophe",
+    "en": "Part of Catastrophe — meaning related to Catastrophe",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Treasure": {
+    "th": "ส่วนTreasure — ความหมายด้านTreasure",
+    "en": "Part of Treasure — meaning related to Treasure",
+    "formula": "ASC + Planet8 - Planet0"
+  },
+  "Part of Servants": {
+    "th": "ส่วนServants — ความหมายด้านServants",
+    "en": "Part of Servants — meaning related to Servants",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Father": {
+    "th": "ส่วนFather — ความหมายด้านFather",
+    "en": "Part of Father — meaning related to Father",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Mother": {
+    "th": "ส่วนMother — ความหมายด้านMother",
+    "en": "Part of Mother — meaning related to Mother",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Brothers": {
+    "th": "ส่วนBrothers — ความหมายด้านBrothers",
+    "en": "Part of Brothers — meaning related to Brothers",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of Sisters": {
+    "th": "ส่วนSisters — ความหมายด้านSisters",
+    "en": "Part of Sisters — meaning related to Sisters",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of Health": {
+    "th": "ส่วนHealth — ความหมายด้านHealth",
+    "en": "Part of Health — meaning related to Health",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Wealth": {
+    "th": "ส่วนWealth — ความหมายด้านWealth",
+    "en": "Part of Wealth — meaning related to Wealth",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Power": {
+    "th": "ส่วนPower — ความหมายด้านPower",
+    "en": "Part of Power — meaning related to Power",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Honor": {
+    "th": "ส่วนHonor — ความหมายด้านHonor",
+    "en": "Part of Honor — meaning related to Honor",
+    "formula": "ASC + Planet8 - Planet0"
+  },
+  "Part of Love": {
+    "th": "ส่วนLove — ความหมายด้านLove",
+    "en": "Part of Love — meaning related to Love",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Friendship": {
+    "th": "ส่วนFriendship — ความหมายด้านFriendship",
+    "en": "Part of Friendship — meaning related to Friendship",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Enemies": {
+    "th": "ส่วนEnemies — ความหมายด้านEnemies",
+    "en": "Part of Enemies — meaning related to Enemies",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Knowledge": {
+    "th": "ส่วนKnowledge — ความหมายด้านKnowledge",
+    "en": "Part of Knowledge — meaning related to Knowledge",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of Wisdom": {
+    "th": "ส่วนWisdom — ความหมายด้านWisdom",
+    "en": "Part of Wisdom — meaning related to Wisdom",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of Luck": {
+    "th": "ส่วนLuck — ความหมายด้านLuck",
+    "en": "Part of Luck — meaning related to Luck",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Success": {
+    "th": "ส่วนSuccess — ความหมายด้านSuccess",
+    "en": "Part of Success — meaning related to Success",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Failure": {
+    "th": "ส่วนFailure — ความหมายด้านFailure",
+    "en": "Part of Failure — meaning related to Failure",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Happiness": {
+    "th": "ส่วนHappiness — ความหมายด้านHappiness",
+    "en": "Part of Happiness — meaning related to Happiness",
+    "formula": "ASC + Planet8 - Planet0"
+  },
+  "Part of Sorrow": {
+    "th": "ส่วนSorrow — ความหมายด้านSorrow",
+    "en": "Part of Sorrow — meaning related to Sorrow",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Courage": {
+    "th": "ส่วนCourage — ความหมายด้านCourage",
+    "en": "Part of Courage — meaning related to Courage",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Fear": {
+    "th": "ส่วนFear — ความหมายด้านFear",
+    "en": "Part of Fear — meaning related to Fear",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Anger": {
+    "th": "ส่วนAnger — ความหมายด้านAnger",
+    "en": "Part of Anger — meaning related to Anger",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of Peace": {
+    "th": "ส่วนPeace — ความหมายด้านPeace",
+    "en": "Part of Peace — meaning related to Peace",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of War": {
+    "th": "ส่วนWar — ความหมายด้านWar",
+    "en": "Part of War — meaning related to War",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Life": {
+    "th": "ส่วนLife — ความหมายด้านLife",
+    "en": "Part of Life — meaning related to Life",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Rebirth": {
+    "th": "ส่วนRebirth — ความหมายด้านRebirth",
+    "en": "Part of Rebirth — meaning related to Rebirth",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Transformation": {
+    "th": "ส่วนTransformation — ความหมายด้านTransformation",
+    "en": "Part of Transformation — meaning related to Transformation",
+    "formula": "ASC + Planet8 - Planet0"
+  },
+  "Part of Destruction": {
+    "th": "ส่วนDestruction — ความหมายด้านDestruction",
+    "en": "Part of Destruction — meaning related to Destruction",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Creation": {
+    "th": "ส่วนCreation — ความหมายด้านCreation",
+    "en": "Part of Creation — meaning related to Creation",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Faith": {
+    "th": "ส่วนFaith — ความหมายด้านFaith",
+    "en": "Part of Faith — meaning related to Faith",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Doubt": {
+    "th": "ส่วนDoubt — ความหมายด้านDoubt",
+    "en": "Part of Doubt — meaning related to Doubt",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of Hope": {
+    "th": "ส่วนHope — ความหมายด้านHope",
+    "en": "Part of Hope — meaning related to Hope",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of Despair": {
+    "th": "ส่วนDespair — ความหมายด้านDespair",
+    "en": "Part of Despair — meaning related to Despair",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Joy": {
+    "th": "ส่วนJoy — ความหมายด้านJoy",
+    "en": "Part of Joy — meaning related to Joy",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Pain": {
+    "th": "ส่วนPain — ความหมายด้านPain",
+    "en": "Part of Pain — meaning related to Pain",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Gain": {
+    "th": "ส่วนGain — ความหมายด้านGain",
+    "en": "Part of Gain — meaning related to Gain",
+    "formula": "ASC + Planet8 - Planet0"
+  },
+  "Part of Loss": {
+    "th": "ส่วนLoss — ความหมายด้านLoss",
+    "en": "Part of Loss — meaning related to Loss",
+    "formula": "ASC + Planet0 - Planet1"
+  },
+  "Part of Union": {
+    "th": "ส่วนUnion — ความหมายด้านUnion",
+    "en": "Part of Union — meaning related to Union",
+    "formula": "ASC + Planet1 - Planet2"
+  },
+  "Part of Separation": {
+    "th": "ส่วนSeparation — ความหมายด้านSeparation",
+    "en": "Part of Separation — meaning related to Separation",
+    "formula": "ASC + Planet2 - Planet3"
+  },
+  "Part of Beginning": {
+    "th": "ส่วนBeginning — ความหมายด้านBeginning",
+    "en": "Part of Beginning — meaning related to Beginning",
+    "formula": "ASC + Planet3 - Planet4"
+  },
+  "Part of End": {
+    "th": "ส่วนEnd — ความหมายด้านEnd",
+    "en": "Part of End — meaning related to End",
+    "formula": "ASC + Planet4 - Planet5"
+  },
+  "Part of Journey": {
+    "th": "ส่วนJourney — ความหมายด้านJourney",
+    "en": "Part of Journey — meaning related to Journey",
+    "formula": "ASC + Planet5 - Planet6"
+  },
+  "Part of Home": {
+    "th": "ส่วนHome — ความหมายด้านHome",
+    "en": "Part of Home — meaning related to Home",
+    "formula": "ASC + Planet6 - Planet7"
+  },
+  "Part of Exile": {
+    "th": "ส่วนExile — ความหมายด้านExile",
+    "en": "Part of Exile — meaning related to Exile",
+    "formula": "ASC + Planet7 - Planet8"
+  },
+  "Part of Return": {
+    "th": "ส่วนReturn — ความหมายด้านReturn",
+    "en": "Part of Return — meaning related to Return",
+    "formula": "ASC + Planet8 - Planet0"
+  }
+}

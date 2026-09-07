@@ -1,0 +1,26 @@
+{
+  "transit Sun conjunction natal Sun": {
+    "th": "วันนี้คุณเต็มเปาะ พลังเต็มที่ เป็นวันเริ่มต้นใหม่",
+    "advice": "ใช้พลังนี้เริ่มสิ่งใหม่"
+  },
+  "transit Sun conjunction natal Moon": {
+    "th": "วันนี้อารมณ์แข็งแกร่ง ความรู้สึกชัดเจน",
+    "advice": "ฟังเสียงในใจ"
+  },
+  "transit Sun square natal Saturn": {
+    "th": "วันนี้รู้สึกถูกจำกัด อาจมีอุปสรรค",
+    "advice": "อดทน อย่าเพิ่งตัดสินใจ"
+  },
+  "transit Venus trine natal Jupiter": {
+    "th": "วันนี้โชคดีเรื่องเงินและความรัก",
+    "advice": "กล้าลงทุน กล้ารัก"
+  },
+  "transit Mars opposition natal Mars": {
+    "th": "วันนี้อาจขัดแย้งกันง่าย พลังต่อสู้สูง",
+    "advice": "หลีกเลี่ยงความขัดแย้ง"
+  },
+  "transit Mercury retrograde": {
+    "th": "วันนี้ระวังการสื่อสาร อาจเข้าใจผิด",
+    "advice": "ตรวจสอบข้อมูล 2 ครั้ง"
+  }
+}

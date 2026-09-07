@@ -1,0 +1,79 @@
+{
+  "harmonic_charts": {
+    "D9": {
+      "name": "Navamsa",
+      "name_th": "นวัมซา",
+      "division": 9,
+      "meaning_th": "ดวงชะตาคู่ครองลึก — ความรัก ความสัมพันธ์ และธรรมะในชีวิตหลัง",
+      "en": "Navamsa — spouse chart, deep relationships, dharma in later life",
+      "calculation_method": {
+        "description": "แบ่งแต่ละราศี (30°) ออกเป็น 9 ส่วนเท่ากัน ส่วนละ 3°20' (3 องศา 20 ลิปดา)",
+        "description_th": "Divide each sign (30°) into 9 equal parts of 3°20' each",
+        "mapping_rule": "ราศีที่เป็นอภิเษก (Aries, Leo, Sagittarius) ส่วนที่ 1 = Aries, ส่งเรียงตามลำดับราศี ราศีมังกร (Taurus, Virgo, Capricorn) ส่วนที่ 1 = Capricorn ราศีคู่ (Gemini, Libra, Aquarius) ส่วนที่ 1 = Libra",
+        "mapping_rule_en": "For fire signs (Aries, Leo, Sagittarius): part 1 = Aries. For earth signs (Taurus, Virgo, Capricorn): part 1 = Capricorn. For air signs (Gemini, Libra, Aquarius): part 1 = Libra. Each part progresses in zodiacal order.",
+        "formula": "navamsa_sign = floor(longitude_within_sign / 3.333) ; map_to_sign(navamsa_sign, starting_sign_by_element)"
+      },
+      "interpretation": {
+        "general": "D9 แสดงความรักที่แท้จริง คู่ครอง และบทเรียนทางจิตวิญญาณ เป็นดวงชะตาที่สำคัญที่สุดในโหราศาสตร์เวดิก",
+        "general_en": "D9 shows true love, spouse, and spiritual lessons. Most important in Vedic astrology.",
+        "planets": {
+          "Sun": "อำนาจ ศักดิ์สิทธิ์ ความเป็นผู้นำทางจิตวิญญาณ",
+          "Moon": "จิตใจลึก อารมณ์ที่แท้จริง ความสัมพันธ์กับแม่",
+          "Venus": "ความรัก คู่ครอง ความสวยงาม",
+          "Jupiter": "ธรรมะ คำสอน ความเชื่อ",
+          "Saturn": "บทเรียนชีวิต การเผชิญกับความยากลำบาก"
+        }
+      }
+    },
+    "D10": {
+      "name": "Dashamsa",
+      "name_th": "ทศัมซา",
+      "division": 10,
+      "meaning_th": "ดวงชะตาการงาน — อาชีพ การงาน และตำแหน่งในสังคม",
+      "en": "Dashamsa — career chart, profession, social status",
+      "calculation_method": {
+        "description": "แบ่งแต่ละราศี (30°) ออกเป็น 10 ส่วนเท่ากัน ส่วนละ 3° (3 องศา)",
+        "description_th": "Divide each sign (30°) into 10 equal parts of 3° each",
+        "mapping_rule": "ราศีคู่ (Aries, Gemini, Leo, Libra, Sagittarius, Aquarius) ส่วนที่ 1 = Aries และนับไปข้างหน้า ราศีแข็ง (Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces) ส่วนที่ 1 = Capricorn และนับไปข้างหน้า",
+        "mapping_rule_en": "For odd/movable signs (Aries, Gemini, Leo, Libra, Sagittarius, Aquarius): part 1 = Aries, count forward. For even/fixed signs (Taurus, Cancer, Virgo, Scorpio, Capricorn, Pisces): part 1 = Capricorn, count forward.",
+        "formula": "dashamsa_sign = floor(longitude_within_sign / 3.0) ; map_to_sign(dashamsa_sign, starting_sign_by_parity)"
+      },
+      "interpretation": {
+        "general": "D10 แสดงความสำเร็จทางการงาน ตำแหน่ง และอาชีพ ใช้วิเคราะห์แนวโน้มการงาน",
+        "general_en": "D10 shows career success, position, and profession. Used to analyze career direction.",
+        "planets": {
+          "Sun": "อำนาจ การเป็นผู้นำ ตำแหน่งสูง",
+          "Moon": "ชื่อเสียงสาธารณะ ความสัมพันธ์กับผู้คนในการงาน",
+          "Venus": "อาชีพศิลปะ ความงาม การเกษตร",
+          "Jupiter": "การศึกษา กฎหมาย ครู ที่ปรึกษา",
+          "Saturn": "การงานหนัก ก่อสร้าง การทำงานรัฐบาล"
+        }
+      }
+    },
+    "D12": {
+      "name": "Dwadasamsa",
+      "name_th": "ทวาทศัมซา",
+      "division": 12,
+      "meaning_th": "ดวงชะตาพ่อแม่ — ความสัมพันธ์กับพ่อแม่ และมรดกตกทอด",
+      "en": "Dwadasamsa — parents chart, ancestral legacy",
+      "calculation_method": {
+        "description": "แบ่งแต่ละราศี (30°) ออกเป็น 12 ส่วนเท่ากัน ส่วนละ 2°30' (2 องศา 30 ลิปดา)",
+        "description_th": "Divide each sign (30°) into 12 equal parts of 2°30' each",
+        "mapping_rule": "ส่วนที่ 1 ของแต่ละราศี = ราศีนั้นเอง แล้วนับต่อไปตามลำดับราศี เช่น Aries ส่วนที่ 1 = Aries, ส่วนที่ 2 = Taurus, ..., ส่วนที่ 12 = Pisces",
+        "mapping_rule_en": "Part 1 of each sign = that sign itself, then count forward. Aries: 1=Aries, 2=Taurus, ..., 12=Pisces.",
+        "formula": "dwadasamsa_sign = floor(longitude_within_sign / 2.5) ; starting_sign = current_sign"
+      },
+      "interpretation": {
+        "general": "D12 แสดงความสัมพันธ์กับพ่อแม่ มรดก และรากฐานครอบครัว",
+        "general_en": "D12 shows relationships with parents, inheritance, and family foundation.",
+        "planets": {
+          "Sun": "พ่อ บรรพบุรุษ อำนาจในครอบครัว",
+          "Moon": "แม่ ความผูกพันครอบครัว มรดกทางอารมณ์",
+          "Venus": "ความรักในครอบครัว ความสุขจากบ้าน",
+          "Jupiter": "สัจธรรม คำสอนจากบรรพบุรุษ",
+          "Saturn": "กรรมเก่า บทเรียนจากบรรพบุรุษ ข้อจำกัดในครอบครัว"
+        }
+      }
+    }
+  }
+}

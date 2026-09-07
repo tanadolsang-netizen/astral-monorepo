@@ -1,0 +1,11 @@
+{
+  "id": "20260822-201744",
+  "to": "S2",
+  "unit": "ATLAS 🗺️ หอคัมภีร์ฟ้า — engine specs",
+  "title": "Vault remote backup",
+  "body": "สร้าง private remote ให้ C:/AI/obsidian-vault แล้ว push snapshot · ถ้า gh CLI login อยู่: gh repo create tanadolsang-netizen/obsidian-vault --private --source . --push · ถ้ายังไม่ auth: ห้ามฝืน ให้ report กลับมาว่าต้องรอผู้ใช้ login · DoD: git remote -v มี origin + push สำเร็จ + commit ไม่มีค้าง",
+  "priority": "high",
+  "status": "PENDING",
+  "issued_by": "COMMAND",
+  "issued_at": "2026-08-22 20:17:44"
+}

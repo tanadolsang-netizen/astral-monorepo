@@ -1,0 +1,11 @@
+[   12999ms] [LOG] Debug: GPP event received: {eventName: listenerRegistered, listenerId: 1, data: true, pingData: Object} @ :377
+[   13368ms] [WARNING]  is not a valid value for uspDnsText @ https://cmp.inmobi.com/tcfv2/cmp2.js?referer=www.wagnardsoft.com:1
+[   13677ms] [LOG] Debug: GPP event received: e @ :377
+[   13677ms] [LOG] Debug: GPP event received: e @ :377
+[   13677ms] [LOG] Debug: GPP event received: e @ :377
+[   13714ms] [LOG] uspData set usp out of jurisiction value @ https://cmp.inmobi.com/tcfv2/cmp2.js?referer=www.wagnardsoft.com:1
+[   13715ms] [WARNING] Google basic consent is not applicable. @ https://cmp.inmobi.com/tcfv2/cmp2.js?referer=www.wagnardsoft.com:1
+[   13718ms] [LOG] Visit event sent successfully. @ https://cmp.inmobi.com/tcfv2/cmp2.js?referer=www.wagnardsoft.com:1
+[   13750ms] [LOG] Debug: GPP event received: e @ :377
+[   13750ms] [LOG] Debug: GPP event received: e @ :377
+[   13750ms] [LOG] Debug: No GPP sections found. @ :387

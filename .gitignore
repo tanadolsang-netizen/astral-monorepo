@@ -1,0 +1,28 @@
+# cache / scratch
+_scratch/
+workspace-scratch/
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# node / build
+node_modules/
+.next/
+.vercel/
+dist/
+
+# large binary
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.ico
+*.mp4
+*.webp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# secrets
+.env
