@@ -24,5 +24,6 @@ dist/
 .DS_Store
 Thumbs.db
 
-# secrets
+# secrets / config
 .env
+render.yaml
