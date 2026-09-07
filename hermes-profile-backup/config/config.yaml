@@ -1,0 +1,77 @@
+model:
+  default: z-ai/glm-5.2:free
+  provider: openrouter
+  base_url: ''
+  api_key: ''
+  ollama_num_ctx: 65536
+  aliases:
+    glm53:
+      provider: custom
+      model: coding-glm-5.3-free
+      base_url: https://aihubmix.com/v1
+agent:
+  reasoning_effort: ultra
+terminal:
+  cwd: C:/Users/ADMIN/Desktop
+browser:
+  allow_private_urls: true
+  use_real_profile: true
+checkpoints:
+  enabled: true
+display:
+  personality: helpful
+  pet:
+    enabled: false
+    slug: ''
+  message_reactions: true
+moa:
+  presets:
+    default:
+      reference_models:
+        - provider: nous
+          model: meituan/longcat-2.0:free
+          enabled: true
+      aggregator:
+        provider: nous
+        model: stepfun/step-3.7-flash:free
+      degraded_reference_policy: loud
+      fanout: user_turn
+  reference_models:
+    - provider: nous
+      model: meituan/longcat-2.0:free
+      enabled: true
+  aggregator:
+    provider: nous
+    model: stepfun/step-3.7-flash:free
+  degraded_reference_policy: loud
+  max_tokens: 4096
+  fanout: user_turn
+  enabled: true
+timezone: Asia/Bangkok
+approvals:
+  destructive_slash_confirm: false
+command_allowlist:
+  - script execution via -e/-c flag
+  - recursive delete
+  - access to Hermes secrets (Windows path)
+  - script execution via heredoc
+  - execute_code
+  - force kill processes (taskkill /F)
+security:
+  allow_private_urls: true
+sessions:
+  auto_archive: true
+  auto_archive_days: 1
+_config_version: 40
+custom_providers:
+  - name: Local (localhost:11434)
+    base_url: http://localhost:11434/v1
+    key_env: HERMES_CUSTOM_LOCALHOST_11434_API_KEY
+    model: gemma4:12b
+    models:
+      qwen-64k:
+        context_length: 65536
+        ollama_num_ctx: 65536
+      gemma4:12b:
+        context_length: 65536
+        ollama_num_ctx: 65536
