@@ -587,11 +587,31 @@ planetData.forEach(p => {
   orbit.add(mesh);
 
   if (p.name === 'Saturn') {
-    const ringGeo = new THREE.RingGeometry(p.size * 1.4, p.size * 2.2, 64);
-    const ringMat = new THREE.MeshBasicMaterial({ color: 0xc9b896, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
-    const ring = new THREE.Mesh(ringGeo, ringMat);
-    ring.rotation.x = Math.PI / 2.5;
-    mesh.add(ring);
+    // Purple particles orbiting Saturn (replaces ring)
+    const particleCount = 200;
+    const particleGeo = new THREE.BufferGeometry();
+    const positions = new Float32Array(particleCount * 3);
+    const particleSpeeds = [];
+    for (let i = 0; i < particleCount; i++) {
+      const angle = Math.random() * Math.PI * 2;
+      const r = p.size * 1.5 + Math.random() * p.size * 1.2;
+      positions[i * 3] = Math.cos(angle) * r;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 0.8;
+      positions[i * 3 + 2] = Math.sin(angle) * r;
+      particleSpeeds.push(0.3 + Math.random() * 0.7);
+    }
+    particleGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const particleMat = new THREE.PointsMaterial({
+      color: 0x8b5cf6,
+      size: 0.6,
+      transparent: true,
+      opacity: 0.7,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false
+    });
+    const particles = new THREE.Points(particleGeo, particleMat);
+    mesh.add(particles);
+    mesh.userData.saturnParticles = { speeds: particleSpeeds, baseRadius: p.size * 1.5 };
   }
 
   scene.add(orbit);
@@ -773,7 +793,22 @@ function animate() {
     }
   });
 
-  planets.forEach(p => { p.orbit.rotation.y += p.speed * 0.008; });
+  planets.forEach(p => {
+    p.orbit.rotation.y += p.speed * 0.008;
+    // Animate Saturn's purple particles orbiting
+    if (p.mesh.userData.saturnParticles) {
+      const particleMesh = p.mesh.children[p.mesh.children.length - 1];
+      const positions = particleMesh.geometry.attributes.position.array;
+      const { speeds, baseRadius } = p.mesh.userData.saturnParticles;
+      for (let i = 0; i < speeds.length; i++) {
+        const angle = Math.atan2(positions[i * 3 + 2], positions[i * 3]) + speeds[i] * 0.01;
+        const r = baseRadius + Math.sin(time * 2 + i) * 0.5;
+        positions[i * 3] = Math.cos(angle) * r;
+        positions[i * 3 + 2] = Math.sin(angle) * r;
+      }
+      particleMesh.geometry.attributes.position.needsUpdate = true;
+    }
+  });
   asteroidBelt.rotation.y += 0.0004;
 
   comets.forEach(c => {
