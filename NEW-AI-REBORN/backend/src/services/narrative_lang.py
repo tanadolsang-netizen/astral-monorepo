@@ -244,6 +244,11 @@ LANDING: dict[str, dict[str, str]] = {
     "art_uniqueness":       {"th": "ภาพนี้สร้างจากข้อมูลดวงชะตาของคุณ — ไม่มีใครเหมือนคุณในจักรวาลนี้",
                              "en": "This image was generated from your unique birth chart — no one else in the universe is like you"},
     "footer":               {"th": "อัสตรัล — ภาษาที่ท้องฟ้าจารซ้านไว้ — ๒๕๖๙", "en": "Astral — Written in the sky's language — 2026"},
+    "form_title":           {"th": "สร้างภาพดวงชะตาของคุณ", "en": "Generate your cosmic art"},
+    "form_subtitle":        {"th": "กรอกข้อมูลเพื่อให้ฟ้าสร้างภาพให้คุณ", "en": "Enter your birth data for the sky to create your art"},
+    "form_name_ph":         {"th": "ใส่ชื่อของคุณ", "en": "Enter your name"},
+    "form_place_ph":        {"th": "เช่น กรุงเทพฯ", "en": "e.g. Bangkok"},
+    "deck_title":           {"th": "สำนักไพ่แห่งจักรวาล", "en": "The Cosmic Deck"},
 }
 
 SECTION: dict[str, dict[str, str]] = {
@@ -380,10 +385,77 @@ BIRTH_FORM: dict[str, dict[str, str]] = {
     "place_required":   {"th": "กรุณากรอกสถานที่เกิด", "en": "Place is required"},
 }
 
-# Tarot section
+# Intro page
 INTRO: dict[str, dict[str, str]] = {
     "prepare":  {"th": "✦ เตรียมพร้อมลอยสู่ท้องฟ้า ✦", "en": "✦ PREPARE FOR TAKEOFF ✦"},
     "system":   {"th": "ระบบโหราศาสตร์ครบวงจร", "en": "THE COSMIC SYSTEM"},
+    "title":        {"th": "เรื่องราวที่ฟ้าฝากมาให้ท่าน", "en": "The story the sky left for you"},
+    "description":  {"th": "ไม่ใช่การทำนายทั่วไป — แต่เป็นภาพสร้างสรรค์จากปัญญาประดิษฐ์ สไตล์ cosmic garden ที่สร้างมาจากข้อมูลดวงชะตาของท่านโดยเฉพาะ ท่านจะเห็นตัวเองในแสงดาว",
+                    "en": "Not ordinary fortune-telling — but AI-generated cosmic garden imagery crafted exclusively from your birth chart. You will see yourself among the stars"},
+    "cta":          {"th": "เริ่มต้นการเดินทาง", "en": "Begin the journey"},
+    "scroll_hint":  {"th": "เลื่อนเพื่อดูลึกลับ", "en": "Scroll to unveil the mystery"},
+}
+
+# Warp transition page
+WARP: dict[str, dict[str, str]] = {
+    "title":    {"th": "ความลับรอท่านอยู่", "en": "Secrets await you"},
+    "subtitle": {"th": "ฟ้าพร้อมจะเล่าแล้ว", "en": "The sky is ready to speak"},
+    "skip":     {"th": "ข้ามแล้วเข้าสู่หน้าแรก →", "en": "Skip to the main page →"},
+}
+
+# SPA page strings
+SPA: dict[str, dict[str, str]] = {
+    "eyebrow":          {"th": "✦ โหราศาสตร์ครบวงจร ✦", "en": "✦ Complete Astrology ✦"},
+    "hero_title":       {"th": "ดาวแต่ละดวง<br/>ล้วนมี<span class=\"g\">คำบอก</span>ให้ท่าน", "en": "Every star<br/>has a<span class=\"g\">message</span>for you"},
+    "hero_desc":        {"th": "วันที่ท่านลืมตาดูโลก ดาวแต่ละดวงยืนเรียงตำแหน่งให้ได้เห็นแล้ว — ว่าท่านมาเกิดมาเพื่ออะไร จะรักกับใคร และช่วงไหนในชีวิตที่ฟ้าจะประทานของขวัญ",
+                       "en": "The day you opened your eyes, the stars had already arranged themselves — revealing why you were born, who you'll love, and when the sky will gift you"},
+    "cta_primary":      {"th": "ขอให้ดาวบอกท่าน", "en": "Let the stars speak"},
+    "cta_secondary":    {"th": "ดูสิ่งที่ฟ้าเล่า", "en": "See what the sky tells"},
+    "scroll":           {"th": "scroll", "en": "scroll"},
+    "features_title":   {"th": "สิ่งที่<span class=\"g\">ดาว</span>อยากบอกท่าน", "en": "What the<span class=\"g\">stars</span>want to tell you"},
+    "features_desc":    {"th": "เลือกสิ่งที่ท่านสงสัยใจ — เราจะอ่านจากตำราโบราณที่ส่งกันมาหลายพันปี แล้วเล่ากลับให้ท่านฟังเป็นภาษาที่เข้าใจได้จริง",
+                       "en": "Choose what weighs on your heart — we'll read from ancient texts passed down millennia, and tell it back in words you truly understand"},
+    "card_natal_title":     {"th": "ดวงชะตา", "en": "Natal Chart"},
+    "card_natal_desc":      {"th": "วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าท่านมีของดีซ่อนที่ไหน และอุปสรรคที่ฟ้าฝากมาให้ฝ่าฟัน",
+                           "en": "Your birth date is the compass pointing to your origin — we'll show where your gifts lie hidden and the obstacles the sky gave you to overcome"},
+    "card_synastry_title":  {"th": "ดูคู่", "en": "Synastry"},
+    "card_synastry_desc":   {"th": "เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือจะต้องระวังเรื่องใด",
+                           "en": "When your star meets theirs, a current flows — we'll reveal whether these two stars amplify each other or warn what to guard against"},
+    "card_vedic_title":     {"th": "เวดิก", "en": "Vedic"},
+    "card_vedic_desc":      {"th": "มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล — เห็นธาตุที่ท่านเกิดมาและหน้าที่ที่ฟ้าฝากไว้",
+                           "en": "Through ancient Indian texts, the stars shift to their true seasonal positions — revealing the element you were born under and the duty the sky entrusted to you"},
+    "card_horary_title":    {"th": "มูฮูร์ตะ", "en": "Horary"},
+    "card_horary_desc":     {"th": "มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่ท่านเริ่มตั้งต้นนั้นเป็นสิริมงคล",
+                           "en": "Have something important to do? — we'll find the hour the stars stand in support, making what you begin auspicious"},
+    "card_tarot_title":     {"th": "ไพ่ทาโรต์", "en": "Tarot"},
+    "card_tarot_desc":      {"th": "จั่วไพ่ 78 ใบจากสำนักโบราณ สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย — แต่เป็นเสียงที่สะท้อนสิ่งที่ท่านกังวลอยู่ในใจตอนนี้",
+                           "en": "Draw 78 cards from the ancient school — what emerges is no vague prophecy, but a voice reflecting what currently troubles your heart"},
+    "card_transit_title":   {"th": "ชีวิตคุณ", "en": "Your Life"},
+    "card_transit_desc":    {"th": "ดาวไม่หยุดหมุน และแต่ละรอบที่มันผ่าน จะพาเหตุการณ์ใหม่มา — เราจะบอกท่านล่วงหน้าว่าเมื่อไหร่ควรก้าวไปและเมื่อไหร่ควรรอ",
+                           "en": "Stars never stop turning, and each cycle brings new events — we'll tell you in advance when to step forward and when to wait"},
+    "form_title":       {"th": "บอกเราว่าท่าน<span class=\"g\">ลืมตาดูโลก</span>วันไหน", "en": "Tell us the day<span class=\"g\">you opened your eyes</span>to the world"},
+    "form_desc":        {"th": "ดาวจะเล่าชีวิตท่านให้ฟัง — จากตำราโบราณที่ส่งกันมาหลายพันปี", "en": "The stars will tell your life story — from ancient texts passed down millennia"},
+    "form_name":        {"th": "ชื่อของคุณ", "en": "Your name"},
+    "form_date":        {"th": "วันเกิด", "en": "Birth date"},
+    "form_time":        {"th": "เวลาเกิด", "en": "Birth time"},
+    "form_place":       {"th": "จังหวัด", "en": "Province"},
+    "form_name_ph":     {"th": "ชื่อที่ใช้เรียก", "en": "What to call you"},
+    "btn_calculate":    {"th": "ขอให้ดาวบอกท่าน", "en": "Let the stars tell you"},
+    "btn_draw":         {"th": "จั่วไพ่", "en": "Draw cards"},
+    "tarot_title":      {"th": "จั่ว<span class=\"g\">ไพ่ทาโรต์</span>ให้ท่าน", "en": "Draw<span class=\"g\">the Tarot</span>for you"},
+    "tarot_desc":       {"th": "โบกไพ่แล้วตั้งคำถามในใจ — ไพ่สามใบนี้จะตอบสิ่งที่ท่านอยากรู้ (คลิกไพ่เพื่อพลิกดู)", "en": "Shuffle and set your question — these three cards will answer what you seek (click to flip)"},
+    "tarot_question":   {"th": "คำถามของคุณ", "en": "Your question"},
+    "tarot_question_ph":{"th": "สิ่งที่อยากรู้", "en": "What you wish to know"},
+    "loading":          {"th": "⏳ กำลังอ่านดาวให้ท่านฟัง...", "en": "⏳ Reading the stars for you..."},
+    "result_done":      {"th": "✅ ดาวบอกท่านครบแล้ว", "en": "✅ The stars have spoken"},
+    "result_report":    {"th": "อ่านรายงานที่ฟ้าฝากมา", "en": "Read the report the sky left"},
+    "result_error":     {"th": "❌ ข้อผิดพลาด", "en": "❌ Error"},
+    "flip_draw":        {"th": "จั่วไพ่", "en": "Draw"},
+    "flip_reversed":    {"th": " (คว่ำ)", "en": " (reversed)"},
+    "footer_line1":     {"th": "Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร", "en": "Astral · Est. MMXXVI · Complete Astrology"},
+    "footer_line2":     {"th": "ภาพประกอบ — The Met Open Access · Venus and the Lute Player (Titian)", "en": "Art — The Met Open Access · Venus and the Lute Player (Titian)"},
+    "loader_line1":     {"th": "The stars are aligning…", "en": "The stars are aligning…"},
+    "loader_line2":     {"th": "ฟ้ากำลังจัดวางดวงดาวให้ท่าน", "en": "The sky is arranging the stars for you"},
 }
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -499,7 +571,7 @@ def export_i18n() -> dict:
     """Export ข้อความทั้งหมดเป็น dict สำหรับ frontend (JSON)"""
     sections = [
         "NAV", "HERO", "LANDING", "SECTION", "BUTTONS", "FORM",
-        "RESULT", "APP", "TAROT", "BIRTH_FORM", "INTRO",
+        "RESULT", "APP", "TAROT", "BIRTH_FORM", "INTRO", "WARP", "SPA",
     ]
     data: dict[str, dict[str, dict[str, str]]] = {}
     for section_name in sections:

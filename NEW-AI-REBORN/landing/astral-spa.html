@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" translate="no">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Astral — ภาษาที่ท้องฟ้าจารซ้านไว้ให้ท่าน</title>
+<title>Astral — ภาษาที่ท้องฟ้าจารซ้านไว้</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Noto+Serif+Thai:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -23,7 +23,7 @@
     background:var(--void); color:var(--text); overflow-x:hidden;
   }
 
-  /* ── COSMIC BACKGROUND LAYERS (fixed) ── */
+  /* ── COSMIC BACKGROUND LAYERS ── */
   #starfield{position:fixed; inset:0; z-index:0; pointer-events:none;
     background:
       radial-gradient(ellipse at 20% 10%, rgba(154,123,52,.10) 0%, transparent 50%),
@@ -52,11 +52,6 @@
     transition:opacity 1s ease, visibility 1s, filter .8s ease;}
   #loader.done{opacity:0; visibility:hidden; filter:blur(20px);}
   #galaxy{position:absolute; inset:0; width:100%; height:100%;}
-  .loader-orbit{width:120px; height:120px; position:relative; border:1px solid rgba(154,123,52,.3); border-radius:50%;
-    animation:spinSlow 6s linear infinite;}
-  .loader-orbit::before{content:""; position:absolute; inset:18px; border:1px solid rgba(154,123,52,.18); border-radius:50%;}
-  .loader-dot{position:absolute; top:-6px; left:50%; width:12px; height:12px; margin-left:-6px; border-radius:50%;
-    background:radial-gradient(circle at 30% 30%, #fff, var(--gold-bright)); box-shadow:0 0 18px var(--gold-bright);}
   .loader-txt{position:relative; z-index:2; text-align:center;}
   .loader-line{font-family:'Cinzel',serif; font-size:clamp(20px,3.4vw,30px); color:var(--moon); letter-spacing:1px; text-shadow:0 2px 20px rgba(0,0,0,.6);}
   .loader-sub{margin-top:8px; color:var(--muted); font-size:14px; letter-spacing:.5px; opacity:.85;}
@@ -64,7 +59,6 @@
   .loader-bar i{display:block; height:100%; width:0; background:linear-gradient(90deg,transparent,var(--gold-bright),transparent);
     animation:load 2.2s ease forwards;}
   @keyframes load{to{width:100%;}}
-  @keyframes spinSlow{to{transform:rotate(360deg);}}
 
   /* ── WARP OVERLAY ── */
   body.warp .wrap{opacity:0 !important; transform:scale(1.08) !important; transition:opacity .5s, transform .5s;}
@@ -85,8 +79,6 @@
   .ornamental-border::before{content:""; position:absolute; inset:8px; border:1px solid var(--gold-soft); border-radius:8px; pointer-events:none;}
   .ornamental-border::after{content:"✦"; position:absolute; top:-12px; left:50%; transform:translateX(-50%);
     color:var(--gold-bright); font-size:24px; text-shadow:0 0 20px var(--gold); padding:0 12px; background:var(--midnight);}
-
-  /* ── CORNER ORNAMENTS ── */
   .corner-orn{position:absolute; width:40px; height:40px; pointer-events:none;}
   .corner-orn.tl{top:-2px; left:-2px; border-top:2px solid var(--purple); border-left:2px solid var(--purple); border-radius:8px 0 0 0;}
   .corner-orn.tr{top:-2px; right:-2px; border-top:2px solid var(--purple); border-right:2px solid var(--purple); border-radius:0 8px 0 0;}
@@ -173,7 +165,6 @@
   .scroll-indicator .arrow{width:20px; height:20px; border-right:2px solid var(--purple); border-bottom:2px solid var(--purple); transform:rotate(45deg);}
   @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0);}50%{transform:translateX(-50%) translateY(8px);}}
 
-  /* ── RESPONSIVE ── */
   @media(max-width:640px){
     .section{padding:10vh 5vw;}
     .ornamental-border{padding:28px 20px;}
@@ -194,8 +185,8 @@
 <div id="loader">
   <canvas id="galaxy"></canvas>
   <div class="loader-txt">
-    <p class="loader-line">The stars are aligning…</p>
-    <p class="loader-sub">ฟ้ากำลังจัดวางดวงดาวให้ท่าน</p>
+    <p class="loader-line" data-i18n="SPA.loader_line1">The stars are aligning…</p>
+    <p class="loader-sub" data-i18n="SPA.loader_line2">ฟ้ากำลังจัดวางดวงดาวให้ท่าน</p>
   </div>
   <div class="loader-bar"><i></i></div>
 </div>
@@ -206,16 +197,16 @@
   <!-- ═══ SECTION 1: HERO ═══ -->
   <section class="section" id="sec-hero">
     <div class="hero-inner">
-      <p class="eyebrow">✦ โหราศาสตร์ครบวงจร ✦</p>
-      <h1>ดาวแต่ละดวง<br/>ล้วนมี<span class="g">คำบอก</span>ให้ท่าน</h1>
-      <p>วันที่ท่านลืมตาดูโลก ดาวแต่ละดวงยืนเรียงตำแหน่งให้ได้เห็นแล้ว — ว่าท่านมาเกิดมาเพื่ออะไร จะรักกับใคร และช่วงไหนในชีวิตที่ฟ้าจะประทานของขวัญ</p>
+      <p class="eyebrow" data-i18n="SPA.eyebrow">✦ โหราศาสตร์ครบวงจร ✦</p>
+      <h1 data-i18n="SPA.hero_title">ดาวแต่ละดวง<br/>ล้วนมี<span class="g">คำบอก</span>ให้ท่าน</h1>
+      <p data-i18n="SPA.hero_desc">วันที่ท่านลืมตาดูโลก ดาวแต่ละดวงยืนเรียงตำแหน่งให้ได้เห็นแล้ว — ว่าท่านมาเกิดมาเพื่ออะไร จะรักกับใคร และช่วงไหนในชีวิตที่ฟ้าจะประทานของขวัญ</p>
       <div class="cta">
-        <button class="btn primary" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})">ขอให้ดาวบอกท่าน</button>
-        <button class="btn" onclick="document.getElementById('sec-features').scrollIntoView({behavior:'smooth'})">ดูสิ่งที่ฟ้าเล่า</button>
+        <button class="btn primary" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})" data-i18n="SPA.cta_primary">ขอให้ดาวบอกท่าน</button>
+        <button class="btn" onclick="document.getElementById('sec-features').scrollIntoView({behavior:'smooth'})" data-i18n="SPA.cta_secondary">ดูสิ่งที่ฟ้าเล่า</button>
       </div>
     </div>
     <div class="scroll-indicator">
-      <span>scroll</span>
+      <span data-i18n="SPA.scroll">scroll</span>
       <div class="arrow"></div>
     </div>
   </section>
@@ -224,16 +215,16 @@
   <section class="section" id="sec-features">
     <div style="width:100%; max-width:1100px;">
       <div class="sec-title">
-        <h2>สิ่งที่<span class="g">ดาว</span>อยากบอกท่าน</h2>
-        <p>เลือกสิ่งที่ท่านสงสัยใจ — เราจะอ่านจากตำราโบราณที่ส่งกันมาหลายพันปี แล้วเล่ากลับให้ท่านฟังเป็นภาษาที่เข้าใจได้จริง</p>
+        <h2 data-i18n="SPA.features_title">สิ่งที่<span class="g">ดาว</span>อยากบอกท่าน</h2>
+        <p data-i18n="SPA.features_desc">เลือกสิ่งที่ท่านสงสัยใจ — เราจะอ่านจากตำราโบราณที่ส่งกันมาหลายพันปี แล้วเล่ากลับให้ท่านฟังเป็นภาษาที่เข้าใจได้จริง</p>
       </div>
       <div class="cards">
-        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🌟</div><h3>ดวงชะตา</h3><p>วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าท่านมีของดีซ่อนที่ไหน และอุปสรรคที่ฟ้าฝากมาให้ฝ่าฟัน</p><div class="orn">✦</div></div>
-        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">💞</div><h3>ดูคู่</h3><p>เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือจะต้องระวังเรื่องใด</p><div class="orn">✦</div></div>
-        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🪐</div><h3>เวดิก</h3><p>มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล — เห็นธาตุที่ท่านเกิดมาและหน้าที่ที่ฟ้าฝากไว้</p><div class="orn">✦</div></div>
-        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">⏳</div><h3>มูฮูร์ตะ</h3><p>มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่ท่านเริ่มตั้งต้นนั้นเป็นสิริมงคล</p><div class="orn">✦</div></div>
-        <div class="card" onclick="document.getElementById('sec-tarot').scrollIntoView({behavior:'smooth'})"><div class="ic">🔮</div><h3>ไพ่ทาโรต์</h3><p>จั่วไพ่ 78 ใบจากสำนักโบราณ สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย — แต่เป็นเสียงที่สะท้อนสิ่งที่ท่านกังวลอยู่ในใจตอนนี้</p><div class="orn">✦</div></div>
-        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🌌</div><h3>ชีวิตคุณ</h3><p>ดาวไม่หยุดหมุน และแต่ละรอบที่มันผ่าน จะพาเหตุการณ์ใหม่มา — เราจะบอกท่านล่วงหน้าว่าเมื่อไหร่ควรก้าวไปและเมื่อไหร่ควรรอ</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🌟</div><h3 data-i18n="SPA.card_natal_title">ดวงชะตา</h3><p data-i18n="SPA.card_natal_desc">วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าท่านมีของดีซ่อนที่ไหน และอุปสรรคที่ฟ้าฝากมาให้ฝ่าฟัน</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">💞</div><h3 data-i18n="SPA.card_synastry_title">ดูคู่</h3><p data-i18n="SPA.card_synastry_desc">เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือจะต้องระวังเรื่องใด</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🪐</div><h3 data-i18n="SPA.card_vedic_title">เวดิก</h3><p data-i18n="SPA.card_vedic_desc">มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล — เห็นธาตุที่ท่านเกิดมาและหน้าที่ที่ฟ้าฝากไว้</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">⏳</div><h3 data-i18n="SPA.card_horary_title">มูฮูร์ตะ</h3><p data-i18n="SPA.card_horary_desc">มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่ท่านเริ่มตั้งต้นนั้นเป็นสิริมงคล</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-tarot').scrollIntoView({behavior:'smooth'})"><div class="ic">🔮</div><h3 data-i18n="SPA.card_tarot_title">ไพ่ทาโรต์</h3><p data-i18n="SPA.card_tarot_desc">จั่วไพ่ 78 ใบจากสำนักโบราณ สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย — แต่เป็นเสียงที่สะท้อนสิ่งที่ท่านกังวลอยู่ในใจตอนนี้</p><div class="orn">✦</div></div>
+        <div class="card" onclick="document.getElementById('sec-form').scrollIntoView({behavior:'smooth'})"><div class="ic">🌌</div><h3 data-i18n="SPA.card_transit_title">ชีวิตคุณ</h3><p data-i18n="SPA.card_transit_desc">ดาวไม่หยุดหมุน และแต่ละรอบที่มันผ่าน จะพาเหตุการณ์ใหม่มา — เราจะบอกท่านล่วงหน้าว่าเมื่อไหร่ควรก้าวไปและเมื่อไหร่ควรรอ</p><div class="orn">✦</div></div>
       </div>
     </div>
   </section>
@@ -247,13 +238,13 @@
       <div class="corner-orn br"></div>
       <div class="form-wrap">
         <div class="sec-title" style="margin-bottom:3vh;">
-          <h2>บอกเราว่าท่าน<span class="g">ลืมตาดูโลก</span>วันไหน</h2>
-          <p>ดาวจะเล่าชีวิตท่านให้ฟัง — จากตำราโบราณที่ส่งกันมาหลายพันปี</p>
+          <h2 data-i18n="SPA.form_title">บอกเราว่าท่าน<span class="g">ลืมตาดูโลก</span>วันไหน</h2>
+          <p data-i18n="SPA.form_desc">ดาวจะเล่าชีวิตท่านให้ฟัง — จากตำราโบราณที่ส่งกันมาหลายพันปี</p>
         </div>
-        <div class="field"><label>ชื่อของคุณ</label><input id="n-name" placeholder="ชื่อที่ใช้เรียก" /></div>
-        <div class="field"><label>วันเกิด</label><input id="n-date" type="date" /></div>
-        <div class="field"><label>เวลาเกิด</label><input id="n-time" type="time" /></div>
-        <div class="field"><label>จังหวัด</label>
+        <div class="field"><label data-i18n="SPA.form_name">ชื่อของคุณ</label><input id="n-name" data-ph="SPA.form_name_ph" placeholder="ชื่อที่ใช้เรียก" /></div>
+        <div class="field"><label data-i18n="SPA.form_date">วันเกิด</label><input id="n-date" type="date" /></div>
+        <div class="field"><label data-i18n="SPA.form_time">เวลาเกิด</label><input id="n-time" type="time" /></div>
+        <div class="field"><label data-i18n="SPA.form_place">จังหวัด</label>
           <select id="n-prov">
             <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
             <option value="13.3633,100.9868">ชลบุรี</option>
@@ -262,7 +253,7 @@
             <option value="7.8804,98.3923">ภูเก็ต</option>
           </select>
         </div>
-        <button class="btn primary" onclick="callApi('natal')" style="width:100%;">ขอให้ดาวบอกท่าน</button>
+        <button class="btn primary" onclick="callApi('natal')" style="width:100%;" data-i18n="SPA.btn_calculate">ขอให้ดาวบอกท่าน</button>
         <div class="result" id="r-natal"></div>
       </div>
     </div>
@@ -277,11 +268,11 @@
       <div class="corner-orn br"></div>
       <div class="form-wrap">
         <div class="sec-title" style="margin-bottom:3vh;">
-          <h2>จั่ว<span class="g">ไพ่ทาโรต์</span>ให้ท่าน</h2>
-          <p>โบกไพ่แล้วตั้งคำถามในใจ — ไพ่สามใบนี้จะตอบสิ่งที่ท่านอยากรู้ (คลิกไพ่เพื่อพลิกดู)</p>
+          <h2 data-i18n="SPA.tarot_title">จั่ว<span class="g">ไพ่ทาโรต์</span>ให้ท่าน</h2>
+          <p data-i18n="SPA.tarot_desc">โบกไพ่แล้วตั้งคำถามในใจ — ไพ่สามใบนี้จะตอบสิ่งที่ท่านอยากรู้ (คลิกไพ่เพื่อพลิกดู)</p>
         </div>
-        <div class="field"><label>คำถามของคุณ</label><input id="t-q" placeholder="สิ่งที่อยากรู้" /></div>
-        <button class="btn primary" onclick="callApi('tarot')" style="width:100%;">จั่วไพ่</button>
+        <div class="field"><label data-i18n="SPA.tarot_question">คำถามของคุณ</label><input id="t-q" data-ph="SPA.tarot_question_ph" placeholder="สิ่งที่อยากรู้" /></div>
+        <button class="btn primary" onclick="callApi('tarot')" style="width:100%;" data-i18n="SPA.btn_draw">จั่วไพ่</button>
         <div class="result" id="r-tarot"></div>
       </div>
     </div>
@@ -290,8 +281,8 @@
   <!-- ═══ FOOTER ═══ -->
   <footer>
     <div class="seal">A</div><br />
-    Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร<br />
-    <span style="font-size:11px;opacity:.6;">ภาพประกอบ — The Met Open Access · Venus and the Lute Player (Titian)</span>
+    <span data-i18n="SPA.footer_line1">Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร</span><br />
+    <span style="font-size:11px;opacity:.6;" data-i18n="SPA.footer_line2">ภาพประกอบ — The Met Open Access · Venus and the Lute Player (Titian)</span>
   </footer>
 
 </div><!-- /scroll-container -->
@@ -302,6 +293,80 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
 <script>
   const API = "http://127.0.0.1:8000";
+
+  /* ═══ i18n LOADER ═══ */
+  (function() {
+    var FALLBACK = {
+      SPA: {
+        "loader_line1":"The stars are aligning…","loader_line2":"ฟ้ากำลังจัดวางดวงดาวให้ท่าน",
+        "eyebrow":"✦ โหราศาสตร์ครบวงจร ✦","scroll":"scroll",
+        "hero_title":"ดาวแต่ละดวง<br/>ล้วนมี<span class=\"g\">คำบอก</span>ให้ท่าน",
+        "hero_desc":"วันที่ท่านลืมตาดูโลก ดาวแต่ละดวงยืนเรียงตำแหน่งให้ได้เห็นแล้ว — ว่าท่านมาเกิดมาเพื่ออะไร จะรักกับใคร และช่วงไหนในชีวิตที่ฟ้าจะประทานของขวัญ",
+        "cta_primary":"ขอให้ดาวบอกท่าน","cta_secondary":"ดูสิ่งที่ฟ้าเล่า",
+        "features_title":"สิ่งที่<span class=\"g\">ดาว</span>อยากบอกท่าน",
+        "features_desc":"เลือกสิ่งที่ท่านสงสัยใจ — เราจะอ่านจากตำราโบราณที่ส่งกันมาหลายพันปี แล้วเล่ากลับให้ท่านฟังเป็นภาษาที่เข้าใจได้จริง",
+        "card_natal_title":"ดวงชะตา","card_natal_desc":"วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าท่านมีของดีซ่อนที่ไหน และอุปสรรคที่ฟ้าฝากมาให้ฝ่าฟัน",
+        "card_synastry_title":"ดูคู่","card_synastry_desc":"เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือจะต้องระวังเรื่องใด",
+        "card_vedic_title":"เวดิก","card_vedic_desc":"มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล — เห็นธาตุที่ท่านเกิดมาและหน้าที่ที่ฟ้าฝากไว้",
+        "card_horary_title":"มูฮูร์ตะ","card_horary_desc":"มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่ท่านเริ่มตั้งต้นนั้นเป็นสิริมงคล",
+        "card_tarot_title":"ไพ่ทาโรต์","card_tarot_desc":"จั่วไพ่ 78 ใบจากสำนักโบราณ สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย — แต่เป็นเสียงที่สะท้อนสิ่งที่ท่านกังวลอยู่ในใจตอนนี้",
+        "card_transit_title":"ชีวิตคุณ","card_transit_desc":"ดาวไม่หยุดหมุน และแต่ละรอบที่มันผ่าน จะพาเหตุการณ์ใหม่มา — เราจะบอกท่านล่วงหน้าว่าเมื่อไหร่ควรก้าวไปและเมื่อไหร่ควรรอ",
+        "form_title":"บอกเราว่าท่าน<span class=\"g\">ลืมตาดูโลก</span>วันไหน",
+        "form_desc":"ดาวจะเล่าชีวิตท่านให้ฟัง — จากตำราโบราณที่ส่งกันมาหลายพันปี",
+        "form_name":"ชื่อของคุณ","form_date":"วันเกิด","form_time":"เวลาเกิด","form_place":"จังหวัด","form_name_ph":"ชื่อที่ใช้เรียก",
+        "btn_calculate":"ขอให้ดาวบอกท่าน","btn_draw":"จั่วไพ่",
+        "tarot_title":"จั่ว<span class=\"g\">ไพ่ทาโรต์</span>ให้ท่าน",
+        "tarot_desc":"โบกไพ่แล้วตั้งคำถามในใจ — ไพ่สามใบนี้จะตอบสิ่งที่ท่านอยากรู้ (คลิกไพ่เพื่อพลิกดู)",
+        "tarot_question":"คำถามของคุณ","tarot_question_ph":"สิ่งที่อยากรู้",
+        "loading":"⏳ กำลังอ่านดาวให้ท่านฟัง...","result_done":"✅ ดาวบอกท่านครบแล้ว",
+        "result_report":"อ่านรายงานที่ฟ้าฝากมา","result_error":"❌ ข้อผิดพลาด",
+        "flip_draw":"จั่วไพ่","flip_reversed":" (คว่ำ)",
+        "footer_line1":"Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร",
+        "footer_line2":"ภาพประกอบ — The Met Open Access · Venus and the Lute Player (Titian)"
+      }
+    };
+
+    function applyI18n(data) {
+      window.I18N = data || FALLBACK;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var key = el.getAttribute('data-i18n');
+        var parts = key.split('.');
+        var section = parts[0], subkey = parts[1];
+        var value = null;
+        if (data && data[section] && data[section][subkey]) {
+          var entry = data[section][subkey];
+          value = (typeof entry === 'object' && entry.th) ? entry.th : entry;
+        }
+        if (!value && FALLBACK[section]) {
+          var fb = FALLBACK[section][subkey];
+          if (fb) value = (typeof fb === 'object' && fb.th) ? fb.th : fb;
+        }
+        if (value && typeof value === 'string') {
+          el.innerHTML = value;
+        }
+      });
+      document.querySelectorAll('[data-ph]').forEach(function(el) {
+        var key = el.getAttribute('data-ph');
+        var parts = key.split('.');
+        var section = parts[0], subkey = parts[1];
+        var value = null;
+        if (data && data[section] && data[section][subkey]) {
+          var entry = data[section][subkey];
+          value = (typeof entry === 'object' && entry.th) ? entry.th : entry;
+        }
+        if (!value && FALLBACK[section]) {
+          var fb = FALLBACK[section][subkey];
+          if (fb) value = (typeof fb === 'object' && fb.th) ? fb.th : fb;
+        }
+        if (value) el.placeholder = value;
+      });
+    }
+
+    fetch('/v1/i18n')
+      .then(function(r) { return r.json(); })
+      .then(function(data) { applyI18n(data); })
+      .catch(function() { applyI18n(FALLBACK); });
+  })();
 
   /* ═══ LENIS SMOOTH SCROLL ═══ */
   let lenis;
@@ -318,8 +383,7 @@
     const ctx = cv.getContext('2d');
     let W, H, stars = [];
     function resize(){
-      W = cv.width = innerWidth;
-      H = cv.height = innerHeight;
+      W = cv.width = innerWidth; H = cv.height = innerHeight;
       stars = Array.from({length:300},()=>({
         x:Math.random()*W, y:Math.random()*H,
         r:Math.random()*1.5+0.3, a:Math.random()*.5+.2,
@@ -339,7 +403,7 @@
     })();
   })();
 
-  /* ═══ SOLAR SYSTEM (2D) ═══ */
+  /* ═══ SOLAR SYSTEM (2D) — SCROLL ZOOM ═══ */
   const Solar = (function(){
     const cv=document.getElementById('solar-system'); const ctx=cv.getContext('2d');
     let W,H,cx,cy,planets=[],t=0,zoom=0;
@@ -368,20 +432,19 @@
     return { setZoom, draw };
   })();
 
-  /* ═══ SCROLL-DRIVEN CAMERA (zoom + rotate) ═══ */
-  let mz = 0;
+  /* ═══ SCROLL-DRIVEN STORYTELLING CAMERA (ROTATION + ZOOM) ═══ */
+  let mz = 0, mr = 0;
   function computeZ(){
     const y = (window.lenis && typeof window.lenis.scroll==='number') ? window.lenis.scroll
             : (window.scrollY || document.documentElement.scrollTop || 0);
     const max = Math.max(1, (document.documentElement.scrollHeight - innerHeight));
     const prog = y / max;
-    const z = (prog - 0.55) / 0.45;
-    return Math.min(1, Math.max(0, z));
+    return { z: Math.min(1, Math.max(0, (prog - 0.55) / 0.45)), prog: prog };
   }
-
   (function master(){
-    const tz = computeZ();
-    mz += (tz - mz) * 0.06;
+    const {z, prog} = computeZ();
+    mz += (z - mz) * 0.06;
+    mr = prog * Math.PI * 0.4;
     if(mz > 0.02){ Solar.draw(); Solar.setZoom(mz); }
     else { if(document.body.classList.contains('zoomed')) Solar.setZoom(0); }
     requestAnimationFrame(master);
@@ -409,24 +472,20 @@
       const spiral=Math.sin(r*0.4)*0.6;
       const x=Math.cos(a+spiral)*r, z=Math.sin(a+spiral)*r, y=(Math.random()-0.5)*1.2*(1-r/9);
       pos[i*3]=x; pos[i*3+1]=y; pos[i*3+2]=z;
-      const t=Math.min(1,r/9), c=c1.clone().lerp(c2,t).lerp(c3,Math.max(0,(r-4)/5)).lerp(c4,Math.random()*0.3);
-      col[i*3]=c.r; col[i*3+1]=c.g; col[i*3+2]=c.b;
+      const t=Math.min(1,r/9), cc=c1.clone().lerp(c2,t).lerp(c3,Math.max(0,(r-4)/5)).lerp(c4,Math.random()*0.3);
+      col[i*3]=cc.r; col[i*3+1]=cc.g; col[i*3+2]=cc.b;
     }
     const g=new THREE.BufferGeometry();
     g.setAttribute('position',new THREE.BufferAttribute(pos,3));
     g.setAttribute('color',new THREE.BufferAttribute(col,3));
     const m=new THREE.PointsMaterial({size:0.06, vertexColors:true, transparent:true, opacity:0.9, blending:THREE.AdditiveBlending, depthWrite:false});
-    const galaxy=new THREE.Points(g,m); scene.add(galaxy);
+    const galaxyPoints=new THREE.Points(g,m); scene.add(galaxyPoints);
     const core=new THREE.Mesh(new THREE.SphereGeometry(0.8,24,24), new THREE.MeshBasicMaterial({color:0xfff2c0}));
     scene.add(core);
     addEventListener('resize',()=>{ cam.aspect=innerWidth/innerHeight; cam.updateProjectionMatrix(); rnd.setSize(innerWidth,innerHeight); });
 
     let raf, alive=true, start=null, phase={name:'intro'};
-
-    function startWarp(){
-      phase.name='warp';
-      document.body.classList.add('warp');
-    }
+    function startWarp(){ phase.name='warp'; document.body.classList.add('warp'); }
     function finishWarp(){
       if(phase.name==='land') return;
       phase.name='land';
@@ -445,8 +504,8 @@
       if(!alive) return;
       if(start===null) start=now;
       const elapsed=(now-start)/1000;
-      galaxy.rotation.y = elapsed*0.5;
-      galaxy.rotation.x = 0.35;
+      galaxyPoints.rotation.y = elapsed*0.5;
+      galaxyPoints.rotation.x = 0.35 + Math.sin(elapsed*0.3)*0.1;
       if(phase.name==='intro'){
         const prog=Math.min(1, elapsed/3.2);
         cam.position.z = 14 - prog*15.5;
@@ -471,50 +530,30 @@
   /* ═══ SCROLL-DRIVEN STORYTELLING CAMERA (GSAP) ═══ */
   if(window.gsap && window.ScrollTrigger){
     gsap.registerPlugin(ScrollTrigger);
-
-    // Hero parallax
     gsap.fromTo('#sec-hero .hero-inner', {opacity:1, y:0}, {
       opacity:0, y:-60, ease:'none',
       scrollTrigger:{trigger:'#sec-hero', start:'top top', end:'bottom top', scrub:1}
     });
-
-    // Features cards stagger
     gsap.fromTo('#sec-features .card', {opacity:0, y:60}, {
       opacity:1, y:0, stagger:0.12, ease:'power2.out',
       scrollTrigger:{trigger:'#sec-features', start:'top 70%', end:'bottom 30%', scrub:1}
     });
-
-    // Form section entrance
     gsap.fromTo('#sec-form .ornamental-border', {opacity:0, scale:0.92}, {
       opacity:1, scale:1, ease:'power2.out',
       scrollTrigger:{trigger:'#sec-form', start:'top 75%', end:'bottom 40%', scrub:1}
     });
-
-    // Tarot section entrance
     gsap.fromTo('#sec-tarot .ornamental-border', {opacity:0, scale:0.92}, {
       opacity:1, scale:1, ease:'power2.out',
       scrollTrigger:{trigger:'#sec-tarot', start:'top 75%', end:'bottom 40%', scrub:1}
-    });
-
-    // Solar system zoom on scroll
-    gsap.to({}, {
-      scrollTrigger:{
-        trigger:'.scroll-container',
-        start:'top top',
-        end:'bottom bottom',
-        scrub:0.5,
-        onUpdate:(self)=>{
-          const z = Math.max(0, (self.progress - 0.55) / 0.45);
-          // Solar zoom handled in master loop via computeZ()
-        }
-      }
     });
   }
 
   /* ═══ API CALLS ═══ */
   async function callApi(kind){
     const box = document.getElementById("r-"+kind);
-    box.classList.add("show"); box.innerHTML = "⏳ กำลังอ่านดาวให้ท่านฟัง...";
+    const I = window.I18N?.SPA || {};
+    box.classList.add("show");
+    box.innerHTML = I.loading || "⏳ กำลังอ่านดาวให้ท่านฟัง...";
     let url, payload;
     if(kind==="natal"){
       const [lat,lon]=document.getElementById("n-prov").value.split(",");
@@ -530,23 +569,24 @@
       const res = await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
       const data = await res.json();
       if(data.file){
-        box.innerHTML = `✅ ดาวบอกท่านครบแล้ว (${data.sections} หน้า)<br><a href="${API}/v1/reports/pdf/download?file=${encodeURIComponent(data.file)}" target="_blank" style="color:var(--gold-bright);">อ่านรายงานที่ฟ้าฝากมา</a>`;
+        box.innerHTML = `✅ ${(I.result_done || "ดาวบอกท่านครบแล้ว")} (${data.sections} หน้า)<br><a href="${API}/v1/reports/pdf/download?file=${encodeURIComponent(data.file)}" target="_blank" style="color:var(--gold-bright);">${I.result_report || "อ่านรายงานที่ฟ้าฝากมา"}</a>`;
       } else if(data.cards){
         renderTarot(box, data);
       } else { box.innerHTML="✅ "+JSON.stringify(data).slice(0,300); }
-    } catch(e){ box.innerHTML="❌ "+e; }
+    } catch(e){ box.innerHTML=(I.result_error || "❌ ข้อผิดพลาด")+": "+e; }
   }
 
   /* ═══ TAROT RENDER ═══ */
   function renderTarot(box, data){
+    const I = window.I18N?.SPA || {};
     const narr = (data.narrative && (data.narrative.th||data.narrative.en)) || "";
     const cards = data.cards || [];
     const glyphs=["☉","☽","☿","♀","♂","♃","♄","♅","♆","♇","⚭","⚮"];
     const flipHtml = cards.map((c,i)=>{
       const nm = c.card ? c.card.replace(' of ',' แห่ง ') : (c.name||"");
-      const or = c.orientation==="reversed" ? " ( reversed )" : "";
+      const or = c.orientation==="reversed" ? (I.flip_reversed || " (คว่ำ)") : "";
       return `<div class="flip" onclick="this.classList.toggle('flipped')">
-        <div class="flip-inner"><div class="flip-face flip-front"><div class="sym">${glyphs[i%12]}</div><div>จั่วไพ่</div></div>
+        <div class="flip-inner"><div class="flip-face flip-front"><div class="sym">${glyphs[i%12]}</div><div>${I.flip_draw || "จั่วไพ่"}</div></div>
         <div class="flip-face flip-back"><div class="nm">${nm}</div><div class="or">${or}</div><div style="font-size:22px;margin-top:8px;">🔮</div></div></div></div>`;
     }).join("");
     const narrHtml = narr

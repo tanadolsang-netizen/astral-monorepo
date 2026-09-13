@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="th" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +36,11 @@ html { scroll-behavior: smooth; }
 body {
   font-family: 'Noto Serif Thai', serif;
   background: var(--void);
+  background-image:
+    radial-gradient(ellipse at 30% 20%, rgba(107, 33, 168, 0.18) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(212, 168, 83, 0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 90%, rgba(147, 51, 234, 0.12) 0%, transparent 45%),
+    radial-gradient(ellipse at 10% 80%, rgba(139, 92, 246, 0.08) 0%, transparent 30%);
   color: var(--moon-white);
   overflow-x: hidden;
   cursor: none;
@@ -50,6 +55,7 @@ canvas {
   width: 100vw;
   height: 100vh;
   z-index: 0;
+  filter: brightness(1.2) contrast(1.1);
 }
 
 #scene-container {
@@ -76,10 +82,11 @@ canvas {
 
 .dom-star {
   position: absolute;
-  width: 2px;
-  height: 2px;
+  width: 3px;
+  height: 3px;
   background: var(--moon-white);
   border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
   animation: twinkle var(--dur) ease-in-out infinite;
 }
 
@@ -98,9 +105,10 @@ canvas {
   z-index: 2;
   pointer-events: none;
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(107, 33, 168, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(212, 168, 83, 0.04) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 80%, rgba(147, 51, 234, 0.06) 0%, transparent 45%);
+    radial-gradient(ellipse at 20% 50%, rgba(107, 33, 168, 0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(212, 168, 83, 0.18) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 80%, rgba(147, 51, 234, 0.2) 0%, transparent 45%),
+    radial-gradient(ellipse at 60% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 35%);
   animation: nebula-shift 30s ease-in-out infinite;
 }
 
@@ -1052,7 +1060,7 @@ footer {
        THE COSMIC DECK — Stats
        ═══════════════════════════════════════ -->
   <section class="deck-section reveal">
-    <div class="deck-title">The Cosmic Deck</div>
+    <div class="deck-title" data-i18n="LANDING.deck_title">สำนักไพ่แห่งจักรวาล</div>
     <div class="deck-grid">
       <div class="deck-card">
         <div class="deck-card-number">๗๘</div>
@@ -1126,12 +1134,12 @@ footer {
        ═══════════════════════════════════════ -->
   <section id="form" class="divination-section reveal">
     <div class="divination-box">
-      <h2 data-i18n="LANDING.result_thai_pure">ภาษาที่ท้องฟ้าจารซ้านไว้</h2>
-      <p data-i18n="LANDING.result_subtitle">ผลลัพธ์ภาษาไทยบริสุทธิ์ สไตล์ไพ่ทาโรต์</p>
+      <h2 data-i18n="LANDING.form_title">สร้างภาพดวงชะตาของคุณ</h2>
+      <p data-i18n="LANDING.form_subtitle">กรอกข้อมูลเพื่อให้ฟ้าสร้างภาพให้คุณ</p>
       <form id="birth-form">
         <div class="form-group">
           <label data-i18n="LANDING.form_name">ชื่อของคุณ</label>
-          <input type="text" id="name" required placeholder="ใส่ชื่อของคุณ">
+          <input type="text" id="name" required data-ph="LANDING.form_name_ph" placeholder="ใส่ชื่อของคุณ">
         </div>
         <div class="form-group">
           <label data-i18n="LANDING.form_dob">วันเกิด</label>
@@ -1143,7 +1151,7 @@ footer {
         </div>
         <div class="form-group">
           <label data-i18n="LANDING.form_place">สถานที่เกิด</label>
-          <input type="text" id="pob" placeholder="เช่น กรุงเทพฯ" required>
+          <input type="text" id="pob" data-ph="LANDING.form_place_ph" placeholder="เช่น กรุงเทพฯ" required>
         </div>
         <button type="submit" class="submit-btn" id="submit-btn" data-i18n="LANDING.form_submit">สร้างภาพดวงชะตาของคุณ</button>
       </form>
@@ -1189,7 +1197,7 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 const container = document.getElementById('scene-container');
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 5000);
-camera.position.set(0, 50, 300);
+camera.position.set(0, 40, 200);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -1201,19 +1209,19 @@ container.appendChild(renderer.domElement);
 // Post-processing
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 0.8, 0.4, 0.85);
+const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.6, 0.85);
 composer.addPass(bloom);
 
 // Lights
 const ambient = new THREE.AmbientLight(0x404060, 0.4);
 scene.add(ambient);
-const sunLight = new THREE.PointLight(0xfff5e0, 3, 800);
+const sunLight = new THREE.PointLight(0xfff5e0, 5, 800);
 sunLight.position.set(0, 0, 0);
 scene.add(sunLight);
 
 // ── Sun ──
 const sunGroup = new THREE.Group();
-const sunGeo = new THREE.SphereGeometry(18, 64, 64);
+const sunGeo = new THREE.SphereGeometry(30, 64, 64);
 const sunMat = new THREE.ShaderMaterial({
   uniforms: { time: { value: 0 } },
   vertexShader: `
@@ -1439,23 +1447,23 @@ for (let i = 0; i < nebulaCount; i++) {
   nebulaPositions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
   const colorChoice = Math.random();
   if (colorChoice < 0.4) {
-    nebulaColors[i * 3] = 0.3 + Math.random() * 0.2;
-    nebulaColors[i * 3 + 1] = 0.1;
-    nebulaColors[i * 3 + 2] = 0.5 + Math.random() * 0.3;
-  } else if (colorChoice < 0.7) {
-    nebulaColors[i * 3] = 0.6 + Math.random() * 0.3;
+    nebulaColors[i * 3] = 0.6 + Math.random() * 0.2;
     nebulaColors[i * 3 + 1] = 0.2;
-    nebulaColors[i * 3 + 2] = 0.4 + Math.random() * 0.2;
+    nebulaColors[i * 3 + 2] = 1.0 + Math.random() * 0.3;
+  } else if (colorChoice < 0.7) {
+    nebulaColors[i * 3] = 0.9 + Math.random() * 0.3;
+    nebulaColors[i * 3 + 1] = 0.4;
+    nebulaColors[i * 3 + 2] = 0.7 + Math.random() * 0.2;
   } else {
-    nebulaColors[i * 3] = 0.2;
-    nebulaColors[i * 3 + 1] = 0.1;
-    nebulaColors[i * 3 + 2] = 0.4 + Math.random() * 0.3;
+    nebulaColors[i * 3] = 0.4;
+    nebulaColors[i * 3 + 1] = 0.2;
+    nebulaColors[i * 3 + 2] = 0.8 + Math.random() * 0.3;
   }
 }
 nebulaGeo.setAttribute('position', new THREE.BufferAttribute(nebulaPositions, 3));
 nebulaGeo.setAttribute('color', new THREE.BufferAttribute(nebulaColors, 3));
 const nebulaMat = new THREE.PointsMaterial({
-  size: 2.5, vertexColors: true, transparent: true, opacity: 0.4,
+  size: 4, vertexColors: true, transparent: true, opacity: 0.6,
   blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
 });
 const nebula = new THREE.Points(nebulaGeo, nebulaMat);
@@ -1464,7 +1472,7 @@ scene.add(nebula);
 
 // ── Starfield ──
 const starGeo = new THREE.BufferGeometry();
-const starCount = 10000;
+const starCount = 15000;
 const starPositions = new Float32Array(starCount * 3);
 const starSizes = new Float32Array(starCount);
 for (let i = 0; i < starCount; i++) {
@@ -1657,14 +1665,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 (function createDomStarfield() {
   const container = document.getElementById('dom-starfield');
-  const count = 200;
+  const count = 400;
   for (let i = 0; i < count; i++) {
     const star = document.createElement('div');
     star.className = 'dom-star';
     star.style.left = Math.random() * 100 + '%';
     star.style.top = Math.random() * 100 + '%';
     star.style.setProperty('--dur', (2 + Math.random() * 4) + 's');
-    star.style.setProperty('--min-op', (0.2 + Math.random() * 0.4).toFixed(2));
+    star.style.setProperty('--min-op', (0.3 + Math.random() * 0.5).toFixed(2));
     star.style.animationDelay = (Math.random() * 5) + 's';
     container.appendChild(star);
   }
@@ -1692,7 +1700,7 @@ document.getElementById('birth-form').addEventListener('submit', async function(
 
   loadingBar.classList.add('active');
   submitBtn.disabled = true;
-  submitBtn.textContent = 'กำลังสร้างภาพ...';
+  submitBtn.textContent = window.I18N?.LANDING?.loading_generate || 'กำลังสร้างภาพ...';
   artResult.classList.remove('visible');
 
   const lat = 13.75;
@@ -1747,7 +1755,8 @@ document.getElementById('birth-form').addEventListener('submit', async function(
           submitBtn.textContent = window.I18N?.LANDING?.form_submit || 'สร้างภาพดวงชะตาของคุณ';
 
           document.getElementById('art-image').src = status.image_url;
-          document.getElementById('art-prompt').textContent = data.prompt || '';
+          var artPrompt = document.getElementById('art-prompt');
+          if(artPrompt) artPrompt.textContent = data.prompt || '';
           artResult.classList.add('visible');
           artResult.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else if (status.status === 'failed') {
@@ -1808,8 +1817,6 @@ document.getElementById('birth-form').addEventListener('submit', async function(
   };
 
   function applyI18n(data) {
-    // New endpoint format: {NAV: {home: {th: "...", en: "..."}, ...}, ...}
-    // data-i18n="NAV.home" → data["NAV"]["home"].th
     window.I18N = data || FALLBACK;
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
@@ -1821,7 +1828,6 @@ document.getElementById('birth-form').addEventListener('submit', async function(
         var entry = data[section][subkey];
         value = (typeof entry === 'object' && entry.th) ? entry.th : entry;
       }
-      // Fallback
       if (!value && FALLBACK[section]) {
         var fb = FALLBACK[section][subkey];
         if (fb) value = (typeof fb === 'object' && fb.th) ? fb.th : fb;
@@ -1829,6 +1835,22 @@ document.getElementById('birth-form').addEventListener('submit', async function(
       if (value && typeof value === 'string') {
         el.textContent = value;
       }
+    });
+    document.querySelectorAll('[data-ph]').forEach(function(el) {
+      var key = el.getAttribute('data-ph');
+      var parts = key.split('.');
+      var section = parts[0];
+      var subkey = parts[1];
+      var value = null;
+      if (data && data[section] && data[section][subkey]) {
+        var entry = data[section][subkey];
+        value = (typeof entry === 'object' && entry.th) ? entry.th : entry;
+      }
+      if (!value && FALLBACK[section]) {
+        var fb = FALLBACK[section][subkey];
+        if (fb) value = (typeof fb === 'object' && fb.th) ? fb.th : fb;
+      }
+      if (value) el.placeholder = value;
     });
   }
 
