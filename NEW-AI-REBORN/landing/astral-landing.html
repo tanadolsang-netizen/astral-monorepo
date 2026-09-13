@@ -1196,20 +1196,21 @@ import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js'
 
 const container = document.getElementById('scene-container');
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0x070318);
 const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 5000);
 camera.position.set(0, 40, 200);
 
-const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 1.2;
+renderer.toneMappingExposure = 2.0;
 container.appendChild(renderer.domElement);
 
 // Post-processing
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
-const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.6, 0.85);
+const bloom = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 2.5, 0.7, 0.2);
 composer.addPass(bloom);
 
 // Lights
@@ -1221,7 +1222,7 @@ scene.add(sunLight);
 
 // ── Sun ──
 const sunGroup = new THREE.Group();
-const sunGeo = new THREE.SphereGeometry(30, 64, 64);
+const sunGeo = new THREE.SphereGeometry(40, 64, 64);
 const sunMat = new THREE.ShaderMaterial({
   uniforms: { time: { value: 0 } },
   vertexShader: `
@@ -1269,7 +1270,7 @@ const sun = new THREE.Mesh(sunGeo, sunMat);
 sunGroup.add(sun);
 
 // Corona
-const coronaGeo = new THREE.SphereGeometry(22, 32, 32);
+const coronaGeo = new THREE.SphereGeometry(60, 32, 32);
 const coronaMat = new THREE.ShaderMaterial({
   uniforms: { time: { value: 0 } },
   vertexShader: `
@@ -1285,8 +1286,8 @@ const coronaMat = new THREE.ShaderMaterial({
     void main() {
       float rim = pow(1.0 - abs(dot(vNormal, vec3(0.0, 0.0, 1.0))), 3.0);
       float pulse = 0.8 + 0.2 * sin(time * 2.0);
-      vec3 color = vec3(1.0, 0.8, 0.4) * rim * pulse;
-      gl_FragColor = vec4(color, rim * 0.6);
+      vec3 color = vec3(1.0, 0.8, 0.4) * rim * pulse * 1.5;
+      gl_FragColor = vec4(color, rim * 0.8);
     }
   `,
   transparent: true,
@@ -1296,6 +1297,13 @@ const coronaMat = new THREE.ShaderMaterial({
 });
 const corona = new THREE.Mesh(coronaGeo, coronaMat);
 sunGroup.add(corona);
+
+// Outer halo
+const halo = new THREE.Mesh(
+  new THREE.SphereGeometry(90, 32, 32),
+  new THREE.MeshBasicMaterial({ color: 0xff7733, transparent: true, opacity: 0.15, side: THREE.BackSide })
+);
+sunGroup.add(halo);
 
 // Sun rays
 for (let i = 0; i < 12; i++) {
@@ -1349,16 +1357,28 @@ const planetData = [
 
 planetData.forEach(p => {
   const geo = new THREE.SphereGeometry(p.size, 32, 32);
-  const mat = new THREE.MeshStandardMaterial({
-    color: p.color, roughness: 0.7, metalness: 0.1,
-    emissive: p.color, emissiveIntensity: 0.05
-  });
+  const mat = new THREE.MeshBasicMaterial({ color: p.color });
   const mesh = new THREE.Mesh(geo, mat);
   const orbit = new THREE.Group();
   orbit.rotation.x = Math.random() * 0.1;
   orbit.rotation.z = Math.random() * 0.1;
   mesh.position.x = p.dist;
   orbit.add(mesh);
+
+  // Glow sphere behind planet
+  const glowGeo = new THREE.SphereGeometry(p.size * 1.8, 16, 16);
+  const glowMat = new THREE.MeshBasicMaterial({
+    color: p.color, transparent: true, opacity: 0.25, side: THREE.BackSide
+  });
+  const glow = new THREE.Mesh(glowGeo, glowMat);
+  mesh.add(glow);
+
+  // Second glow layer
+  const glow2 = new THREE.Mesh(
+    new THREE.SphereGeometry(p.size * 2.5, 16, 16),
+    new THREE.MeshBasicMaterial({ color: p.color, transparent: true, opacity: 0.1, side: THREE.BackSide })
+  );
+  mesh.add(glow2);
 
   if (p.name === 'Saturn') {
     // Purple particles orbiting Saturn (replaces ring)
@@ -1433,18 +1453,18 @@ for (let i = 0; i < 5; i++) {
   comets.push({ mesh: comet, speed: 0.3 + Math.random() * 0.3, angle, elev, dist });
 }
 
-// ── Nebula ──
+// ── Nebula (surrounds entire scene in 3D sphere) ──
 const nebulaGeo = new THREE.BufferGeometry();
 const nebulaCount = 6000;
 const nebulaPositions = new Float32Array(nebulaCount * 3);
 const nebulaColors = new Float32Array(nebulaCount * 3);
 for (let i = 0; i < nebulaCount; i++) {
-  const r = 300 + Math.random() * 500;
+  const r = 200 + Math.random() * 600;
   const theta = Math.random() * Math.PI * 2;
-  const phi = Math.random() * Math.PI;
+  const phi = Math.acos(2 * Math.random() - 1);
   nebulaPositions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
-  nebulaPositions[i * 3 + 1] = (Math.random() - 0.5) * 150;
-  nebulaPositions[i * 3 + 2] = r * Math.sin(phi) * Math.sin(theta);
+  nebulaPositions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+  nebulaPositions[i * 3 + 2] = r * Math.cos(phi);
   const colorChoice = Math.random();
   if (colorChoice < 0.4) {
     nebulaColors[i * 3] = 0.6 + Math.random() * 0.2;
@@ -1463,23 +1483,25 @@ for (let i = 0; i < nebulaCount; i++) {
 nebulaGeo.setAttribute('position', new THREE.BufferAttribute(nebulaPositions, 3));
 nebulaGeo.setAttribute('color', new THREE.BufferAttribute(nebulaColors, 3));
 const nebulaMat = new THREE.PointsMaterial({
-  size: 4, vertexColors: true, transparent: true, opacity: 0.6,
+  size: 6, vertexColors: true, transparent: true, opacity: 0.8,
   blending: THREE.AdditiveBlending, depthWrite: false, sizeAttenuation: true
 });
 const nebula = new THREE.Points(nebulaGeo, nebulaMat);
-nebula.position.z = -1500;
 scene.add(nebula);
 
-// ── Starfield ──
+// ── Starfield (sphere around entire scene) ──
 const starGeo = new THREE.BufferGeometry();
-const starCount = 15000;
+const starCount = 25000;
 const starPositions = new Float32Array(starCount * 3);
 const starSizes = new Float32Array(starCount);
 for (let i = 0; i < starCount; i++) {
-  starPositions[i * 3] = (Math.random() - 0.5) * 3000;
-  starPositions[i * 3 + 1] = (Math.random() - 0.5) * 3000;
-  starPositions[i * 3 + 2] = -800 - Math.random() * 2000;
-  starSizes[i] = Math.random() * 2 + 0.5;
+  const r = 150 + Math.random() * 2000;
+  const theta = Math.random() * Math.PI * 2;
+  const phi = Math.acos(2 * Math.random() - 1);
+  starPositions[i * 3] = r * Math.sin(phi) * Math.cos(theta);
+  starPositions[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
+  starPositions[i * 3 + 2] = r * Math.cos(phi);
+  starSizes[i] = Math.random() * 2.5 + 0.5;
 }
 starGeo.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
 starGeo.setAttribute('size', new THREE.BufferAttribute(starSizes, 1));
@@ -1500,11 +1522,13 @@ let scrollProgress = 0;
 let targetScrollProgress = 0;
 
 const cameraKeyframes = [
-  { pos: new THREE.Vector3(0, 50, 300), lookAt: new THREE.Vector3(0, 0, 0), fov: 55 },
-  { pos: new THREE.Vector3(40, 30, 80), lookAt: new THREE.Vector3(0, 0, 0), fov: 50 },
-  { pos: new THREE.Vector3(200, 80, 150), lookAt: new THREE.Vector3(0, 0, 0), fov: 45 },
-  { pos: new THREE.Vector3(120, 40, 100), lookAt: new THREE.Vector3(130, 0, 0), fov: 42 },
-  { pos: new THREE.Vector3(70, 10, 40), lookAt: new THREE.Vector3(70, 0, 0), fov: 38 }
+  { pos: new THREE.Vector3(0, 60, 280), lookAt: new THREE.Vector3(0, 0, 0), fov: 55 },      // Hero: top-down on sun
+  { pos: new THREE.Vector3(30, 20, 100), lookAt: new THREE.Vector3(55, 0, 0), fov: 55 },     // About: Venus
+  { pos: new THREE.Vector3(70, 15, 70), lookAt: new THREE.Vector3(75, 0, 0), fov: 50 },      // Features: Earth
+  { pos: new THREE.Vector3(120, 25, 90), lookAt: new THREE.Vector3(140, 0, 0), fov: 45 },    // Tarot: Jupiter
+  { pos: new THREE.Vector3(170, 10, 60), lookAt: new THREE.Vector3(185, 0, 0), fov: 42 },    // Saturn
+  { pos: new THREE.Vector3(220, 30, 100), lookAt: new THREE.Vector3(240, 0, 0), fov: 40 },   // Uranus
+  { pos: new THREE.Vector3(280, 15, 70), lookAt: new THREE.Vector3(300, 0, 0), fov: 38 }     // Neptune
 ];
 
 function easeInOutCubic(t) {
