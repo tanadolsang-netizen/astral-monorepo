@@ -284,6 +284,9 @@ import os
 landing_dir = os.path.dirname(os.path.abspath(__file__))
 _landing_path = os.path.normpath(os.path.join(landing_dir, "..", "..", "landing"))
 
+# Static mount for all landing HTML files (spa, intro, etc.)
+app.mount("/landing", StaticFiles(directory=_landing_path), name="landing")
+
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def landing_page():
     for fname in ("astral-landing.html", "index.html"):
