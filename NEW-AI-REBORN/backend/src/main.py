@@ -183,7 +183,7 @@ app.add_middleware(
 )
 
 # ── Routers (all API v1) ─────────────────────────────────────
-from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, reports, vedic, muhurta, chat, accuracy, life, sky, research
+from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, reports, vedic, muhurta, chat, accuracy, life, sky, research, comfyui
 from .routers import new_engines, narrative_router, grand_narrative_router, ai_router
 
 for router, prefix, tags in [
@@ -241,8 +241,16 @@ for router, prefix, tags in [
     (new_engines.br, "/v1/parans", ["fixed-stars"]),
     (new_engines.rv, "/v1/reel-video", ["reel"]),
     (new_engines.gk, "/v1/genekeys", ["gene-keys"]),
+    (comfyui.router, "/v1/comfyui", ["comfyui"]),
 ]:
     app.include_router(router, prefix=prefix, tags=tags)
+
+# ── Serve ComfyUI Output Images ─────────────────────────────
+import os
+comfyui_output_dir = os.getenv("COMFYUI_OUTPUT_DIR", r"C:/Users/ADMIN/Documents/comfy/ComfyUI/output")
+if os.path.exists(comfyui_output_dir):
+    app.mount("/comfyui-output", StaticFiles(directory=comfyui_output_dir), name="comfyui-output")
+    logger.info("Serving ComfyUI output from %s", comfyui_output_dir)
 
 # ── Static Files (Landing Page) ─────────────────────────────
 import os
@@ -250,15 +258,38 @@ static_dir = os.path.join(os.path.dirname(__file__), "..", "static")
 if os.path.exists(static_dir):
     app.mount("/static", StaticFiles(directory=static_dir), name="static")
 
-# ── Landing Page (root) ───────────────────────────────────────
-from fastapi.responses import HTMLResponse
+# ── i18n Endpoint ─────────────────────────────────────────────
+from pathlib import Path as _Path
+
+_i18n_cache: dict | None = None
+
+@app.get("/v1/i18n", include_in_schema=False)
+async def get_i18n():
+    global _i18n_cache
+    if _i18n_cache is None:
+        i18n_path = _Path(__file__).parent.parent / "i18n.json"
+        if i18n_path.exists():
+            import json
+            with open(i18n_path, "r", encoding="utf-8") as f:
+                _i18n_cache = json.load(f)
+        else:
+            _i18n_cache = {}
+    return JSONResponse(_i18n_cache)
+
+# ── Landing Page ─────────────────────────────────────────────
+import os
+
+# Serve landing page from ../landing/ directory (not backend/static/)
+landing_dir = os.path.dirname(os.path.abspath(__file__))
+_landing_path = os.path.normpath(os.path.join(landing_dir, "..", "..", "landing"))
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def landing_page():
-    index_path = os.path.join(static_dir, "index.html")
-    if os.path.exists(index_path):
-        with open(index_path, "r", encoding="utf-8") as f:
-            return HTMLResponse(content=f.read())
+    for fname in ("astral-landing.html", "index.html"):
+        index_path = os.path.join(_landing_path, fname)
+        if os.path.exists(index_path):
+            with open(index_path, "r", encoding="utf-8") as f:
+                return HTMLResponse(content=f.read())
     return HTMLResponse(content="""
     <!DOCTYPE html><html><head><title>Astral</title></head>
     <body style="background:#000;color:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;height:100vh;margin:0">

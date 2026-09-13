@@ -112,6 +112,14 @@ def _element_summary(element_balance: dict | None) -> dict:
 
 
 from src.services.tarot_meanings_th import TAROT_MEANINGS_TH as _THAI_MEANINGS
+from src.services.tarot_knowledge import (
+    YES_NO, yes_no_answer,
+    SUIT_SPEED, NUMBER_QUANTITY, timing_for_card,
+    SPREADS as _KNOWLEDGE_SPREADS, get_spread, list_spreads,
+    COURT_ZODIAC, court_card_zodiac,
+    COMBINATION_RULES, analyze_combination,
+    REVERSED_PATTERNS, ELEMENT_BALANCE, NARRATIVE_TEMPLATES,
+)
 
 def _meaning(card_name: str, orientation: str = "upright") -> str:
     data = _THAI_MEANINGS.get(card_name)
@@ -181,18 +189,30 @@ def draw_spread(
             "position": str(i + 1),
             "orientation": orientation,
             "is_reversed": orientation == "reversed",
+            "yes_no": yes_no_answer(card_name, orientation),
+            "timing": timing_for_card(card_name),
         })
-    return {
+        if COURT_ZODIAC.get(card_name):
+            drawn[-1]["court_zodiac"] = court_card_zodiac(card_name)
+
+    # Enrich spread result with knowledge
+    result = {
         "name": name,
         "spread": resolved_spread,
+        "spread_info": get_spread(resolved_spread),
         "cards": drawn,
+        "combination": analyze_combination(drawn),
         "tilted_toward": _tilted_toward(element_balance),
         "elements": _element_summary(element_balance),
     }
+    return result
 
 
 def get_spread_names() -> list[str]:
-    return list(SPREADS.keys())
+    """Return available spread names (merge static + knowledge)."""
+    builtin = list(SPREADS.keys())
+    extra = [s for s in list_spreads() if s not in builtin]
+    return builtin + extra
 
 
 def get_spread_size(spread_name: str) -> int:

@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral — ดวงดาวจะบอกอะไรคุณ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #ffd700;
+  --gold-dim: #b8960f;
+  --purple: #c084fc;
+  --pink: #ff6b9d;
+  --blue: #60a5fa;
+  --bg: #030208;
+  --text: #f0e6d3;
+  --text-dim: rgba(240, 230, 211, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar { display: none; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans Thai', sans-serif;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* ============ CURSOR ============ */
+.cursor-dot {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease, opacity 0.3s ease;
+  mix-blend-mode: difference;
+  opacity: 0;
+}
+.cursor-ring {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid rgba(255, 215, 0, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease-out, width 0.3s ease, height 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.cursor-ring.hover {
+  width: 70px;
+  height: 70px;
+  border-color: rgba(255, 107, 157, 0.6);
+}
+
+/* ============ PRELOADER ============ */
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10001;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), visibility 1s;
+}
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.preloader-logo {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.4em;
+  background: linear-gradient(135deg, var(--gold), var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.preloader-bar-container {
+  width: min(300px, 70vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1px;
+  margin-top: 2rem;
+  overflow: hidden;
+}
+.preloader-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--gold), var(--pink), var(--purple));
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+/* ============ CANVAS ============ */
+#scene-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ============ NAV ============ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  mix-blend-mode: difference;
+}
+.nav-logo {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: #fff;
+}
+.nav-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+}
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+  cursor: none;
+}
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+/* ============ SECTIONS ============ */
+.section {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+
+/* ============ HERO ============ */
+.hero {
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+}
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #fff, var(--gold), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-dim);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-top: 2rem;
+  font-weight: 300;
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-cta {
+  margin-top: 3rem;
+  padding: 1rem 3rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  border: 1px solid var(--gold);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--gold);
+  cursor: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+.hero-cta:hover {
+  background: var(--gold);
+  color: var(--bg);
+  box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+/* ============ MANIFESTO ============ */
+.manifesto {
+  flex-direction: column;
+  text-align: center;
+  max-width: 900px;
+}
+.manifesto-text {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ SHOWCASE (Horizontal Pin) ============ */
+.showcase-pin-wrapper {
+  position: relative;
+  height: 300vh;
+  z-index: 10;
+}
+.showcase-pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.showcase-track {
+  display: flex;
+  gap: 3rem;
+  padding-left: 10vw;
+  align-items: center;
+  height: 100%;
+}
+.showcase-card {
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 700px;
+  height: 70vh;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  cursor: none;
+  opacity: 1;
+}
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card-grad);
+  opacity: 0.6;
+  z-index: -1;
+}
+.showcase-card-content {
+  position: relative;
+  z-index: 2;
+}
+.showcase-card-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.showcase-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.showcase-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  max-width: 400px;
+}
+
+/* ============ FEATURES ============ */
+.features {
+  flex-direction: column;
+  text-align: center;
+}
+.features-header {
+  margin-bottom: 5rem;
+}
+.features-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 1;
+}
+.features-header p {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 500px;
+  line-height: 1.8;
+  opacity: 1;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+}
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: none;
+  opacity: 1;
+}
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 215, 0, 0.2);
+  transform: translateY(-5px);
+}
+.feature-icon {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+.feature-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.feature-card p {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+/* ============ STATS ============ */
+.stats {
+  flex-direction: column;
+  text-align: center;
+}
+.stats-header {
+  margin-bottom: 4rem;
+}
+.stats-header h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  opacity: 1;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+  max-width: 900px;
+  width: 100%;
+}
+.stat-item {
+  text-align: center;
+  opacity: 1;
+}
+.stat-number {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  letter-spacing: 0.1em;
+}
+
+/* ============ CTA FINAL ============ */
+.cta-final {
+  flex-direction: column;
+  text-align: center;
+}
+.cta-final h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 1;
+}
+.cta-final p {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  max-width: 450px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  opacity: 1;
+}
+.cta-final-btn {
+  padding: 1.2rem 3.5rem;
+  font-family: 'Noto Sans Thai', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border: none;
+  border-radius: 100px;
+  background: linear-gradient(135deg, var(--gold), var(--pink), var(--purple));
+  color: var(--bg);
+  cursor: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+.cta-final-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 60px rgba(255, 215, 0, 0.4);
+}
+
+/* ============ FOOTER ============ */
+.footer {
+  position: relative;
+  z-index: 10;
+  padding: 4rem 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-dim);
+}
+.footer a {
+  color: var(--gold);
+  text-decoration: none;
+}
+
+/* ============ SCROLL INDICATOR ============ */
+.scroll-indicator {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dim);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: float 2s ease-in-out infinite;
+}
+.scroll-indicator::after {
+  content: '';
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(8px); }
+}
+
+/* ============ PARALLAX DEPTH LAYERS ============ */
+.parallax-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+.parallax-stars-far {
+  background: radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,0.3), transparent),
+              radial-gradient(1px 1px at 40% 70%, rgba(255,255,255,0.2), transparent),
+              radial-gradient(1px 1px at 60% 20%, rgba(255,255,255,0.25), transparent),
+              radial-gradient(1px 1px at 80% 50%, rgba(255,255,255,0.2), transparent);
+  background-size: 300px 300px;
+  opacity: 0.4;
+}
+.parallax-stars-near {
+  background: radial-gradient(1.5px 1.5px at 10% 60%, rgba(255,215,0,0.4), transparent),
+              radial-gradient(1.5px 1.5px at 30% 10%, rgba(192,132,252,0.3), transparent),
+              radial-gradient(1.5px 1.5px at 50% 80%, rgba(255,107,157,0.3), transparent),
+              radial-gradient(1.5px 1.5px at 70% 40%, rgba(96,165,250,0.3), transparent),
+              radial-gradient(1.5px 1.5px at 90% 90%, rgba(255,215,0,0.3), transparent);
+  background-size: 400px 400px;
+  opacity: 0.5;
+}
+
+/* ============ LENIS SMOOTH SCROLL ============ */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
+
+@media (max-width: 768px) {
+  .nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.5rem; }
+  .nav-links a { font-size: 0.65rem; }
+  .section { padding: 4rem 1.5rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+  .showcase-card { width: 90vw; height: 60vh; }
+}
+</style>
+</head>
+<body>
+
+<!-- CUSTOM CURSOR -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- PARALLAX LAYERS -->
+<div class="parallax-layer parallax-stars-far" id="starsFar"></div>
+<div class="parallax-layer parallax-stars-near" id="starsNear"></div>
+
+<!-- PRELOADER -->
+<div class="preloader" id="preloader">
+  <div class="preloader-logo">ASTRAL</div>
+  <div class="preloader-bar-container">
+    <div class="preloader-bar" id="preloaderBar"></div>
+  </div>
+</div>
+
+<!-- THREE.JS CANVAS -->
+<canvas id="scene-canvas"></canvas>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo">ASTRAL</div>
+  <ul class="nav-links">
+    <li><a href="#manifesto">บทเปิด</a></li>
+    <li><a href="#features">สิ่งที่รออยู่</a></li>
+    <li><a href="#contact">เริ่มเดินทาง</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="section hero" id="hero">
+  <h1 class="hero-title">Astral</h1>
+  <p class="hero-subtitle">ในเส้นทางอันกว้างใหญ่แห่งจักรวาล — ดวงดาวจะเล่าให้คุณฟัง ถ้าคุณกล้อยฟัง</p>
+  <button class="hero-cta">เริ่มต้นการเดินทางของคุณ</button>
+</section>
+
+<!-- MANIFESTO -->
+<section class="section manifesto" id="manifesto">
+  <p class="manifesto-text">ก่อนที่มนุษย์จะเรียกมันว่า "โหราศาสตร์" มันคือ ภาษาของดวงดาว — ที่เคยเล่าเรื่องราวให้ราชากับผู้คน ณ หน้าขบวนกลางคืน ณ แผ่นลานกว้างใต้ฟ้าที่ไร้เมือง</p>
+</section>
+
+<!-- SHOWCASE (Horizontal Pin) -->
+<div class="showcase-pin-wrapper">
+  <div class="showcase-pin">
+    <div class="showcase-track">
+      <div class="showcase-card" style="--card-grad: linear-gradient(135deg, #1a0a2e, #0d1b2a);">
+        <div class="showcase-card-content">
+          <div class="showcase-card-label">ดวงชะตา</div>
+          <h3 class="showcase-card-title">แผนที่ดวงดาวของคุณ</h3>
+          <p class="showcase-card-desc">ทุกอย่างเริ่มต้นจากจุดเล็กๆ บนท้องฟ้า ณ เวลาที่คุณถือกำเนิด — กราฟแสดงดวงดาวที่ไม่เหมือนใคร</p>
+        </div>
+      </div>
+      <div class="showcase-card" style="--card-grad: linear-gradient(135deg, #2e1a0a, #1a0d2e);">
+        <div class="showcase-card-content">
+          <div class="showcase-card-label">ความสัมพันธ์</div>
+          <h3 class="showcase-card-title">เมื่อดวงดาวสองดวงเดินทางมาเจอกัน</h3>
+          <p class="showcase-card-desc">ทำไมคนบางคนทำให้เรารู้สึกเหมือนเคยรู้จักมาก่อน และทำไมบางคนกลับทำให้เรารู้สึกหลงทางในตัวเอง</p>
+        </div>
+      </div>
+      <div class="showcase-card" style="--card-grad: linear-gradient(135deg, #0a2e1a, #2e0a1a);">
+        <div class="showcase-card-content">
+          <div class="showcase-card-label">ดวงเคลื่อน</div>
+          <h3 class="showcase-card-title">ดวงดาวยังเคลื่อน โลกยังหมุน</h3>
+          <p class="showcase-card-desc">ไม่มีวันที่ดวงดาวหยุดพัก — แต่ไม่ใช่ว่าทุกการเคลื่อนที่จะนำพาสิ่งที่ไม่ดี</p>
+        </div>
+      </div>
+      <div class="showcase-card" style="--card-grad: linear-gradient(135deg, #1a1a2e, #2e1a2e);">
+        <div class="showcase-card-content">
+          <div class="showcase-card-label">ไพ่ทาโรต์</div>
+          <h3 class="showcase-card-title">ไพ่เปิดจากจักรวาล</h3>
+          <p class="showcase-card-desc">78 ใบ คือ 78 มุมมองที่ดวงดาวหยิบยื่นให้คุณ ณ เวลาที่คุณต้องการคำตอบ</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="section features" id="features">
+  <div class="features-header">
+    <h2>สิ่งที่รอคุณอยู่</h2>
+    <p>ไม่ใช่แค่เครื่องมือ — แต่เป็นประสบการณ์ที่เปลี่ยนวิธีที่คุณมองจักรวาล</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">📜</span>
+      <h3>เพื่อนคู่คิดจากตำราโบราณ</h3>
+      <p>AI ที่เรียนรู้จากตำราโหราศาสตร์หลายพันปี เข้าใจทั้งตะวันออกและตะวันตก ถ่ายทอดด้วยถ้อยคำที่มนุษย์เข้าใจ</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🌌</span>
+      <h3>จักรวาลในมือ</h3>
+      <p>โมเดล 3D ที่หมุนได้ ดวงดาวเคลื่อนไหวตามเวลาจริง คุณสามารถจับต้องจักรวาลของตัวเองได้</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">📖</span>
+      <h3>บันทึกชีวิตประจำวัน</h3>
+      <p>รายงานเจาะลึก 100+ หน้า ไม่ใช่ข้อมูลระบบยานยนต์ แต่เป็นบทวิเคราะห์ที่อ่านเหมือนนิยาย</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">⛈️</span>
+      <h3>เสียงเรียกก่อนฝนตก</h3>
+      <p>ระบบแจ้งเตือนเมื่อดวงดาวสำคัญเคลื่อน — คุณจะไม่พลาดช่วงเวลาสำคัญของชีวิต</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🔒</span>
+      <h3>ดวงชะตาเป็นความลับ</h3>
+      <p>เข้ารหัส end-to-end ดวงชะตาของคุณเป็นเอกสารส่วนตัว ไม่มีใครเข้าถึงนอกจากคุณ</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">♾️</span>
+      <h3>ดาวยังเคลื่อน เรายังอยู่</h3>
+      <p>อัปเดตตลอดชีพ ไม่มีค่าสมัรต์ยอดเยิ่ม ไม่มีกำหนด — เพราะดาวไม่มีวันหมดอายุ</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section stats">
+  <div class="stats-header">
+    <h2>จักรวาลในตัวเลข</h2>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number">12</div>
+      <div class="stat-label">ราศีที่เล่าเรื่องคุณ</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">9</div>
+      <div class="stat-label">ดาวเคละที่คำนวณ</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">100+</div>
+      <div class="stat-label">หน้ารายงาน</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">24/7</div>
+      <div class="stat-label">ดาวไม่เคลื่อน</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="section cta-final" id="contact">
+  <h2>จักรวาลรอคุณอยู่</h2>
+  <p>เริ่มต้นการเดินทางสู่ความเข้าใจตัวเอง ผ่านภาษาที่ดวงดาวจารซ้านไว้ให้ — ฟรี</p>
+  <button class="cta-final-btn">สร้างแผนที่ดวงดาวของคุณ</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div>© 2026 Astral — ดวงดาวจะบอกอะไรคุณ</div>
+  <div>ภาษาที่ดวงดาวจารซ้านไว้ให้</div>
+</footer>
+
+<!-- SCROLL INDICATOR -->
+<div class="scroll-indicator">Scroll</div>
+
+<!-- THREE.JS + GSAP + LENIS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+<script>
+// ============ LENIS SMOOTH SCROLL ============
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smoothWheel: true,
+  wheelMultiplier: 1,
+  touchMultiplier: 2,
+});
+
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+// ============ CUSTOM CURSOR ============
+const cursorDot = document.getElementById('cursorDot');
+const cursorRing = document.getElementById('cursorRing');
+let mouseX = 0, mouseY = 0;
+let ringX = 0, ringY = 0;
+
+document.addEventListener('mousemove', (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
+  cursorDot.style.left = mouseX + 'px';
+  cursorDot.style.top = mouseY + 'px';
+});
+
+function animateCursor() {
+  ringX += (mouseX - ringX) * 0.15;
+  ringY += (mouseY - ringY) * 0.15;
+  cursorRing.style.left = ringX + 'px';
+  cursorRing.style.top = ringY + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Hover effects
+document.querySelectorAll('.hero-cta, .cta-final-btn, .feature-card, .showcase-card').forEach(el => {
+  el.addEventListener('mouseenter', () => cursorRing.classList.add('hover'));
+  el.addEventListener('mouseleave', () => cursorRing.classList.remove('hover'));
+});
+
+// Show cursor after load
+setTimeout(() => {
+  cursorDot.style.opacity = '1';
+  cursorRing.style.opacity = '1';
+}, 500);
+
+// ============ PRELOADER ============
+const preloaderBar = document.getElementById('preloaderBar');
+const preloader = document.getElementById('preloader');
+let progress = 0;
+
+function updatePreloader() {
+  progress += Math.random() * 15 + 5;
+  if (progress > 100) progress = 100;
+  preloaderBar.style.width = progress + '%';
+  if (progress < 100) {
+    setTimeout(updatePreloader, 200);
+  } else {
+    setTimeout(() => {
+      preloader.classList.add('hidden');
+      // Animate hero content in
+      gsap.from('.hero-title', { opacity: 0, y: 60, duration: 1.5, ease: 'power3.out' });
+      gsap.from('.hero-subtitle', { opacity: 0, y: 40, duration: 1.5, delay: 0.2, ease: 'power3.out' });
+      gsap.from('.hero-cta', { opacity: 0, y: 40, duration: 1.2, delay: 0.4, ease: 'power3.out' });
+    }, 500);
+  }
+}
+setTimeout(updatePreloader, 300);
+
+// ============ PARALLAX STARS ============
+const starsFar = document.getElementById('starsFar');
+const starsNear = document.getElementById('starsNear');
+
+document.addEventListener('mousemove', (e) => {
+  const x = (e.clientX / window.innerWidth - 0.5) * 20;
+  const y = (e.clientY / window.innerHeight - 0.5) * 20;
+  starsFar.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+  starsNear.style.transform = `translate(${x * 1.5}px, ${y * 1.5}px)`;
+});
+
+// ============ THREE.JS SCENE ============
+const canvas = document.getElementById('scene-canvas');
+const renderer = new THREE.WebGLRenderer({
+  canvas: canvas,
+  antialias: true,
+  alpha: true,
+  powerPreference: 'high-performance'
+});
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 0, 30);
+
+// LIGHTING - เพิ่มแสงให้สวยขึ้น
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambientLight);
+
+const pointLight1 = new THREE.PointLight(0xffd700, 2, 100);
+pointLight1.position.set(10, 10, 10);
+scene.add(pointLight1);
+
+const pointLight2 = new THREE.PointLight(0xc084fc, 1.5, 100);
+pointLight2.position.set(-10, -10, 10);
+scene.add(pointLight2);
+
+const pointLight3 = new THREE.PointLight(0xff6b9d, 1.2, 100);
+pointLight3.position.set(0, 10, -10);
+scene.add(pointLight3);
+
+// -space-donut TORUS + PARTICLES ============
+// Main torus ring
+const torusGeo = new THREE.TorusGeometry(8, 0.3, 32, 100);
+const torusMat = new THREE.MeshStandardMaterial({
+  color: 0xffd700,
+  metalness: 0.9,
+  roughness: 0.2,
+  emissive: 0xffd700,
+  emissiveIntensity: 0.5,
+});
+const torus = new THREE.Mesh(torusGeo, torusMat);
+torus.position.set(0, 0, 0);
+scene.add(torus);
+
+// Inner sphere wireframe
+const sphereGeo = new THREE.IcosahedronGeometry(3, 1);
+const sphereMat = new THREE.MeshBasicMaterial({
+  color: 0xc084fc,
+  wireframe: true,
+  transparent: true,
+  opacity: 0.6,
+});
+const innerSphere = new THREE.Mesh(sphereGeo, sphereMat);
+scene.add(innerSphere);
+
+// 8000 stars particles (space-donut inspired)
+const starsGeometry = new THREE.BufferGeometry();
+const starPositions = new Float32Array(8000 * 3);
+const starColors = new Float32Array(8000 * 3);
+
+for (let i = 0; i < 8000; i++) {
+  const i3 = i * 3;
+  starPositions[i3] = (Math.random() - 0.5) * 200;
+  starPositions[i3 + 1] = (Math.random() - 0.5) * 200;
+  starPositions[i3 + 2] = (Math.random() - 0.5) * 200;
+
+  // สีดาวหลากหลาย
+  const colorChoice = Math.random();
+  if (colorChoice < 0.3) {
+    starColors[i3] = 1; starColors[i3 + 1] = 0.84; starColors[i3 + 2] = 0; // Gold
+  } else if (colorChoice < 0.6) {
+    starColors[i3] = 0.75; starColors[i3 + 1] = 0.52; starColors[i3 + 2] = 1; // Purple
+  } else if (colorChoice < 0.8) {
+    starColors[i3] = 1; starColors[i3 + 1] = 0.42; starColors[i3 + 2] = 0.62; // Pink
+  } else {
+    starColors[i3] = 0.38; starColors[i3 + 1] = 0.65; starColors[i3 + 2] = 0.98; // Blue
+  }
+}
+
+starsGeometry.setAttribute('position', new THREE.BufferAttribute(starPositions, 3));
+starsGeometry.setAttribute('color', new THREE.BufferAttribute(starColors, 3));
+
+const starsMaterial = new THREE.PointsMaterial({
+  size: 0.15,
+  vertexColors: true,
+  transparent: true,
+  opacity: 0.8,
+  sizeAttenuation: true,
+});
+
+const stars = new THREE.Points(starsGeometry, starsMaterial);
+scene.add(stars);
+
+// 12 floating diamonds
+const diamonds = [];
+for (let i = 0; i < 12; i++) {
+  const diamondGeo = new THREE.OctahedronGeometry(0.4, 0);
+  const diamondMat = new THREE.MeshStandardMaterial({
+    color: new THREE.Color().setHSL(Math.random(), 0.8, 0.6),
+    metalness: 0.9,
+    roughness: 0.1,
+    emissive: new THREE.Color().setHSL(Math.random(), 0.8, 0.6),
+    emissiveIntensity: 0.3,
+  });
+  const diamond = new THREE.Mesh(diamondGeo, diamondMat);
+  diamond.position.set(
+    (Math.random() - 0.5) * 40,
+    (Math.random() - 0.5) * 40,
+    (Math.random() - 0.5) * 40
+  );
+  diamond.userData = {
+    originalPos: diamond.position.clone(),
+    speed: Math.random() * 0.5 + 0.3,
+    phase: Math.random() * Math.PI * 2,
+  };
+  scene.add(diamond);
+  diamonds.push(diamond);
+}
+
+// RENDERER SETTINGS
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setClearColor(0x000000, 0);
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 2.5;
+
+// ============ GSAP SCROLL ANIMATIONS ============
+gsap.registerPlugin(ScrollTrigger);
+
+// Horizontal pin showcase (rejouice inspired)
+const showcaseWrapper = document.querySelector('.showcase-pin-wrapper');
+const showcaseTrack = document.querySelector('.showcase-track');
+
+if (showcaseWrapper && showcaseTrack) {
+  const scrollWidth = showcaseTrack.scrollWidth - window.innerWidth;
+
+  gsap.to(showcaseTrack, {
+    x: -scrollWidth,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: showcaseWrapper,
+      start: 'top top',
+      end: 'bottom bottom',
+      scrub: 1,
+      pin: '.showcase-pin',
+      anticipatePin: 1,
+    }
+  });
+}
+
+// Manifesto text reveal
+gsap.from('.manifesto-text', {
+  opacity: 0,
+  y: 60,
+  duration: 1.5,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.manifesto',
+    start: 'top 80%',
+    end: 'top 40%',
+    scrub: 1,
+  }
+});
+
+// Feature cards stagger
+gsap.from('.feature-card', {
+  opacity: 0,
+  y: 50,
+  duration: 0.8,
+  stagger: 0.1,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.features',
+    start: 'top 80%',
+    end: 'top 40%',
+    scrub: 1,
+  }
+});
+
+// Stats reveal
+gsap.from('.stat-item', {
+  opacity: 0,
+  y: 40,
+  duration: 0.8,
+  stagger: 0.15,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.stats',
+    start: 'top 80%',
+    end: 'top 40%',
+    scrub: 1,
+  }
+});
+
+// CTA final reveal
+gsap.from('.cta-final h2', {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.cta-final',
+    start: 'top 85%',
+  }
+});
+
+gsap.from('.cta-final p', {
+  opacity: 0,
+  y: 30,
+  duration: 1,
+  delay: 0.2,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.cta-final',
+    start: 'top 85%',
+  }
+});
+
+gsap.from('.cta-final-btn', {
+  opacity: 0,
+  y: 30,
+  duration: 0.8,
+  delay: 0.4,
+  ease: 'power3.out',
+  scrollTrigger: {
+    trigger: '.cta-final',
+    start: 'top 85%',
+  }
+});
+
+// ============ CAMERA PARALLAX (mouse + scroll) ============
+let scrollY = 0;
+window.addEventListener('scroll', () => {
+  scrollY = window.scrollY;
+});
+
+// ============ ANIMATION LOOP ============
+const clock = new THREE.Clock();
+
+function animate() {
+  requestAnimationFrame(animate);
+  const time = clock.getElapsedTime();
+
+  // Rotate torus
+  torus.rotation.x = time * 0.2;
+  torus.rotation.y = time * 0.3;
+
+  // Rotate inner sphere
+  innerSphere.rotation.x = time * 0.1;
+  innerSphere.rotation.y = time * 0.15;
+
+  // Rotate stars
+  stars.rotation.y = time * 0.02;
+  stars.rotation.x = time * 0.01;
+
+  // Animate diamonds
+  diamonds.forEach((d, i) => {
+    const { originalPos, speed, phase } = d.userData;
+    d.position.x = originalPos.x + Math.sin(time * speed + phase) * 2;
+    d.position.y = originalPos.y + Math.cos(time * speed + phase) * 2;
+    d.position.z = originalPos.z + Math.sin(time * speed * 0.5 + phase) * 1;
+    d.rotation.x = time * 0.5;
+    d.rotation.y = time * 0.3;
+  });
+
+  // Camera movement
+  camera.position.x = (mouseX / window.innerWidth - 0.5) * 5;
+  camera.position.y = -(mouseY / window.innerHeight - 0.5) * 5;
+  camera.position.z = 30 - scrollY * 0.01;
+  camera.lookAt(0, 0, 0);
+
+  renderer.render(scene, camera);
+}
+animate();
+
+// ============ RESIZE ============
+window.addEventListener('resize', () => {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+});
+</script>
+</body>
+</html>

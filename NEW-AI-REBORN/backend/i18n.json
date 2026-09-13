@@ -1,0 +1,676 @@
+{
+  "NAV": {
+    "home": {
+      "th": "หน้าแรก",
+      "en": "Home"
+    },
+    "natal": {
+      "th": "ดูดวงชะตา",
+      "en": "Natal Chart"
+    },
+    "tarot": {
+      "th": "ไพ่ทาโรต์",
+      "en": "Tarot"
+    },
+    "synastry": {
+      "th": "ดูคู่",
+      "en": "Synastry"
+    },
+    "vedic": {
+      "th": "เวดิก",
+      "en": "Vedic"
+    },
+    "horary": {
+      "th": "มูฮูร์ตะ",
+      "en": "Horary"
+    },
+    "ai": {
+      "th": "AI Reading",
+      "en": "AI Reading"
+    },
+    "login": {
+      "th": "เข้าสู่ระบบ",
+      "en": "Login"
+    },
+    "signup": {
+      "th": "สมัครสมาชิก",
+      "en": "Sign Up"
+    }
+  },
+  "HERO": {
+    "pill": {
+      "th": "✦ ดูดวงแบบโหรหลวงเคยมองฟ้า",
+      "en": "✦ Read fortunes like ancient astrologers"
+    },
+    "title1": {
+      "th": "ดาวแต่ละดวง",
+      "en": "Each star"
+    },
+    "title2": {
+      "th": "ล้วนมี",
+      "en": "all has"
+    },
+    "title3": {
+      "th": "คำบอก",
+      "en": "words to tell"
+    },
+    "title4": {
+      "th": "ให้คุณ",
+      "en": "for you"
+    },
+    "description": {
+      "th": "วันที่คุณลืมตามาเกิด ดาวแต่ละดวงจัดเรียงตัวเองให้พอดีจนคุณได้เห็น — แล้วมันก็เล่าได้ว่าคุณมาเพื่ออะไร จะไปรักใคร และช่วงไหนที่ฟ้าจะมอบของขวัญให้คุณ",
+      "en": "The day you were born, the stars arranged themselves just so you could see — and then they told what you came for, who you'll love, and when the sky will gift you"
+    },
+    "cta_primary": {
+      "th": "ให้ดาวเล่าให้คุณฟัง",
+      "en": "Let the stars tell your story"
+    },
+    "cta_secondary": {
+      "th": "✦ เลื่อนลงเพื่อเริ่มการเดินทางท่ามกลางดวงดาว ✦",
+      "en": "✦ Scroll to begin your journey among the stars ✦"
+    },
+    "scroll_hint": {
+      "th": "เลื่อนลง",
+      "en": "Scroll"
+    },
+    "loading": {
+      "th": "กำลังโหลดจักรวาล...",
+      "en": "Loading the cosmos..."
+    }
+  },
+  "LANDING": {
+    "tagline": {
+      "th": "ภาษาที่ท้องฟ้าจารซ้านไว้",
+      "en": "The language the sky has written"
+    },
+    "hero_subtitle": {
+      "th": "อ่านดวงชะตาผ่าน โหราศาสตร์ และ ไพ่ทาโรต์ ด้วยปัญญาประดิษฐ์ที่เข้าใจจักรวาล",
+      "en": "Read your destiny through astrology & tarot with AI that understands the cosmos"
+    },
+    "hero_cta": {
+      "th": "เริ่มต้นดูดวง",
+      "en": "Start Reading"
+    },
+    "hero_scroll": {
+      "th": "เลื่อนเพื่อสำรวจ",
+      "en": "Scroll to explore"
+    },
+    "story_sun_title": {
+      "th": "หนึ่ง — ดวงอาทิตย์",
+      "en": "One — The Sun"
+    },
+    "story_sun_subtitle": {
+      "th": "แสงแห่ง ตัวตน",
+      "en": "Light of Identity"
+    },
+    "story_sun_desc": {
+      "th": "ดวงอาทิตย์คือหัวใจของระบบสุริยะ — เช่นเดียวกับตัวตนที่แท้จริงของคุณในจักรวาล มันคือแสงสว่างที่บอกว่าคุณมาเพื่อเป็นใคร",
+      "en": "The Sun is the heart of the solar system — like your true identity in the universe"
+    },
+    "story_planets_title": {
+      "th": "สอง — ดวงดาว",
+      "en": "Two — The Planets"
+    },
+    "story_planets_subtitle": {
+      "th": "ทั้งแปดดวง เล่าเรื่องราว",
+      "en": "Eight planets tell the story"
+    },
+    "story_planets_desc": {
+      "th": "ดาวพุธ ดาวศุกร์ ดาวอังคาร ดาวพฤหัส ดาวเสาร์ ดาวยูเรนัส ดาวเนปจูน ดาวพลูโต — แต่ละดวงคือบทบาทในละครเรื่องชีวิตคุณ",
+      "en": "Mercury Venus Mars Jupiter Saturn Uranus Neptune Pluto — each a role in your life's play"
+    },
+    "story_tarot_title": {
+      "th": "สาม — ไพ่ทาโรต์",
+      "en": "Three — Tarot"
+    },
+    "story_tarot_subtitle": {
+      "th": "เจ็ดสิบแปดใบ เปิดเผยความลับ",
+      "en": "Seventy-eight cards reveal secrets"
+    },
+    "story_tarot_desc": {
+      "th": "ไพ่ทาโรต์เจ็ดสิบแปดใบ คือกระจกสะท้อนจิตใจ ตั้งแต่นักเดินทางผู้เริ่มต้นการผจญภัย ไปจนถึงโลกแห่งความสมบูรณ์",
+      "en": "Seventy-eight tarot cards — a mirror of the mind"
+    },
+    "stat_tarot": {
+      "th": "๗๘ ไพ่ทาโรต์",
+      "en": "78 Tarot Cards"
+    },
+    "stat_houses": {
+      "th": "๑๒ บ้าน",
+      "en": "12 Houses"
+    },
+    "stat_planets": {
+      "th": "๑๐ ดวงดาว",
+      "en": "10 Planets"
+    },
+    "stat_chart": {
+      "th": "๓๖๐° แผนที่ดวงชะตา",
+      "en": "360° Natal Chart"
+    },
+    "capabilities_title": {
+      "th": "ความสามารถ",
+      "en": "Capabilities"
+    },
+    "capabilities_subtitle": {
+      "th": "ความสามารถที่ครอบคลุมทุกมิติโหราศาสตร์",
+      "en": "Comprehensive astrology capabilities"
+    },
+    "cap_natal_title": {
+      "th": "แผนที่ดวงชะตา",
+      "en": "Natal Chart"
+    },
+    "cap_natal_desc": {
+      "th": "แผนที่ชะตาวันเกิดสามร้อยหกสิดองศา แสดงตำแหน่งดาวครบถ้วน",
+      "en": "360-degree natal chart showing complete planetary positions"
+    },
+    "cap_tarot_title": {
+      "th": "การอ่านไพ่ทาโรต์",
+      "en": "Tarot Reading"
+    },
+    "cap_tarot_desc": {
+      "th": "ไพ่เจ็ดสิบแปดใบ อ่านได้ทุกด้าน ทั้งงาน ความรัก การเงิน",
+      "en": "Seventy-eight cards for career, love, and finance"
+    },
+    "cap_synastry_title": {
+      "th": "การมองเห็นคู่",
+      "en": "Synastry"
+    },
+    "cap_synastry_desc": {
+      "th": "วิเคราะห์ความเข้ากันระหว่างสองจิตวิญญาณ",
+      "en": "Analyze the connection between two souls"
+    },
+    "cap_transit_title": {
+      "th": "ดาวเคลื่อนที่",
+      "en": "Transits"
+    },
+    "cap_transit_desc": {
+      "th": "ดูพลังงานดาวเคลื่อนที่ในปัจจุบัน",
+      "en": "See current planetary energy movements"
+    },
+    "cap_solar_title": {
+      "th": "บ้านธรณีประจำปี",
+      "en": "Annual Solar Return"
+    },
+    "cap_solar_desc": {
+      "th": "คาดการณ์รายปีผ่านบ้านธรณีประจำตัว",
+      "en": "Yearly forecast through solar houses"
+    },
+    "result_thai_pure": {
+      "th": "ภาษาที่ท้องฟ้าจารซ้านไว้",
+      "en": "Written in the sky's language"
+    },
+    "result_subtitle": {
+      "th": "ผลลัพธ์ภาษาไทยบริสุทธิ์ สไตล์ไพ่ทาโรต์",
+      "en": "Pure Thai results, tarot-style"
+    },
+    "form_name": {
+      "th": "ชื่อของคุณ",
+      "en": "Your Name"
+    },
+    "form_dob": {
+      "th": "วันเกิด",
+      "en": "Date of Birth"
+    },
+    "form_time": {
+      "th": "เวลาเกิด",
+      "en": "Time of Birth"
+    },
+    "form_place": {
+      "th": "สถานที่เกิด",
+      "en": "Place of Birth"
+    },
+    "form_submit": {
+      "th": "สร้างภาพดวงชะตาของคุณ",
+      "en": "Generate Your Cosmic Art"
+    },
+    "loading_generate": {
+      "th": "กำลังสร้างภาพดวงชะตาด้วยคอสมิก...",
+      "en": "Generating your cosmic destiny art..."
+    },
+    "loading_timeout": {
+      "th": "การสร้างภาพใช้เวลานานเกินไป กรุณาลองใหม่",
+      "en": "Generation timed out, please retry"
+    },
+    "loading_fail": {
+      "th": "การสร้างภาพล้มเหลว",
+      "en": "Generation failed"
+    },
+    "loading_connect_fail": {
+      "th": "การเชื่อมต่อล้มเหลว กรุณาลองใหม่",
+      "en": "Connection failed, please retry"
+    },
+    "art_title": {
+      "th": "ภาพดวงชะตาของคุณ",
+      "en": "Your Cosmic Art"
+    },
+    "art_uniqueness": {
+      "th": "ภาพนี้สร้างจากข้อมูลดวงชะตาของคุณ — ไม่มีใครเหมือนคุณในจักรวาลนี้",
+      "en": "This image was generated from your unique birth chart — no one else in the universe is like you"
+    },
+    "footer": {
+      "th": "อัสตรัล — ภาษาที่ท้องฟ้าจารซ้านไว้ — ๒๕๖๙",
+      "en": "Astral — Written in the sky's language — 2026"
+    }
+  },
+  "SECTION": {
+    "01_title": {
+      "th": "ดูดวงชะตา",
+      "en": "Natal Chart"
+    },
+    "01_desc": {
+      "th": "วันเกิดของคุณ คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าคุณมีของดีซ่อนที่ไหน",
+      "en": "Your birthday is a compass — we'll show you where your gifts hide"
+    },
+    "02_title": {
+      "th": "ไพ่ทาโรต์",
+      "en": "Tarot"
+    },
+    "02_desc": {
+      "th": "ไพ่ 78 ใบจากสำนักโบราณ — สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย แต่เป็นเสียงที่สะท้อนสิ่งที่คุณกังวลอยู่",
+      "en": "78 cards from ancient schools — not vague prophecies, but reflections of your worries"
+    },
+    "03_title": {
+      "th": "มูฮูร์ตะ",
+      "en": "Horary"
+    },
+    "03_desc": {
+      "th": "มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่คุณเริ่มตั้งต้นนั้นเป็นสิริมงคล",
+      "en": "Starting something important? We'll find the hour the stars support you"
+    },
+    "04_title": {
+      "th": "เวดิก",
+      "en": "Vedic"
+    },
+    "04_desc": {
+      "th": "มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล",
+      "en": "Through ancient Indian texts — stars shift to their true seasonal positions"
+    },
+    "05_title": {
+      "th": "ดูคู่ Synastry",
+      "en": "Synastry"
+    },
+    "05_desc": {
+      "th": "เมื่อดวงคุณไปพบดวงเขา จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือต้องระวัง",
+      "en": "When your chart meets theirs — we'll tell if these two stars help each other"
+    }
+  },
+  "BUTTONS": {
+    "cta": {
+      "th": "เริ่มต้นใช้งาน",
+      "en": "Get Started"
+    },
+    "login": {
+      "th": "เข้าสู่ระบบ",
+      "en": "Login"
+    },
+    "signup": {
+      "th": "สมัครสมาชิก",
+      "en": "Sign Up"
+    },
+    "logout": {
+      "th": "ออกจากระบบ",
+      "en": "Logout"
+    },
+    "save": {
+      "th": "บันทึก",
+      "en": "Save"
+    },
+    "cancel": {
+      "th": "ยกเลิก",
+      "en": "Cancel"
+    },
+    "close": {
+      "th": "ปิด",
+      "en": "Close"
+    },
+    "back": {
+      "th": "ย้อนกลับ",
+      "en": "Back"
+    },
+    "next": {
+      "th": "ถัดไป",
+      "en": "Next"
+    },
+    "submit": {
+      "th": "ส่ง",
+      "en": "Submit"
+    },
+    "download": {
+      "th": "ดาวน์โหลด",
+      "en": "Download"
+    },
+    "share": {
+      "th": "แชร์",
+      "en": "Share"
+    },
+    "read_more": {
+      "th": "อ่านต่อ",
+      "en": "Read More"
+    },
+    "loading": {
+      "th": "กำลังโหลด...",
+      "en": "Loading..."
+    },
+    "calculating": {
+      "th": "กำลังคำนวณ...",
+      "en": "Calculating..."
+    }
+  },
+  "FORM": {
+    "name": {
+      "th": "ชื่อ",
+      "en": "Name"
+    },
+    "date": {
+      "th": "วันเกิด",
+      "en": "Birth Date"
+    },
+    "time": {
+      "th": "เวลาเกิด",
+      "en": "Birth Time"
+    },
+    "location": {
+      "th": "สถานที่เกิด",
+      "en": "Birth Location"
+    },
+    "question": {
+      "th": "คำถาม",
+      "en": "Your Question"
+    },
+    "system": {
+      "th": "ระบบ",
+      "en": "System"
+    },
+    "tropical": {
+      "th": "Tropical (ตะวันตก)",
+      "en": "Tropical (Western)"
+    },
+    "sidereal": {
+      "th": "Sidereal (เวดิก)",
+      "en": "Sidereal (Vedic)"
+    },
+    "name_placeholder": {
+      "th": "ใส่ชื่อของคุณ",
+      "en": "Enter your name"
+    },
+    "date_placeholder": {
+      "th": "วัน/เดือน/ปี",
+      "en": "DD/MM/YYYY"
+    },
+    "time_placeholder": {
+      "th": "ชั่วโมง:นาที",
+      "en": "HH:MM"
+    },
+    "question_placeholder": {
+      "th": "พิมพ์คำถามของคุณ...",
+      "en": "Type your question..."
+    }
+  },
+  "RESULT": {
+    "title": {
+      "th": "เรื่องราวที่ดาวเล่าให้คุณฟัง",
+      "en": "The story the stars tell you"
+    },
+    "loading": {
+      "th": "กำลังอ่านดวงชะตา...",
+      "en": "Reading your chart..."
+    },
+    "narrative_title": {
+      "th": "เรื่องราวจากดาว",
+      "en": "Story from the Stars"
+    },
+    "tarot_title": {
+      "th": "ไพ่ที่ออกมาสำหรับคุณ",
+      "en": "Your Tarot Cards"
+    },
+    "elements_title": {
+      "th": "ธาตุในดวง",
+      "en": "Elements"
+    },
+    "aspects_title": {
+      "th": "Aspects",
+      "en": "Aspects"
+    },
+    "houses_title": {
+      "th": "บ้าน",
+      "en": "Houses"
+    },
+    "caveat": {
+      "th": "นี่คือเรื่องราวชีวิตของคุณ ไม่ใช่ตำราโหราศาสตร์ — ทุกระบบชี้มาที่จุดเดียวกัน นั่นไม่ใช่ความบังเอิญ",
+      "en": "This is your life story, not a textbook — every system points to the same truth"
+    },
+    "download_pdf": {
+      "th": "อ่านรายงานที่ฟ้าฝากมา",
+      "en": "Download Report"
+    },
+    "share_result": {
+      "th": "แชร์ผลลัพธ์",
+      "en": "Share"
+    },
+    "new_reading": {
+      "th": "ดูดวงใหม่",
+      "en": "New Reading"
+    },
+    "error_generic": {
+      "th": "เกิดข้อผิดพลาด — ลองใหม่อีกครั้ง",
+      "en": "Something went wrong — try again"
+    },
+    "no_data": {
+      "th": "กรุณากรอกข้อมูลวันเกิดก่อน",
+      "en": "Please enter your birth data first"
+    },
+    "ai_reading": {
+      "th": "AI Reading",
+      "en": "AI Reading"
+    },
+    "ai_button": {
+      "th": "ขอ AI อ่านเพิ่ม",
+      "en": "Ask AI"
+    }
+  },
+  "APP": {
+    "app_name": {
+      "th": "Astral",
+      "en": "Astral"
+    },
+    "tagline": {
+      "th": "โหราศาสตร์ครบวงจร",
+      "en": "Complete Astrology System"
+    },
+    "loading": {
+      "th": "กำลังโหลด...",
+      "en": "Loading..."
+    },
+    "error": {
+      "th": "ข้อผิดพลาด",
+      "en": "Error"
+    },
+    "success": {
+      "th": "สำเร็จ",
+      "en": "Success"
+    },
+    "warning": {
+      "th": "คำเตือน",
+      "en": "Warning"
+    },
+    "info": {
+      "th": "ข้อมูล",
+      "en": "Info"
+    },
+    "yes": {
+      "th": "ใช่",
+      "en": "Yes"
+    },
+    "no": {
+      "th": "ไม่",
+      "en": "No"
+    },
+    "confirm": {
+      "th": "ยืนยัน",
+      "en": "Confirm"
+    },
+    "required": {
+      "th": "จำเป็น",
+      "en": "Required"
+    },
+    "optional": {
+      "th": "ไม่จำเป็น",
+      "en": "Optional"
+    },
+    "enable_js": {
+      "th": "ต้องเปิด JavaScript เพื่อใช้งาน 3D ดวงดาวได้",
+      "en": "Please enable JavaScript for 3D star rendering"
+    },
+    "motion_on": {
+      "th": "แอนิเมชันเปิดอยู่ — คลิกเพื่อปิด",
+      "en": "Animation on — click to turn off"
+    },
+    "motion_off": {
+      "th": "แอนิเมชันปิดอยู่ — คลิกเพื่อเปิด",
+      "en": "Animation off — click to turn on"
+    },
+    "motion_toggle_on": {
+      "th": "เปิดแอนิเมชัน",
+      "en": "Turn On Animation"
+    },
+    "motion_toggle_off": {
+      "th": "ปิดแอนิเมชัน",
+      "en": "Turn Off Animation"
+    },
+    "drag_hint": {
+      "th": "✦ ลากเพื่อหมุน · Scroll เพื่อซูม ✦",
+      "en": "✦ Drag to rotate · Scroll to zoom ✦"
+    },
+    "daily": {
+      "th": "ดาวประจำวัน",
+      "en": "Daily Planets"
+    },
+    "solar_system": {
+      "th": "ระบบสุริยะ",
+      "en": "Solar System"
+    },
+    "calculating": {
+      "th": "กำลังคำนวณดวง...",
+      "en": "Calculating chart..."
+    },
+    "loading_data": {
+      "th": "กำลังโหลดข้อมูลดาว...",
+      "en": "Loading celestial data..."
+    },
+    "chart_life": {
+      "th": "ตำแหน่งดวงในชะตาคุณ",
+      "en": "Positions in your chart"
+    },
+    "chart_sky": {
+      "th": "ตำแหน่งดวงท้องฟ้า",
+      "en": "Positions in the sky"
+    }
+  },
+  "TAROT": {
+    "title": {
+      "th": "ไพ่ทาโรต์",
+      "en": "Tarot"
+    },
+    "draw": {
+      "th": "สับไพ่",
+      "en": "Draw Cards"
+    },
+    "spread_3": {
+      "th": "ไพ่ 3 ใบ",
+      "en": "3 Cards"
+    },
+    "celtic_cross": {
+      "th": "Celtic Cross",
+      "en": "Celtic Cross"
+    },
+    "love": {
+      "th": "ไพ่ความรัก",
+      "en": "Love Spread"
+    },
+    "career": {
+      "th": "ไพ่การงาน",
+      "en": "Career Spread"
+    },
+    "three_card_desc": {
+      "th": "โบกไพ่แล้วตั้งคำถามใจ — ไพ่สามใบนี้จะตอบสิ่งที่คุณอยากรู้",
+      "en": "Shuffle and set your intention — these three cards answer your question"
+    },
+    "your_cards": {
+      "th": "ไพ่ของคุณ",
+      "en": "Your Cards"
+    },
+    "meaning": {
+      "th": "ความหมาย",
+      "en": "Meaning"
+    },
+    "upright": {
+      "th": "หงาย",
+      "en": "Upright"
+    },
+    "reversed": {
+      "th": "คว่ำ",
+      "en": "Reversed"
+    },
+    "click_flip": {
+      "th": "คลิกเพื่อพลิกไพ่",
+      "en": "Click to flip"
+    }
+  },
+  "BIRTH_FORM": {
+    "title": {
+      "th": "ข้อมูลการเกิด",
+      "en": "Birth Data"
+    },
+    "name_label": {
+      "th": "ชื่อของคุณ",
+      "en": "Your Name"
+    },
+    "date_label": {
+      "th": "วันเกิด",
+      "en": "Date of Birth"
+    },
+    "time_label": {
+      "th": "เวลาเกิด",
+      "en": "Time of Birth"
+    },
+    "place_label": {
+      "th": "สถานที่เกิด",
+      "en": "Place of Birth"
+    },
+    "get_location": {
+      "th": "ใช้ตำแหน่งปัจจุบัน",
+      "en": "Use current location"
+    },
+    "calculate": {
+      "th": "คำนวณดวง",
+      "en": "Calculate"
+    },
+    "name_required": {
+      "th": "กรุณากรอกชื่อ",
+      "en": "Name is required"
+    },
+    "date_required": {
+      "th": "กรุณากรอกวันเกิด",
+      "en": "Date is required"
+    },
+    "time_required": {
+      "th": "กรุณากรอกเวลาเกิด",
+      "en": "Time is required"
+    },
+    "place_required": {
+      "th": "กรุณากรอกสถานที่เกิด",
+      "en": "Place is required"
+    }
+  },
+  "INTRO": {
+    "prepare": {
+      "th": "✦ เตรียมพร้อมลอยสู่ท้องฟ้า ✦",
+      "en": "✦ PREPARE FOR TAKEOFF ✦"
+    },
+    "system": {
+      "th": "ระบบโหราศาสตร์ครบวงจร",
+      "en": "THE COSMIC SYSTEM"
+    }
+  }
+}

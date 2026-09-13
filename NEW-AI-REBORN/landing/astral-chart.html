@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Astral — แผนที่ดวงดาวของคุณ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Noto+Sans+Thai:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Thai',sans-serif;background:#000;color:#f0e6d3;overflow-x:hidden}
+canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
+.content{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:80px 24px 40px}
+.nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:16px 32px;background:linear-gradient(180deg,rgba(0,0,0,.8),transparent);z-index:10}
+.nav-logo{font-family:'Cinzel',serif;font-size:20px;font-weight:700;letter-spacing:3px;color:#f0e6d3}
+.nav-back{color:#f0e6d3;text-decoration:none;font-size:14px;opacity:.7;transition:opacity .3s}
+.nav-back:hover{opacity:1}
+.hero{text-align:center;margin-bottom:48px}
+.hero h1{font-family:'Cinzel',serif;font-size:42px;font-weight:900;letter-spacing:2px;margin-bottom:12px;background:linear-gradient(135deg,#f0e6d3,#c9a96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{font-size:16px;opacity:.6;font-weight:300}
+.form-card{background:rgba(20,15,30,.7);backdrop-filter:blur(16px);border:1px solid rgba(240,230,211,.12);border-radius:20px;padding:40px;width:100%;max-width:480px}
+.form-card h2{font-family:'Cinzel',serif;font-size:22px;font-weight:600;margin-bottom:24px;text-align:center}
+.field{margin-bottom:20px}
+.field label{display:block;font-size:13px;opacity:.6;margin-bottom:6px;font-weight:300}
+.field input,.field select{width:100%;padding:12px 16px;background:rgba(255,255,255,.06);border:1px solid rgba(240,230,211,.15);border-radius:10px;color:#f0e6d3;font-size:15px;font-family:'Noto Sans Thai',sans-serif;outline:none;transition:border .3s}
+.field input:focus,.field select:focus{border-color:rgba(201,169,110,.5)}
+.field-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+.btn-calculate{width:100%;padding:14px;background:linear-gradient(135deg,#c9a96e,#8b6914);color:#000;font-size:16px;font-weight:600;border:none;border-radius:10px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-family:'Noto Sans Thai',sans-serif}
+.btn-calculate:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,169,110,.3)}
+.result{display:none;margin-top:32px;padding:24px;background:rgba(201,169,110,.08);border:1px solid rgba(201,169,110,.2);border-radius:16px}
+.result.show{display:block;animation:fadeUp .6s ease}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.result h3{font-family:'Cinzel',serif;font-size:18px;margin-bottom:12px;color:#c9a96e}
+.result p{font-size:14px;line-height:1.8;opacity:.8}
+.footer{text-align:center;padding:32px;font-size:12px;opacity:.4}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<nav class="nav"><div class="nav-logo">ASTRAL</div><a href="astral-landing.html" class="nav-back">← กลับสู่ท้องฟ้า</a></nav>
+<div class="content">
+  <div class="hero">
+    <h1>แผนที่ดวงดาวของคุณ</h1>
+    <p>เปิดเผยภาษาที่จักรวาลจารซ้านไว้ให้คุณ ณ ช่วงเวลาที่คุณเข้ามาในโลก</p>
+  </div>
+  <div class="form-card">
+    <h2>ข้อมูลชีวิต</h2>
+    <div class="field"><label>วันเดือนปีเกิด</label><input type="date" id="birthDate" value="1997-05-19"></div>
+    <div class="field-row">
+      <div class="field"><label>ชั่วโมง</label><select id="birthHour"><option>00</option><option>01</option><option>02</option><option>03</option><option>04</option><option selected>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option></select></div>
+      <div class="field"><label>นาที</label><select id="birthMin"><option>00</option><option>05</option><option>10</option><option>15</option><option>20</option><option>25</option><option>30</option><option>35</option><option>40</option><option selected>45</option><option>50</option><option>55</option></select></div>
+      <div class="field"><label>นาที</label><select id="birthSec"><option selected>00</option><option>15</option><option>30</option><option>45</option></select></div>
+    </div>
+    <div class="field"><label>สถานที่เกิด</label><input type="text" id="birthPlace" value="ชลบุรี" placeholder="จังหวัดหรือเมือง"></div>
+    <button class="btn-calculate" onclick="calculate()">เปิดแผนที่ดวงดาว</button>
+    <div class="result" id="result">
+      <h3 id="resultTitle"></h3>
+      <p id="resultText"></p>
+    </div>
+  </div>
+  <div class="footer">ภาษาที่ดวงดาวจารซ้านไว้ให้</div>
+</div>
+
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script>
+// Background starfield
+const canvas=document.getElementById('bg');
+const ctx=canvas.getContext('2d');
+let w,h;function resize(){w=canvas.width=window.innerWidth;h=canvas.height=window.innerHeight}
+resize();window.addEventListener('resize',resize);
+const stars=[];for(let i=0;i<800;i++)stars.push({x:Math.random()*2000-1000,y:Math.random()*2000-1000,z:Math.random()*2000,s:Math.random()*1.5+.5,ph:Math.random()*Math.PI*2});
+let t=0;
+function draw(){t+=0.005;ctx.fillStyle='rgba(0,0,0,0.15)';ctx.fillRect(0,0,w,h);stars.forEach(s=>{s.ph+=0.02;const a=0.3+Math.sin(s.ph)*0.3;ctx.fillStyle=`rgba(240,230,211,${a})`;const sx=w/2+s.x*0.3,sy=h/2+s.y*0.3;ctx.beginPath();ctx.arc(sx,sy,s.s,0,Math.PI*2);ctx.fill()});requestAnimationFrame(draw)}
+draw();
+
+// Calculate chart
+function calculate(){
+  const date=document.getElementById('birthDate').value;
+  const hour=document.getElementById('birthHour').value;
+  const min=document.getElementById('birthMin').value;
+  const place=document.getElementById('birthPlace').value||'ไม่ระบุ';
+  if(!date){alert('กรุณาระบุวันเกิด');return}
+  const d=new Date(date);
+  const day=d.getDate();const month=d.getMonth()+1;const year=d.getFullYear();
+  const signs=['เมษ','พุธ','มถุน','กรกฎ','สิงห','กันย์','ตุล','พิจิก','ธนู','มกร','กุมภ์','มีน'];
+  const signIndex=(month-1+Math.floor(day/15))%12;
+  const sign=signIndex;
+  const signName=signs[sign];
+  const elements=['ไฟ','ดิน','ลม','น้ำ'];
+  const elem=elements[Math.floor(signIndex/3)%4];
+  const qualities=['ริเริ่ม','มั่นคง','เปลี่ยนแปลง'];
+  const qual=sign%3;
+  const resultTitle=`พระอาทิตย์สิงห์ราศี${signName}`;
+  const resultText=`ในวันที่ ${day}/${month}/${year} เวลา ${hour}:${min} น. ที่${place} — ดวงอาทิตย์สว่างไสวในราศี${signName} ธาตุ${elements[signIndex%4]} ณ จุดนี้ ดวงดาวกำลังกล่าวถึงตัวตนที่แท้จริงของคุณ สิ่งที่คุณมุ่งมั่น และแสงที่คุณมอบให้โลก`;
+  document.getElementById('resultTitle').textContent=resultTitle;
+  document.getElementById('resultText').textContent=resultText;
+  document.getElementById('result').classList.add('show');
+}
+</script>
+</body>
+</html>

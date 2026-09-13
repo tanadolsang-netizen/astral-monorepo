@@ -188,6 +188,64 @@ HERO: dict[str, dict[str, str]] = {
     "loading":      {"th": "กำลังโหลดจักรวาล...", "en": "Loading the cosmos..."},
 }
 
+# ── LANDING: ข้อความเฉพาะหน้า Landing ──
+LANDING: dict[str, dict[str, str]] = {
+    # Tagline
+    "tagline":              {"th": "ภาษาที่ท้องฟ้าจารซ้านไว้", "en": "The language the sky has written"},
+    "hero_subtitle":        {"th": "อ่านดวงชะตาผ่าน โหราศาสตร์ และ ไพ่ทาโรต์ ด้วยปัญญาประดิษฐ์ที่เข้าใจจักรวาล",
+                             "en": "Read your destiny through astrology & tarot with AI that understands the cosmos"},
+    "hero_cta":             {"th": "เริ่มต้นดูดวง", "en": "Start Reading"},
+    "hero_scroll":          {"th": "เลื่อนเพื่อสำรวจ", "en": "Scroll to explore"},
+    "story_sun_title":      {"th": "หนึ่ง — ดวงอาทิตย์", "en": "One — The Sun"},
+    "story_sun_subtitle":   {"th": "แสงแห่ง ตัวตน", "en": "Light of Identity"},
+    "story_sun_desc":       {"th": "ดวงอาทิตย์คือหัวใจของระบบสุริยะ — เช่นเดียวกับตัวตนที่แท้จริงของคุณในจักรวาล มันคือแสงสว่างที่บอกว่าคุณมาเพื่อเป็นใคร",
+                             "en": "The Sun is the heart of the solar system — like your true identity in the universe"},
+    "story_planets_title":  {"th": "สอง — ดวงดาว", "en": "Two — The Planets"},
+    "story_planets_subtitle": {"th": "ทั้งแปดดวง เล่าเรื่องราว", "en": "Eight planets tell the story"},
+    "story_planets_desc":   {"th": "ดาวพุธ ดาวศุกร์ ดาวอังคาร ดาวพฤหัส ดาวเสาร์ ดาวยูเรนัส ดาวเนปจูน ดาวพลูโต — แต่ละดวงคือบทบาทในละครเรื่องชีวิตคุณ",
+                             "en": "Mercury Venus Mars Jupiter Saturn Uranus Neptune Pluto — each a role in your life's play"},
+    "story_tarot_title":    {"th": "สาม — ไพ่ทาโรต์", "en": "Three — Tarot"},
+    "story_tarot_subtitle": {"th": "เจ็ดสิบแปดใบ เปิดเผยความลับ", "en": "Seventy-eight cards reveal secrets"},
+    "story_tarot_desc":     {"th": "ไพ่ทาโรต์เจ็ดสิบแปดใบ คือกระจกสะท้อนจิตใจ ตั้งแต่นักเดินทางผู้เริ่มต้นการผจญภัย ไปจนถึงโลกแห่งความสมบูรณ์",
+                             "en": "Seventy-eight tarot cards — a mirror of the mind"},
+    "stat_tarot":           {"th": "๗๘ ไพ่ทาโรต์", "en": "78 Tarot Cards"},
+    "stat_houses":          {"th": "๑๒ บ้าน", "en": "12 Houses"},
+    "stat_planets":         {"th": "๑๐ ดวงดาว", "en": "10 Planets"},
+    "stat_chart":           {"th": "๓๖๐° แผนที่ดวงชะตา", "en": "360° Natal Chart"},
+    "capabilities_title":   {"th": "ความสามารถ", "en": "Capabilities"},
+    "capabilities_subtitle": {"th": "ความสามารถที่ครอบคลุมทุกมิติโหราศาสตร์", "en": "Comprehensive astrology capabilities"},
+    "cap_natal_title":      {"th": "แผนที่ดวงชะตา", "en": "Natal Chart"},
+    "cap_natal_desc":       {"th": "แผนที่ชะตาวันเกิดสามร้อยหกสิดองศา แสดงตำแหน่งดาวครบถ้วน",
+                             "en": "360-degree natal chart showing complete planetary positions"},
+    "cap_tarot_title":      {"th": "การอ่านไพ่ทาโรต์", "en": "Tarot Reading"},
+    "cap_tarot_desc":       {"th": "ไพ่เจ็ดสิบแปดใบ อ่านได้ทุกด้าน ทั้งงาน ความรัก การเงิน",
+                             "en": "Seventy-eight cards for career, love, and finance"},
+    "cap_synastry_title":   {"th": "การมองเห็นคู่", "en": "Synastry"},
+    "cap_synastry_desc":    {"th": "วิเคราะห์ความเข้ากันระหว่างสองจิตวิญญาณ",
+                             "en": "Analyze the connection between two souls"},
+    "cap_transit_title":    {"th": "ดาวเคลื่อนที่", "en": "Transits"},
+    "cap_transit_desc":     {"th": "ดูพลังงานดาวเคลื่อนที่ในปัจจุบัน",
+                             "en": "See current planetary energy movements"},
+    "cap_solar_title":      {"th": "บ้านธรณีประจำปี", "en": "Annual Solar Return"},
+    "cap_solar_desc":       {"th": "คาดการณ์รายปีผ่านบ้านธรณีประจำตัว",
+                             "en": "Yearly forecast through solar houses"},
+    "result_thai_pure":     {"th": "ภาษาที่ท้องฟ้าจารซ้านไว้", "en": "Written in the sky's language"},
+    "result_subtitle":      {"th": "ผลลัพธ์ภาษาไทยบริสุทธิ์ สไตล์ไพ่ทาโรต์", "en": "Pure Thai results, tarot-style"},
+    "form_name":            {"th": "ชื่อของคุณ", "en": "Your Name"},
+    "form_dob":             {"th": "วันเกิด", "en": "Date of Birth"},
+    "form_time":            {"th": "เวลาเกิด", "en": "Time of Birth"},
+    "form_place":           {"th": "สถานที่เกิด", "en": "Place of Birth"},
+    "form_submit":          {"th": "สร้างภาพดวงชะตาของคุณ", "en": "Generate Your Cosmic Art"},
+    "loading_generate":     {"th": "กำลังสร้างภาพดวงชะตาด้วยคอสมิก...", "en": "Generating your cosmic destiny art..."},
+    "loading_timeout":      {"th": "การสร้างภาพใช้เวลานานเกินไป กรุณาลองใหม่", "en": "Generation timed out, please retry"},
+    "loading_fail":         {"th": "การสร้างภาพล้มเหลว", "en": "Generation failed"},
+    "loading_connect_fail": {"th": "การเชื่อมต่อล้มเหลว กรุณาลองใหม่", "en": "Connection failed, please retry"},
+    "art_title":            {"th": "ภาพดวงชะตาของคุณ", "en": "Your Cosmic Art"},
+    "art_uniqueness":       {"th": "ภาพนี้สร้างจากข้อมูลดวงชะตาของคุณ — ไม่มีใครเหมือนคุณในจักรวาลนี้",
+                             "en": "This image was generated from your unique birth chart — no one else in the universe is like you"},
+    "footer":               {"th": "อัสตรัล — ภาษาที่ท้องฟ้าจารซ้านไว้ — ๒๕๖๙", "en": "Astral — Written in the sky's language — 2026"},
+}
+
 SECTION: dict[str, dict[str, str]] = {
     "01_title":     {"th": "ดูดวงชะตา", "en": "Natal Chart"},
     "01_desc":      {"th": "วันเกิดของคุณ คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าคุณมีของดีซ่อนที่ไหน", "en": "Your birthday is a compass — we'll show you where your gifts hide"},
@@ -440,7 +498,7 @@ def sign_element(sign: str) -> str:
 def export_i18n() -> dict:
     """Export ข้อความทั้งหมดเป็น dict สำหรับ frontend (JSON)"""
     sections = [
-        "NAV", "HERO", "SECTION", "BUTTONS", "FORM",
+        "NAV", "HERO", "LANDING", "SECTION", "BUTTONS", "FORM",
         "RESULT", "APP", "TAROT", "BIRTH_FORM", "INTRO",
     ]
     data: dict[str, dict[str, dict[str, str]]] = {}
