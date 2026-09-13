@@ -184,7 +184,7 @@ app.add_middleware(
 
 # ── Routers (all API v1) ─────────────────────────────────────
 from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, reports, vedic, muhurta, chat, accuracy, life, sky, research, comfyui
-from .routers import new_engines, narrative_router, grand_narrative_router, ai_router
+from .routers import new_engines, narrative_router, grand_narrative_router, ai_router, image_tools
 
 for router, prefix, tags in [
     (health.router, "", ["health"]),
@@ -242,6 +242,7 @@ for router, prefix, tags in [
     (new_engines.rv, "/v1/reel-video", ["reel"]),
     (new_engines.gk, "/v1/genekeys", ["gene-keys"]),
     (comfyui.router, "/v1/comfyui", ["comfyui"]),
+    (image_tools.router, "/v1/image", ["image-tools"]),
 ]:
     app.include_router(router, prefix=prefix, tags=tags)
 
