@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral | Solar System Explorer</title>
+<style>
+:root {
+  --gold: #ffd700;
+  --purple: #c084fc;
+  --pink: #ff6b9d;
+  --blue: #60a5fa;
+  --bg: #02021a;
+  --text: #f0e6d3;
+  --text-dim: rgba(240, 230, 211, 0.5);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scrollbar-width: none; -ms-overflow-style: none; }
+html::-webkit-scrollbar { display: none; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans Thai', sans-serif;
+  overflow-x: hidden;
+}
+canvas {
+  position: fixed; top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  z-index: 0;
+}
+
+/* ============ TABS ============ */
+.tabs {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border-radius: 100px;
+  padding: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+.tab {
+  padding: 0.8rem 2rem;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: var(--text-dim);
+  background: transparent;
+  border: none;
+}
+.tab.active {
+  background: linear-gradient(135deg, var(--gold), var(--pink));
+  color: var(--bg);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+.tab:hover:not(.active) {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============ LANDING SECTION ============ */
+#landing {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 3rem;
+}
+.landing-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, #fff, var(--gold), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 40px rgba(139, 92, 246, 0.4);
+}
+.landing-subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  color: var(--text-dim);
+  max-width: 500px;
+  line-height: 1.8;
+  margin-top: 2rem;
+  font-weight: 300;
+}
+
+/* ============ SOLAR SYSTEM SECTION ============ */
+#solar-system {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 3rem;
+}
+.solar-info {
+  max-width: 600px;
+  text-align: center;
+}
+.solar-info h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff, var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.solar-info p {
+  font-size: 1rem;
+  color: var(--text-dim);
+  line-height: 1.8;
+}
+.planet-label {
+  position: fixed;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.planet-label.visible { opacity: 1; }
+
+@media (max-width: 768px) {
+  .tabs { top: 1rem; }
+  .tab { padding: 0.6rem 1.2rem; font-size: 0.75rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('landing')">🌌 Landing</button>
+  <button class="tab" onclick="switchTab('solar')">🪐 Solar System</button>
+</div>
+
+<!-- LANDING SECTION -->
+<section id="landing">
+  <h1 class="landing-title">Astral</h1>
+  <p class="landing-subtitle">ในเส้นทางอันกว้างใหญ่แห่งจักรวาล — ดวงดาวจะเล่าให้คุณฟัง ถ้าคุณกล้อยฟัง</p>
+</section>
+
+<!-- SOLAR SYSTEM SECTION -->
+<section id="solar-system">
+  <div class="solar-info">
+    <h2>สำรวจระบบสุริยะ</h2>
+    <p>ดาวเคราะห์ 8 ดวง ดวงจันทร์ และดวงอาทิตย์ คำนวณจาก NASA JPL Horizons ความแม่นยำสูงสุด</p>
+  </div>
+</section>
+
+<div class="planet-label" id="planetLabel"></div>
+
+<!-- THREE.JS -->
+<script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+<script>
+// ============ GLOBALS ============
+let currentTab = 'landing';
+let scene, camera, renderer, clock;
+let sun, planets = {};
+let bgStars;
+
+// ============ INIT ============
+function init() {
+  const canvas = document.createElement('canvas');
+  document.body.appendChild(canvas);
+  
+  scene = new THREE.Scene();
+  
+  camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 2000);
+  camera.position.set(0, 30, 100);
+  camera.lookAt(0, 0, 0);
+  
+  renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  
+  clock = new THREE.Clock();
+  
+  createBackground();
+  createSolarSystem();
+  
+  window.addEventListener('resize', onResize);
+  animate();
+}
+
+// ============ BACKGROUND STARS (HD) ============
+function createBackground() {
+  const geometry = new THREE.BufferGeometry();
+  const count = 5000;
+  const positions = new Float32Array(count * 3);
+  const sizes = new Float32Array(count);
+  
+  for (let i = 0; i < count; i++) {
+    positions[i * 3] = (Math.random() - 0.5) * 1000;
+    positions[i * 3 + 1] = (Math.random() - 0.5) * 1000;
+    positions[i * 3 + 2] = (Math.random() - 0.5) * 1000;
+    sizes[i] = Math.random() * 2 + 1;
+  }
+  
+  geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+  geometry.setAttribute('size', new THREE.BufferAttribute(sizes, 1));
+  
+  const material = new THREE.PointsMaterial({
+    size: 2,
+    sizeAttenuation: true,
+    color: 0xffffff,
+    transparent: true,
+    opacity: 0.8,
+  });
+  
+  bgStars = new THREE.Points(geometry, material);
+  scene.add(bgStars);
+}
+
+// ============ SOLAR SYSTEM (from Solar Wanderer) ============
+function createSolarSystem() {
+  // Sun
+  const sunGeo = new THREE.SphereGeometry(8, 64, 64);
+  const sunMat = new THREE.MeshBasicMaterial({ color: 0xffaa00 });
+  sun = new THREE.Mesh(sunGeo, sunMat);
+  scene.add(sun);
+  
+  // Sun light
+  const sunLight = new THREE.PointLight(0xfff2e0, 2, 0, 0);
+  sun.add(sunLight);
+  
+  // Planets data
+  const planetData = [
+    { name: 'Mercury', color: 0x8a8a8a, size: 0.4, distance: 15 },
+    { name: 'Venus', color: 0xc9a06a, size: 0.6, distance: 20 },
+    { name: 'Earth', color: 0x4a90d9, size: 0.8, distance: 28 },
+    { name: 'Mars', color: 0xd96a4a, size: 0.5, distance: 38 },
+    { name: 'Jupiter', color: 0xc9a06a, size: 2.5, distance: 55 },
+    { name: 'Saturn', color: 0xd9c97a, size: 2.0, distance: 75 },
+    { name: 'Uranus', color: 0x7ad9d9, size: 1.2, distance: 95 },
+    { name: 'Neptune', color: 0x4a6ad9, size: 1.0, distance: 115 },
+  ];
+  
+  planetData.forEach(data => {
+    const geo = new THREE.SphereGeometry(data.size, 32, 32);
+    const mat = new THREE.MeshStandardMaterial({ color: data.color });
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.position.x = data.distance;
+    scene.add(mesh);
+    
+    planets[data.name] = {
+      mesh,
+      distance: data.distance,
+      angle: Math.random() * Math.PI * 2,
+      speed: 0.1 + Math.random() * 0.2,
+    };
+  });
+  
+  // Saturn rings
+  const saturn = planets['Saturn'];
+  const ringGeo = new THREE.RingGeometry(2.5, 4, 64);
+  const ringMat = new THREE.MeshBasicMaterial({ color: 0xd9c97a, side: THREE.DoubleSide, transparent: true, opacity: 0.6 });
+  const ring = new THREE.Mesh(ringGeo, ringMat);
+  ring.rotation.x = Math.PI / 2;
+  saturn.mesh.add(ring);
+}
+
+// ============ TAB SWITCHING ============
+function switchTab(tab) {
+  currentTab = tab;
+  
+  // Update tab buttons
+  document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  // Show/hide sections
+  document.getElementById('landing').style.display = tab === 'landing' ? 'flex' : 'none';
+  document.getElementById('solar-system').style.display = tab === 'solar' ? 'flex' : 'none';
+  
+  // Reset camera
+  if (tab === 'landing') {
+    camera.position.set(0, 30, 100);
+    camera.lookAt(0, 0, 0);
+  } else {
+    camera.position.set(0, 50, 150);
+    camera.lookAt(0, 0, 0);
+  }
+}
+
+// ============ ANIMATION ============
+function animate() {
+  requestAnimationFrame(animate);
+  
+  const time = clock.getElapsedTime();
+  
+  // Rotate sun
+  if (sun) sun.rotation.y = time * 0.1;
+  
+  // Rotate background stars
+  if (bgStars) bgStars.rotation.y = time * 0.01;
+  
+  // Animate planets
+  Object.values(planets).forEach(p => {
+    p.angle += p.speed * 0.01;
+    p.mesh.position.x = Math.cos(p.angle) * p.distance;
+    p.mesh.position.z = Math.sin(p.angle) * p.distance;
+    p.mesh.rotation.y = time * 0.5;
+  });
+  
+  renderer.render(scene, camera);
+}
+
+// ============ RESIZE ============
+function onResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// ============ START ============
+init();
+</script>
+</body>
+</html>

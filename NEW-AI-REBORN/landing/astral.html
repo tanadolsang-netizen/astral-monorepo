@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="th" class="loading">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Astral | จักรวาลจะบอกอะไรคุณ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Noto+Sans+Thai:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gold:#ffd700; --purple:#c084fc; --pink:#ff6b9d; --blue:#60a5fa;
+  --bg:#02021a; --bg2:#050318; --text:#f0e6d3; --dim:rgba(240,230,211,.55); --dim2:rgba(240,230,211,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none}
+html::-webkit-scrollbar{display:none}
+html.loading{overflow:hidden}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans Thai',sans-serif;overflow-x:hidden;cursor:none;position:relative}
+@media(hover:none),(pointer:coarse){body{cursor:auto}.cursor-dot,.cursor-ring{display:none!important}}
+h1,h2,h3,.cinzel{font-family:'Cinzel',serif}
+a{text-decoration:none;color:inherit}
+button,input,select{font-family:inherit}
+img{max-width:100%}
+
+/* ===================== CURSOR ===================== */
+.cursor-dot{position:fixed;width:7px;height:7px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:difference;opacity:0}
+.cursor-ring{position:fixed;width:38px;height:38px;border:1.5px solid rgba(255,215,0,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,opacity .3s;opacity:0}
+.cursor-ring.hover{width:64px;height:64px;border-color:rgba(255,107,157,.65)}
+.cursor-ring.dragging{width:50px;height:50px;border-color:rgba(255,215,0,.9);border-width:2px}
+
+/* ===================== PRELOADER ===================== */
+#preloader{position:fixed;inset:0;z-index:20000;background:radial-gradient(ellipse at 50% 45%,rgba(15,8,35,.94),rgba(2,2,26,.99) 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transition:opacity 1s ease,visibility 1s}
+#preloader.hidden{opacity:0;visibility:hidden}
+.pl-orbit{width:110px;height:110px;position:relative;border:1px solid rgba(255,215,0,.28);border-radius:50%;animation:plSpin 6s linear infinite}
+.pl-orbit::before{content:'';position:absolute;inset:20px;border:1px solid rgba(192,132,252,.22);border-radius:50%}
+.pl-dot{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold));box-shadow:0 0 16px var(--gold)}
+@keyframes plSpin{to{transform:rotate(360deg)}}
+.pl-logo{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:.4em;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pl-pct{font-size:1rem;letter-spacing:.2em;color:var(--gold)}
+.pl-bar-wrap{width:min(280px,68vw);height:2px;background:rgba(255,255,255,.1);border-radius:1px;overflow:hidden}
+.pl-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple));border-radius:1px;transition:width .25s}
+.pl-label{font-size:.68rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
+html.loading #stars{animation:spinStars 40s linear infinite}
+@keyframes spinStars{to{transform:rotate(360deg)}}
+
+/* ===================== BACKGROUND LAYERS ===================== */
+#stars{position:fixed;inset:-15%;z-index:-3;pointer-events:none;width:130%;height:130%;transform-origin:center}
+.aurora{position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:
+  radial-gradient(40% 50% at 20% 25%,rgba(192,132,252,.18),transparent 70%),
+  radial-gradient(45% 55% at 80% 18%,rgba(96,165,250,.14),transparent 70%),
+  radial-gradient(50% 60% at 55% 85%,rgba(255,107,157,.12),transparent 70%);
+  filter:blur(60px);animation:drift 24s ease-in-out infinite alternate}
+@keyframes drift{0%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,-3%) scale(1.08)}100%{transform:translate(-3%,4%) scale(1.04)}}
+.section-tone{position:fixed;inset:-20%;z-index:-2;pointer-events:none;opacity:.7;transition:background 1.8s ease;background:radial-gradient(ellipse at 50% 30%,rgba(192,132,252,.1),transparent 70%)}
+.grain{position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:3px 3px}
+
+/* ===================== NAV ===================== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;backdrop-filter:blur(10px);background:rgba(2,2,26,.35);border-bottom:1px solid rgba(255,215,0,.08)}
+.nav-logo{font-weight:700;letter-spacing:.35em;font-size:1.1rem;background:linear-gradient(120deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;gap:.3rem;list-style:none;flex-wrap:wrap;justify-content:flex-end}
+.nav-links a{display:inline-block;padding:.5rem .9rem;border-radius:100px;color:var(--dim);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s,background .3s}
+.nav-links a:hover{color:var(--gold)}
+.nav-links a.active{color:var(--gold);background:rgba(255,215,0,.1)}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ===================== REVEAL ===================== */
+.reveal{opacity:0;transform:translateY(42px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:none}
+.reveal.stagger.visible{transition-delay:calc(var(--i,0)*.1s)}
+
+/* ===================== SECTION COMMON ===================== */
+.section{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem}
+.section h2{font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:700;margin-bottom:.8rem;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 40px rgba(139,92,246,.35)}
+.section>p.lead{color:var(--dim);max-width:560px;line-height:1.85;font-size:.95rem;margin-bottom:2.6rem}
+.eyebrow{display:inline-block;padding:.4rem 1.2rem;border-radius:100px;font-size:.68rem;letter-spacing:.25em;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.06);color:var(--gold);text-transform:uppercase;margin-bottom:1.4rem}
+
+/* ===================== INTRO / HERO ===================== */
+#intro{padding-top:0;overflow:hidden}
+#introCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1}
+.hero-inner{position:relative;z-index:5}
+.hero-title{font-size:clamp(3.4rem,13vw,9rem);font-weight:900;letter-spacing:.06em;line-height:1;display:flex;justify-content:center;gap:.02em}
+.hero-title span{display:inline-block;opacity:0;transform:translateY(50px) scale(.7);background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 60px rgba(192,132,252,.4);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.hero-title span.in{opacity:1;transform:none}
+.hero-sub{margin-top:1.8rem;color:var(--dim);max-width:480px;line-height:1.9;font-size:clamp(.95rem,1.4vw,1.15rem);opacity:0;transform:translateY(20px);transition:opacity 1s ease .3s,transform 1s ease .3s}
+.hero-sub.in{opacity:1;transform:none}
+.hero-cta{margin-top:2.6rem;padding:.95rem 2.6rem;border:1px solid var(--gold);border-radius:100px;background:transparent;color:var(--gold);font-size:.82rem;letter-spacing:.14em;cursor:none;transition:background .4s,color .4s,box-shadow .4s,opacity 1s,transform 1s;box-shadow:0 0 26px rgba(139,92,246,.25);opacity:0;transform:translateY(20px)}
+.hero-cta.in{opacity:1;transform:none;transition-delay:.5s}
+.hero-cta:hover{background:var(--gold);color:var(--bg);box-shadow:0 0 40px rgba(255,215,0,.35)}
+.scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--dim);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2.2s cubic-bezier(.45,0,.55,1) infinite;z-index:5}
+.scroll-ind::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent)}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+
+/* ===================== SOLAR SYSTEM ===================== */
+#solar{padding:7rem 0}
+.solar-stage{position:relative;width:100%;height:88vh;min-height:460px}
+#solarCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.solar-caption{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.15em;color:var(--dim2);text-transform:uppercase;z-index:5}
+
+/* ===================== FORM PANELS (natal / synastry / vedic-search) ===================== */
+.panel{max-width:560px;width:100%;margin:0 auto;background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid rgba(255,215,0,.18);border-left:2px solid var(--gold);border-radius:14px;padding:2.2rem 2rem;backdrop-filter:blur(6px)}
+.panel-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.field{margin-bottom:1rem;text-align:left}
+.field.full{grid-column:1/-1}
+.field label{display:block;font-size:.72rem;color:var(--dim);margin-bottom:.4rem;letter-spacing:.05em}
+.field input,.field select{width:100%;padding:.75rem 1rem;border-radius:10px;border:1px solid rgba(255,215,0,.22);background:rgba(255,255,255,.03);color:var(--text);font-size:.9rem}
+.field input:focus,.field select:focus{outline:none;border-color:var(--gold)}
+.field input::-webkit-calendar-picker-indicator{filter:invert(1)}
+.rule-div{height:0;width:70%;margin:1.4rem auto;border-top:1px solid rgba(255,215,0,.18);position:relative}
+.rule-div::after{content:'✦';position:absolute;left:50%;top:-9px;transform:translateX(-50%);color:var(--gold);background:var(--bg2);padding:0 8px;font-size:.8rem}
+.btn-gold{width:100%;padding:.95rem;border:none;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));color:var(--bg);font-weight:700;font-size:.85rem;letter-spacing:.1em;cursor:none;transition:transform .4s,box-shadow .4s;box-shadow:0 0 24px rgba(139,92,246,.3)}
+.btn-gold:hover{transform:scale(1.02);box-shadow:0 0 40px rgba(255,215,0,.4)}
+
+.chart-out{margin-top:2.2rem;display:none;flex-direction:column;align-items:center;gap:1rem}
+.chart-out.show{display:flex}
+.chart3d-wrap{perspective:1000px}
+.chart-canvas{width:min(340px,80vw);height:min(340px,80vw);transform:rotateX(34deg);transition:transform .6s;animation:chartSpin 60s linear infinite}
+@keyframes chartSpin{from{transform:rotateX(34deg) rotateZ(0deg)}to{transform:rotateX(34deg) rotateZ(360deg)}}
+.chart-label{font-size:.82rem;color:var(--dim);letter-spacing:.03em;text-align:center}
+.chart-legend{display:flex;gap:1.2rem;font-size:.72rem;color:var(--dim)}
+.chart-legend span{display:inline-flex;align-items:center;gap:.35rem}
+.chart-legend i{width:9px;height:9px;border-radius:50%;display:inline-block}
+
+/* ===================== VEDIC WHEEL ===================== */
+.vedic-stage{perspective:1300px;margin:0 auto 2rem;touch-action:none;cursor:grab}
+.vedic-stage:active{cursor:grabbing}
+.vedic-wheel{position:relative;width:1px;height:1px;margin:190px auto 60px;transform-style:preserve-3d;transform:rotateX(-12deg) rotateY(0deg)}
+.vedic-item{position:absolute;width:168px;height:58px;left:-84px;top:-29px;display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,215,0,.22);backface-visibility:hidden;font-size:.85rem;cursor:none;transition:background .3s,border-color .3s,transform .3s}
+.vedic-item .vsym{font-size:1.2rem;color:var(--gold)}
+.vedic-item:hover,.vedic-item.active{background:rgba(255,215,0,.16);border-color:var(--gold)}
+.vedic-hint{font-size:.68rem;letter-spacing:.15em;color:var(--dim2);text-transform:uppercase;margin:-1.4rem 0 1.6rem}
+.vedic-info{max-width:480px;min-height:100px;padding:1.3rem 1.6rem;border:1px solid rgba(255,255,255,.08);border-radius:1rem;background:rgba(255,255,255,.02)}
+.vedic-info h3{color:var(--gold);font-size:1.1rem;margin-bottom:.35rem}
+.vedic-info .meta{font-size:.7rem;letter-spacing:.1em;color:var(--dim);margin-bottom:.5rem;text-transform:uppercase}
+.vedic-info p{font-size:.86rem;color:var(--dim);line-height:1.75}
+
+/* ===================== TAROT ===================== */
+.tarot-cards{display:flex;flex-wrap:wrap;gap:1.4rem;justify-content:center;margin:1.6rem 0}
+.flip{width:140px;height:220px;perspective:1000px;cursor:none}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .9s cubic-bezier(.2,.8,.3,1);transform-style:preserve-3d}
+.flip.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;border-radius:14px;border:1px solid rgba(255,215,0,.3);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1rem;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.flip-front{background:radial-gradient(circle at 50% 30%,#2a1d40,#0e0820);color:var(--gold)}
+.flip-front .sym{font-size:2.6rem;margin-bottom:.6rem;filter:drop-shadow(0 0 10px rgba(255,215,0,.5))}
+.flip-back{background:linear-gradient(160deg,#f6f0e2,#fbf7ec);color:#3b3324;transform:rotateY(180deg)}
+.flip-back .sym{font-size:2rem;margin-bottom:.5rem}
+.flip-back .nm{font-weight:700;font-size:.85rem;margin-bottom:.4rem;color:#2e2818}
+.flip-back .mn{font-size:.72rem;color:#5a4a28;line-height:1.6}
+.tarot-narr{max-width:560px;margin-top:1.4rem;text-align:left;display:none}
+.tarot-narr.show{display:block}
+.tarot-narr p{font-size:.88rem;color:var(--dim);line-height:1.9;margin:.5rem 0;padding:.6rem 1rem;border-left:2px solid rgba(255,215,0,.4);background:rgba(255,255,255,.02);border-radius:0 8px 8px 0}
+.tarot-narr p b{color:var(--gold)}
+
+/* ===================== STATS ===================== */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2.4rem;max-width:920px;width:100%}
+.stat-item{text-align:center}
+.stat-number{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;background:linear-gradient(135deg,var(--gold),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;line-height:1;margin-bottom:.5rem}
+.stat-label{font-size:.78rem;color:var(--dim);letter-spacing:.05em}
+@media(max-width:768px){.stats-grid{grid-template-columns:repeat(2,1fr)}}
+
+/* ===================== WARP / CTA / RESULT ===================== */
+.cta-btn{padding:1.05rem 3rem;border:none;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));color:var(--bg);font-weight:700;font-size:.88rem;letter-spacing:.1em;cursor:none;transition:transform .4s,box-shadow .4s;box-shadow:0 0 30px rgba(139,92,246,.35);animation:ctaPulse 4s ease-in-out infinite}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 30px rgba(139,92,246,.3)}50%{box-shadow:0 0 55px rgba(255,215,0,.55)}}
+.cta-btn:hover{transform:scale(1.05)}
+
+.warp-overlay{position:fixed;inset:0;z-index:30000;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}
+.warp-overlay.active{display:flex}
+#warpCanvas{position:absolute;inset:0;width:100%;height:100%}
+.warp-result{position:relative;z-index:2;text-align:center;max-width:520px;padding:2rem;opacity:0;transform:scale(.9);transition:opacity 1s ease,transform 1s ease}
+.warp-result.show{opacity:1;transform:none}
+.warp-result h2{font-size:clamp(1.8rem,4vw,3rem);margin-bottom:1rem;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.warp-result p{color:var(--dim);line-height:1.85;margin-bottom:2rem;font-size:.95rem}
+.warp-close{padding:.9rem 2.4rem;border:1px solid var(--gold);border-radius:100px;background:transparent;color:var(--gold);font-size:.82rem;letter-spacing:.12em;cursor:none;transition:all .4s}
+.warp-close:hover{background:var(--gold);color:var(--bg)}
+
+/* ===================== FOOTER ===================== */
+footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+.footer-logo{letter-spacing:.35em;font-size:1.1rem;color:var(--gold);font-weight:700}
+.footer-tag{margin-top:.5rem;font-size:.72rem;letter-spacing:.15em;color:var(--dim);text-transform:uppercase}
+.footer-links{display:flex;justify-content:center;gap:1.6rem;margin:1.4rem 0;flex-wrap:wrap}
+.footer-links a{color:var(--dim);font-size:.75rem;transition:color .3s;cursor:none}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:.7rem;color:var(--dim2)}
+
+@media(max-width:768px){
+  .panel{padding:1.6rem 1.3rem}
+  .panel-grid{grid-template-columns:1fr}
+  .stats-grid{gap:1.4rem}
+  .vedic-wheel{margin:150px auto 50px}
+  .nav{padding:.9rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<div class="cursor-dot" id="cDot"></div>
+<div class="cursor-ring" id="cRing"></div>
+
+<!-- ============ 1. PRELOADER ============ -->
+<div id="preloader">
+  <div class="pl-orbit"><div class="pl-dot"></div></div>
+  <div class="pl-logo">ASTRAL</div>
+  <div class="pl-pct" id="plPct">0%</div>
+  <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
+  <div class="pl-label">กำลังเรียงดวงดาว</div>
+</div>
+
+<canvas id="stars"></canvas>
+<div class="section-tone" id="sectionTone"></div>
+<div class="aurora"></div>
+<div class="grain"></div>
+
+<nav class="nav">
+  <div class="nav-logo">ASTRAL</div>
+  <ul class="nav-links">
+    <li><a href="#intro" class="active">เริ่มต้น</a></li>
+    <li><a href="#solar">ระบบสุริยะ</a></li>
+    <li><a href="#natal">ดวงชะตา</a></li>
+    <li><a href="#synastry">ดูคู่</a></li>
+    <li><a href="#vedic">เวดิก</a></li>
+    <li><a href="#tarot">ไพ่ทาโรต์</a></li>
+    <li><a href="#stats">จักรวาล</a></li>
+    <li><a href="#cta">เริ่มเดินทาง</a></li>
+  </ul>
+</nav>
+
+<!-- ============ 2. INTRO ============ -->
+<section class="section" id="intro">
+  <canvas id="introCanvas"></canvas>
+  <div class="hero-inner">
+    <h1 class="hero-title" id="heroTitle">
+      <span>A</span><span>S</span><span>T</span><span>R</span><span>A</span><span>L</span>
+    </h1>
+    <p class="hero-sub" id="heroSub">ในความมืดอันกว้างใหญ่แห่งจักรวาล มีดาวดวงหนึ่งเรืองแสงรอคุณอยู่ — และมันมีเรื่องราวจะเล่าให้คุณฟัง</p>
+    <button class="hero-cta" id="heroCta" onclick="scrollToId('solar')">ล่องเข้าสู่จักรวาล</button>
+  </div>
+  <div class="scroll-ind">Scroll</div>
+</section>
+
+<!-- ============ 3. SOLAR SYSTEM 3D ============ -->
+<section class="section" id="solar">
+  <span class="eyebrow reveal">Three.js · Live Orbit</span>
+  <h2 class="reveal">ระบบสุริยะที่หมุนอยู่จริง</h2>
+  <p class="lead reveal">ดาวเคราะห์ 8 ดวงโคจรรอบดวงอาทิตย์ วงแหวนดาวเสาร์ แถบดาวเคราะห์น้อย ดาวหางหางยาว และเนบิวลาที่ลอยอยู่เบื้องหลัง — ทั้งหมดคำนวณและเคลื่อนไหวแบบเรียลไทม์</p>
+  <div class="solar-stage reveal">
+    <canvas id="solarCanvas"></canvas>
+    <div class="solar-caption">ลากเพื่อหมุนมุมมอง · เลื่อนเมาส์เพื่อพารัลแลกซ์</div>
+  </div>
+</section>
+
+<!-- ============ 4. NATAL CHART ============ -->
+<section class="section" id="natal">
+  <span class="eyebrow reveal">Natal Chart</span>
+  <h2 class="reveal">แผนภูมิดวงชะตาของคุณ</h2>
+  <p class="lead reveal">บอกเราว่าคุณลืมตาดูโลกวันไหน เวลาใด ที่ไหน — เราจะจัดวางดาว 10 ดวงลงในแผนภูมิ 3 มิติเฉพาะของคุณ</p>
+  <div class="panel reveal">
+    <div class="panel-grid">
+      <div class="field full"><label>ชื่อของคุณ</label><input id="n-name" placeholder="เช่น สมชาย"></div>
+      <div class="field"><label>วันเกิด</label><input id="n-date" type="date"></div>
+      <div class="field"><label>เวลาเกิด</label><input id="n-time" type="time"></div>
+      <div class="field full"><label>จังหวัด</label>
+        <select id="n-prov">
+          <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+          <option value="18.7883,98.9853">เชียงใหม่</option>
+          <option value="13.3633,100.9868">ชลบุรี</option>
+          <option value="7.8804,98.3923">ภูเก็ต</option>
+          <option value="15.8700,100.9925">นครราชสีมา</option>
+        </select>
+      </div>
+    </div>
+    <button class="btn-gold" onclick="submitNatal()">สร้างแผนภูมิดวงดาว</button>
+    <div class="chart-out" id="natalOut">
+      <div class="chart3d-wrap"><canvas class="chart-canvas" id="natalCanvas" width="380" height="380"></canvas></div>
+      <div class="chart-label" id="natalLabel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. SYNASTRY ============ -->
+<section class="section" id="synastry">
+  <span class="eyebrow reveal">Synastry</span>
+  <h2 class="reveal">เมื่อดวงดาวสองดวงมาเจอกัน</h2>
+  <p class="lead reveal">ใส่วันเกิดของทั้งสองคน — เราจะวางดาวสองชุดซ้อนกันและลากเส้นเชื่อมจุดที่ดวงทั้งสองส่งเสียงถึงกัน</p>
+  <div class="panel reveal">
+    <div class="panel-grid">
+      <div class="field"><label>ชื่อคนที่ 1</label><input id="s1-name" placeholder="ชื่อ A"></div>
+      <div class="field"><label>ชื่อคนที่ 2</label><input id="s2-name" placeholder="ชื่อ B"></div>
+      <div class="field"><label>วันเกิด A</label><input id="s1-date" type="date"></div>
+      <div class="field"><label>วันเกิด B</label><input id="s2-date" type="date"></div>
+      <div class="field"><label>เวลาเกิด A</label><input id="s1-time" type="time"></div>
+      <div class="field"><label>เวลาเกิด B</label><input id="s2-time" type="time"></div>
+    </div>
+    <div class="rule-div"></div>
+    <button class="btn-gold" onclick="submitSynastry()">ดูความเข้ากันของดวงดาว</button>
+    <div class="chart-out" id="synastryOut">
+      <div class="chart3d-wrap"><canvas class="chart-canvas" id="synastryCanvas" width="380" height="380"></canvas></div>
+      <div class="chart-legend">
+        <span><i style="background:var(--gold)"></i>คนที่ 1</span>
+        <span><i style="background:var(--pink)"></i>คนที่ 2</span>
+      </div>
+      <div class="chart-label" id="synastryLabel"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. VEDIC ============ -->
+<section class="section" id="vedic">
+  <span class="eyebrow reveal">Vedic · ราศีไทย</span>
+  <h2 class="reveal">วงล้อ 12 ราศี</h2>
+  <p class="lead reveal">มองผ่านตำราโบราณอินเดีย — ลากวงล้อเพื่อหมุนดูราศีทั้ง 12 แล้วแตะเพื่อฟังเรื่องราวของมัน</p>
+  <div class="vedic-stage reveal" id="vedicStage">
+    <div class="vedic-wheel" id="vedicWheel"></div>
+  </div>
+  <div class="vedic-hint reveal">✦ ลากซ้าย–ขวาเพื่อหมุนวงล้อ ✦</div>
+  <div class="vedic-info reveal" id="vedicInfo"><p>เลือกราศีบนวงล้อ เพื่อฟังเรื่องราวจากดวงดาว</p></div>
+</section>
+
+<!-- ============ 7. TAROT ============ -->
+<section class="section" id="tarot">
+  <span class="eyebrow reveal">Tarot · 78 ใบ</span>
+  <h2 class="reveal">ไพ่ทาโรต์สามใบ</h2>
+  <p class="lead reveal">ตั้งคำถามในใจ แล้วจั่วไพ่สามใบ — อดีต ปัจจุบัน และอนาคต จากสำนักโบราณ</p>
+  <div class="panel reveal" style="max-width:460px">
+    <div class="field full"><label>คำถามของคุณ</label><input id="t-q" placeholder="สิ่งที่อยากรู้ตอนนี้"></div>
+    <button class="btn-gold" onclick="drawTarotCards()">จั่วไพ่</button>
+  </div>
+  <div class="tarot-cards" id="tarotCards"></div>
+  <div class="tarot-narr" id="tarotNarr"></div>
+</section>
+
+<!-- ============ 8. STATS ============ -->
+<section class="section" id="stats">
+  <span class="eyebrow reveal">In Numbers</span>
+  <h2 class="reveal">จักรวาลในตัวเลข</h2>
+  <div class="stats-grid">
+    <div class="stat-item reveal stagger" style="--i:0"><div class="stat-number" data-target="8">0</div><div class="stat-label">ดาวเคราะห์ในระบบสุริยะ</div></div>
+    <div class="stat-item reveal stagger" style="--i:1"><div class="stat-number" data-target="12">0</div><div class="stat-label">ราศีที่เล่าเรื่องคุณ</div></div>
+    <div class="stat-item reveal stagger" style="--i:2"><div class="stat-number" data-target="78">0</div><div class="stat-label">ไพ่ทาโรต์ทั้งสำรับ</div></div>
+    <div class="stat-item reveal stagger" style="--i:3"><div class="stat-number" data-target="1200">0</div><div class="stat-label">ดวงดาวพื้นหลังที่จำลอง</div></div>
+    <div class="stat-item reveal stagger" style="--i:4"><div class="stat-number" data-target="400">0</div><div class="stat-label">เศษหินในแถบดาวเคราะห์น้อย</div></div>
+    <div class="stat-item reveal stagger" style="--i:5"><div class="stat-number" data-target="100" data-suffix="+">0</div><div class="stat-label">หน้ารายงานเจาะลึก</div></div>
+    <div class="stat-item reveal stagger" style="--i:6"><div class="stat-number" data-target="24" data-suffix="/7">0</div><div class="stat-label">ดาวไม่เคยหยุดเคลื่อน</div></div>
+    <div class="stat-item reveal stagger" style="--i:7"><div class="stat-number" data-target="∞">0</div><div class="stat-label">ความเป็นไปได้ของชีวิตคุณ</div></div>
+  </div>
+</section>
+
+<!-- ============ 9. WARP / CTA ============ -->
+<section class="section" id="cta">
+  <span class="eyebrow reveal">Final Jump</span>
+  <h2 class="reveal">จักรวาลรอคุณอยู่</h2>
+  <p class="lead reveal">กดปุ่มด้านล่าง แล้วปล่อยให้ความเร็วแสงพาคุณทะลุผ่านห้วงอวกาศ สู่บทสรุปของการเดินทางครั้งนี้</p>
+  <button class="cta-btn reveal" id="warpBtn">เข้าสู่ไฮเปอร์สเปซ</button>
+</section>
+
+<div class="warp-overlay" id="warpOverlay">
+  <canvas id="warpCanvas"></canvas>
+  <div class="warp-result" id="warpResult">
+    <h2>จักรวาลพร้อมแล้ว</h2>
+    <p>คุณเดินทางผ่านดวงดาว แผนภูมิ และไพ่ทาโรต์มาครบทุกบท — เส้นทางต่อไปคือการเริ่มต้นดวงชะตาฉบับเต็มของคุณเอง</p>
+    <button class="warp-close" id="warpCloseBtn">กลับสู่จักรวาล</button>
+  </div>
+</div>
+
+<!-- ============ 10. FOOTER ============ -->
+<footer>
+  <div class="footer-logo">ASTRAL</div>
+  <div class="footer-tag">ดวงดาวจะบอกอะไรคุณ — ถ้าคุณพร้อมฟัง</div>
+  <div class="footer-links">
+    <a href="#intro">เริ่มต้น</a><a href="#solar">ระบบสุริยะ</a><a href="#natal">ดวงชะตา</a>
+    <a href="#vedic">เวดิก</a><a href="#tarot">ไพ่ทาโรต์</a>
+  </div>
+  <div class="footer-copy">© 2026 Astral — จักรวาลในหน้าจอเดียว</div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+/* ===================== SAFETY NET ===================== */
+window.addEventListener('error',e=>{console.warn('Global error:',e.message);return true});
+window.addEventListener('unhandledrejection',e=>{console.warn('Unhandled:',e.reason);return true});
+
+/* ===================== UTIL ===================== */
+function hashSeed(str){let h=0;for(let i=0;i<str.length;i++){h=(h*31+str.charCodeAt(i))>>>0}return h||1}
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function scrollToId(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'})}
+
+/* ===================== CURSOR ===================== */
+const cDot=document.getElementById('cDot'),cRing=document.getElementById('cRing');
+let mouseX=innerWidth/2,mouseY=innerHeight/2,ringX=mouseX,ringY=mouseY;
+addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cDot.style.left=mouseX+'px';cDot.style.top=mouseY+'px'});
+(function ringLoop(){ringX+=(mouseX-ringX)*.15;ringY+=(mouseY-ringY)*.15;cRing.style.left=ringX+'px';cRing.style.top=ringY+'px';requestAnimationFrame(ringLoop)})();
+setTimeout(()=>{cDot.style.opacity=1;cRing.style.opacity=1},400);
+function hoverable(el){if(!el)return;el.addEventListener('mouseenter',()=>cRing.classList.add('hover'));el.addEventListener('mouseleave',()=>cRing.classList.remove('hover'))}
+function refreshHoverables(){document.querySelectorAll('button,a,input,select,.flip,.vedic-item').forEach(hoverable)}
+refreshHoverables();
+
+/* ===================== PRELOADER ===================== */
+const plBar=document.getElementById('plBar'),plPct=document.getElementById('plPct'),preloader=document.getElementById('preloader');
+let plProgress=0;
+function tickPreloader(){
+  plProgress+=Math.random()*14+6;
+  if(plProgress>100)plProgress=100;
+  plBar.style.width=plProgress+'%';
+  plPct.textContent=Math.round(plProgress)+'%';
+  if(plProgress<100){setTimeout(tickPreloader,180)}
+  else{
+    setTimeout(()=>{
+      preloader.classList.add('hidden');
+      document.documentElement.classList.remove('loading');
+      startIntroSequence();
+    },400);
+  }
+}
+setTimeout(tickPreloader,300);
+
+/* ===================== BACKGROUND STARFIELD — 5-layer 3D parallax (Canvas2D, arc+radialGradient only) ===================== */
+const starsCv=document.getElementById('stars'),sctx=starsCv.getContext('2d');
+let SW,SH,layerFar=[],layerMid=[],layerNear=[],nebulaBlobs=[],shootingStars=[];
+function resizeStars(){
+  SW=starsCv.width=innerWidth*1.3; SH=starsCv.height=innerHeight*1.3;
+  layerFar=Array.from({length:3000},()=>({x:Math.random()*SW,y:Math.random()*SH,r:Math.random()*.6+.25,a:.3+Math.random()*.4}));
+  layerMid=Array.from({length:800},()=>({x:Math.random()*SW,y:Math.random()*SH,r:Math.random()*1+.6,tw:Math.random()*Math.PI*2,sp:.02+Math.random()*.035}));
+  layerNear=Array.from({length:150},()=>({x:Math.random()*SW,y:Math.random()*SH,r:Math.random()*1.6+1.3,tw:Math.random()*Math.PI*2,sp:.012+Math.random()*.02,hue:Math.random()<.5?'255,250,235':'190,210,255'}));
+  nebulaBlobs=Array.from({length:4},()=>({x:Math.random()*SW,y:Math.random()*SH,r:160+Math.random()*260,hue:['147,92,246','255,107,157','96,165,250'][Math.floor(Math.random()*3)],ph:Math.random()*Math.PI*2,sp:.001+Math.random()*.0018}));
+}
+addEventListener('resize',resizeStars); resizeStars();
+
+let bgScrollY=0,bgMouseX=0,bgMouseY=0,bgTargetX=0,bgTargetY=0;
+addEventListener('scroll',()=>{bgScrollY=window.scrollY||0},{passive:true});
+addEventListener('mousemove',e=>{bgTargetX=(e.clientX/innerWidth-.5)*2;bgTargetY=(e.clientY/innerHeight-.5)*2});
+
+function spawnShootingStar(){
+  if(shootingStars.length>=2)return;
+  const speed=9+Math.random()*6;
+  shootingStars.push({x:-60,y:Math.random()*SH*.55,vx:speed,vy:speed*.3,trail:[],life:0,maxLife:80+Math.random()*30});
+}
+setInterval(()=>{if(Math.random()<.55)spawnShootingStar()},2400);
+
+function drawStars(){
+  bgMouseX+=(bgTargetX-bgMouseX)*.04; bgMouseY+=(bgTargetY-bgMouseY)*.04;
+  sctx.clearRect(0,0,SW,SH);
+
+  /* layer 4: nebula clouds — slow drift + fade in/out */
+  nebulaBlobs.forEach(b=>{
+    b.ph+=b.sp;
+    const fade=.4+Math.sin(b.ph)*.4+.2;
+    const px=b.x+bgMouseX*5+bgScrollY*.02, py=b.y+bgMouseY*5+bgScrollY*.03;
+    const g=sctx.createRadialGradient(px,py,0,px,py,b.r);
+    g.addColorStop(0,`rgba(${b.hue},${(.09*fade).toFixed(3)})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    sctx.fillStyle=g;sctx.beginPath();sctx.arc(px,py,b.r,0,Math.PI*2);sctx.fill();
+  });
+
+  /* layer 1: 3000 tiny far stars — very slow parallax */
+  const f1x=bgMouseX*8+bgScrollY*.015, f1y=bgMouseY*8+bgScrollY*.04;
+  for(const s of layerFar){
+    const x=((s.x+f1x)%SW+SW)%SW, y=((s.y+f1y)%SH+SH)%SH;
+    const g=sctx.createRadialGradient(x,y,0,x,y,s.r*2.2);
+    g.addColorStop(0,`rgba(225,235,255,${s.a})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    sctx.fillStyle=g;sctx.beginPath();sctx.arc(x,y,s.r*2.2,0,Math.PI*2);sctx.fill();
+  }
+
+  /* layer 2: 800 mid stars — moderate parallax + short twinkle */
+  const f2x=bgMouseX*22+bgScrollY*.03, f2y=bgMouseY*22+bgScrollY*.09;
+  for(const s of layerMid){
+    s.tw+=s.sp;
+    const a=.32+Math.sin(s.tw)*.3+.22;
+    const x=((s.x+f2x)%SW+SW)%SW, y=((s.y+f2y)%SH+SH)%SH;
+    const g=sctx.createRadialGradient(x,y,0,x,y,s.r*3.4);
+    g.addColorStop(0,`rgba(255,250,235,${a})`);
+    g.addColorStop(.45,`rgba(200,180,255,${a*.4})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    sctx.fillStyle=g;sctx.beginPath();sctx.arc(x,y,s.r*3.4,0,Math.PI*2);sctx.fill();
+  }
+
+  /* layer 3: 150 large near stars — fast parallax + outward glow */
+  const f3x=bgMouseX*42+bgScrollY*.05, f3y=bgMouseY*42+bgScrollY*.16;
+  for(const s of layerNear){
+    s.tw+=s.sp;
+    const a=.5+Math.sin(s.tw)*.3+.2;
+    const x=((s.x+f3x)%SW+SW)%SW, y=((s.y+f3y)%SH+SH)%SH;
+    const g=sctx.createRadialGradient(x,y,0,x,y,s.r*6);
+    g.addColorStop(0,`rgba(255,255,255,${a})`);
+    g.addColorStop(.3,`rgba(${s.hue},${a*.55})`);
+    g.addColorStop(1,'rgba(0,0,0,0)');
+    sctx.fillStyle=g;sctx.beginPath();sctx.arc(x,y,s.r*6,0,Math.PI*2);sctx.fill();
+  }
+
+  /* layer 5: shooting stars — random spawn, left→right, ~30px tapered tail */
+  for(let i=shootingStars.length-1;i>=0;i--){
+    const s=shootingStars[i];
+    s.trail.unshift({x:s.x,y:s.y});
+    if(s.trail.length>6)s.trail.pop();
+    s.x+=s.vx; s.y+=s.vy; s.life++;
+    if(s.life>s.maxLife||s.x>SW+60){shootingStars.splice(i,1);continue}
+    const fadeIn=Math.min(s.life/10,1), fadeOut=1-Math.max(0,(s.life-(s.maxLife-16))/16);
+    const alpha=fadeIn*fadeOut;
+    s.trail.forEach((p,idx)=>{
+      const t=1-idx/s.trail.length;
+      const r=(1.8*t+.3)*2.2;
+      const a=alpha*t*.9;
+      const g=sctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r);
+      g.addColorStop(0,`rgba(255,255,255,${a})`);
+      g.addColorStop(.4,`rgba(200,220,255,${a*.5})`);
+      g.addColorStop(1,'rgba(0,0,0,0)');
+      sctx.fillStyle=g;sctx.beginPath();sctx.arc(p.x,p.y,r,0,Math.PI*2);sctx.fill();
+    });
+  }
+
+  requestAnimationFrame(drawStars);
+}
+requestAnimationFrame(drawStars);
+
+/* ===================== INTRO (Canvas2D pseudo-3D zoom, arc+radialGradient only) ===================== */
+const introCv=document.getElementById('introCanvas'),ictx=introCv.getContext('2d');
+let iW,iH,iCX,iCY,introStars=[],introStart=null,introDone=false,introLettersFired=false;
+function resizeIntro(){iW=introCv.width=innerWidth;iH=introCv.height=innerHeight;iCX=iW/2;iCY=iH*0.42}
+function buildIntroStars(n){introStars=Array.from({length:n},()=>({x:(Math.random()-.5)*iW*2,y:(Math.random()-.5)*iH*2,z:Math.random()*iW}))}
+addEventListener('resize',resizeIntro); resizeIntro(); buildIntroStars(420);
+
+function revealHeroLetters(){
+  document.querySelectorAll('#heroTitle span').forEach((sp,i)=>{
+    setTimeout(()=>sp.classList.add('in'),i*130);
+  });
+  setTimeout(()=>document.getElementById('heroSub').classList.add('in'),900);
+  setTimeout(()=>document.getElementById('heroCta').classList.add('in'),1300);
+}
+
+function drawIntroFrame(ts){
+  if(introDone)return;
+  if(!introStart)introStart=ts;
+  const elapsed=(ts-introStart)/1000;
+  ictx.fillStyle='rgba(2,2,26,.35)';
+  ictx.fillRect(0,0,iW,iH);
+  const speed=1.5+Math.min(elapsed,4)*13;
+  introStars.forEach(s=>{
+    s.z-=speed;
+    if(s.z<=1){s.z=iW;s.x=(Math.random()-.5)*iW*2;s.y=(Math.random()-.5)*iH*2}
+    const k=140/s.z;
+    const px=s.x*k+iCX, py=s.y*k+iCY;
+    if(px<-20||px>iW+20||py<-20||py>iH+20)return;
+    const size=(1-s.z/iW)*2.6+.3;
+    const g=ictx.createRadialGradient(px,py,0,px,py,size*2.4);
+    g.addColorStop(0,'rgba(255,255,255,.95)');
+    g.addColorStop(.5,'rgba(220,200,255,.35)');
+    g.addColorStop(1,'rgba(255,255,255,0)');
+    ictx.fillStyle=g;ictx.beginPath();ictx.arc(px,py,size*2.4,0,Math.PI*2);ictx.fill();
+  });
+  if(elapsed>1){
+    const growT=Math.min((elapsed-1)/1.8,1);
+    const r=4+growT*150;
+    const g2=ictx.createRadialGradient(iCX,iCY,0,iCX,iCY,r);
+    g2.addColorStop(0,'rgba(255,255,255,1)');
+    g2.addColorStop(.18,'rgba(255,215,0,.9)');
+    g2.addColorStop(.5,'rgba(192,132,252,.35)');
+    g2.addColorStop(1,'rgba(255,215,0,0)');
+    ictx.fillStyle=g2;ictx.beginPath();ictx.arc(iCX,iCY,r,0,Math.PI*2);ictx.fill();
+  }
+  if(elapsed>2.2&&!introLettersFired){introLettersFired=true;revealHeroLetters()}
+  if(elapsed>4.2){
+    introDone=true;
+    introCv.style.transition='opacity 1.4s ease';
+    introCv.style.opacity='.22';
+    return;
+  }
+  requestAnimationFrame(drawIntroFrame);
+}
+function startIntroSequence(){ requestAnimationFrame(drawIntroFrame); }
+
+/* ===================== REVEAL ON SCROLL ===================== */
+const revealObs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');revealObs.unobserve(en.target)}});
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ===================== NAV ACTIVE + SMOOTH SCROLL ===================== */
+document.querySelectorAll('.nav-links a, .footer-links a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    e.preventDefault();
+    scrollToId(a.getAttribute('href').slice(1));
+  });
+});
+const sectionIds=['intro','solar','natal','synastry','vedic','tarot','stats','cta'];
+const sectionTones={
+  intro:'146,92,246', solar:'255,178,64', natal:'255,215,0', synastry:'255,107,157',
+  vedic:'96,165,250', tarot:'192,132,252', stats:'255,255,255', cta:'255,107,157'
+};
+const sectionToneEl=document.getElementById('sectionTone');
+const navObs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id));
+      const tone=sectionTones[en.target.id];
+      if(tone&&sectionToneEl)sectionToneEl.style.background=`radial-gradient(ellipse at 50% 30%,rgba(${tone},.12),transparent 70%)`;
+    }
+  });
+},{threshold:.5});
+sectionIds.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)});
+
+/* ===================== SOLAR SYSTEM (Three.js — only WebGL usage) ===================== */
+let solarActive=false, solarInited=false;
+let scene,camera,renderer,clock,sun,sunGlow1,sunGlow2,sunGlow3,corona,nebula,nebula2,planetMeshes=[],asteroids,cometGroup,starLayers=[];
+let solarUserTheta=0,solarUserPhi=0,solarDragging=false,solarDragStartX=0,solarDragStartY=0,solarBaseTheta=0,solarBasePhi=0,solarLastInteraction=0,solarCameraAngle=0;
+let solarFocusing=false,solarFocusStart=0;
+
+/* shared circular-point shader — renders true circles via gl_PointCoord on every GPU, no texture needed */
+function createParticleShaderMaterial(size,edgeTint){
+  return new THREE.ShaderMaterial({
+    uniforms:{uSize:{value:size},uPixelRatio:{value:Math.min(devicePixelRatio,2)},uEdgeTint:{value:new THREE.Color(edgeTint)}},
+    vertexColors:true,transparent:true,depthWrite:false,blending:THREE.AdditiveBlending,
+    vertexShader:`
+      uniform float uSize;
+      uniform float uPixelRatio;
+      varying vec3 vColor;
+      void main(){
+        vColor=color;
+        vec4 mvPosition=modelViewMatrix*vec4(position,1.0);
+        gl_PointSize=uSize*uPixelRatio*(300.0/-mvPosition.z);
+        gl_Position=projectionMatrix*mvPosition;
+      }
+    `,
+    fragmentShader:`
+      uniform vec3 uEdgeTint;
+      varying vec3 vColor;
+      void main(){
+        vec2 cxy=2.0*gl_PointCoord-1.0;
+        float r2=dot(cxy,cxy);
+        if(r2>1.0)discard;
+        float d=sqrt(r2);
+        vec3 col=mix(vColor,uEdgeTint,smoothstep(0.15,1.0,d));
+        col=mix(vec3(1.0),col,smoothstep(0.0,0.3,d));
+        float alpha=smoothstep(1.0,0.0,d);
+        gl_FragColor=vec4(col,alpha);
+      }
+    `
+  });
+}
+
+/* Ashima 3D simplex noise — used for the sun's turbulent surface */
+const SNOISE_GLSL=`
+  vec3 mod289(vec3 x){return x-floor(x*(1.0/289.0))*289.0;}
+  vec4 mod289(vec4 x){return x-floor(x*(1.0/289.0))*289.0;}
+  vec4 permute(vec4 x){return mod289(((x*34.0)+1.0)*x);}
+  vec4 taylorInvSqrt(vec4 r){return 1.79284291400159-0.85373472095314*r;}
+  float snoise(vec3 v){
+    const vec2 C=vec2(1.0/6.0,1.0/3.0);
+    const vec4 D=vec4(0.0,0.5,1.0,2.0);
+    vec3 i=floor(v+dot(v,C.yyy));
+    vec3 x0=v-i+dot(i,C.xxx);
+    vec3 g=step(x0.yzx,x0.xyz);
+    vec3 l=1.0-g;
+    vec3 i1=min(g.xyz,l.zxy);
+    vec3 i2=max(g.xyz,l.zxy);
+    vec3 x1=x0-i1+C.xxx;
+    vec3 x2=x0-i2+C.yyy;
+    vec3 x3=x0-D.yyy;
+    i=mod289(i);
+    vec4 p=permute(permute(permute(
+      i.z+vec4(0.0,i1.z,i2.z,1.0))
+      +i.y+vec4(0.0,i1.y,i2.y,1.0))
+      +i.x+vec4(0.0,i1.x,i2.x,1.0));
+    float n_=0.142857142857;
+    vec3 ns=n_*D.wyz-D.xzx;
+    vec4 j=p-49.0*floor(p*ns.z*ns.z);
+    vec4 x_=floor(j*ns.z);
+    vec4 y_=floor(j-7.0*x_);
+    vec4 x=x_*ns.x+ns.yyyy;
+    vec4 y=y_*ns.x+ns.yyyy;
+    vec4 h=1.0-abs(x)-abs(y);
+    vec4 b0=vec4(x.xy,y.xy);
+    vec4 b1=vec4(x.zw,y.zw);
+    vec4 s0=floor(b0)*2.0+1.0;
+    vec4 s1=floor(b1)*2.0+1.0;
+    vec4 sh=-step(h,vec4(0.0));
+    vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;
+    vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+    vec3 p0=vec3(a0.xy,h.x);
+    vec3 p1=vec3(a0.zw,h.y);
+    vec3 p2=vec3(a1.xy,h.z);
+    vec3 p3=vec3(a1.zw,h.w);
+    vec4 norm=taylorInvSqrt(vec4(dot(p0,p0),dot(p1,p1),dot(p2,p2),dot(p3,p3)));
+    p0*=norm.x;p1*=norm.y;p2*=norm.z;p3*=norm.w;
+    vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);
+    m=m*m;
+    return 42.0*dot(m*m,vec4(dot(p0,x0),dot(p1,x1),dot(p2,x2),dot(p3,x3)));
+  }
+  float fbm(vec3 p){
+    float sum=0.0,amp=0.5,freq=1.0;
+    for(int i=0;i<5;i++){
+      sum+=amp*snoise(p*freq);
+      freq*=2.02;
+      amp*=0.5;
+    }
+    return sum;
+  }
+`;
+
+function createSunMaterial(){
+  return new THREE.ShaderMaterial({
+    uniforms:{uTime:{value:0}},
+    vertexShader:`
+      varying vec3 vObjPos;
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      void main(){
+        vObjPos=position;
+        vNormal=normalize(normalMatrix*normal);
+        vec4 mvPosition=modelViewMatrix*vec4(position,1.0);
+        vViewPos=mvPosition.xyz;
+        gl_Position=projectionMatrix*mvPosition;
+      }
+    `,
+    fragmentShader:SNOISE_GLSL+`
+      uniform float uTime;
+      varying vec3 vObjPos;
+      varying vec3 vNormal;
+      varying vec3 vViewPos;
+      void main(){
+        vec3 p=normalize(vObjPos);
+        float n=fbm(p*2.5+vec3(0.0,0.0,uTime*0.12));
+        n+=0.5*fbm(p*6.0-vec3(uTime*0.22,0.0,0.0));
+        n=n*0.35+0.5;
+        n=clamp(n,0.0,1.0);
+
+        vec3 white=vec3(1.0,0.97,0.88);
+        vec3 amber=vec3(1.0,0.78,0.28);
+        vec3 orange=vec3(1.0,0.42,0.08);
+        vec3 red=vec3(0.75,0.12,0.04);
+
+        vec3 col=mix(red,orange,smoothstep(0.15,0.4,n));
+        col=mix(col,amber,smoothstep(0.4,0.65,n));
+        col=mix(col,white,smoothstep(0.65,0.9,n));
+
+        vec3 viewDir=normalize(-vViewPos);
+        float ndotv=clamp(dot(normalize(vNormal),viewDir),0.0,1.0);
+        float limb=smoothstep(0.0,0.7,ndotv);
+        col=mix(red*0.55,col,limb);
+
+        gl_FragColor=vec4(col,1.0);
+      }
+    `
+  });
+}
+function createNebulaTexture(){
+  const c=document.createElement('canvas');c.width=512;c.height=512;
+  const ctx=c.getContext('2d');
+  const bg=ctx.createRadialGradient(256,256,0,256,256,380);
+  bg.addColorStop(0,'rgba(30,10,70,.75)');bg.addColorStop(.4,'rgba(18,5,45,.5)');bg.addColorStop(.7,'rgba(8,2,20,.25)');bg.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.fillStyle=bg;ctx.beginPath();ctx.arc(256,256,380,0,Math.PI*2);ctx.fill();
+  for(let i=0;i<16;i++){
+    const x=Math.random()*512,y=Math.random()*512,r=70+Math.random()*180;
+    const cols=['rgba(80,30,180,.09)','rgba(120,50,220,.08)','rgba(255,107,157,.06)','rgba(96,165,250,.06)'];
+    const g=ctx.createRadialGradient(x,y,0,x,y,r);
+    g.addColorStop(0,cols[i%cols.length]);g.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=g;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();
+  }
+  return new THREE.CanvasTexture(c);
+}
+
+function initSolar(){
+  if(solarInited)return; solarInited=true;
+  const canvas=document.getElementById('solarCanvas');
+  const stage=document.querySelector('.solar-stage');
+  scene=new THREE.Scene();
+  scene.background=new THREE.Color(0x02020f);
+  camera=new THREE.PerspectiveCamera(58,stage.clientWidth/stage.clientHeight,.1,3000);
+  camera.position.set(0,40,130);
+  renderer=new THREE.WebGLRenderer({canvas,antialias:false,alpha:true,powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+  renderer.setSize(stage.clientWidth,stage.clientHeight);
+  clock=new THREE.Clock();
+
+  const nebulaTexture=createNebulaTexture();
+  const nebulaMat=new THREE.MeshBasicMaterial({map:nebulaTexture,transparent:true,blending:THREE.AdditiveBlending,depthWrite:false,opacity:.7});
+  nebula=new THREE.Mesh(new THREE.PlaneGeometry(1600,1600),nebulaMat); nebula.position.z=-500; scene.add(nebula);
+  nebula2=new THREE.Mesh(new THREE.PlaneGeometry(900,900),nebulaMat.clone()); nebula2.material.opacity=.45; nebula2.position.z=-220; nebula2.rotation.z=Math.PI/3; scene.add(nebula2);
+
+  /* 1200 background stars */
+  const bgGeo=new THREE.BufferGeometry();
+  const bgCount=1200;
+  const bgPos=new Float32Array(bgCount*3), bgCol=new Float32Array(bgCount*3);
+  const baseCol=new THREE.Color(0xffffff);
+  for(let i=0;i<bgCount;i++){
+    bgPos[i*3]=(Math.random()-.5)*900; bgPos[i*3+1]=(Math.random()-.5)*900; bgPos[i*3+2]=(Math.random()-.5)*700;
+    const v=.15;
+    bgCol[i*3]=baseCol.r+(Math.random()-.5)*v; bgCol[i*3+1]=baseCol.g+(Math.random()-.5)*v; bgCol[i*3+2]=baseCol.b+(Math.random()-.5)*v;
+  }
+  bgGeo.setAttribute('position',new THREE.BufferAttribute(bgPos,3));
+  bgGeo.setAttribute('color',new THREE.BufferAttribute(bgCol,3));
+  const bgMat=createParticleShaderMaterial(1.6,0x88bbff);
+  const bgStars=new THREE.Points(bgGeo,bgMat); scene.add(bgStars);
+  starLayers.push({mesh:bgStars,spread:450,speedX:.0001,speedY:.00006});
+
+  /* sun */
+  sun=new THREE.Mesh(new THREE.SphereGeometry(8,32,32),createSunMaterial()); scene.add(sun);
+  sunGlow1=new THREE.Mesh(new THREE.SphereGeometry(13,16,16),new THREE.MeshBasicMaterial({color:0xffcc44,transparent:true,opacity:.25,blending:THREE.AdditiveBlending,depthWrite:false})); scene.add(sunGlow1);
+  sunGlow2=new THREE.Mesh(new THREE.SphereGeometry(20,16,16),new THREE.MeshBasicMaterial({color:0xff8833,transparent:true,opacity:.12,blending:THREE.AdditiveBlending,depthWrite:false})); scene.add(sunGlow2);
+  sunGlow3=new THREE.Mesh(new THREE.SphereGeometry(32,16,16),new THREE.MeshBasicMaterial({color:0xff5522,transparent:true,opacity:.06,blending:THREE.AdditiveBlending,depthWrite:false})); scene.add(sunGlow3);
+  const sunLight=new THREE.PointLight(0xffeebb,3,600); scene.add(sunLight);
+  scene.add(new THREE.AmbientLight(0x111122,.6));
+
+  /* corona */
+  const coronaCount=160, coronaGeo=new THREE.BufferGeometry();
+  const coronaPos=new Float32Array(coronaCount*3), coronaCol=new Float32Array(coronaCount*3);
+  for(let i=0;i<coronaCount;i++){
+    const r=9+Math.random()*5, th=Math.random()*Math.PI*2, ph=Math.acos(2*Math.random()-1);
+    coronaPos[i*3]=r*Math.sin(ph)*Math.cos(th); coronaPos[i*3+1]=r*Math.sin(ph)*Math.sin(th); coronaPos[i*3+2]=r*Math.cos(ph);
+    const c=new THREE.Color().setHSL(.09+Math.random()*.06,1,.6+Math.random()*.2);
+    coronaCol[i*3]=c.r;coronaCol[i*3+1]=c.g;coronaCol[i*3+2]=c.b;
+  }
+  coronaGeo.setAttribute('position',new THREE.BufferAttribute(coronaPos,3));
+  coronaGeo.setAttribute('color',new THREE.BufferAttribute(coronaCol,3));
+  corona=new THREE.Points(coronaGeo,createParticleShaderMaterial(2.0,0xff5522));
+  scene.add(corona);
+
+  /* 8 planets */
+  const planetsData=[
+    {radius:1,distance:26,speed:.012,color:0xa0a0a0},
+    {radius:1.7,distance:38,speed:.009,color:0xe8b849},
+    {radius:1.9,distance:50,speed:.007,color:0x5588cc},
+    {radius:1.4,distance:64,speed:.005,color:0xcc4422},
+    {radius:4.6,distance:88,speed:.003,color:0xddbb88},
+    {radius:3.9,distance:114,speed:.002,color:0xccaa77,rings:true},
+    {radius:2.8,distance:140,speed:.0015,color:0x88aacc},
+    {radius:2.6,distance:164,speed:.001,color:0x4466cc}
+  ];
+  planetsData.forEach(p=>{
+    const mesh=new THREE.Mesh(new THREE.SphereGeometry(p.radius,24,24),new THREE.MeshLambertMaterial({color:p.color}));
+    mesh.userData={distance:p.distance,speed:p.speed,angle:Math.random()*Math.PI*2,inclination:(Math.random()-.5)*.12};
+    scene.add(mesh); planetMeshes.push(mesh);
+    const glow=new THREE.Mesh(new THREE.SphereGeometry(p.radius*1.35,10,10),new THREE.MeshBasicMaterial({color:p.color,transparent:true,opacity:.18,blending:THREE.AdditiveBlending,depthWrite:false}));
+    mesh.add(glow);
+    if(p.rings){
+      const ring=new THREE.Mesh(new THREE.RingGeometry(p.radius*1.5,p.radius*2.4,32),new THREE.MeshBasicMaterial({color:0xbbaa88,side:THREE.DoubleSide,transparent:true,opacity:.6}));
+      ring.rotation.x=Math.PI/2.8; mesh.add(ring);
+      const ring2=new THREE.Mesh(new THREE.RingGeometry(p.radius*2.5,p.radius*3.1,32),new THREE.MeshBasicMaterial({color:0xddccaa,side:THREE.DoubleSide,transparent:true,opacity:.25}));
+      ring2.rotation.x=Math.PI/2.8; mesh.add(ring2);
+    }
+    const pts=[]; for(let i=0;i<=200;i++){const a=(i/200)*Math.PI*2; pts.push(new THREE.Vector3(Math.cos(a)*p.distance,0,Math.sin(a)*p.distance));}
+    const orbitGeo=new THREE.BufferGeometry().setFromPoints(pts);
+    scene.add(new THREE.Line(orbitGeo,new THREE.LineBasicMaterial({color:0x332255,transparent:true,opacity:.25})));
+  });
+
+  /* asteroid belt — 400 particles */
+  const asteroidGeo=new THREE.BufferGeometry();
+  const asteroidCount=400;
+  const asteroidPos=new Float32Array(asteroidCount*3), asteroidCol=new Float32Array(asteroidCount*3);
+  const asteroidBase=new THREE.Color(0x998866);
+  for(let i=0;i<asteroidCount;i++){
+    const angle=Math.random()*Math.PI*2, r=72+Math.random()*16;
+    asteroidPos[i*3]=Math.cos(angle)*r; asteroidPos[i*3+1]=(Math.random()-.5)*6; asteroidPos[i*3+2]=Math.sin(angle)*r;
+    const v=.18;
+    asteroidCol[i*3]=asteroidBase.r+(Math.random()-.5)*v; asteroidCol[i*3+1]=asteroidBase.g+(Math.random()-.5)*v; asteroidCol[i*3+2]=asteroidBase.b+(Math.random()-.5)*v;
+  }
+  asteroidGeo.setAttribute('position',new THREE.BufferAttribute(asteroidPos,3));
+  asteroidGeo.setAttribute('color',new THREE.BufferAttribute(asteroidCol,3));
+  asteroids=new THREE.Points(asteroidGeo,createParticleShaderMaterial(1.1,0x664422));
+  scene.add(asteroids);
+
+  /* comet — 80-segment tail */
+  cometGroup=new THREE.Group();
+  cometGroup.add(new THREE.Mesh(new THREE.SphereGeometry(1.3,10,10),new THREE.MeshBasicMaterial({color:0xaaddff})));
+  const tailLen=80, tailGeo=new THREE.BufferGeometry(), tailPts=new Float32Array(tailLen*3), tailCol=new Float32Array(tailLen*3);
+  const tailBase=new THREE.Color(0x88ccff);
+  for(let i=0;i<tailLen;i++){
+    tailPts[i*3]=i*.45;tailPts[i*3+1]=(Math.random()-.5)*i*.08;tailPts[i*3+2]=(Math.random()-.5)*i*.08;
+    const t=i/tailLen;
+    tailCol[i*3]=.85*(1-t)+tailBase.r*.25*t; tailCol[i*3+1]=.93*(1-t)+tailBase.g*.25*t; tailCol[i*3+2]=1*(1-t)+tailBase.b*.25*t;
+  }
+  tailGeo.setAttribute('position',new THREE.BufferAttribute(tailPts,3));
+  tailGeo.setAttribute('color',new THREE.BufferAttribute(tailCol,3));
+  cometGroup.add(new THREE.Points(tailGeo,createParticleShaderMaterial(1.8,0x336699)));
+  cometGroup.position.set(130,18,0);
+  scene.add(cometGroup);
+
+  /* drag-to-orbit (pointer events, desktop + touch) */
+  canvas.addEventListener('pointerdown',e=>{
+    solarDragging=true; solarDragStartX=e.clientX; solarDragStartY=e.clientY;
+    solarBaseTheta=solarUserTheta; solarBasePhi=solarUserPhi;
+    cRing.classList.add('dragging'); canvas.setPointerCapture(e.pointerId);
+  });
+  canvas.addEventListener('pointermove',e=>{
+    if(!solarDragging)return;
+    solarUserTheta=solarBaseTheta-(e.clientX-solarDragStartX)*.006;
+    solarUserPhi=Math.max(-.6,Math.min(.6,solarBasePhi+(e.clientY-solarDragStartY)*.004));
+  });
+  const endDrag=()=>{if(solarDragging){solarDragging=false;solarLastInteraction=performance.now();cRing.classList.remove('dragging')}};
+  canvas.addEventListener('pointerup',endDrag);
+  canvas.addEventListener('pointerleave',endDrag);
+
+  addEventListener('resize',()=>{
+    if(!stage.clientWidth)return;
+    camera.aspect=stage.clientWidth/stage.clientHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(stage.clientWidth,stage.clientHeight);
+  });
+}
+
+let solarLastFrame=0;
+function animateSolar(ts){
+  requestAnimationFrame(animateSolar);
+  if(!solarActive||!solarInited)return;
+  if(solarLastFrame&&ts-solarLastFrame<1000/60)return;
+  solarLastFrame=ts;
+  try{
+    const t=clock.getElapsedTime()||0;
+    if(!solarDragging&&(solarUserTheta!==0||solarUserPhi!==0)&&(solarLastInteraction===0||performance.now()-solarLastInteraction>2600)){
+      solarUserTheta*=.94; solarUserPhi*=.94;
+      if(Math.abs(solarUserTheta)<.001)solarUserTheta=0;
+      if(Math.abs(solarUserPhi)<.001)solarUserPhi=0;
+    }
+    solarCameraAngle+=.0007;
+    let camRadius=140+Math.sin(t*.1)*18;
+    if(solarFocusing){
+      const ft=(performance.now()-solarFocusStart)/1600;
+      if(ft>=1){solarFocusing=false}
+      else{const ease=1-Math.pow(1-Math.min(ft,1),3);camRadius=260-(260-camRadius)*ease}
+    }
+    const effAngle=solarCameraAngle+solarUserTheta;
+    camera.position.x=Math.sin(effAngle)*camRadius;
+    camera.position.z=Math.cos(effAngle)*camRadius;
+    camera.position.y=40+Math.sin(t*.15)*12+solarUserPhi*80;
+    camera.lookAt(0,0,0);
+
+    const pulse=1+Math.sin(t*1.5)*.06;
+    sunGlow1.scale.setScalar(pulse); sunGlow2.scale.setScalar(pulse*1.1); sunGlow3.scale.setScalar(pulse*1.2);
+    sun.material.uniforms.uTime.value=t; sun.rotation.y+=.0006;
+    corona.rotation.y+=.0009; corona.rotation.x+=.0004;
+
+    planetMeshes.forEach(m=>{
+      m.userData.angle+=m.userData.speed;
+      m.position.x=Math.cos(m.userData.angle)*m.userData.distance;
+      m.position.z=Math.sin(m.userData.angle)*m.userData.distance;
+      m.position.y=Math.sin(m.userData.angle)*m.userData.distance*m.userData.inclination;
+      m.rotation.y+=.01;
+    });
+
+    asteroids.rotation.y+=.0006;
+
+    const cometAngle=t*.05;
+    cometGroup.position.x=Math.cos(cometAngle)*150;
+    cometGroup.position.z=Math.sin(cometAngle)*150;
+    cometGroup.position.y=16+Math.sin(cometAngle*2)*24;
+    cometGroup.rotation.y=-cometAngle+Math.PI/2;
+
+    if(nebula){nebula.rotation.z+=.00005}
+    if(nebula2){nebula2.rotation.z+=.00009}
+
+    starLayers.forEach(l=>{
+      const p=l.mesh.geometry.attributes.position.array;
+      for(let i=0;i<p.length;i+=3){
+        p[i]+=l.speedX*60; p[i+1]+=l.speedY*60;
+        if(p[i]>l.spread)p[i]=-l.spread; if(p[i]<-l.spread)p[i]=l.spread;
+        if(p[i+1]>l.spread)p[i+1]=-l.spread; if(p[i+1]<-l.spread)p[i+1]=l.spread;
+      }
+      l.mesh.geometry.attributes.position.needsUpdate=true;
+    });
+
+    renderer.render(scene,camera);
+  }catch(e){console.warn('Solar frame error:',e.message)}
+}
+requestAnimationFrame(animateSolar);
+
+const solarObs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      if(!solarInited)initSolar();
+      if(!solarActive){solarFocusing=true;solarFocusStart=performance.now()}
+      solarActive=true;
+    } else {
+      solarActive=false;
+    }
+  });
+},{threshold:.15});
+solarObs.observe(document.getElementById('solar'));
+
+/* ===================== NATAL / SYNASTRY CHART DRAWING (Canvas2D) ===================== */
+const PLANETS_TH=[
+  {name:'อาทิตย์',sym:'☉',ring:.30},{name:'จันทร์',sym:'☽',ring:.40},{name:'พุธ',sym:'☿',ring:.50},
+  {name:'ศุกร์',sym:'♀',ring:.58},{name:'อังคาร',sym:'♂',ring:.66},{name:'พฤหัสบดี',sym:'♃',ring:.74},
+  {name:'เสาร์',sym:'♄',ring:.82},{name:'ยูเรนัส',sym:'♅',ring:.88},{name:'เนปจูน',sym:'♆',ring:.93},{name:'พลูโต',sym:'♇',ring:.98}
+];
+function drawZodiacTicks(ctx,cx,cy,maxR){
+  ctx.strokeStyle='rgba(255,215,0,.25)'; ctx.lineWidth=1.2;
+  [.4,.7,1].forEach(f=>{ctx.beginPath();ctx.arc(cx,cy,maxR*f,0,Math.PI*2);ctx.stroke()});
+  for(let i=0;i<12;i++){
+    const a=(i/12)*Math.PI*2;
+    ctx.strokeStyle='rgba(255,215,0,.35)';
+    ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*maxR,cy+Math.sin(a)*maxR);ctx.lineTo(cx+Math.cos(a)*maxR*1.06,cy+Math.sin(a)*maxR*1.06);ctx.stroke();
+  }
+}
+function drawNatalChart(seedStr){
+  const canvas=document.getElementById('natalCanvas'), ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height,cx=W/2,cy=H/2,maxR=W*.42;
+  ctx.clearRect(0,0,W,H);
+  drawZodiacTicks(ctx,cx,cy,maxR);
+  const rng=mulberry32(hashSeed(seedStr));
+  const cols=['255,215,0','192,132,252','255,107,157','96,165,250','255,255,255','255,215,0','192,132,252','255,107,157','96,165,250','255,255,255'];
+  PLANETS_TH.forEach((p,i)=>{
+    const a=rng()*Math.PI*2, r=p.ring*maxR;
+    const x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r;
+    const col=cols[i%cols.length];
+    const g=ctx.createRadialGradient(x,y,0,x,y,10);
+    g.addColorStop(0,`rgba(${col},1)`);g.addColorStop(.5,`rgba(${col},.5)`);g.addColorStop(1,`rgba(${col},0)`);
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,10,0,Math.PI*2); ctx.fill();
+    ctx.fillStyle='rgba(20,10,30,.9)'; ctx.font='11px sans-serif'; ctx.textAlign='center';
+    ctx.fillText(p.sym,x,y+4);
+  });
+  const cg=ctx.createRadialGradient(cx,cy,0,cx,cy,26);
+  cg.addColorStop(0,'rgba(255,255,255,.85)'); cg.addColorStop(1,'rgba(255,255,255,0)');
+  ctx.fillStyle=cg; ctx.beginPath(); ctx.arc(cx,cy,26,0,Math.PI*2); ctx.fill();
+}
+function drawSynastryChart(seedA,seedB){
+  const canvas=document.getElementById('synastryCanvas'), ctx=canvas.getContext('2d');
+  const W=canvas.width,H=canvas.height,cx=W/2,cy=H/2,maxR=W*.42;
+  ctx.clearRect(0,0,W,H);
+  drawZodiacTicks(ctx,cx,cy,maxR);
+  const rngA=mulberry32(hashSeed(seedA)), rngB=mulberry32(hashSeed(seedB));
+  const ptsA=[],ptsB=[];
+  PLANETS_TH.forEach(p=>{
+    const aA=rngA()*Math.PI*2, rA=p.ring*maxR;
+    ptsA.push({x:cx+Math.cos(aA)*rA,y:cy+Math.sin(aA)*rA});
+    const aB=rngB()*Math.PI*2, rB=p.ring*maxR;
+    ptsB.push({x:cx+Math.cos(aB)*rB,y:cy+Math.sin(aB)*rB});
+  });
+  ptsA.forEach((pa,i)=>{
+    const pb=ptsB[i], dist=Math.hypot(pa.x-pb.x,pa.y-pb.y), strong=dist<maxR*.32;
+    ctx.strokeStyle=strong?'rgba(255,215,0,.55)':'rgba(192,132,252,.18)';
+    ctx.lineWidth=strong?1.4:.7;
+    ctx.beginPath(); ctx.moveTo(pa.x,pa.y); ctx.lineTo(pb.x,pb.y); ctx.stroke();
+  });
+  function dot(p,colArr){
+    const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,8);
+    g.addColorStop(0,`rgba(${colArr},1)`);g.addColorStop(.5,`rgba(${colArr},.5)`);g.addColorStop(1,`rgba(${colArr},0)`);
+    ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,8,0,Math.PI*2); ctx.fill();
+  }
+  ptsA.forEach(p=>dot(p,'255,215,0'));
+  ptsB.forEach(p=>dot(p,'255,107,157'));
+}
+
+function submitNatal(){
+  const name=document.getElementById('n-name').value||'คุณ';
+  const date=document.getElementById('n-date').value||'2000-01-01';
+  const time=document.getElementById('n-time').value||'00:00';
+  const prov=document.getElementById('n-prov').selectedOptions[0].textContent;
+  drawNatalChart(name+date+time+prov);
+  document.getElementById('natalLabel').textContent=`${name} · ${date} ${time} · ${prov}`;
+  document.getElementById('natalOut').classList.add('show');
+  document.getElementById('natalOut').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function submitSynastry(){
+  const n1=document.getElementById('s1-name').value||'คนที่ 1';
+  const n2=document.getElementById('s2-name').value||'คนที่ 2';
+  const d1=document.getElementById('s1-date').value||'2000-01-01';
+  const d2=document.getElementById('s2-date').value||'2000-06-01';
+  const t1=document.getElementById('s1-time').value||'00:00';
+  const t2=document.getElementById('s2-time').value||'00:00';
+  drawSynastryChart(n1+d1+t1,n2+d2+t2);
+  document.getElementById('synastryLabel').textContent=`${n1} × ${n2}`;
+  document.getElementById('synastryOut').classList.add('show');
+  document.getElementById('synastryOut').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ===================== VEDIC 3D WHEEL (CSS 3D transforms, draggable) ===================== */
+const ZODIAC_TH=[
+ {sym:'♈',name:'ราศีเมษ',range:'21 มี.ค. – 19 เม.ย.',elem:'ไฟ',desc:'จุดเริ่มต้นของทุกสิ่ง ไฟที่ไม่เคยหยุดลุกโชน'},
+ {sym:'♉',name:'ราศีพฤษภ',range:'20 เม.ย. – 20 พ.ค.',elem:'ดิน',desc:'ความมั่นคงที่ไม่มีวันสั่นคลอน'},
+ {sym:'♊',name:'ราศีเมถุน',range:'21 พ.ค. – 20 มิ.ย.',elem:'ลม',desc:'เสียงกระซิบสองเสียงในร่างเดียว'},
+ {sym:'♋',name:'ราศีกรกฎ',range:'21 มิ.ย. – 22 ก.ค.',elem:'น้ำ',desc:'บ้านที่หัวใจไม่เคยลืมทาง'},
+ {sym:'♌',name:'ราศีสิงห์',range:'23 ก.ค. – 22 ส.ค.',elem:'ไฟ',desc:'แสงที่ไม่ต้องขอใครอนุญาตให้ส่อง'},
+ {sym:'♍',name:'ราศีกันย์',range:'23 ส.ค. – 22 ก.ย.',elem:'ดิน',desc:'ความสมบูรณ์แบบที่ซ่อนอยู่ในรายละเอียด'},
+ {sym:'♎',name:'ราศีตุลย์',range:'23 ก.ย. – 22 ต.ค.',elem:'ลม',desc:'ตราชั่งที่ตามหาความสมดุลเสมอ'},
+ {sym:'♏',name:'ราศีพิจิก',range:'23 ต.ค. – 21 พ.ย.',elem:'น้ำ',desc:'ความลึกที่ไม่มีใครมองเห็นจนสุด'},
+ {sym:'♐',name:'ราศีธนู',range:'22 พ.ย. – 21 ธ.ค.',elem:'ไฟ',desc:'ลูกศรที่มุ่งสู่ขอบฟ้าที่ไกลกว่า'},
+ {sym:'♑',name:'ราศีมังกร',range:'22 ธ.ค. – 19 ม.ค.',elem:'ดิน',desc:'ภูเขาที่ปีนขึ้นไปโดยไม่เคยหยุดพัก'},
+ {sym:'♒',name:'ราศีกุมภ์',range:'20 ม.ค. – 18 ก.พ.',elem:'ลม',desc:'สายน้ำแห่งความคิดที่ไม่เหมือนใคร'},
+ {sym:'♓',name:'ราศีมีน',range:'19 ก.พ. – 20 มี.ค.',elem:'น้ำ',desc:'ความฝันที่ไหลรวมกับมหาสมุทร'}
+];
+const vedicWheel=document.getElementById('vedicWheel');
+const vedicRadius=230;
+ZODIAC_TH.forEach((z,i)=>{
+  const el=document.createElement('div');
+  el.className='vedic-item';
+  el.style.transform=`rotateY(${i*30}deg) translateZ(${vedicRadius}px)`;
+  el.innerHTML=`<span class="vsym">${z.sym}</span><span>${z.name}</span>`;
+  el.addEventListener('click',()=>{
+    document.querySelectorAll('.vedic-item').forEach(n=>n.classList.remove('active'));
+    el.classList.add('active');
+    document.getElementById('vedicInfo').innerHTML=`<h3>${z.sym} ${z.name}</h3><div class="meta">${z.range} · ธาตุ${z.elem}</div><p>${z.desc}</p>`;
+  });
+  vedicWheel.appendChild(el);
+});
+refreshHoverables();
+
+let vedicRot=0, vedicDragging=false, vedicDragStartX=0, vedicBaseRot=0, vedicLastInteraction=0;
+const vedicStage=document.getElementById('vedicStage');
+function applyVedicTransform(){ vedicWheel.style.transform=`rotateX(-12deg) rotateY(${vedicRot}deg)`; }
+vedicStage.addEventListener('pointerdown',e=>{
+  vedicDragging=true; vedicDragStartX=e.clientX; vedicBaseRot=vedicRot;
+  cRing.classList.add('dragging'); vedicStage.setPointerCapture(e.pointerId);
+});
+vedicStage.addEventListener('pointermove',e=>{
+  if(!vedicDragging)return;
+  vedicRot=vedicBaseRot+(e.clientX-vedicDragStartX)*.35;
+  applyVedicTransform();
+});
+const endVedicDrag=()=>{if(vedicDragging){vedicDragging=false;vedicLastInteraction=performance.now();cRing.classList.remove('dragging')}};
+vedicStage.addEventListener('pointerup',endVedicDrag);
+vedicStage.addEventListener('pointerleave',endVedicDrag);
+function animateVedic(){
+  if(!vedicDragging){
+    vedicRot+=.06;
+    applyVedicTransform();
+  }
+  requestAnimationFrame(animateVedic);
+}
+applyVedicTransform();
+requestAnimationFrame(animateVedic);
+
+/* ===================== TAROT ===================== */
+const TAROT=[
+ {sym:'🃏',name:'The Fool — คนเริ่มต้น',mean:'การเริ่มต้นใหม่ ความกล้าที่จะก้าวโดยไม่รู้ปลายทาง'},
+ {sym:'🎩',name:'The Magician — นักมายากล',mean:'พลังสร้างสรรค์ที่อยู่ในมือคุณอยู่แล้ว'},
+ {sym:'🌙',name:'High Priestess — นักบวชหญิง',mean:'สัญชาตญาณที่ไม่ควรมองข้าม'},
+ {sym:'👑',name:'The Empress — จักรพรรดินี',mean:'ความอุดมสมบูรณ์ที่กำลังจะเบ่งบาน'},
+ {sym:'⚔️',name:'The Emperor — จักรพรรดิ',mean:'โครงสร้างและอำนาจที่คุณต้องสร้างเอง'},
+ {sym:'📿',name:'The Hierophant — ปุโรหิต',mean:'ประเพณีและคำสอนที่นำทางคุณ'},
+ {sym:'💞',name:'The Lovers — คู่รัก',mean:'ทางเลือกที่มาจากหัวใจ'},
+ {sym:'🏹',name:'The Chariot — รถศึก',mean:'ชัยชนะที่มาจากความมุ่งมั่น'},
+ {sym:'🦁',name:'Strength — พลัง',mean:'ความกล้าที่อ่อนโยนแต่หนักแน่น'},
+ {sym:'🏮',name:'The Hermit — ฤๅษี',mean:'ช่วงเวลาที่ต้องอยู่กับตัวเอง'},
+ {sym:'☸️',name:'Wheel of Fortune — กงล้อโชคชะตา',mean:'วัฏจักรกำลังหมุนเปลี่ยนสู่บทใหม่'},
+ {sym:'⚖️',name:'Justice — ความยุติธรรม',mean:'ผลลัพธ์ที่สมดุลกับสิ่งที่คุณทำมา'},
+ {sym:'🙃',name:'The Hanged Man — ชายแขวนคอ',mean:'มุมมองใหม่จากการหยุดนิ่ง'},
+ {sym:'🦋',name:'Death — การเปลี่ยนแปลง',mean:'บางสิ่งต้องจบ เพื่อสิ่งใหม่จะได้เริ่ม'},
+ {sym:'🕊️',name:'Temperance — ความพอดี',mean:'สมดุลระหว่างสองด้านที่ต่างกัน'},
+ {sym:'😈',name:'The Devil — ปีศาจ',mean:'พันธนาการที่คุณเลือกเองโดยไม่รู้ตัว'},
+ {sym:'🗼',name:'The Tower — หอคอย',mean:'การพังทลายที่นำไปสู่ความจริง'},
+ {sym:'⭐',name:'The Star — ดวงดาว',mean:'ความหวังหลังพายุผ่านพ้น'},
+ {sym:'🌕',name:'The Moon — ดวงจันทร์',mean:'ความคลุมเครือที่ต้องใช้สัญชาตญาณนำทาง'},
+ {sym:'☀️',name:'The Sun — ดวงอาทิตย์',mean:'ความสำเร็จและความสุขที่ชัดเจน'},
+ {sym:'📯',name:'Judgement — การพิพากษา',mean:'การตื่นรู้และให้อภัยตัวเอง'},
+ {sym:'🌍',name:'The World — โลก',mean:'บทหนึ่งจบสมบูรณ์ พร้อมสู่วงจรใหม่'}
+];
+function drawTarotCards(){
+  const q=document.getElementById('t-q').value||'สิ่งที่อยากรู้';
+  const box=document.getElementById('tarotCards');
+  box.innerHTML='';
+  const pool=TAROT.map((_,i)=>i);
+  const rng=mulberry32(hashSeed(q+Date.now()));
+  const picked=[];
+  for(let i=0;i<3&&pool.length;i++){
+    const idx=Math.floor(rng()*pool.length);
+    picked.push(pool.splice(idx,1)[0]);
+  }
+  const labels=['อดีต','ปัจจุบัน','อนาคต'];
+  picked.forEach((cardIdx,i)=>{
+    const card=TAROT[cardIdx];
+    const el=document.createElement('div');
+    el.className='flip';
+    el.innerHTML=`<div class="flip-inner">
+      <div class="flip-face flip-front"><div class="sym">✦</div><div>${labels[i]}</div></div>
+      <div class="flip-face flip-back"><div class="sym">${card.sym}</div><div class="nm">${card.name}</div><div class="mn">${card.mean}</div></div>
+    </div>`;
+    el.addEventListener('click',()=>el.classList.toggle('flipped'));
+    box.appendChild(el);
+    setTimeout(()=>el.classList.add('flipped'),400+i*350);
+  });
+  refreshHoverables();
+  const narr=document.getElementById('tarotNarr');
+  narr.innerHTML=`<p><b>คำถาม:</b> ${q}</p>`+picked.map((idx,i)=>`<p><b>${labels[i]}:</b> ${TAROT[idx].name} — ${TAROT[idx].mean}</p>`).join('');
+  narr.classList.add('show');
+}
+
+/* ===================== STATS COUNT-UP ===================== */
+function animateStatNumber(el){
+  const raw=el.dataset.target, num=parseFloat(raw), suffix=el.dataset.suffix||'';
+  if(isNaN(num)){el.textContent=raw;return}
+  const dur=1600; let start=null;
+  function step(ts){
+    if(!start)start=ts;
+    const p=Math.min((ts-start)/dur,1), eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(eased*num)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const statsObs=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{
+    if(en.isIntersecting){
+      document.querySelectorAll('.stat-number').forEach(animateStatNumber);
+      statsObs.disconnect();
+    }
+  });
+},{threshold:.3});
+const statsSection=document.getElementById('stats');
+if(statsSection)statsObs.observe(statsSection);
+
+/* ===================== WARP / HYPERSPACE ===================== */
+const warpBtn=document.getElementById('warpBtn'), warpOverlay=document.getElementById('warpOverlay');
+const warpCv=document.getElementById('warpCanvas'), wctx=warpCv.getContext('2d');
+const warpResult=document.getElementById('warpResult'), warpCloseBtn=document.getElementById('warpCloseBtn');
+let wW,wH,wCX,wCY,warpStars=[],warpActive=false,warpStart=null,warpResultShown=false;
+function resizeWarp(){wW=warpCv.width=innerWidth;wH=warpCv.height=innerHeight;wCX=wW/2;wCY=wH/2}
+addEventListener('resize',resizeWarp); resizeWarp();
+function buildWarpStars(n){warpStars=Array.from({length:n},()=>({x:(Math.random()-.5)*wW*2,y:(Math.random()-.5)*wH*2,z:Math.random()*wW}))}
+
+function drawWarpFrame(ts){
+  if(!warpActive)return;
+  if(!warpStart)warpStart=ts;
+  const elapsed=(ts-warpStart)/1000;
+  wctx.fillStyle='rgba(0,0,0,.22)';
+  wctx.fillRect(0,0,wW,wH);
+  const speed=40+Math.min(elapsed,1.6)*280;
+  warpStars.forEach(s=>{
+    const prevZ=s.z;
+    s.z-=speed;
+    if(s.z<=1){s.z=wW;s.x=(Math.random()-.5)*wW*2;s.y=(Math.random()-.5)*wH*2;return}
+    const k1=140/prevZ, k2=140/s.z;
+    const x1=s.x*k1+wCX, y1=s.y*k1+wCY, x2=s.x*k2+wCX, y2=s.y*k2+wCY;
+    const bright=Math.min(1,1-s.z/wW);
+    wctx.strokeStyle=`rgba(255,255,255,${bright})`;
+    wctx.lineWidth=Math.max(.5,bright*3);
+    wctx.beginPath();wctx.moveTo(x1,y1);wctx.lineTo(x2,y2);wctx.stroke();
+    if(bright>.7){
+      const g=wctx.createRadialGradient(x2,y2,0,x2,y2,4);
+      g.addColorStop(0,'rgba(255,255,255,.9)');g.addColorStop(1,'rgba(255,255,255,0)');
+      wctx.fillStyle=g;wctx.beginPath();wctx.arc(x2,y2,4,0,Math.PI*2);wctx.fill();
+    }
+  });
+  if(elapsed>1.9&&!warpResultShown){warpResultShown=true;warpResult.classList.add('show')}
+  requestAnimationFrame(drawWarpFrame);
+}
+warpBtn.addEventListener('click',()=>{
+  warpOverlay.classList.add('active');
+  warpActive=true; warpStart=null; warpResultShown=false;
+  warpResult.classList.remove('show');
+  resizeWarp(); buildWarpStars(320);
+  requestAnimationFrame(drawWarpFrame);
+});
+warpCloseBtn.addEventListener('click',()=>{
+  warpActive=false;
+  warpOverlay.classList.remove('active');
+  scrollToId('intro');
+});
+refreshHoverables();
+</script>
+</body>
+</html>
