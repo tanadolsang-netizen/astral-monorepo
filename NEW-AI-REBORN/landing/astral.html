@@ -28,19 +28,27 @@ img{max-width:100%}
 .cursor-ring{position:fixed;width:38px;height:38px;border:1.5px solid rgba(255,215,0,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .3s,height .3s,border-color .3s,opacity .3s;opacity:0}
 .cursor-ring.hover{width:64px;height:64px;border-color:rgba(255,107,157,.65)}
 .cursor-ring.dragging{width:50px;height:50px;border-color:rgba(255,215,0,.9);border-width:2px}
+.cursor-ring.click{animation:cRingClick .45s ease}
+@keyframes cRingClick{0%{transform:translate(-50%,-50%) scale(1)}40%{transform:translate(-50%,-50%) scale(.5);border-color:rgba(255,215,0,.9)}100%{transform:translate(-50%,-50%) scale(1)}}
 
 /* ===================== PRELOADER ===================== */
 #preloader{position:fixed;inset:0;z-index:20000;background:radial-gradient(ellipse at 50% 45%,rgba(15,8,35,.94),rgba(2,2,26,.99) 75%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.6rem;transition:opacity 1s ease,visibility 1s}
 #preloader.hidden{opacity:0;visibility:hidden}
-.pl-orbit{width:110px;height:110px;position:relative;border:1px solid rgba(255,215,0,.28);border-radius:50%;animation:plSpin 6s linear infinite}
+.pl-orbit{width:110px;height:110px;position:relative;border:1px solid rgba(255,215,0,.28);border-radius:50%;animation:plSpin 6s linear infinite,plGlow 3s ease-in-out infinite alternate}
 .pl-orbit::before{content:'';position:absolute;inset:20px;border:1px solid rgba(192,132,252,.22);border-radius:50%}
-.pl-dot{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold));box-shadow:0 0 16px var(--gold)}
+.pl-orbit::after{content:'';position:absolute;inset:-18px;border:1px solid rgba(255,107,157,.14);border-radius:50%;animation:plSpin 11s linear infinite reverse}
+.pl-dot{position:absolute;top:-5px;left:50%;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold));box-shadow:0 0 16px var(--gold);animation:plDotPulse 2.4s ease-in-out infinite}
 @keyframes plSpin{to{transform:rotate(360deg)}}
-.pl-logo{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:.4em;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.pl-pct{font-size:1rem;letter-spacing:.2em;color:var(--gold)}
+@keyframes plGlow{0%{filter:brightness(1) saturate(1)}100%{filter:brightness(1.35) saturate(1.3)}}
+@keyframes plDotPulse{0%,100%{box-shadow:0 0 16px var(--gold)}50%{box-shadow:0 0 30px var(--gold),0 0 46px rgba(255,215,0,.5)}}
+.pl-logo{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:900;letter-spacing:.4em;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:plLogoIn 1.1s cubic-bezier(.16,1,.3,1)}
+@keyframes plLogoIn{from{opacity:0;letter-spacing:.1em;transform:translateY(8px)}to{opacity:1;letter-spacing:.4em;transform:none}}
+.pl-pct{font-size:1rem;letter-spacing:.2em;color:var(--gold);font-variant-numeric:tabular-nums}
 .pl-bar-wrap{width:min(280px,68vw);height:2px;background:rgba(255,255,255,.1);border-radius:1px;overflow:hidden}
-.pl-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple));border-radius:1px;transition:width .25s}
+.pl-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple));border-radius:1px;transition:width .3s cubic-bezier(.16,1,.3,1);box-shadow:0 0 10px rgba(255,215,0,.6)}
 .pl-label{font-size:.68rem;letter-spacing:.3em;color:var(--dim);text-transform:uppercase}
+.pl-error{font-size:.68rem;letter-spacing:.1em;color:var(--pink);max-width:280px;text-align:center;line-height:1.7;display:none}
+.pl-error.show{display:block}
 html.loading #stars{animation:spinStars 40s linear infinite}
 @keyframes spinStars{to{transform:rotate(360deg)}}
 
@@ -55,6 +63,9 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .section-tone{position:fixed;inset:-20%;z-index:-2;pointer-events:none;opacity:.7;transition:background 1.8s ease;background:radial-gradient(ellipse at 50% 30%,rgba(192,132,252,.1),transparent 70%)}
 .grain{position:fixed;inset:0;z-index:-1;opacity:.035;pointer-events:none;background-image:radial-gradient(rgba(255,255,255,.6) 1px,transparent 1px);background-size:3px 3px}
 
+/* ===================== SCROLL PROGRESS ===================== */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),var(--pink),var(--purple));box-shadow:0 0 10px rgba(255,215,0,.6);z-index:600;pointer-events:none}
+
 /* ===================== NAV ===================== */
 .nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem;backdrop-filter:blur(10px);background:rgba(2,2,26,.35);border-bottom:1px solid rgba(255,215,0,.08)}
 .nav-logo{font-weight:700;letter-spacing:.35em;font-size:1.1rem;background:linear-gradient(120deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
@@ -62,7 +73,20 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .nav-links a{display:inline-block;padding:.5rem .9rem;border-radius:100px;color:var(--dim);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:color .3s,background .3s}
 .nav-links a:hover{color:var(--gold)}
 .nav-links a.active{color:var(--gold);background:rgba(255,215,0,.1)}
-@media(max-width:900px){.nav-links{display:none}}
+.nav-toggle{display:none;width:32px;height:24px;position:relative;background:none;border:none;cursor:none;flex-shrink:0}
+.nav-toggle span{position:absolute;left:0;right:0;height:2px;background:var(--gold);border-radius:2px;transition:transform .35s ease,opacity .25s ease}
+.nav-toggle span:nth-child(1){top:1px}
+.nav-toggle span:nth-child(2){top:11px}
+.nav-toggle span:nth-child(3){top:21px}
+.nav.open .nav-toggle span:nth-child(1){transform:translateY(10px) rotate(45deg)}
+.nav.open .nav-toggle span:nth-child(2){opacity:0}
+.nav.open .nav-toggle span:nth-child(3){transform:translateY(-10px) rotate(-45deg)}
+@media(max-width:900px){
+  .nav-toggle{display:block}
+  .nav-links{position:fixed;top:60px;left:0;right:0;flex-direction:column;flex-wrap:nowrap;justify-content:flex-start;gap:0;max-height:0;overflow:hidden;background:rgba(2,2,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,215,0,.12);transition:max-height .4s cubic-bezier(.16,1,.3,1)}
+  .nav.open .nav-links{max-height:75vh;overflow-y:auto}
+  .nav-links a{width:100%;padding:.95rem 1.5rem;border-radius:0;text-align:center;font-size:.75rem}
+}
 
 /* ===================== REVEAL ===================== */
 .reveal{opacity:0;transform:translateY(42px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
@@ -72,6 +96,8 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 /* ===================== SECTION COMMON ===================== */
 .section{position:relative;z-index:10;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:7rem 1.5rem}
 .section h2{font-size:clamp(1.9rem,4.2vw,3.2rem);font-weight:700;margin-bottom:.8rem;background:linear-gradient(135deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 40px rgba(139,92,246,.35)}
+@keyframes kfPulse{0%{filter:brightness(1) drop-shadow(0 0 0 rgba(255,215,0,0))}40%{filter:brightness(1.25) drop-shadow(0 0 18px rgba(255,215,0,.5))}100%{filter:brightness(1) drop-shadow(0 0 0 rgba(255,215,0,0))}}
+.section h2.kf-pulse{animation:kfPulse .8s ease}
 .section>p.lead{color:var(--dim);max-width:560px;line-height:1.85;font-size:.95rem;margin-bottom:2.6rem}
 .eyebrow{display:inline-block;padding:.4rem 1.2rem;border-radius:100px;font-size:.68rem;letter-spacing:.25em;border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.06);color:var(--gold);text-transform:uppercase;margin-bottom:1.4rem}
 
@@ -87,6 +113,8 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .hero-cta{margin-top:2.6rem;padding:.95rem 2.6rem;border:1px solid var(--gold);border-radius:100px;background:transparent;color:var(--gold);font-size:.82rem;letter-spacing:.14em;cursor:none;transition:background .4s,color .4s,box-shadow .4s,opacity 1s,transform 1s;box-shadow:0 0 26px rgba(139,92,246,.25);opacity:0;transform:translateY(20px)}
 .hero-cta.in{opacity:1;transform:none;transition-delay:.5s}
 .hero-cta:hover{background:var(--gold);color:var(--bg);box-shadow:0 0 40px rgba(255,215,0,.35)}
+.hero-cta:active{transform:scale(.96)}
+@media(max-width:420px){.hero-title{font-size:clamp(2.6rem,15vw,4rem);letter-spacing:.02em}}
 .scroll-ind{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--dim);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;animation:bob 2.2s cubic-bezier(.45,0,.55,1) infinite;z-index:5}
 .scroll-ind::after{content:'';width:1px;height:36px;background:linear-gradient(to bottom,var(--gold),transparent)}
 @keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
@@ -95,7 +123,15 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 #solar{padding:7rem 0}
 .solar-stage{position:relative;width:100%;height:88vh;min-height:460px}
 #solarCanvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.solar-bloom{position:absolute;top:50%;left:50%;width:48%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,224,140,.75),rgba(255,150,60,.32) 40%,transparent 72%);filter:blur(32px);mix-blend-mode:screen;opacity:.72;z-index:1;will-change:transform,opacity;transition:opacity .3s}
 .solar-caption{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);font-size:.7rem;letter-spacing:.15em;color:var(--dim2);text-transform:uppercase;z-index:5}
+.solar-fallback{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;text-align:center;padding:2rem;border-radius:14px;background:radial-gradient(ellipse at 50% 45%,rgba(30,15,55,.65),rgba(2,2,15,.92))}
+.solar-fallback.show{display:flex}
+.sf-orbit{width:150px;height:150px;position:relative;border:1px solid rgba(255,215,0,.3);border-radius:50%;animation:plSpin 9s linear infinite}
+.sf-orbit::before{content:'';position:absolute;inset:24px;border:1px solid rgba(192,132,252,.24);border-radius:50%;animation:plSpin 6s linear infinite reverse}
+.sf-orbit::after{content:'';position:absolute;top:50%;left:50%;width:22px;height:22px;margin:-11px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--gold));box-shadow:0 0 28px var(--gold)}
+.solar-fallback p{color:var(--dim);font-size:.85rem;max-width:360px;line-height:1.85}
+@media(max-width:600px){.solar-stage{height:64vh;min-height:400px}}
 
 /* ===================== FORM PANELS (natal / synastry / vedic-search) ===================== */
 .panel{max-width:560px;width:100%;margin:0 auto;background:linear-gradient(160deg,rgba(255,255,255,.045),rgba(255,255,255,.015));border:1px solid rgba(255,215,0,.18);border-left:2px solid var(--gold);border-radius:14px;padding:2.2rem 2rem;backdrop-filter:blur(6px)}
@@ -110,6 +146,7 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .rule-div::after{content:'✦';position:absolute;left:50%;top:-9px;transform:translateX(-50%);color:var(--gold);background:var(--bg2);padding:0 8px;font-size:.8rem}
 .btn-gold{width:100%;padding:.95rem;border:none;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));color:var(--bg);font-weight:700;font-size:.85rem;letter-spacing:.1em;cursor:none;transition:transform .4s,box-shadow .4s;box-shadow:0 0 24px rgba(139,92,246,.3)}
 .btn-gold:hover{transform:scale(1.02);box-shadow:0 0 40px rgba(255,215,0,.4)}
+.btn-gold:active{transform:scale(.98)}
 
 .chart-out{margin-top:2.2rem;display:none;flex-direction:column;align-items:center;gap:1rem}
 .chart-out.show{display:flex}
@@ -125,9 +162,10 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .vedic-stage{perspective:1300px;margin:0 auto 2rem;touch-action:none;cursor:grab}
 .vedic-stage:active{cursor:grabbing}
 .vedic-wheel{position:relative;width:1px;height:1px;margin:190px auto 60px;transform-style:preserve-3d;transform:rotateX(-12deg) rotateY(0deg)}
-.vedic-item{position:absolute;width:168px;height:58px;left:-84px;top:-29px;display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,215,0,.22);backface-visibility:hidden;font-size:.85rem;cursor:none;transition:background .3s,border-color .3s,transform .3s}
+.vedic-item{position:absolute;width:168px;height:58px;left:-84px;top:-29px;display:flex;align-items:center;justify-content:center;gap:.5rem;border-radius:12px;background:rgba(255,255,255,.035);border:1px solid rgba(255,215,0,.22);backface-visibility:hidden;font-size:.85rem;cursor:none;transition:background .3s,border-color .3s,filter .3s,box-shadow .3s}
 .vedic-item .vsym{font-size:1.2rem;color:var(--gold)}
 .vedic-item:hover,.vedic-item.active{background:rgba(255,215,0,.16);border-color:var(--gold)}
+.vedic-item.active{filter:brightness(1.2);box-shadow:0 0 22px rgba(255,215,0,.4)}
 .vedic-hint{font-size:.68rem;letter-spacing:.15em;color:var(--dim2);text-transform:uppercase;margin:-1.4rem 0 1.6rem}
 .vedic-info{max-width:480px;min-height:100px;padding:1.3rem 1.6rem;border:1px solid rgba(255,255,255,.08);border-radius:1rem;background:rgba(255,255,255,.02)}
 .vedic-info h3{color:var(--gold);font-size:1.1rem;margin-bottom:.35rem}
@@ -162,6 +200,7 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .cta-btn{padding:1.05rem 3rem;border:none;border-radius:100px;background:linear-gradient(135deg,var(--gold),var(--pink),var(--purple));color:var(--bg);font-weight:700;font-size:.88rem;letter-spacing:.1em;cursor:none;transition:transform .4s,box-shadow .4s;box-shadow:0 0 30px rgba(139,92,246,.35);animation:ctaPulse 4s ease-in-out infinite}
 @keyframes ctaPulse{0%,100%{box-shadow:0 0 30px rgba(139,92,246,.3)}50%{box-shadow:0 0 55px rgba(255,215,0,.55)}}
 .cta-btn:hover{transform:scale(1.05)}
+.cta-btn:active{transform:scale(.97)}
 
 .warp-overlay{position:fixed;inset:0;z-index:30000;background:#000;display:none;align-items:center;justify-content:center;overflow:hidden}
 .warp-overlay.active{display:flex}
@@ -172,6 +211,7 @@ html.loading #stars{animation:spinStars 40s linear infinite}
 .warp-result p{color:var(--dim);line-height:1.85;margin-bottom:2rem;font-size:.95rem}
 .warp-close{padding:.9rem 2.4rem;border:1px solid var(--gold);border-radius:100px;background:transparent;color:var(--gold);font-size:.82rem;letter-spacing:.12em;cursor:none;transition:all .4s}
 .warp-close:hover{background:var(--gold);color:var(--bg)}
+.warp-close:active{transform:scale(.95)}
 
 /* ===================== FOOTER ===================== */
 footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center;border-top:1px solid rgba(255,255,255,.06)}
@@ -187,7 +227,22 @@ footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center
   .panel-grid{grid-template-columns:1fr}
   .stats-grid{gap:1.4rem}
   .vedic-wheel{margin:150px auto 50px}
+  .vedic-item{width:150px;height:52px}
   .nav{padding:.9rem 1.2rem}
+}
+@media(max-width:480px){
+  .vedic-wheel{margin:120px auto 40px}
+  .vedic-item{width:126px;height:46px;font-size:.75rem;gap:.35rem}
+  .vedic-item .vsym{font-size:1rem}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:1.1rem}
+  .warp-result{padding:1.4rem}
+  .section{padding:5.5rem 1.1rem}
+}
+@media(max-width:380px){
+  .nav-logo{font-size:.9rem;letter-spacing:.2em}
+  .eyebrow{font-size:.6rem;padding:.35rem 1rem;letter-spacing:.18em}
+  .hero-cta{padding:.85rem 2rem;font-size:.75rem}
+  .flip{width:118px;height:186px}
 }
 </style>
 </head>
@@ -202,7 +257,8 @@ footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center
   <div class="pl-logo">ASTRAL</div>
   <div class="pl-pct" id="plPct">0%</div>
   <div class="pl-bar-wrap"><div class="pl-bar" id="plBar"></div></div>
-  <div class="pl-label">กำลังเรียงดวงดาว</div>
+  <div class="pl-label" id="plLabel">กำลังเรียงดวงดาว</div>
+  <div class="pl-error" id="plError">ไม่สามารถโหลดเอนจิน 3 มิติได้ — ระบบสุริยะจะแสดงผลแบบพื้นฐานแทน</div>
 </div>
 
 <canvas id="stars"></canvas>
@@ -210,6 +266,7 @@ footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center
 <div class="aurora"></div>
 <div class="grain"></div>
 
+<div class="scroll-progress" id="scrollProgress"></div>
 <nav class="nav">
   <div class="nav-logo">ASTRAL</div>
   <ul class="nav-links">
@@ -244,6 +301,11 @@ footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center
   <p class="lead reveal">ดาวเคราะห์ 8 ดวงโคจรรอบดวงอาทิตย์ วงแหวนดาวเสาร์ แถบดาวเคราะห์น้อย ดาวหางหางยาว และเนบิวลาที่ลอยอยู่เบื้องหลัง — ทั้งหมดคำนวณและเคลื่อนไหวแบบเรียลไทม์</p>
   <div class="solar-stage reveal">
     <canvas id="solarCanvas"></canvas>
+    <div class="solar-bloom" id="solarBloom"></div>
+    <div class="solar-fallback" id="solarFallback">
+      <div class="sf-orbit"></div>
+      <p>อุปกรณ์นี้ไม่รองรับกราฟิก 3 มิติ (WebGL/THREE.js) — แต่ดาวเคราะห์ทั้ง 8 ดวงยังโคจรรอบดวงอาทิตย์อยู่เสมอ แม้คุณจะมองไม่เห็นตอนนี้</p>
+    </div>
     <div class="solar-caption">ลากเพื่อหมุนมุมมอง · เลื่อนเมาส์เพื่อพารัลแลกซ์</div>
   </div>
 </section>
@@ -372,7 +434,7 @@ footer{position:relative;z-index:10;padding:3.6rem 1.5rem 3rem;text-align:center
   <div class="footer-copy">© 2026 Astral — จักรวาลในหน้าจอเดียว</div>
 </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="window.threeLoadFailed=true;var pe=document.getElementById('plError');if(pe)pe.classList.add('show');"></script>
 <script>
 /* ===================== SAFETY NET ===================== */
 window.addEventListener('error',e=>{console.warn('Global error:',e.message);return true});
@@ -392,6 +454,8 @@ setTimeout(()=>{cDot.style.opacity=1;cRing.style.opacity=1},400);
 function hoverable(el){if(!el)return;el.addEventListener('mouseenter',()=>cRing.classList.add('hover'));el.addEventListener('mouseleave',()=>cRing.classList.remove('hover'))}
 function refreshHoverables(){document.querySelectorAll('button,a,input,select,.flip,.vedic-item').forEach(hoverable)}
 refreshHoverables();
+cRing.addEventListener('animationend',()=>cRing.classList.remove('click'));
+addEventListener('pointerdown',()=>{cRing.classList.remove('click');void cRing.offsetWidth;cRing.classList.add('click')});
 
 /* ===================== PRELOADER ===================== */
 const plBar=document.getElementById('plBar'),plPct=document.getElementById('plPct'),preloader=document.getElementById('preloader');
@@ -407,7 +471,7 @@ function tickPreloader(){
       preloader.classList.add('hidden');
       document.documentElement.classList.remove('loading');
       startIntroSequence();
-    },400);
+    },window.threeLoadFailed?1800:400);
   }
 }
 setTimeout(tickPreloader,300);
@@ -567,41 +631,181 @@ function drawIntroFrame(ts){
 }
 function startIntroSequence(){ requestAnimationFrame(drawIntroFrame); }
 
-/* ===================== REVEAL ON SCROLL ===================== */
-const revealObs=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');revealObs.unobserve(en.target)}});
-},{threshold:.15});
-document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
-
-/* ===================== NAV ACTIVE + SMOOTH SCROLL ===================== */
+/* ===================== NAV SMOOTH SCROLL (click) ===================== */
 document.querySelectorAll('.nav-links a, .footer-links a').forEach(a=>{
   a.addEventListener('click',e=>{
     e.preventDefault();
     scrollToId(a.getAttribute('href').slice(1));
   });
 });
+
+/* ===================== PAGE SCROLL TIMELINE (landing-page level) =====================
+   Owns every scroll-driven behaviour for the whole page: progress bar, nav highlight,
+   per-section overlay fade/position, keyframe-triggered effects (staggered reveal, text
+   pulse, solar events) and the solar camera target. The 3D scene in initSolar/animateSolar
+   never samples scroll itself — it only reads solarCamTarget/solarScrollT and renders. */
 const sectionIds=['intro','solar','natal','synastry','vedic','tarot','stats','cta'];
 const sectionTones={
   intro:'146,92,246', solar:'255,178,64', natal:'255,215,0', synastry:'255,107,157',
   vedic:'96,165,250', tarot:'192,132,252', stats:'255,255,255', cta:'255,107,157'
 };
+const sectionEls={}; sectionIds.forEach(id=>sectionEls[id]=document.getElementById(id));
 const sectionToneEl=document.getElementById('sectionTone');
-const navObs=new IntersectionObserver(entries=>{
-  entries.forEach(en=>{
-    if(en.isIntersecting){
-      document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id));
-      const tone=sectionTones[en.target.id];
-      if(tone&&sectionToneEl)sectionToneEl.style.background=`radial-gradient(ellipse at 50% 30%,rgba(${tone},.12),transparent 70%)`;
+const scrollProgressEl=document.getElementById('scrollProgress');
+
+function easeInOutCubic(x){return x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2}
+function lerp(a,b,f){return a+(b-a)*f}
+function lerpVec3(a,b,f){return{x:lerp(a.x,b.x,f),y:lerp(a.y,b.y,f),z:lerp(a.z,b.z,f)}}
+
+/* one keyframe array per section: t = local scroll progress through that section
+   (0 = entering viewport, 1 = scrolled past), overlay = {opacity,y} fade/position for
+   the section, effect = special trigger fired once per forward crossing. Solar keyframes
+   additionally carry the camera pos/look/roll that used to be sampled inside animateSolar. */
+const SECTION_KEYFRAMES={
+  intro:[
+    {t:0,   overlay:{opacity:1,   y:0},  effect:null},
+    {t:1,   overlay:{opacity:0,   y:-40},effect:null}
+  ],
+  solar:[
+    {t:0,   overlay:{opacity:.92,y:0},  effect:'reveal',        camera:{pos:{x:0,  y:78,z:230}, look:{x:0,  y:0,z:0},  roll:0}},
+    {t:.28, overlay:{opacity:1,  y:-6}, effect:'flareSun',      camera:{pos:{x:110,y:34,z:130}, look:{x:24, y:0,z:-10},roll:.035}},
+    {t:.55, overlay:{opacity:1,  y:-6}, effect:'shootingComet', camera:{pos:{x:-95,y:20,z:70},  look:{x:-30,y:6,z:20}, roll:-.03}},
+    {t:.8,  overlay:{opacity:.92,y:0},  effect:'nebulaShift',   camera:{pos:{x:40, y:60,z:-40}, look:{x:0,  y:0,z:0},  roll:.02}},
+    {t:1,   overlay:{opacity:.85,y:6},  effect:null,            camera:{pos:{x:0,  y:60,z:170}, look:{x:0,  y:0,z:0},  roll:0}}
+  ],
+  natal:    sectionFormKeyframes(),
+  synastry: sectionFormKeyframes(),
+  vedic:    sectionFormKeyframes(),
+  tarot:    sectionFormKeyframes(),
+  stats:[
+    {t:0,  overlay:{opacity:0,y:36}, effect:null},
+    {t:.15,overlay:{opacity:1,y:0},  effect:'reveal'},
+    {t:.92,overlay:{opacity:1,y:0},  effect:null},
+    {t:1,  overlay:{opacity:.82,y:-18},effect:null}
+  ],
+  cta:[
+    {t:0,  overlay:{opacity:0,y:36}, effect:null},
+    {t:.15,overlay:{opacity:1,y:0},  effect:'reveal'},
+    {t:1,  overlay:{opacity:1,y:0},  effect:null}
+  ]
+};
+function sectionFormKeyframes(){
+  return[
+    {t:0,  overlay:{opacity:0,y:36}, effect:null},
+    {t:.15,overlay:{opacity:1,y:0},  effect:'reveal'},
+    {t:.5, overlay:{opacity:1,y:0},  effect:'textAnim'},
+    {t:.92,overlay:{opacity:1,y:0},  effect:null},
+    {t:1,  overlay:{opacity:.82,y:-18},effect:null}
+  ];
+}
+
+function sampleKeyframes(kfs,t){
+  if(t<=kfs[0].t)return kfs[0];
+  for(let i=0;i<kfs.length-1;i++){
+    const a=kfs[i],b=kfs[i+1];
+    if(t<=b.t){
+      const f=easeInOutCubic((t-a.t)/((b.t-a.t)||1));
+      const sample={overlay:{opacity:lerp(a.overlay.opacity,b.overlay.opacity,f),y:lerp(a.overlay.y,b.overlay.y,f)}};
+      if(a.camera&&b.camera)sample.camera={pos:lerpVec3(a.camera.pos,b.camera.pos,f),look:lerpVec3(a.camera.look,b.camera.look,f),roll:lerp(a.camera.roll,b.camera.roll,f)};
+      return sample;
     }
+  }
+  return kfs[kfs.length-1];
+}
+
+/* dispatch for keyframe effects — 'reveal'/'textAnim' are generic, everything else is a solar-scene event */
+function runSectionEffect(id,effect){
+  if(effect==='reveal'){
+    document.querySelectorAll('#'+id+' .reveal').forEach(el=>el.classList.add('visible'));
+  } else if(effect==='textAnim'){
+    const h2=sectionEls[id]&&sectionEls[id].querySelector('h2');
+    if(h2){h2.classList.remove('kf-pulse');void h2.offsetWidth;h2.classList.add('kf-pulse')}
+  } else if(id==='solar'&&effect){
+    triggerSolarEvent(effect);
+  }
+}
+
+let solarCamTarget={pos:{x:0,y:78,z:230},look:{x:0,y:0,z:0},roll:0};
+const prevLocalT={}, firedEffects=new Set();
+let progressSmoothed=0, scrollLoopLastTs=performance.now();
+
+function scrollLoop(ts){
+  requestAnimationFrame(scrollLoop);
+  const dt=Math.min((ts-scrollLoopLastTs)/1000,.1); scrollLoopLastTs=ts;
+
+  /* progress bar — smoothed toward real scroll position, frame-rate independent */
+  const maxScroll=Math.max(1,document.documentElement.scrollHeight-innerHeight);
+  const rawProgress=Math.max(0,Math.min(1,(window.scrollY||0)/maxScroll));
+  progressSmoothed+=(rawProgress-progressSmoothed)*(1-Math.pow(.002,dt));
+  if(scrollProgressEl)scrollProgressEl.style.width=(progressSmoothed*100)+'%';
+
+  const camSmooth=1-Math.pow(.0018,dt);
+  let currentId=null,bestVisible=-Infinity;
+  sectionIds.forEach(id=>{
+    const el=sectionEls[id]; if(!el)return;
+    const rect=el.getBoundingClientRect();
+    const localT=Math.max(0,Math.min(1,(innerHeight-rect.top)/(innerHeight+rect.height)));
+    const kfs=SECTION_KEYFRAMES[id];
+    const sample=sampleKeyframes(kfs,localT);
+
+    /* overlay fade/position — continuous function of scroll progress, never a boolean toggle */
+    el.style.opacity=sample.overlay.opacity;
+    el.style.transform=`translateY(${sample.overlay.y}px)`;
+
+    if(id==='solar'&&sample.camera){
+      solarCamTarget.pos.x+=(sample.camera.pos.x-solarCamTarget.pos.x)*camSmooth;
+      solarCamTarget.pos.y+=(sample.camera.pos.y-solarCamTarget.pos.y)*camSmooth;
+      solarCamTarget.pos.z+=(sample.camera.pos.z-solarCamTarget.pos.z)*camSmooth;
+      solarCamTarget.look.x+=(sample.camera.look.x-solarCamTarget.look.x)*camSmooth;
+      solarCamTarget.look.y+=(sample.camera.look.y-solarCamTarget.look.y)*camSmooth;
+      solarCamTarget.look.z+=(sample.camera.look.z-solarCamTarget.look.z)*camSmooth;
+      solarCamTarget.roll+=(sample.camera.roll-solarCamTarget.roll)*camSmooth;
+      solarScrollT=localT;
+    }
+
+    /* fire each keyframe's effect once per forward crossing, re-arm once scroll retreats past it */
+    const prev=prevLocalT[id]||0;
+    kfs.forEach(k=>{
+      if(!k.effect)return;
+      const key=id+':'+k.t+':'+k.effect;
+      if(localT>=k.t&&prev<k.t&&!firedEffects.has(key)){
+        firedEffects.add(key); runSectionEffect(id,k.effect);
+      } else if(localT<k.t-.04){
+        firedEffects.delete(key);
+      }
+    });
+    prevLocalT[id]=localT;
+
+    const visible=Math.min(rect.bottom,innerHeight)-Math.max(rect.top,0);
+    if(visible>bestVisible){bestVisible=visible;currentId=id}
   });
-},{threshold:.5});
-sectionIds.forEach(id=>{const el=document.getElementById(id);if(el)navObs.observe(el)});
+
+  /* nav highlight + background tone track whichever section is most in view */
+  if(currentId){
+    document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+currentId));
+    const tone=sectionTones[currentId];
+    if(tone&&sectionToneEl)sectionToneEl.style.background=`radial-gradient(ellipse at 50% 30%,rgba(${tone},.12),transparent 70%)`;
+  }
+}
+requestAnimationFrame(scrollLoop);
 
 /* ===================== SOLAR SYSTEM (Three.js — only WebGL usage) ===================== */
-let solarActive=false, solarInited=false;
-let scene,camera,renderer,clock,sun,sunGlow1,sunGlow2,sunGlow3,corona,nebula,nebula2,planetMeshes=[],asteroids,cometGroup,starLayers=[];
+let solarActive=false, solarInited=false, solarFallbackActive=false;
+let scene,camera,renderer,clock,sun,sunGlow1,sunGlow2,sunGlow3,sunGlow4,corona,nebula,nebula2,planetMeshes=[],asteroids,cometGroup,starLayers=[],solarBloomEl,solarStageEl;
+function showSolarFallback(){
+  solarFallbackActive=true;
+  const fb=document.getElementById('solarFallback');
+  if(fb)fb.classList.add('show');
+}
 let solarUserTheta=0,solarUserPhi=0,solarDragging=false,solarDragStartX=0,solarDragStartY=0,solarBaseTheta=0,solarBasePhi=0,solarLastInteraction=0,solarCameraAngle=0;
-let solarFocusing=false,solarFocusStart=0;
+let solarScrollT=0,solarFlareT=-1,solarNebulaShiftT=-1,solarElapsed=0;
+
+/* fired by the page-level scrollLoop when the scroll-timeline crosses a solar keyframe (see SECTION_KEYFRAMES.solar) */
+function triggerSolarEvent(name){
+  if(name==='flareSun')solarFlareT=0;
+  else if(name==='shootingComet')spawnShootingStar();
+  else if(name==='nebulaShift')solarNebulaShiftT=0;
+}
 
 /* shared circular-point shader — renders true circles via gl_PointCoord on every GPU, no texture needed */
 function createParticleShaderMaterial(size,edgeTint){
@@ -759,12 +963,16 @@ function createNebulaTexture(){
 
 function initSolar(){
   if(solarInited)return; solarInited=true;
+  if(typeof THREE==='undefined'){showSolarFallback();return}
+  try{
+  solarBloomEl=document.getElementById('solarBloom');
   const canvas=document.getElementById('solarCanvas');
   const stage=document.querySelector('.solar-stage');
+  solarStageEl=stage;
   scene=new THREE.Scene();
   scene.background=new THREE.Color(0x02020f);
   camera=new THREE.PerspectiveCamera(58,stage.clientWidth/stage.clientHeight,.1,3000);
-  camera.position.set(0,40,130);
+  camera.position.set(0,78,230);
   renderer=new THREE.WebGLRenderer({canvas,antialias:false,alpha:true,powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio,2));
   renderer.setSize(stage.clientWidth,stage.clientHeight);
@@ -818,15 +1026,15 @@ function initSolar(){
     {radius:1,distance:26,speed:.012,color:0xa0a0a0},
     {radius:1.7,distance:38,speed:.009,color:0xe8b849},
     {radius:1.9,distance:50,speed:.007,color:0x5588cc},
-    {radius:1.4,distance:64,speed:.005,color:0xcc4422},
-    {radius:4.6,distance:88,speed:.003,color:0xddbb88},
-    {radius:3.9,distance:114,speed:.002,color:0xccaa77,rings:true},
+    {radius:1.4,distance:64,speed:.005,color:0xcc4422,parallax:.6},
+    {radius:4.6,distance:88,speed:.003,color:0xddbb88,parallax:1.4},
+    {radius:3.9,distance:114,speed:.002,color:0xccaa77,rings:true,parallax:2.2},
     {radius:2.8,distance:140,speed:.0015,color:0x88aacc},
     {radius:2.6,distance:164,speed:.001,color:0x4466cc}
   ];
   planetsData.forEach(p=>{
     const mesh=new THREE.Mesh(new THREE.SphereGeometry(p.radius,24,24),new THREE.MeshLambertMaterial({color:p.color}));
-    mesh.userData={distance:p.distance,speed:p.speed,angle:Math.random()*Math.PI*2,inclination:(Math.random()-.5)*.12};
+    mesh.userData={distance:p.distance,speed:p.speed,angle:Math.random()*Math.PI*2,inclination:(Math.random()-.5)*.12,parallax:p.parallax||0};
     scene.add(mesh); planetMeshes.push(mesh);
     const glow=new THREE.Mesh(new THREE.SphereGeometry(p.radius*1.35,10,10),new THREE.MeshBasicMaterial({color:p.color,transparent:true,opacity:.18,blending:THREE.AdditiveBlending,depthWrite:false}));
     mesh.add(glow);
@@ -894,6 +1102,7 @@ function initSolar(){
     camera.updateProjectionMatrix();
     renderer.setSize(stage.clientWidth,stage.clientHeight);
   });
+  }catch(e){console.warn('Solar init error:',e.message);showSolarFallback()}
 }
 
 let solarLastFrame=0;
@@ -903,39 +1112,63 @@ function animateSolar(ts){
   if(solarLastFrame&&ts-solarLastFrame<1000/60)return;
   solarLastFrame=ts;
   try{
-    const t=clock.getElapsedTime()||0;
+    const dt=Math.min(clock.getDelta(),.1);
+    solarElapsed+=dt;
+    const t=solarElapsed;
+
     if(!solarDragging&&(solarUserTheta!==0||solarUserPhi!==0)&&(solarLastInteraction===0||performance.now()-solarLastInteraction>2600)){
       solarUserTheta*=.94; solarUserPhi*=.94;
       if(Math.abs(solarUserTheta)<.001)solarUserTheta=0;
       if(Math.abs(solarUserPhi)<.001)solarUserPhi=0;
     }
-    solarCameraAngle+=.0007;
-    let camRadius=140+Math.sin(t*.1)*18;
-    if(solarFocusing){
-      const ft=(performance.now()-solarFocusStart)/1600;
-      if(ft>=1){solarFocusing=false}
-      else{const ease=1-Math.pow(1-Math.min(ft,1),3);camRadius=260-(260-camRadius)*ease}
-    }
-    const effAngle=solarCameraAngle+solarUserTheta;
-    camera.position.x=Math.sin(effAngle)*camRadius;
-    camera.position.z=Math.cos(effAngle)*camRadius;
-    camera.position.y=40+Math.sin(t*.15)*12+solarUserPhi*80;
-    camera.lookAt(0,0,0);
+    solarCameraAngle+=dt*.04;
+
+    /* camera: solarCamTarget was already eased toward the scroll-sampled keyframe by the
+       page-level scrollLoop — this just layers idle auto-orbit + user drag on top and renders */
+    const stageAspect=solarStageEl?solarStageEl.clientWidth/Math.max(1,solarStageEl.clientHeight):1.6;
+    const kfScale=stageAspect<1?1.35:1;
+    const idleAngle=(solarCameraAngle+solarUserTheta)*.15;
+    const idleCos=Math.cos(idleAngle),idleSin=Math.sin(idleAngle);
+    const base=solarCamTarget.pos;
+    camera.position.x=(base.x*idleCos-base.z*idleSin)*kfScale;
+    camera.position.z=(base.x*idleSin+base.z*idleCos)*kfScale;
+    camera.position.y=base.y*kfScale+solarUserPhi*80;
+    camera.up.set(Math.sin(solarCamTarget.roll),Math.cos(solarCamTarget.roll),0);
+    camera.lookAt(solarCamTarget.look.x,solarCamTarget.look.y,solarCamTarget.look.z);
 
     const pulse=1+Math.sin(t*1.5)*.06;
     sunGlow1.scale.setScalar(pulse); sunGlow2.scale.setScalar(pulse*1.1); sunGlow3.scale.setScalar(pulse*1.2);
     sun.material.uniforms.uTime.value=t; sun.rotation.y+=.0006;
-    corona.rotation.y+=.0009; corona.rotation.x+=.0004;
+    corona.rotation.y+=.0009+solarScrollT*.002; corona.rotation.x+=.0004;
+
+    if(solarFlareT>=0){
+      solarFlareT+=dt;
+      const f=Math.max(0,1-solarFlareT/1.1);
+      sunGlow2.material.opacity=.12+f*.55; sunGlow3.material.opacity=.06+f*.4;
+      if(solarFlareT>1.1){solarFlareT=-1; sunGlow2.material.opacity=.12; sunGlow3.material.opacity=.06}
+    }
+    if(solarNebulaShiftT>=0){
+      solarNebulaShiftT+=dt;
+      const f=Math.min(1,solarNebulaShiftT/1.4);
+      const hue=.05*Math.sin(f*Math.PI);
+      if(nebula)nebula.material.color.setHSL(.75+hue,.6,.55);
+      if(nebula2)nebula2.material.color.setHSL(.55-hue,.6,.55);
+      if(solarNebulaShiftT>1.4){
+        solarNebulaShiftT=-1;
+        if(nebula)nebula.material.color.set(0xffffff);
+        if(nebula2)nebula2.material.color.set(0xffffff);
+      }
+    }
 
     planetMeshes.forEach(m=>{
       m.userData.angle+=m.userData.speed;
       m.position.x=Math.cos(m.userData.angle)*m.userData.distance;
       m.position.z=Math.sin(m.userData.angle)*m.userData.distance;
-      m.position.y=Math.sin(m.userData.angle)*m.userData.distance*m.userData.inclination;
+      m.position.y=Math.sin(m.userData.angle)*m.userData.distance*m.userData.inclination+solarScrollT*m.userData.parallax*16;
       m.rotation.y+=.01;
     });
 
-    asteroids.rotation.y+=.0006;
+    asteroids.rotation.y+=.0006+solarScrollT*.0012;
 
     const cometAngle=t*.05;
     cometGroup.position.x=Math.cos(cometAngle)*150;
@@ -943,17 +1176,18 @@ function animateSolar(ts){
     cometGroup.position.y=16+Math.sin(cometAngle*2)*24;
     cometGroup.rotation.y=-cometAngle+Math.PI/2;
 
-    if(nebula){nebula.rotation.z+=.00005}
-    if(nebula2){nebula2.rotation.z+=.00009}
+    if(nebula){nebula.rotation.z+=.00005; nebula.position.x=solarScrollT*18-9}
+    if(nebula2){nebula2.rotation.z+=.00009; nebula2.position.x=-solarScrollT*30+15}
 
-    starLayers.forEach(l=>{
+    starLayers.forEach((l,i)=>{
       const p=l.mesh.geometry.attributes.position.array;
-      for(let i=0;i<p.length;i+=3){
-        p[i]+=l.speedX*60; p[i+1]+=l.speedY*60;
-        if(p[i]>l.spread)p[i]=-l.spread; if(p[i]<-l.spread)p[i]=l.spread;
-        if(p[i+1]>l.spread)p[i+1]=-l.spread; if(p[i+1]<-l.spread)p[i+1]=l.spread;
+      for(let j=0;j<p.length;j+=3){
+        p[j]+=l.speedX*60; p[j+1]+=l.speedY*60;
+        if(p[j]>l.spread)p[j]=-l.spread; if(p[j]<-l.spread)p[j]=l.spread;
+        if(p[j+1]>l.spread)p[j+1]=-l.spread; if(p[j+1]<-l.spread)p[j+1]=l.spread;
       }
       l.mesh.geometry.attributes.position.needsUpdate=true;
+      l.mesh.position.y=-solarScrollT*25*(i+1);
     });
 
     renderer.render(scene,camera);
@@ -965,7 +1199,6 @@ const solarObs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(en.isIntersecting){
       if(!solarInited)initSolar();
-      if(!solarActive){solarFocusing=true;solarFocusStart=performance.now()}
       solarActive=true;
     } else {
       solarActive=false;
