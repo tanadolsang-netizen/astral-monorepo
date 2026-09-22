@@ -22,6 +22,7 @@ class StripeCheckoutRequest(BaseModel):
 
 class StripeCheckoutResponse(BaseModel):
     url: str
+    session_id: Optional[str] = None
 
 
 async def create_checkout_session(req: StripeCheckoutRequest) -> StripeCheckoutResponse:

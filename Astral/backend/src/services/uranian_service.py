@@ -7,7 +7,7 @@ Extends the existing cosmobiology engine.
 from __future__ import annotations
 
 import math
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 from src.services.cosmobiology_service import midpoint_axes
 
@@ -79,9 +79,9 @@ def uranian_report(natal_bodies: dict[str, float], birth_iso_local: str,
                    tz_offset_hours: float = 7.0,
                    query_date_iso: str | None = None) -> dict:
     birth = datetime.fromisoformat(birth_iso_local)
-    birth_utc = birth - __import__("datetime").timedelta(hours=tz_offset_hours)
+    birth_utc = birth - timedelta(hours=tz_offset_hours)
     qdate = datetime.fromisoformat(query_date_iso) if query_date_iso \
-        else datetime.utcnow()
+        else datetime.now(timezone.utc)
 
     natal_tnps = tnp_longitudes(birth_utc)
     transit_tnps = tnp_longitudes(qdate)

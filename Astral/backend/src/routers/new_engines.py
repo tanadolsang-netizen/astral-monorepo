@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 import os
 from fastapi import APIRouter, HTTPException
@@ -97,7 +97,7 @@ def draconic(b: BirthIn):
     bodies, _ = _chart_bodies(b)
     from datetime import datetime as dt
     birth_dt = dt.fromisoformat(f"{b.date}T{b.time}:00") - \
-        __import__("datetime").timedelta(hours=b.tz)
+        timedelta(hours=b.tz)
     jd = birth_dt.toordinal() + 1721424.5
     return draconic_report(bodies, jd)
 

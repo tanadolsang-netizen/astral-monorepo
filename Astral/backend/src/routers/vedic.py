@@ -7,6 +7,7 @@ from pydantic import BaseModel, Field
 
 from src.services.vedic_service import compute_vedic
 from src.services.chart_service import compute_dual_chart
+from src.services.caveat import CAVEAT
 
 router = APIRouter()
 

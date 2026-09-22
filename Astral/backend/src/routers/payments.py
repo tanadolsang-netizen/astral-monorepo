@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Header
 from src.integrations.stripe_client import create_checkout_session, StripeCheckoutRequest
 from src.integrations.supabase_client import get_current_user
 
@@ -6,7 +6,7 @@ router = APIRouter()
 
 
 @router.post("/checkout")
-async def checkout(req: StripeCheckoutRequest, authorization: str = ""):
+async def checkout(req: StripeCheckoutRequest, authorization: str = Header(None)):
     try:
         if not authorization.startswith("Bearer "):
             raise HTTPException(status_code=401, detail="Unauthorized")

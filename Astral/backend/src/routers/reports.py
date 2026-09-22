@@ -12,6 +12,7 @@ from fastapi import APIRouter
 from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
+from src.routers.muhurta import MuhurtaRequest
 from src.services.pdf_agent_th import (
     build_synastry_sections as build_synastry_sections_th,
     build_natal_sections as build_natal_sections_th,
@@ -182,7 +183,9 @@ def _lang(lang: str = "th") -> str:
 
 def _pick_greek_art(sections: list[dict]) -> dict[int, str]:
     """Return section_art mapping based on section content/theme."""
-    art_dir = os.path.join(r"D:\AI\NEW-AI-REBORN\assets\art")
+    art_dir = os.path.join(os.path.dirname(__file__), "..", "..", "assets", "art")
+    if not os.path.isdir(art_dir):
+        art_dir = os.path.join(r"D:\AI\NEW-AI-REBORN\assets\art")
     art = {
         "venus_mars": os.path.join(art_dir, "venus_mars.jpg"),
         "diana": os.path.join(art_dir, "diana.jpg"),
@@ -366,16 +369,16 @@ def transit_report(req: NatalPayload):
     return ReportPdfResponse(ok=True, file=out_path, sections=len(sections))
 
 
-@router.post("/report/muhurta")
-def muhurta_report(req: dict):
+@router.post("/muhurta")
+def muhurta_report(req: MuhurtaRequest):
     from src.services.muhurta_service import find_windows
-    action = req.get("action", "marriage")
-    start_date = req.get("start_date", "")
-    days = int(req.get("days", 60))
-    top_n = int(req.get("top_n", 3))
-    lat = float(req.get("lat", 13.7565))
-    lon = float(req.get("lon", 100.5018))
-    tz_offset_hours = float(req.get("tz_offset_hours", 7.0))
+    action = req.action
+    start_date = req.start_date
+    days = req.days
+    top_n = req.top_n
+    lat = req.lat
+    lon = req.lon
+    tz_offset_hours = req.tz_offset_hours
 
     windows = find_windows(
         action=action,
@@ -486,7 +489,7 @@ def grand_summary_report(req: GrandSummaryPayload):
     ensure_deck_ready(background=True)
     from src.services.grand.grand_fusion import compute_grand_fusion
     payload = compute_grand_fusion(req.name, lang=req.lang)
-    sections = _grand_sections(payload)
+    sections = _grand_sections(payload, req)
 
     # optional synastry with partner
     try:
@@ -577,15 +580,15 @@ def brochure_transit(req: NatalPayload):
 
 
 @router.post("/brochure/muhurta")
-def brochure_muhurta(req: dict):
+def brochure_muhurta(req: MuhurtaRequest):
     from src.services.muhurta_service import find_windows
-    action = req.get("action", "marriage")
-    start_date = req.get("start_date", "")
-    days = int(req.get("days", 60))
-    top_n = int(req.get("top_n", 3))
-    lat = float(req.get("lat", 13.7565))
-    lon = float(req.get("lon", 100.5018))
-    tz_offset_hours = float(req.get("tz_offset_hours", 7.0))
+    action = req.action
+    start_date = req.start_date
+    days = req.days
+    top_n = req.top_n
+    lat = req.lat
+    lon = req.lon
+    tz_offset_hours = req.tz_offset_hours
 
     windows = find_windows(
         action=action,
@@ -750,9 +753,9 @@ def _bazi_sections(name: str, chart: dict) -> list[dict]:
     hour = pillars.get("hour") or {}
 
     lines = [
-        f"ดูตำแหน่ง four pillars ของ {name} เดือนนี้หมุนไปอย่างกลมกลืน: ปี{_s(year.get('pillar',''))} เป็นรากที่ให้กำเนิดคุณ, เดือน{_s(month.get('pillar',''))} คือช่วงที่โลกเริ่มเห็นความพยายามของคุณ, วันที่{_s(day.get('pillar',''))} คือตัวที่แท้จริงที่painstakingly หล่อหลอม, ชั่วโมง{_s(hour.get('pillar',''))} คือบทสรุปที่ลงท้ายลงในความจริง",
-        f"วันนี้เป็น{_s(day.get('animal_th',''))} กับธาตุ{_s(day.get('stem_element_th',''))} — นี่คือetalon ของตัวคุณ คือสิ่งที่rutin ทำให้คนรู้สึกถึง presence โดยไม่ต้องพูด",
-        f" estat分析ไม่ใช่บทวิจารณ์ แต่เป็นสะพาน cross-reference ว่าวันใดควรใช้ไฟ ควรใช้ไม้ ควรใช้โลหะ — เมื่ออ่านก็รู้สึกไม่ใช่ future ที่ถูกเขียน แต่คือ track ที่คุณเลือกเดิน",
+        f"ดูตำแหน่ง four pillars ของ {name} เดือนนี้หมุนไปอย่างกลมกลืน: ปี{_s(year.get('pillar',''))} เป็นรากที่ให้กำเนิดคุณ, เดือน{_s(month.get('pillar',''))} คือช่วงที่โลกเริ่มเห็นความพยายามของคุณ, วันที่{_s(day.get('pillar',''))} คือตัวที่แท้จริงที่ค่อยๆ หล่อหลอม, ชั่วโมง{_s(hour.get('pillar',''))} คือบทสรุปที่ลงท้ายลงในความจริง",
+        f"วันนี้เป็น{_s(day.get('animal_th',''))} กับธาตุ{_s(day.get('stem_element_th',''))} — นี่คือแบบอย่างของตัวคุณ คือสิ่งที่ทำให้คนรู้สึกถึงตัวตนของคุณโดยไม่ต้องพูด",
+        f"การวิเคราะห์นี้ไม่ใช่บทวิจารณ์ แต่เป็นสะพานเชื่อมโยงว่าวันใดควรใช้ไฟ ควรใช้ไม้ ควรใช้โลหะ — เมื่ออ่านก็รู้สึกไม่ใช่อนาคตที่ถูกเขียน แต่คือทางเลือกที่คุณเลือกเดิน",
     ]
     if zodiac:
         lines.append(zodiac)
@@ -790,7 +793,7 @@ def _ziwei_sections(name: str, chart: dict) -> list[dict]:
     return [{"title": f"Zi Wei Dou Shu — {name}", "lines": lines}]
 
 
-def _grand_sections(payload: dict) -> list[dict]:
+def _grand_sections(payload: dict, req) -> list[dict]:
     from datetime import date, time
     from src.services.chart_service import compute_chart
     from src.services.vedic_service import compute_vedic

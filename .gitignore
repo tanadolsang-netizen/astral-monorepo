@@ -5,6 +5,14 @@ workspace-scratch/
 __pycache__/
 *.pyc
 
+# AppData migration (not part of Astral)
+AOS/
+backup-appdata/
+tmp_compat.py
+
+# temp landing files
+.hermes-tmp.*
+
 # node / build
 node_modules/
 .next/

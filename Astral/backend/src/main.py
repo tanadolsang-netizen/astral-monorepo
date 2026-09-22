@@ -9,8 +9,12 @@ from dotenv import load_dotenv
 # integrations in transitively.
 load_dotenv()
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from slowapi import Limiter
+from slowapi.util import get_remote_address
+from slowapi.errors import RateLimitExceeded
 
 from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, reports, vedic, muhurta, chat, accuracy
 from .routers import new_engines
@@ -20,6 +24,11 @@ from .integrations.stripe_client import init_stripe
 
 ENV = os.getenv("ENV", "dev")
 ALLOWED_ORIGINS = [o.strip() for o in os.getenv("ALLOWED_ORIGINS", "").split(",") if o.strip()]
+
+# Validate ENV at startup — fail fast if misconfigured
+_VALID_ENVS = {"dev", "staging", "prod"}
+if ENV not in _VALID_ENVS:
+    raise RuntimeError(f"ENV must be one of {_VALID_ENVS}, got '{ENV}'")
 
 
 @asynccontextmanager
@@ -36,6 +45,25 @@ app = FastAPI(
     version="0.1.0",
     lifespan=lifespan,
 )
+
+# Rate limiting: 100 requests per minute per IP
+limiter = Limiter(key_func=get_remote_address, default_limits=["100/minute"])
+app.state.limiter = limiter
+
+# Global exception handlers
+@app.exception_handler(RateLimitExceeded)
+async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    return JSONResponse(
+        status_code=429,
+        content={"detail": "Rate limit exceeded. Try again later."},
+    )
+
+@app.exception_handler(Exception)
+async def global_exception_handler(request: Request, exc: Exception):
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error."},
+    )
 
 # A wildcard origin ("*") is incompatible with allow_credentials=True per the
 # fetch/CORS spec (browsers reject the response outright), so dev mode still
