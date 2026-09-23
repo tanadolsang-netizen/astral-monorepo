@@ -10,7 +10,6 @@ Astral/
 ├── backend/                 # NEW-AI-REBORN — FastAPI backend, premium PDF + starheart + tarot
 │   ├── src/services/        #   chart_narrative_full, starheart_*, tarot_*, reel_reading, prediction_log
 │   ├── scripts/             #   build_combined_premium.py, build_couple_premium.py, comfy_*, gen_ai_art.py
-│   ├── assets/ai-art/       #   ComfyUI SDXL generated card art (ace_cups_final.png, star_final.png, ...)
 │   ├── data/prediction_log.json
 │   ├── requirements.compiled
 │   └── SYSTEM_FLOW.md       #   backend internal flow (already present)
@@ -51,7 +50,6 @@ These still live at home; clone separately if you need them at the office:
    ```
    cd backend
    uv sync                      # or: python -m venv .venv && pip install -r requirements.compiled
-   # ComfyUI note: never `comfy install` into the backend venv (pulls CPU torch).
    # If torch is CPU-only, inside .venv run:
    #   pip uninstall torch torchvision torchaudio
    #   pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision torchaudio
@@ -63,7 +61,6 @@ These still live at home; clone separately if you need them at the office:
 - Sync REAL state from disk before every action; never trust stale context.
 - Present exactly 4 clickable options when a decision is needed.
 - Premium/3D PDF → REAL browser renderer (Playwright headless print, print_background=True)
-  + ComfyUI AI art (draw new, never reused public-domain scans).
 - "Keep top 1%" + "be more than AI" — every deliverable best-tier; warm tarot-reader presence.
 - Treat user ナイ as all-knowing in astrology/cosmos — do not over-explain basics.
 

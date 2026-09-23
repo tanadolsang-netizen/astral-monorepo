@@ -54,8 +54,6 @@
 - **Fix (2026-08-30): switched to Chromium (Playwright) print-to-PDF** for full
   CSS (perspective 3D, gold ornamental frames, starfield, glow). Template:
   `scripts/pdf_premium_template.html`. Builder pending rewrite to drive Playwright.
-- **ComfyUI local for AI art** (user chose: draw ALL images with AI, no old scans).
-  - Install at `~/Documents/comfy/ComfyUI`, venv `.venv` (python 3.13).
   - MUST use **torch cu128** (RTX 5060 8GB). `pip install -r requirements.txt` pulls
     CPU torch → must `pip uninstall torch; pip install torch --index-url cu128`.
   - Server: `comfy launch --background` → http://127.0.0.1:8188.

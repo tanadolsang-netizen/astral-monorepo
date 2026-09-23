@@ -2,7 +2,6 @@
 
 Monorepo snapshot for the **same Hermes account**, synced from home machine on **2026-08-31**.
 Contains the latest nightly system (2026-08-30/31): premium dark-mystical PDF, StarHeart
-map/narrative, ComfyUI SDXL art pipeline, tarot TH/EN engine, prediction-log + hit-rate audit.
 
 ## What's in here
 
@@ -30,7 +29,6 @@ hermes profile use default
 # 3. Backend venv (Windows, RTX5060 / Blackwell cu128 torch)
 cd backend
 uv sync
-#   ComfyUI gotcha: never `comfy install` into this venv (CPU torch).
 #   If torch is CPU-only, inside .venv:
 #     pip uninstall torch torchvision torchaudio
 #     pip install --index-url https://download.pytorch.org/whl/cu128 torch torchvision torchaudio
@@ -68,6 +66,5 @@ Typical flow home → office:
 ## Standing orders (also in memory/MEMORY.md — must honor)
 - Sync REAL disk state before every action; never trust stale context.
 - Present exactly 4 clickable options when a decision is needed.
-- Premium/3D PDF → REAL browser renderer (Playwright headless, print_background=True) + ComfyUI AI art (draw new).
 - "Keep top 1%" + "be more than AI" — best-tier deliverables, warm tarot-reader presence.
 - Treat user ナイ as all-knowing in astrology/cosmos.

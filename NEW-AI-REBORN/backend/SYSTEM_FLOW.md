@@ -43,8 +43,6 @@ Client Request
      ▼
 FastAPI Router (src/main.py)
      │
-     ├── /v1/reports/report/*          ← Report endpoints (engine → sections → PDF)
-     ├── /v1/reports/brochure/*        ← Standalone brochure PDFs (single system)
      ├── /v1/fusion/grand/*            ← Grand fusion 18-science engine
      ├── /v1/bazi/*                    ← BaZi engine
      ├── /v1/vedic/*                   ← Vedic engine
@@ -96,7 +94,6 @@ PDF File (temp dir, returned as {ok, file, sections})
 
 ## Report Endpoints → Section Builders → PDF
 
-### Report Endpoints (`/v1/reports/report/*`)
 | Endpoint | Engine | Section Builder | Theme |
 |----------|--------|-----------------|-------|
 | `/report/natal` | compute_chart | build_natal_sections() | natal |
@@ -111,7 +108,6 @@ PDF File (temp dir, returned as {ok, file, sections})
 | `/report/ziwei` | compute_ziwei | _ziwei_sections() | ziwei |
 | `/report/grand-summary` | compute_grand_fusion | _grand_sections() | grand summary |
 
-### Brochure Endpoints (`/v1/reports/brochure/*`)
 Same engines/builders as above, but single-system standalone PDFs.
 | Endpoint | Source Report |
 |----------|---------------|
@@ -219,7 +215,6 @@ render_brochure(sections, out_path, ...)
 ## Data Flow Example: `/report/grand-summary`
 
 ```
-POST /v1/reports/report/grand-summary
   payload: {name, date, time, tz_offset_hours, lat, lon, lang}
      │
      ▼
@@ -413,7 +408,6 @@ from fastapi.testclient import TestClient
 from src.main import app
 client = TestClient(app)
 routes = [
-    ("/v1/reports/report/natal", {"name":"Test","date":"1997-05-19","time":"05:45:00","tz_offset_hours":7.0,"lat":13.36,"lon":100.98}),
     # ... add all routes
 ]
 for route, payload in routes:
@@ -422,7 +416,6 @@ for route, payload in routes:
 PY
 
 # Check health
-curl http://127.0.0.1:8001/v1/reports/health
 ```
 
 ---

@@ -690,22 +690,8 @@
     const box = document.getElementById("r-"+kind);
     box.classList.add("show"); box.innerHTML = "⏳ กำลังอ่านดาวให้ท่านฟัง...";
     let url, payload;
-    if(kind==="natal"){
-      const [lat,lon]=document.getElementById("n-prov").value.split(",");
-      url=API+"/v1/reports/report/natal";
-      payload={name:document.getElementById("n-name").value||"คุณ",date:document.getElementById("n-date").value,
-        time:document.getElementById("n-time").value,tz_offset_hours:7,lat:+lat,lon:+lon,lang:"th"};
-    } else if(kind==="synastry"){
-      url=API+"/v1/reports/report/synastry-dual";
-      const mk=(p,s)=>({name:document.getElementById(p+"-name").value||s,date:document.getElementById(p+"-date").value,
-        time:document.getElementById(p+"-time").value,tz_offset_hours:7,lat:13.7563,lon:100.5018});
-      payload={a:mk("s1","A"),b:mk("s2","B"),spread:"three_card",lang:"th"};
-    } else if(kind==="vedic"){
-      const [lat,lon]=document.getElementById("v-prov").value.split(",");
-      url=API+"/v1/reports/report/vedic";
-      payload={name:document.getElementById("v-name").value||"คุณ",date:document.getElementById("v-date").value,
-        time:document.getElementById("v-time").value,tz_offset_hours:7,lat:+lat,lon:+lon,ayanamsa:"lahiri",lang:"th"};
-    } else if(kind==="tarot"){
+
+    if(kind==="tarot"){
       url=API+"/v1/tarot/draw";
       payload={name:document.getElementById("t-name")?.value||"คุณ",question:document.getElementById("t-q")?.value||"",spread:"three_card",lang:"th",
         birth:{date:"1997-05-19",time:"05:45",tz_offset_hours:7,lat:13.3633,lon:100.9868,system:"tropical"}};
@@ -713,9 +699,7 @@
     try{
       const res = await fetch(url,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
       const data = await res.json();
-      if(data.file){
-        box.innerHTML = `✅ ดาวบอกท่านครบแล้ว (${data.sections} หน้า)<br><a href="${API}/v1/reports/pdf/download?file=${encodeURIComponent(data.file)}" target="_blank">อ่านรายงานที่ฟ้าฝากมา</a>`;
-      } else if(data.cards){
+      if(data.cards){
         renderTarot(box, data);
       } else { box.innerHTML="✅ "+JSON.stringify(data).slice(0,300); }
     } catch(e){ box.innerHTML="❌ "+e; }

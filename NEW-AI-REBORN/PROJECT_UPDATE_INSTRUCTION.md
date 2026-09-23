@@ -15,15 +15,12 @@ C:/AI/NEW-AI-REBORN/
 │   ├── src/
 │   │   ├── main.py             # Entry point, router registration, i18n endpoint
 │   │   ├── routers/            # API route modules
-│   │   │   ├── comfyui.py      # ComfyUI generate + status endpoints
 │   │   │   ├── natal.py        # Natal chart calculation
 │   │   │   ├── tarot.py        # Tarot reading endpoints
 │   │   │   ├── narrative_router.py  # Narrative text generation
 │   │   │   └── ...             # 20+ other routers
 │   │   └── services/
 │   │       ├── narrative_lang.py      # ⭐ SINGLE SOURCE OF TRUTH for all display text
-│   │       ├── comfyui_service.py     # ComfyUI client (queue/poll/return)
-│   │       ├── comfyui_prompt_builder.py  # Astrological → cosmic prompt
 │   │       ├── tarot_knowledge.py     # 78-card tarot knowledge base
 │   │       └── ...             # Other services
 │   ├── i18n.json               # Exported i18n data (11 sections, ~12KB)
@@ -48,12 +45,8 @@ C:/AI/NEW-AI-REBORN/
 - Frontend loads `i18n.json` at startup → injects via `data-i18n` attributes
 - Sections: `NAV`, `HERO`, `LANDING`, `SECTION`, `BUTTONS`, `FORM`, `RESULT`, `APP`, `TAROT`, `BIRTH_FORM`, `INTRO`
 
-### 2. **ComfyUI Generative Art Pipeline**
-- External ComfyUI server at `127.0.0.1:8188` (v0.34.0, Windows, 16GB RAM)
 - Model: `sd_xl_base_1.0.safetensors` (6.9GB)
 - Upscale: `4x-UltraSharp.pth` (66MB) for 4K output
-- Workflow: User birth data → astrological calculation → cosmic prompt → ComfyUI → unique artwork
-- Output served at `/comfyui-output/` (static mount)
 
 ### 3. **Scroll-Driven Storytelling Camera**
 - 5 keyframes: Hero (top-down) → About (angle) → Features (edge-on) → Tarot (Jupiter) → Form (Earth)
@@ -63,7 +56,6 @@ C:/AI/NEW-AI-REBORN/
 ### 4. **Backend Serves Frontend**
 - `GET /` → serves `landing/astral-landing.html`
 - `GET /v1/i18n` → returns full i18n JSON (cached)
-- `GET /comfyui-output/{filename}` → serves generated images
 - No separate frontend server needed for production
 
 ---
@@ -76,10 +68,8 @@ cd C:/AI/NEW-AI-REBORN/backend
 uv run uvicorn src.main:app --host 0.0.0.0 --port 8001
 ```
 
-### ComfyUI (required for image generation)
 ```bash
 # Already running at http://127.0.0.1:8188
-# Models in C:/Users/ADMIN/Documents/comfy/ComfyUI/
 ```
 
 ### Preview (optional, for static testing)
@@ -96,9 +86,6 @@ python -m http.server 8000
 |----------|--------|-------------|
 | `/` | GET | Landing page (i18n-driven) |
 | `/v1/i18n` | GET | Full i18n JSON (all display text) |
-| `/v1/comfyui/generate` | POST | Submit birth data → get job_id |
-| `/v1/comfyui/status/job_{id}` | GET | Poll job status → get image path |
-| `/comfyui-output/{file}` | GET | Serve generated image |
 | `/v1/natal/...` | POST | Natal chart calculation |
 | `/v1/tarot/...` | POST | Tarot reading |
 | `/v1/narrative/...` | POST | Narrative text generation |
@@ -136,11 +123,9 @@ cd C:/AI/NEW-AI-REBORN/backend && uv run uvicorn src.main:app --host 0.0.0.0 --p
 
 ---
 
-## 🎨 ComfyUI Integration Details
 
 ### Generate Request
 ```bash
-curl -X POST http://localhost:8001/v1/comfyui/generate \
   -H "Content-Type: application/json" \
   -d '{"date":"1997-05-19","time":"05:45","lat":13.3611,"lon":100.9847,"name":"ณัฐ"}'
 ```
@@ -148,13 +133,10 @@ Response: `{"job_id":"job_xxxx","prompt":"cosmic garden..."}`
 
 ### Poll Status
 ```bash
-curl http://localhost:8001/v1/comfyui/status/job_xxxx
 ```
-Response: `{"status":"done","image":"/comfyui-output/astral_00031_.png"}`
 
 ### View Image
 ```
-http://localhost:8001/comfyui-output/astral_00031_.png
 ```
 
 ---
@@ -165,7 +147,6 @@ http://localhost:8001/comfyui-output/astral_00031_.png
 - **Style**: Cosmic garden (Kim Krans inspired, original art — no copyright)
 - **Resolution**: 1024×1536 → 4× upscale → ~4096×6144
 - **Time**: ~2-3 hours for 78 cards on RTX 5060 8GB
-- **Output**: `C:/Users/ADMIN/Documents/comfy/ComfyUI/output/`
 
 ---
 
@@ -186,7 +167,6 @@ http://localhost:8001/comfyui-output/astral_00031_.png
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `COMFYUI_OUTPUT_DIR` | `C:/Users/ADMIN/Documents/comfy/ComfyUI/output` | ComfyUI output directory |
 | `OPENROUTER_API_KEY` | (not set) | LLM API key (optional) |
 
 ---
@@ -194,10 +174,8 @@ http://localhost:8001/comfyui-output/astral_00031_.png
 ## 📊 Current State
 
 - **Backend**: ✅ Running on port 8001
-- **ComfyUI**: ✅ Running on port 8188
 - **Landing Page**: ✅ HTTP 200, i18n injection working (51 points)
 - **i18n Endpoint**: ✅ Returns 11 sections, 43+ LANDING keys
-- **ComfyUI Generate**: ✅ Creates jobs, returns image paths
 - **78-Card Generation**: ⏳ Background process (status unclear)
 
 ---

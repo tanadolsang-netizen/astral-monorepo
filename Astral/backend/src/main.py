@@ -16,7 +16,7 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 
-from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, reports, vedic, muhurta, chat, accuracy
+from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, vedic, muhurta, chat, accuracy
 from .routers import new_engines
 from .routers import sky, research
 from .integrations.supabase_client import init_supabase
@@ -96,7 +96,7 @@ app.include_router(fusion_full.router, tags=["fusion-full"])
 app.include_router(fusion_grand.router, tags=["fusion-grand"])
 app.include_router(bazi.router, prefix="/v1/bazi", tags=["bazi"])
 app.include_router(chinese.router, prefix="/v1/chinese", tags=["chinese"])
-app.include_router(reports.router, prefix="/v1/reports", tags=["reports"])
+
 app.include_router(vedic.router, prefix="/v1/vedic", tags=["vedic"])
 app.include_router(muhurta.router, prefix="/v1/muhurta", tags=["muhurta"])
 app.include_router(chat.router, prefix="/v1/chat", tags=["chat"])

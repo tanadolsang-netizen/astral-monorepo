@@ -4,9 +4,7 @@ Command Bus: C:/AI/command/dispatch.py; divisions FORGE/ATLAS/ORACLE; protocol: 
 §
 User instruction (Aug 2026): sync real state from disk before every action; never trust stale context. Other Hermes sessions mutate C:/AI concurrently. When decisions are needed, present exactly 4 clickable options and remember the selection.
 §
-Premium PDF rule (2026-08-30): user REJECTED weasyprint dark theme as 'แย่มาก/downgrade/ไม่สวย/3D อะไรก็ไม่มี'. For premium/3D PDF use REAL browser renderer (Playwright+Chromium headless print, print_background=True) + ComfyUI AI art (draw new, no reused public-domain scans). Large files OK.
 §
-ComfyUI gotcha: `comfy install` pulls CPU torch into wrong venv → launch fails. In .venv: `pip uninstall torch torchvision torchaudio` then reinstall `--index-url https://download.pytorch.org/whl/cu128` (RTX5060=Blackwell). Net slow: SDXL 6.5GB ~20min.
 §
 Second brain: full Astral state in Obsidian C:/AI/obsidian-vault/Astral Project - State & Decisions 2026-08-30.md (git-pushed). Store durable context there when memory cap is tight.
 §
