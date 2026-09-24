@@ -27,10 +27,10 @@ export default function ChatScreen({ navigation, lang }) {
     if (!text) return;
     const userMsg = { id: Date.now(), role: 'user', text };
     const lower = text.toLowerCase();
-    let reply = lang === 'th' ? 'ตาม birth chart ปัจจุบัน แนะนำให้ contemplat การตัดสินใจ carefully' : 'Based on your chart, the current transit emphasizes self-reflection.';
-        if (lower.includes('love') || lower.includes('relationship') || lower.includes('รัก')) reply = lang === 'th' ? 'Venus อยู่ตำแหน่งดี สัปดาห์นี้มี prospects ช่วงกลางเดือนเป็นช่วงดีกว่าสำหรับคนโสด' : 'Venus placement shows strong attraction energy this week.';
-        else if (lower.includes('career') || lower.includes('งาน') || lower.includes('job')) reply = lang === 'th' ? 'Jupiter ใน 10th house โปร่ง related to career จะเริ่มชัดเจนหลังวันที่ 15' : 'Jupiter in your 10th house signals expansion.';
-    else if (lower.includes('money') || lower.includes('เงิน') || lower.includes('finance')) reply = lang === 'th' ? 'ระวัง impulsive buys ระ Hernández full moon เป็นช่วงดีสำหรับการตรวจสอบการลงทุน' : 'Mars-Neptune aspect warns against impulsive buys.';
+    let reply = lang === 'th' ? 'ตามดวงชะตาปัจจุบัน แนะนำให้พิจารณาการตัดสินใจอย่างรอบคอบ' : 'Based on your chart, the current transit emphasizes self-reflection.';
+        if (lower.includes('love') || lower.includes('relationship') || lower.includes('รัก')) reply = lang === 'th' ? 'ศุกร์อยู่ตำแหน่งดี สัปดาห์นี้มีโอกาสด้านความรัก ช่วงกลางเดือนเป็นช่วงที่ดีกว่าสำหรับคนโสด' : 'Venus placement shows strong attraction energy this week.';
+        else if (lower.includes('career') || lower.includes('งาน') || lower.includes('job')) reply = lang === 'th' ? 'พฤหัสบดีอยู่ในบ้านที่ 10 เกี่ยวกับการงาน จะเริ่มชัดเจนหลังวันที่ 15' : 'Jupiter in your 10th house signals expansion.';
+    else if (lower.includes('money') || lower.includes('เงิน') || lower.includes('finance')) reply = lang === 'th' ? 'ระวังการใช้จ่ายอย่างเสียหาย ช่วงพระจันทร์เต็มดวงเป็นช่วงที่ดีสำหรับการตรวจสอบการลงทุน' : 'Mars-Neptune aspect warns against impulsive buys.';
     const botMsg = { id: Date.now() + 1, role: 'bot', text: reply };
     setMessages(prev => [...prev, userMsg, botMsg]);
     setInput('');

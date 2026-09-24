@@ -1,11 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { View, StyleSheet, Animated, Dimensions, Text } from 'react-native';
+import { View, StyleSheet, Animated, useWindowDimensions } from 'react-native';
 import Svg, { Circle, Text as SvgText, G, Path, Defs, RadialGradient, Stop } from 'react-native-svg';
-
-const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get('window');
-const SIZE = Math.min(SCREEN_WIDTH, SCREEN_HEIGHT) * 0.7;
-const CENTER = SIZE / 2;
-const RADIUS = SIZE / 2 - 20;
 
 const SIGNS = [
   { name: 'Aries', emoji: '♈', color: '#ff6b6b', angle: 0 },
@@ -23,6 +18,11 @@ const SIGNS = [
 ];
 
 export default function ZodiacWheel3D() {
+  const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = useWindowDimensions();
+  const SIZE = Math.min(SCREEN_WIDTH, SCREEN_HEIGHT) * 0.7;
+  const CENTER = SIZE / 2;
+  const RADIUS = SIZE / 2 - 20;
+
   const rotateAnim = useRef(new Animated.Value(0)).current;
   const scaleAnim = useRef(new Animated.Value(0.3)).current;
   const opacityAnim = useRef(new Animated.Value(0)).current;
@@ -154,8 +154,8 @@ const styles = StyleSheet.create({
     pointerEvents: 'none',
   },
   wheelContainer: {
-    width: SIZE,
-    height: SIZE,
+    width: '100%',
+    height: '100%',
     alignItems: 'center',
     justifyContent: 'center',
   },

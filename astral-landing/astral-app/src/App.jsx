@@ -71,6 +71,17 @@ const Loading = () => <div style={{
   กำลังคำนวณ...
 </div>
 
+// HTML escape helper — use before injecting any user/server data into innerHTML
+const escapeHtml = (str) => {
+  if (str == null) return ''
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export default function App() {
   const [view, setView] = useState('home')
   const [navScrolled, setNavScrolled] = useState(false)
@@ -89,6 +100,63 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
+<<<<<<< Updated upstream
+=======
+  const onBhDone = useCallback(() => {
+    if (warpDone.current) return
+    warpDone.current = true
+    setView(pendingView.current)
+    window.scrollTo(0, 0)
+    setBh(false)
+  }, [])
+
+  // ดูดวงชะตาจริงผ่าน /v1/natal/compute (JSON) — render ตารางดาว + wheel
+  const [natalChart, setNatalChart] = useState(null)
+  const onNatal = useCallback(async () => {
+    const box = document.getElementById('r-natal')
+    const name = document.getElementById('n-name').value || 'คุณ'
+    const date = document.getElementById('n-date').value
+    const time = document.getElementById('n-time').value || '00:00:00'
+    const prov = document.getElementById('n-prov').value.split(',')
+    const sys = document.getElementById('n-sys').value
+    if (!date) { box.classList.add('show'); box.innerHTML = '❌ กรุณาระบุวันเกิด'; setNatalChart(null); return }
+    box.classList.add('show'); box.innerHTML = '⏳ กำลังคำนวณดวงชะตาให้ท่าน...'
+    try {
+      const res = await fetch('http://127.0.0.1:8000/v1/natal/compute', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name, date, time: time.length <= 5 ? time + ':00' : time,
+          tz_offset_hours: 7, lat: +prov[0], lon: +prov[1], system: sys
+        })
+      })
+      const d = await res.json()
+      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); setNatalChart(null); return }
+      setNatalChart(d)
+      const rows = (d.bodies || []).map(b =>
+        `<tr><td>${escapeHtml(b.body)}</td><td>${escapeHtml(b.sign)}</td><td>${b.degree.toFixed(2)}°</td>
+         <td>${b.absolute_deg.toFixed(2)}°</td><td>H${b.house ?? '-'}</td></tr>`).join('')
+      const asc = d.ascendant || {}
+      const els = d.elements || {}
+      const elHtml = Object.entries(els).map(([k, v]) =>
+        `<span class="el-pill">${escapeHtml(k)} ${typeof v === 'number' ? v.toFixed(0) : escapeHtml(v)}</span>`).join('')
+      const ascSign = escapeHtml(asc.sign || '-')
+      const ascDeg = (asc.degree||0).toFixed(2)
+      const ascAbs = (asc.absolute_deg||0).toFixed(2)
+      const caveatHtml = d.caveat ? `<div class="tcaveat">${escapeHtml(d.caveat)}</div>` : ''
+      box.innerHTML = `
+        <div class="chart-head">🌟 ดวงชะตา <b>${escapeHtml(d.name || name)}</b>
+          <span class="chart-sys">${d.system === 'sidereal' ? 'Sidereal' : 'Tropical'}</span></div>
+        <table class="chart-tbl"><thead><tr><th>ดาว</th><th>ราศี</th><th>องศา</th><th>Absolute</th><th>บ้าน</th></tr></thead>
+          <tbody>${rows}
+          <tr class="asc-row"><td>ASC</td><td>${ascSign}</td><td>${ascDeg}°</td><td>${ascAbs}°</td><td>H1</td></tr>
+          </tbody></table>
+        <div class="el-row">${elHtml}</div>
+        ${caveatHtml}`
+    } catch (e) { box.innerHTML = '❌ ' + e; setNatalChart(null) }
+  }, [])
+
+  // helper ดึงค่าฟอร์มธรรมดา
+>>>>>>> Stashed changes
   const gv = (id) => document.getElementById(id)?.value || ''
 
   // ── Natal Chart ──
@@ -99,6 +167,7 @@ export default function App() {
     box.innerHTML = '<div class="loading"><span></span>กำลังคำนวณดวงชะตา...</div>'
     setLoading(true)
     try {
+<<<<<<< Updated upstream
       const date = gv('n-date')
       if (!date) { box.innerHTML = '<span style="color:#c44">กรุณาระบุวันเกิด</span>'; return }
       const time = (gv('n-time') || '12:00') + ':00'
@@ -124,6 +193,28 @@ export default function App() {
     } catch (e) { box.innerHTML = '❌ ' + e.message }
     setLoading(false)
   }
+=======
+      const res = await fetch('http://127.0.0.1:8000/v1/synastry/cross-aspects', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ a: mk('a'), b: mk('b') }) })
+      const d = await res.json()
+      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); return }
+      const ca = d.cross_aspects || []
+      const rows = ca.slice(0, 12).map(x =>
+        `<tr><td>${escapeHtml(x.body_a)} × ${escapeHtml(x.body_b)}</td><td class="asp-${escapeHtml(x.aspect)}">${escapeHtml(x.aspect)}</td><td>${x.orb?.toFixed(2)}°</td></tr>`).join('')
+      const ea = d.elements_a?.dominant, eb = d.elements_b?.dominant
+      const aName = escapeHtml(mk('a').name)
+      const bName = escapeHtml(mk('b').name)
+      const eaStr = escapeHtml(ea || '-')
+      const ebStr = escapeHtml(eb || '-')
+      const caveatHtml = d.caveat ? `<div class="tcaveat">${escapeHtml(d.caveat)}</div>` : ''
+      box.innerHTML = `<div class="chart-head">💞 กระแสสองดวง <b>${aName}</b> × <b>${bName}</b></div>
+        <div class="el-row"><span class="el-pill">A dominant: ${eaStr}</span><span class="el-pill">B dominant: ${ebStr}</span></div>
+        <table class="chart-tbl"><thead><tr><th>Aspect</th><th>ประเภท</th><th>Orb</th></tr></thead><tbody>${rows}${ca.length>12?`<tr><td colspan="3" style="opacity:.6">…อีก ${ca.length-12} aspects</td></tr>`:''}</tbody></table>
+        ${caveatHtml}`
+    } catch (e) { box.innerHTML = '❌ ' + e }
+  }, [])
+>>>>>>> Stashed changes
 
   // ── Tarot ──
   const onTarot = async () => {
@@ -198,6 +289,7 @@ export default function App() {
       })
       if (!d.lagna) { box.innerHTML = `<span style="color:#c44">${d.detail || 'คำนวณไม่สำเร็จ'}</span>`; return }
       const nk = d.nakshatra || {}
+<<<<<<< Updated upstream
       box.innerHTML = `<div style="font-family:Cinzel,serif;font-size:18px;color:#2e2818;margin-bottom:12px">🪐 ดวงเวดิก <b>${d.person_name}</b></div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
         <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">Lagna: ${d.lagna || '-'}</span>
@@ -209,6 +301,27 @@ export default function App() {
     } catch (e) { box.innerHTML = '❌ ' + e.message }
     setLoading(false)
   }
+=======
+      const personName = escapeHtml(d.person_name || gv('v-name'))
+      const lagna = escapeHtml(d.lagna || '-')
+      const surya = escapeHtml(d.surya_rashi || '-')
+      const chandra = escapeHtml(d.chandra_rashi || '-')
+      const nkName = escapeHtml(nk.name_th || nk.name_en || '-')
+      const nkPada = escapeHtml(nk.pada || '-')
+      const interpHtml = d.interpretation ? `<p class="vedic-int">${escapeHtml(d.interpretation)}</p>` : ''
+      const caveatHtml = d.caveat ? `<div class="tcaveat">${escapeHtml(d.caveat)}</div>` : ''
+      box.innerHTML = `<div class="chart-head">🪐 ดวงเวดิก <b>${personName}</b></div>
+        <div class="el-row">
+          <span class="el-pill">Lagna: ${lagna}</span>
+          <span class="el-pill">สุริยะ: ${surya}</span>
+          <span class="el-pill">จันทรา: ${chandra}</span>
+          <span class="el-pill">Nakshatra: ${nkName} (pada ${nkPada})</span>
+        </div>
+        ${interpHtml}
+        ${caveatHtml}`
+    } catch (e) { box.innerHTML = '❌ ' + e }
+  }, [])
+>>>>>>> Stashed changes
 
   // ── Horary ──
   const onHorary = async () => {
@@ -218,6 +331,7 @@ export default function App() {
     box.innerHTML = '<div class="loading"><span></span>ถามจักรวาล...</div>'
     setLoading(true)
     try {
+<<<<<<< Updated upstream
       const q = gv('h-q')
       if (!q) { box.innerHTML = '<span style="color:#c44">พิมพ์คำถามก่อน</span>'; return }
       const prov = gv('h-prov') || '13.7563,100.5018'
@@ -235,6 +349,50 @@ export default function App() {
     } catch (e) { box.innerHTML = '❌ ' + e.message }
     setLoading(false)
   }
+=======
+      const res = await fetch('http://127.0.0.1:8000/v1/muhurta/find', {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action, start_date: date, days, lat, lon,
+          tz_offset_hours: 7, top_n: 3 }) })
+      const d = await res.json()
+      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); return }
+      const wins = (d.windows && Array.isArray(d.windows)) ? d.windows : []
+      const actionTh = escapeHtml(d.action_th || action)
+      const rows = wins.slice(0, 5).map(w => {
+        const when = (w.when_local || w.start || '-')
+        const dt = when.split('T'); const day = escapeHtml(dt[0]); const tm = escapeHtml((dt[1]||'').slice(0,5))
+        const reasons = (w.reasons_th || []).map(r => escapeHtml(r)).join(' · ')
+        const score = w.score ?? '-'
+        return `<tr><td>${day}</td><td class="asp-good">${tm}</td><td class="asp-good">${score}</td></tr>
+          ${reasons?`<tr class="m-reason"><td colspan="3">${reasons}</td></tr>`:''}`
+      }).join('')
+      const caveatHtml = d.caveat ? `<div class="tcaveat">${escapeHtml(d.caveat)}</div>` : ''
+      box.innerHTML = `<div class="chart-head">⏳ ชั่วโมงมงคลสำหรับ <b>${actionTh}</b></div>
+        <table class="chart-tbl"><thead><tr><th>วัน</th><th>เวลา</th><th>คะแนน</th></tr></thead><tbody>${rows||'<tr><td colspan="3">ไม่พบหน้าต่างมงคลในช่วงที่เลือก</td></tr>'}</tbody></table>
+        ${caveatHtml}`
+    } catch (e) { box.innerHTML = '❌ ' + e }
+  }, [])
+  useEffect(() => {
+    window.__renderTarot = (box, data) => {
+      const narr = (data.narrative && (data.narrative.th || data.narrative.en)) || ''
+      const cards = data.cards || []
+      const flipHtml = cards.map((c, i) => {
+        const rawNm = c.card ? c.card.replace(' of ', ' แห่ง ') : (c.name || '')
+        const nm = escapeHtml(rawNm)
+        const or = c.orientation === 'reversed' ? ' ( reversed )' : ''
+        return `<div class="tcard" data-i="${i}" onclick="if(window.__flipTarot3D)window.__flipTarot3D(${i})">${nm}${escapeHtml(or)}</div>`
+      }).join('')
+      const narrHtml = narr
+        ? `<div class="tnarr">${escapeHtml(narr).split('\n').map(l => {
+            const t = l.trim(); if (!t) return ''
+            return /^\[/.test(t) ? `<p class="story">${t}</p>` : `<p>${t}</p>`
+          }).join('')}</div>` : ''
+      const caveat = data.caveat ? `<div class="tcaveat">${escapeHtml(data.caveat)}</div>` : ''
+      box.innerHTML = `<div class="tcards">${flipHtml}</div>${narrHtml}${caveat}`
+      window.__tarotCards = cards
+    }
+  }, [])
+>>>>>>> Stashed changes
 
   return (
     <div className="ui" ref={mainRef}>

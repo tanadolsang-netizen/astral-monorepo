@@ -65,6 +65,14 @@ export const translations = {
     timing: {
       title: 'Cosmic Timing',
       subtitle: 'Align actions with planetary rhythms',
+      today: 'Today',
+      tomorrow: 'Tomorrow',
+      week: 'This Week',
+      month: 'This Month',
+      vibeToday: 'Mercury sextile Jupiter — communication flows. Good for signing, learning, short trips.',
+      vibeTomorrow: 'Moon trine Saturn — emotional stability. Focus on long-term planning and discipline.',
+      vibeWeek: 'Sun enters your 5th house — creativity peaks. Romance and self-expression favored.',
+      vibeMonth: 'Full moon in your career sector — professional culmination. Public recognition possible.',
     },
     about: {
       title: 'Astral ✨',
@@ -139,7 +147,15 @@ export const translations = {
     },
     timing: {
       title: 'เวลาดวง',
-      subtitle: 'ปรับ action ให้ตรงกับ planetary rhythms',
+      subtitle: 'ปรับการทำงานให้ตรงกับจังหวะดวงดาว',
+      today: 'วันนี้',
+      tomorrow: 'พรุ่งนี้',
+      week: 'สัปดาห์นี้',
+      month: 'เดือนนี้',
+      vibeToday: 'พุธเสริมพฤหัสบดี — การสื่อสารไหลลง เหมาะสำหรับเซ็นสัญญา การเรียนรู้ การเดินทางสั้น',
+      vibeTomorrow: 'จันทร์ตรีศุกร์ — ความมั่นคงทางอารมณ์ มุ่งเน้นวางแผนระยะยาวและวินัย',
+      vibeWeek: 'พระอาทิตย์เข้าบ้านที่ 5 — ความคิดสร้างสรรค์สูงสุด ความรักและการแสดงออกได้รับการสนับสนุน',
+      vibeMonth: 'พระจันทร์เต็มดวงในภาคีการงาน — ช่วงสุดยอดอาชีพ อาจได้รับการยอมรับจากสาธารณชน',
     },
     about: {
       title: 'Astral ✨',
