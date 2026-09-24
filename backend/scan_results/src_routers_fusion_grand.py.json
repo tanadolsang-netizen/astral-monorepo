@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\fusion_grand.py", "analysis": "BUGS: None  \nDEAD: Unused `from __future__ import annotations` (can be removed)  \nRISK: No obvious security risks; error handling is adequate  \nSMELL: `exc_info=True` in logger may log sensitive data if not filtered  \nOK: CLEAN — Well-structured, handles errors, and uses proper typing."}

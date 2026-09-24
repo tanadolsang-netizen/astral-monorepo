@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\bazi.py", "analysis": "BUGS: None  \nDEAD: Unused `CAVEAT` import (assuming it's defined elsewhere)  \nRISK: No obvious security or data-loss risks  \nSMELL: Redundant error handling in `/yearly` endpoints; could centralize exceptions  \nOK: CLEAN — Well-structured, consistent error handling, and clear separation of concerns."}

@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\event_service.py", "analysis": "BUGS: None  \nDEAD: Unused import `uuid` (should use `uuid.uuid4()` directly)  \nRISK: No risk  \nSMELL: SQLite is used for production; consider using a proper DB like PostgreSQL. Also, connection handling could be improved with context managers.  \nOK: Not clean, but no critical issues."}

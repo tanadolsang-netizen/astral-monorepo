@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\research.py", "analysis": "BUGS: None  \nDEAD: Unused `from __future__ import annotations` and `Any` type (could use specific types)  \nRISK: No risk detected  \nSMELL: Query results not cached, may cause performance issues under load  \nOK: CLEAN - File is functional with minor style improvements possible."}

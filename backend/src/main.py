@@ -10,10 +10,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-logging.basicConfig(
-    level=os.getenv("LOG_LEVEL", "INFO"),
-    format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
-)
+from .services.observability import setup_logging, attach_observability
+
+# Structured JSON logging (falls back to plain stdlib if python-json-logger missing)
+setup_logging()
+
 logger = logging.getLogger("astral")
 
 from fastapi import FastAPI, Request
@@ -72,6 +73,9 @@ app = FastAPI(
     version="3.0.0",
     lifespan=lifespan,
 )
+
+# Observability: request ID & timing middleware, /health, /metrics, startup log
+attach_observability(app)
 
 # ── Request ID ──────────────────────────────────────────────
 @app.middleware("http")
@@ -273,12 +277,13 @@ async def get_i18n():
 # ── Landing Page ─────────────────────────────────────────────
 import os
 
-# Serve landing page from ../landing/ directory (not backend/static/)
+# Serve landing page from repo-root astral-landing/ directory
 landing_dir = os.path.dirname(os.path.abspath(__file__))
-_landing_path = os.path.normpath(os.path.join(landing_dir, "..", "..", "landing"))
+_landing_path = os.path.normpath(os.path.join(landing_dir, "..", "..", "astral-landing"))
 
-# Static mount for all landing HTML files (spa, intro, etc.)
-app.mount("/landing", StaticFiles(directory=_landing_path), name="landing")
+if os.path.isdir(_landing_path):
+    # Static mount for all landing HTML files (spa, intro, etc.)
+    app.mount("/landing", StaticFiles(directory=_landing_path), name="landing")
 
 @app.get("/", response_class=HTMLResponse, include_in_schema=False)
 async def landing_page():

@@ -1,7 +1,7 @@
 """Persistent JSON store for timestamped prediction logs.
 
 Simple, dependency-free JSON file at:
-    C:/AI/NEW-AI-REBORN/data/prediction_log.json
+    <repo>/backend/data/prediction_log.json
 
 Provides load/store functions used by src.services.prediction_log.
 """

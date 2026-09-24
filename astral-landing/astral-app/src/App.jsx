@@ -1,428 +1,470 @@
-import { useRef, useState, useEffect, useCallback } from 'react'
-import { Canvas } from '@react-three/fiber'
-import CosmicScene from './CosmicScene.jsx'
-import OrbitGalaxy from './OrbitGalaxy.jsx'
-import NatalWheel from './NatalWheel.jsx'
-import CanvasBoundary from './CanvasBoundary.jsx'
-import Tarot3D from './Tarot3D.jsx'
-import GlitterWarp from './GlitterWarp.jsx'
-import BlackHole from './BlackHole.jsx'
-import Intro from './Intro.jsx'
-import { useAstralApi } from './api.js'
+import { useState, useEffect, useRef } from 'react'
 
-const VIEWS = ['home', 'natal', 'synastry', 'vedic', 'tarot', 'muhurta', 'life']
+const VIEWS = ['home', 'natal', 'tarot', 'synastry', 'vedic', 'horary', 'ai-reading', 'life']
+
+const NAV_LABELS = {
+  'home': 'หน้าแรก',
+  'natal': 'ดูดวงชะตา',
+  'tarot': 'ไพ่ทาโรต์',
+  'synastry': 'ดูคู่',
+  'vedic': 'เวดิก',
+  'horary': 'ถามดวง',
+  'ai-reading': 'AI อ่านดวง',
+  'life': 'ชีวิตคุณ',
+}
+
+const S = {
+  hero: {
+    pill: '✦ โหราศาสตร์ครบวงจร',
+    title1: 'ดาวแต่ละดวง',
+    title2: 'เลือกทาง',
+    title3: 'เอง',
+    title4: 'ให้คุณ',
+    description: 'วันที่คุณลืมตามาเกิด ดาวแต่ละดวงจัดเรียงตัวเองให้พอดีจนคุณได้เห็น — มาค้นหาว่าท้องฟ้ากำลังจะบอกอะไรคุณ',
+    cta: 'ดูดวงชะตาของคุณ',
+  },
+  sections: {
+    tarot: {
+      eyebrow: '🔮 ไพ่ทาโรต์',
+      title: 'ไพ่เปิด',
+      titleAccent: 'เส้นทาง',
+      desc: 'สับไพ่แล้วให้ไพ่ตอบคำถามที่คุณอยากรู้',
+      cta: 'เปิดไพ่',
+    },
+    synastry: {
+      eyebrow: '💞 ดูคู่',
+      title: 'สองดวง',
+      titleAccent: 'เดินด้วยกัน',
+      desc: 'เปรียบเทียบดวงชะตาสองคน ดูว่าเราเข้ากันได้แค่ไหน',
+      cta: 'ดูคู่',
+    },
+    vedic: {
+      eyebrow: '🪐 เวดิก',
+      title: 'โหราศาสตร์',
+      titleAccent: 'อินเดียโบราณ',
+      desc: 'Nakshatra, Dasha, Yoga — ภาษาของดาวแบบอินเดีย',
+      cta: 'ดูดวงเวดิก',
+    },
+  },
+}
+
+const callApi = async (url, body) => {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(body),
+  })
+  return res.json()
+}
+
+const Loading = () => <div style={{
+  display: 'inline-flex', alignItems: 'center', gap: '10px',
+  fontSize: '14px', color: 'var(--gold)', padding: '20px 0',
+}}>
+  <span style={{
+    width: '18px', height: '18px',
+    border: '2px solid var(--gold-soft)',
+    borderTopColor: 'var(--gold)',
+    borderRadius: '50%',
+    display: 'inline-block',
+  }} />
+  กำลังคำนวณ...
+</div>
 
 export default function App() {
   const [view, setView] = useState('home')
-  const [warp, setWarp] = useState(false)
-  const [introDone, setIntroDone] = useState(false)
-  const zoomRef = useRef(0)
-  const pendingView = useRef('home')
-  const warpDone = useRef(false)
-  const { call } = useAstralApi()
-  const [orbitSel, setOrbitSel] = useState(null)   // โหนดวงโคจรที่เลือก (BlueYard)
-  const [canvasAlive, setCanvasAlive] = useState(true)  // ตัด Canvas เมื่อ WebGL context lost
+  const [navScrolled, setNavScrolled] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const mainRef = useRef(null)
 
-  // ติดตาม scroll → zoom context (เฉพาะท้ายหน้า)
   useEffect(() => {
-    const onScroll = () => {
-      const max = Math.max(1, document.documentElement.scrollHeight - innerHeight)
-      const prog = (window.scrollY || document.documentElement.scrollTop || 0) / max
-      const z = (prog - 0.62) / 0.38
-      zoomRef.current = Math.min(1, Math.max(0, z))
-    }
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const handleScroll = () => setNavScrolled(window.scrollY > 40)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Enter transition: ซูมหลุมดำ (Black Hole) เมื่อกดเมนู → ดูดกลืนแล้วสลับ view
-  const [bh, setBh] = useState(false)
-  const goView = useCallback((name) => {
-    if (!VIEWS.includes(name) || name === view) return
-    pendingView.current = name
-    warpDone.current = false
-    setBh(true)            // เล่น black hole zoom
-  }, [view])
+  const goView = (name) => {
+    if (!VIEWS.includes(name)) return
+    setView(name)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
-  const onBhDone = useCallback(() => {
-    if (warpDone.current) return
-    warpDone.current = true
-    setView(pendingView.current)
-    window.scrollTo(0, 0)
-    setBh(false)
-  }, [])
-
-  // ดูดวงชะตาจริงผ่าน /v1/natal/compute (JSON) — render ตารางดาว + wheel
-  const [natalChart, setNatalChart] = useState(null)
-  const onNatal = useCallback(async () => {
-    const box = document.getElementById('r-natal')
-    const name = document.getElementById('n-name').value || 'คุณ'
-    const date = document.getElementById('n-date').value
-    const time = document.getElementById('n-time').value || '00:00:00'
-    const prov = document.getElementById('n-prov').value.split(',')
-    const sys = document.getElementById('n-sys').value
-    if (!date) { box.classList.add('show'); box.innerHTML = '❌ กรุณาระบุวันเกิด'; setNatalChart(null); return }
-    box.classList.add('show'); box.innerHTML = '⏳ กำลังคำนวณดวงชะตาให้ท่าน...'
-    try {
-      const res = await fetch('http://127.0.0.1:8000/v1/natal/compute', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name, date, time: time.length <= 5 ? time + ':00' : time,
-          tz_offset_hours: 7, lat: +prov[0], lon: +prov[1], system: sys
-        })
-      })
-      const d = await res.json()
-      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); setNatalChart(null); return }
-      setNatalChart(d)
-      const rows = (d.bodies || []).map(b =>
-        `<tr><td>${b.body}</td><td>${b.sign}</td><td>${b.degree.toFixed(2)}°</td>
-         <td>${b.absolute_deg.toFixed(2)}°</td><td>H${b.house ?? '-'}</td></tr>`).join('')
-      const asc = d.ascendant || {}
-      const els = d.elements || {}
-      const elHtml = Object.entries(els).map(([k, v]) =>
-        `<span class="el-pill">${k} ${typeof v === 'number' ? v.toFixed(0) : v}</span>`).join('')
-      box.innerHTML = `
-        <div class="chart-head">🌟 ดวงชะตา <b>${d.name || name}</b>
-          <span class="chart-sys">${d.system === 'sidereal' ? 'Sidereal' : 'Tropical'}</span></div>
-        <table class="chart-tbl"><thead><tr><th>ดาว</th><th>ราศี</th><th>องศา</th><th>Absolute</th><th>บ้าน</th></tr></thead>
-          <tbody>${rows}
-          <tr class="asc-row"><td>ASC</td><td>${asc.sign || '-'}</td><td>${(asc.degree||0).toFixed(2)}°</td><td>${(asc.absolute_deg||0).toFixed(2)}°</td><td>H1</td></tr>
-          </tbody></table>
-        <div class="el-row">${elHtml}</div>
-        ${d.caveat ? `<div class="tcaveat">${d.caveat}</div>` : ''}`
-    } catch (e) { box.innerHTML = '❌ ' + e; setNatalChart(null) }
-  }, [])
-
-  // helper ดึงค่าฟอร์มธรรมดา
   const gv = (id) => document.getElementById(id)?.value || ''
-  const prov = (id) => (gv(id).split(',')).map(Number)
 
-  // ดูคู่ Synastry จริง (/v1/synastry/cross-aspects)
-  const onSynastry = useCallback(async () => {
-    const box = document.getElementById('r-synastry')
-    const mk = (p) => ({ name: gv(`s-${p}-name`) || ' ', date: gv(`s-${p}-date`),
-      time: (gv(`s-${p}-time`) || '00:00') + ':00', tz_offset_hours: 7,
-      lat: prov(`s-${p}-prov`)[0], lon: prov(`s-${p}-prov`)[1], system: 'tropical' })
-    if (!gv('s-a-date') || !gv('s-b-date')) { box.classList.add('show'); box.innerHTML = '❌ ระบุวันเกิดทั้งสองท่าน'; return }
-    box.classList.add('show'); box.innerHTML = '⏳ กำลังลากเส้น aspect ระหว่างสองดวง...'
+  // ── Natal Chart ──
+  const onNatal = async () => {
+    const box = document.getElementById('r-natal')
+    if (!box) return
+    box.classList.add('show')
+    box.innerHTML = '<div class="loading"><span></span>กำลังคำนวณดวงชะตา...</div>'
+    setLoading(true)
     try {
-      const res = await fetch('http://127.0.0.1:8000/v1/synastry/cross-aspects', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ a: mk('a'), b: mk('b') }) })
-      const d = await res.json()
-      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); return }
-      const ca = d.cross_aspects || []
-      const rows = ca.slice(0, 12).map(x =>
-        `<tr><td>${x.body_a} × ${x.body_b}</td><td class="asp-${x.aspect}">${x.aspect}</td><td>${x.orb?.toFixed(2)}°</td></tr>`).join('')
-      const ea = d.elements_a?.dominant, eb = d.elements_b?.dominant
-      box.innerHTML = `<div class="chart-head">💞 กระแสสองดวง <b>${mk('a').name}</b> × <b>${mk('b').name}</b></div>
-        <div class="el-row"><span class="el-pill">A dominant: ${ea||'-'}</span><span class="el-pill">B dominant: ${eb||'-'}</span></div>
-        <table class="chart-tbl"><thead><tr><th>Aspect</th><th>ประเภท</th><th>Orb</th></tr></thead><tbody>${rows}${ca.length>12?`<tr><td colspan="3" style="opacity:.6">…อีก ${ca.length-12} aspects</td></tr>`:''}</tbody></table>
-        ${d.caveat?`<div class="tcaveat">${d.caveat}</div>`:''}`
-    } catch (e) { box.innerHTML = '❌ ' + e }
-  }, [])
+      const date = gv('n-date')
+      if (!date) { box.innerHTML = '<span style="color:#c44">กรุณาระบุวันเกิด</span>'; return }
+      const time = (gv('n-time') || '12:00') + ':00'
+      const prov = gv('n-prov') || '13.7563,100.5018'
+      const [lat, lon] = prov.split(',').map(v => parseFloat(v) || 0)
+      const d = await callApi('/v1/natal/compute', {
+        name: gv('n-name') || 'คุณ', date, time, tz_offset_hours: 7, lat, lon,
+        system: gv('n-sys') || 'tropical'
+      })
+      if (!d.bodies) { box.innerHTML = `<span style="color:#c44">${d.detail || 'คำนวณไม่สำเร็จ'}</span>`; return }
+      const rows = d.bodies.map(b =>
+        `<tr><td>${b.body}</td><td>${b.sign}</td><td>${b.degree.toFixed(2)}°</td><td>H${b.house ?? '-'}</td></tr>`
+      ).join('')
+      const asc = d.ascendant || {}
+      box.innerHTML = `<div style="font-family:Cinzel,serif;font-size:18px;color:#2e2818;margin-bottom:12px">
+        🌟 ดวงชะตา <b>${d.name}</b>
+        <span style="font-size:11px;color:#7a1f2b;border:1px solid var(--gold-soft);border-radius:12px;padding:3px 12px;margin-left:8px">${d.system === 'sidereal' ? 'Sidereal' : 'Tropical'}</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:14px;color:#3b3324">
+        <thead><tr><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">ดาว</th><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">ราศี</th><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">องศา</th><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">บ้าน</th></tr></thead>
+        <tbody>${rows}<tr style="font-weight:700;background:rgba(201,168,76,.08)"><td>ASC</td><td>${asc.sign || '-'}</td><td>${(asc.degree||0).toFixed(2)}°</td><td>H1</td></tr></tbody>
+      </table>`
+    } catch (e) { box.innerHTML = '❌ ' + e.message }
+    setLoading(false)
+  }
 
-  // เวดิกจริง (/v1/vedic/chart)
-  const onVedic = useCallback(async () => {
+  // ── Tarot ──
+  const onTarot = async () => {
+    const box = document.getElementById('r-tarot')
+    if (!box) return
+    box.classList.add('show')
+    box.innerHTML = '<div class="loading"><span></span>ไพ่กำลังถูกสับ...</div>'
+    setLoading(true)
+    try {
+      const d = await callApi('/v1/tarot/draw', {
+        name: 'คุณ', question: gv('t-q') || '', spread: 'three_card', lang: 'th',
+      })
+      if (!d.cards) { box.innerHTML = `<span style="color:#c44">${d.detail || 'ไม่สามารถสับไพ่ได้'}</span>`; return }
+      const cards = d.cards.map((c, i) => {
+        const nm = (c.card || c.name || '').replace(/ of /g, ' แห่ง ')
+        const or = c.orientation === 'reversed' ? ' 🔄' : ''
+        return `<div style="background:linear-gradient(135deg,rgba(154,123,52,.15),rgba(201,168,76,.08));border:1px solid var(--gold-soft);border-radius:12px;padding:12px 16px;font-size:14px;color:#0a0712;cursor:pointer;transition:all .3s" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform=''">🃏 ${nm}${or}</div>`
+      }).join('')
+      const narr = d.narrative || d.reading || ''
+      box.innerHTML = `<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">${cards}</div>
+      ${narr ? `<p style="line-height:1.9;font-size:15px;color:#3b3324">${narr}</p>` : ''}
+      ${d.caveat ? `<div style="margin-top:12px;font-size:12px;opacity:.6;border-top:1px dashed var(--gold-soft);padding-top:12px">${d.caveat}</div>` : ''}`
+    } catch (e) { box.innerHTML = '❌ ' + e.message }
+    setLoading(false)
+  }
+
+  // ── AI Reading ──
+  const onAiReading = async () => {
+    const box = document.getElementById('r-ai')
+    if (!box) return
+    box.classList.add('show')
+    box.innerHTML = '<div class="loading"><span></span>AI กำลังวิเคราะห์ดวงชะตา...</div>'
+    setLoading(true)
+    try {
+      const date = gv('ai-date')
+      if (!date) { box.innerHTML = '<span style="color:#c44">กรุณาระบุวันเกิด</span>'; return }
+      const time = (gv('ai-time') || '12:00') + ':00'
+      const prov = gv('ai-prov') || '13.7563,100.5018'
+      const [lat, lon] = prov.split(',').map(v => parseFloat(v) || 0)
+      const d = await callApi('/v1/ai/reading', {
+        name: gv('ai-name') || 'คุณ', date, time, tz_offset_hours: 7, lat, lon, system: 'tropical'
+      })
+      if (!d.sections) { box.innerHTML = `<span style="color:#c44">${d.detail || 'ไม่สามารถสร้าง narrative ได้'}</span>`; return }
+      let html = ''
+      for (const [section, paras] of Object.entries(d.sections)) {
+        if (paras && paras.length) {
+          html += `<div style="margin-bottom:20px"><h4 style="font-family:Cinzel,serif;color:#2e2818;margin-bottom:8px">${section}</h4>`
+          for (const p of paras) html += `<p style="line-height:1.85;font-size:15px;color:#3b3324;margin-bottom:8px">${p}</p>`
+          html += `</div>`
+        }
+      }
+      box.innerHTML = html || '<span style="color:#c44">ไม่สามารถสร้าง narrative ได้</span>'
+    } catch (e) { box.innerHTML = '❌ ' + e.message }
+    setLoading(false)
+  }
+
+  // ── Vedic ──
+  const onVedic = async () => {
     const box = document.getElementById('r-vedic')
-    const date = gv('v-date'), time = (gv('v-time') || '00:00')
-    if (!date) { box.classList.add('show'); box.innerHTML = '❌ ระบุวันเกิด'; return }
-    const [lat, lon] = prov('v-prov')
-    box.classList.add('show'); box.innerHTML = '⏳ กำลังเลื่อนดาวไปตำแหน่ง sidereal...'
+    if (!box) return
+    box.classList.add('show')
+    box.innerHTML = '<div class="loading"><span></span>กำลังเลื่อนดาวไปตำแหน่ง sidereal...</div>'
+    setLoading(true)
     try {
-      const res = await fetch('http://127.0.0.1:8000/v1/vedic/chart', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: gv('v-name') || 'คุณ',
-          birth: { date, time, lat, lon, tz_offset_hours: 7 } }) })
-      const d = await res.json()
-      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); return }
+      const date = gv('v-date')
+      if (!date) { box.innerHTML = '<span style="color:#c44">กรุณาระบุวันเกิด</span>'; return }
+      const time = (gv('v-time') || '12:00') + ':00'
+      const prov = gv('v-prov') || '13.7563,100.5018'
+      const [lat, lon] = prov.split(',').map(v => parseFloat(v) || 0)
+      const d = await callApi('/v1/vedic/chart', {
+        name: gv('v-name') || 'คุณ', birth: { date, time, lat, lon, tz_offset_hours: 7 }
+      })
+      if (!d.lagna) { box.innerHTML = `<span style="color:#c44">${d.detail || 'คำนวณไม่สำเร็จ'}</span>`; return }
       const nk = d.nakshatra || {}
-      box.innerHTML = `<div class="chart-head">🪐 ดวงเวดิก <b>${d.person_name||gv('v-name')}</b></div>
-        <div class="el-row">
-          <span class="el-pill">Lagna: ${d.lagna||'-'}</span>
-          <span class="el-pill">สุริยะ: ${d.surya_rashi||'-'}</span>
-          <span class="el-pill">จันทรา: ${d.chandra_rashi||'-'}</span>
-          <span class="el-pill">Nakshatra: ${nk.name_th||nk.name_en||'-'} (pada ${nk.pada||'-'})</span>
-        </div>
-        ${d.interpretation?`<p class="vedic-int">${d.interpretation}</p>`:''}
-        ${d.caveat?`<div class="tcaveat">${d.caveat}</div>`:''}`
-    } catch (e) { box.innerHTML = '❌ ' + e }
-  }, [])
+      box.innerHTML = `<div style="font-family:Cinzel,serif;font-size:18px;color:#2e2818;margin-bottom:12px">🪐 ดวงเวดิก <b>${d.person_name}</b></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">Lagna: ${d.lagna || '-'}</span>
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">สุริยะ: ${d.surya_rashi || '-'}</span>
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">จันทรา: ${d.chandra_rashi || '-'}</span>
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">Nakshatra: ${nk.name_th || nk.name_en || '-'} (pada ${nk.pada || '-'})</span>
+      </div>
+      ${d.interpretation ? `<p style="line-height:1.85;font-size:15px;color:#3b3324;margin-top:12px">${d.interpretation}</p>` : ''}`
+    } catch (e) { box.innerHTML = '❌ ' + e.message }
+    setLoading(false)
+  }
 
-  // มูฮูร์ตะจริง (/v1/muhurta/find)
-  const onMuhurta = useCallback(async () => {
-    const box = document.getElementById('r-muhurta')
-    const action = gv('m-action'), date = gv('m-date'), days = +gv('m-days') || 60
-    if (!date) { box.classList.add('show'); box.innerHTML = '❌ ระบุวันเริ่มหา'; return }
-    const [lat, lon] = prov('m-prov')
-    box.classList.add('show'); box.innerHTML = '⏳ กำลังหาชั่วโมงมงคล (อาจใช้เวลาสักครู่)...'
+  // ── Horary ──
+  const onHorary = async () => {
+    const box = document.getElementById('r-horary')
+    if (!box) return
+    box.classList.add('show')
+    box.innerHTML = '<div class="loading"><span></span>ถามจักรวาล...</div>'
+    setLoading(true)
     try {
-      const res = await fetch('http://127.0.0.1:8000/v1/muhurta/find', {
-        method: 'POST', headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action, start_date: date, days, lat, lon,
-          tz_offset_hours: 7, top_n: 3 }) })
-      const d = await res.json()
-      if (!res.ok) { box.innerHTML = '❌ ' + (d.detail || res.status); return }
-      const wins = (d.windows && Array.isArray(d.windows)) ? d.windows : []
-      const rows = wins.slice(0, 5).map(w => {
-        const when = (w.when_local || w.start || '-')
-        const dt = when.split('T'); const day = dt[0]; const tm = (dt[1]||'').slice(0,5)
-        const reasons = (w.reasons_th || []).join(' · ')
-        return `<tr><td>${day}</td><td class="asp-good">${tm}</td><td class="asp-good">${w.score??'-'}</td></tr>
-          ${reasons?`<tr class="m-reason"><td colspan="3">${reasons}</td></tr>`:''}`
-      }).join('')
-      box.innerHTML = `<div class="chart-head">⏳ ชั่วโมงมงคลสำหรับ <b>${d.action_th||action}</b></div>
-        <table class="chart-tbl"><thead><tr><th>วัน</th><th>เวลา</th><th>คะแนน</th></tr></thead><tbody>${rows||'<tr><td colspan="3">ไม่พบหน้าต่างมงคลในช่วงที่เลือก</td></tr>'}</tbody></table>
-        ${d.caveat?`<div class="tcaveat">${d.caveat}</div>`:''}`
-    } catch (e) { box.innerHTML = '❌ ' + e }
-  }, [])
-  useEffect(() => {
-    window.__renderTarot = (box, data) => {
-      const narr = (data.narrative && (data.narrative.th || data.narrative.en)) || ''
-      const cards = data.cards || []
-      const flipHtml = cards.map((c, i) => {
-        const nm = c.card ? c.card.replace(' of ', ' แห่ง ') : (c.name || '')
-        const or = c.orientation === 'reversed' ? ' ( reversed )' : ''
-        return `<div class="tcard" data-i="${i}" onclick="if(window.__flipTarot3D)window.__flipTarot3D(${i})">${nm}${or}</div>`
-      }).join('')
-      const narrHtml = narr
-        ? `<div class="tnarr">${narr.replace(/&/g,'&amp;').replace(/</g,'&lt;').split('\n').map(l => {
-            const t = l.trim(); if (!t) return ''
-            return /^\[/.test(t) ? `<p class="story">${t}</p>` : `<p>${t}</p>`
-          }).join('')}</div>` : ''
-      const caveat = data.caveat ? `<div class="tcaveat">${data.caveat}</div>` : ''
-      box.innerHTML = `<div class="tcards">${flipHtml}</div>${narrHtml}${caveat}`
-      window.__tarotCards = cards
-    }
-  }, [])
+      const q = gv('h-q')
+      if (!q) { box.innerHTML = '<span style="color:#c44">พิมพ์คำถามก่อน</span>'; return }
+      const prov = gv('h-prov') || '13.7563,100.5018'
+      const [lat, lon] = prov.split(',').map(v => parseFloat(v) || 0)
+      const d = await callApi('/v1/horary/ask', { question: q, tz_offset_hours: 7, lat, lon, system: 'tropical' })
+      if (!d.ascendant) { box.innerHTML = `<span style="color:#c44">${d.detail || 'คำนวณไม่สำเร็จ'}</span>`; return }
+      const asc = d.ascendant || {}
+      const moon = d.moon || {}
+      box.innerHTML = `<div style="font-family:Cinzel,serif;font-size:18px;color:#2e2818;margin-bottom:12px">🔮 คำตอบจากจักรวาล</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">ASC: ${asc.sign || '-'} ${(asc.degree||0).toFixed(1)}°</span>
+        <span style="font-size:12px;background:rgba(154,123,52,.1);border:1px solid var(--gold-soft);border-radius:14px;padding:5px 14px;color:#3b3324">Moon: ${moon.sign || '-'} ${(moon.degree||0).toFixed(1)}°</span>
+      </div>
+      <p style="margin-top:12px;color:#3b3324;line-height:1.8"><i>"${q}"</i><br/>ตอบเมื่อ: ${d.asked_at_local || '-'}</p>`
+    } catch (e) { box.innerHTML = '❌ ' + e.message }
+    setLoading(false)
+  }
 
   return (
-    <>
-      <CanvasBoundary>
-      {canvasAlive && (
-      <Canvas id="bg-canvas" camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 1.5]} gl={{ antialias: true }}
-        onCreated={({ gl }) => {
-          const cv = gl.domElement
-          cv.addEventListener('webglcontextlost', (e) => {
-            e.preventDefault()
-            setCanvasAlive(false)   // ตัด Canvas ออกจาก tree → ปลดบล็อก main thread
-          }, false)
-        }}>
-        <CosmicScene zoomRef={zoomRef} />
-        <OrbitGalaxy onSelect={(n) => { setOrbitSel(n); }}
-                     selectedId={orbitSel?.id} />
-      </Canvas>
-      )}
-      </CanvasBoundary>
-      <div className="grain" />
+    <div className="ui" ref={mainRef}>
+      {/* ── Navigation ── */}
+      <nav className={`nav ${navScrolled ? 'scrolled' : ''}`}>
+        <div className="brand" onClick={() => goView('home')}>
+          <span className="logo">ASTRAL</span>
+          <span className="tag">โหราศาสตร์ครบวงจร</span>
+        </div>
+        <div className="navlinks">
+          {VIEWS.map(v => (
+            <button key={v} className={v === view ? 'active' : ''} onClick={() => goView(v)}>
+              {NAV_LABELS[v]}
+            </button>
+          ))}
+        </div>
+      </nav>
 
-      <div className="ui" style={{ opacity: introDone ? 1 : 0, transition: 'opacity .8s ease', visibility: introDone ? 'visible' : 'hidden' }}>
-        <nav className="nav">
-          <div className="brand" onClick={() => goView('home')}>
-            <span className="logo">Astral</span>
-            <span className="divider" />
-            <span className="tag">ดวงดาวจะบอกอะไรคุณ</span>
+      {/* ── Home View ── */}
+      <section className={`view ${view === 'home' ? 'active' : ''}`}>
+        <div className="hero">
+          <span className="pill">{S.hero.pill}</span>
+          <h1>
+            {S.hero.title1}<br />
+            {S.hero.title2} <span className="g">{S.hero.title3}</span> {S.hero.title4}
+          </h1>
+          <p>{S.hero.description}</p>
+          <div className="cta">
+            <button className="btn primary" onClick={() => goView('natal')}>{S.hero.cta}</button>
+            <button className="btn" onClick={() => goView('tarot')}>เปิดไพ่ทาโรต์</button>
           </div>
-          <div className="navlinks">
-            {VIEWS.map(v => (
-              <button key={v} className={v === view ? 'active' : ''} onClick={() => goView(v)}>
-                {v === 'home' ? 'หน้าแรก' : v === 'natal' ? 'ดวงชะตา' : v === 'synastry' ? 'ดูคู่' :
-                 v === 'vedic' ? 'เวดิก' : v === 'tarot' ? 'ไพ่ทาโรต์' : v === 'muhurta' ? 'มูฮูร์ตะ' : 'ชีวิตคุณ'}
-              </button>
-            ))}
-          </div>
-        </nav>
+        </div>
 
-        <section className={'view' + (view === 'home' ? ' active' : '')}>
-          <div className="hero">
-            <span className="pill">✦ ดูดวงอย่างที่โหรหลวงเคยมองฟ้า</span>
-            <h1>ดาวแต่ละดวง<br/>ล้วนมี<span className="g">คำบอก</span>ให้คุณ</h1>
-            <p>วันที่ท่านลืมตาดูโลก ดาวแต่ละดวงยืนเรียงตำแหน่งให้ได้เห็นแล้ว — ว่าท่านมาเกิดมาเพื่ออะไร จะรักกับใคร และช่วงไหนในชีวิตที่ฟ้าจะประทานของขวัญ</p>
-            <div className="cta">
-              <button className="btn primary" onClick={() => goView('natal')}>ขอให้ดาวบอกท่าน</button>
-              <button className="btn" onClick={() => goView('synastry')}>ดูกระแสใจสองดวง</button>
-            </div>
-          </div>
-          <div className="sec-title"><h2>สิ่งที่<span className="g">ดาว</span>อยากบอกท่าน</h2>
-            <p>เลือกสิ่งที่ท่านสงสัยใจ — เราจะอ่านจากตำราโบราณที่ส่งกันมาหลายพันปี แล้วเล่ากลับให้ท่านฟังเป็นภาษาที่เข้าใจได้จริง</p></div>
-          <div className="cards">
-            {[
-              ['🌟','ดวงชะตา','วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด — เราจะบอกว่าท่านมีของดีซ่อนที่ไหน และอุปสรรคที่ฟ้าฝากมาให้ฝ่าฟัน'],
-              ['💞','ดูคู่','เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ จะเกิดกระแสไฟบางอย่าง — เราจะบอกว่าสองดวงนี้ช่วยกันหรือจะต้องระวังเรื่องใด'],
-              ['🪐','เวดิก','มองผ่านตำราโบราณอินเดีย ดาวจะเลื่อนไปตำแหน่งที่แท้จริงตามฤดูกาล — เห็นธาตุที่ท่านเกิดมาและหน้าที่ที่ฟ้าฝากไว้'],
-              ['⏳','มูฮูร์ตะ','มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง ให้สิ่งที่ท่านเริ่มตั้งต้นนั้นเป็นสิริมงคล'],
-              ['🔮','ไพ่ทาโรต์','จั่วไพ่ 78 ใบจากสำนักโบราณ สิ่งที่ออกมาไม่ใช่คำทำนายเลื่อนลอย — แต่เป็นเสียงที่สะท้อนสิ่งที่ท่านกังวลอยู่ในใจตอนนี้'],
-              ['🌌','ชีวิตคุณ','ดาวไม่หยุดหมุน และแต่ละรอบที่มันผ่าน จะพาเหตุการณ์ใหม่มา — เราจะบอกท่านล่วงหน้าว่าเมื่อไหร่ควรก้าวไปและเมื่อไหร่ควรรอ']
-            ].map(([ic, h, p], i) => (
-              <div key={i} className="card" data-go={['natal','synastry','vedic','muhurta','tarot','life'][i]} onClick={(e) => goView(e.currentTarget.dataset.go)}>
-                <div className="ic">{ic}</div><h3>{h}</h3><p>{p}</p><div className="orn">✦</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="section">
+          <span className="eyebrow">{S.sections.tarot.eyebrow}</span>
+          <h2>{S.sections.tarot.title}<br /><span className="g">{S.sections.tarot.titleAccent}</span></h2>
+          <p>{S.sections.tarot.desc}</p>
+          <button className="btn primary" onClick={() => goView('tarot')}>{S.sections.tarot.cta}</button>
+        </div>
 
-        <section className={'view' + (view === 'natal' ? ' active' : '')}>
-          <div className="form-wrap">
-            <h2>ดวงชะตา</h2>
-            <p className="sub">วันเกิดของท่าน คือเข็มทิศชี้ทางมาเกิด</p>
-            <div className="field"><label>ชื่อ</label><input id="n-name" placeholder="ชื่อของท่าน" defaultValue="คุณ" /></div>
-            <div className="field"><label>วันเกิด</label><input id="n-date" type="date" /></div>
-            <div className="field"><label>เวลาเกิด</label><input id="n-time" type="time" step="1" /></div>
-            <div className="field"><label>จังหวัด</label>
-              <select id="n-prov">
-                <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
-                <option value="13.3633,100.9868">ชลบุรี</option>
-                <option value="18.7883,98.9853">เชียงใหม่</option>
-                <option value="7.8804,98.3923">ภูเก็ต</option>
-              </select>
-            </div>
-            <div className="field"><label>ระบบ</label>
-              <select id="n-sys">
-                <option value="tropical">Tropical (ตะวันตก)</option>
-                <option value="sidereal">Sidereal (เวดิก)</option>
-              </select>
-            </div>
-            <button className="btn primary" onClick={() => onNatal()}>ดูดวงชะตา</button>
-            <div className="result" id="r-natal" />
-            {natalChart && <NatalWheel chart={natalChart} />}
-          </div>
-        </section>
+        <div className="section">
+          <span className="eyebrow">{S.sections.synastry.eyebrow}</span>
+          <h2>{S.sections.synastry.title}<br /><span className="g">{S.sections.synastry.titleAccent}</span></h2>
+          <p>{S.sections.synastry.desc}</p>
+          <button className="btn primary" onClick={() => goView('synastry')}>{S.sections.synastry.cta}</button>
+        </div>
 
-        <section className={'view' + (view === 'tarot' ? ' active' : '')}>
-          <div className="form-wrap">
-            <h2>ไพ่ทาโรต์</h2>
-            <p className="sub">โบกไพ่แล้วตั้งคำถามในใจ — ไพ่สามใบนี้จะตอบสิ่งที่ท่านอยากรู้</p>
-            <div className="field"><label>คำถามของคุณ</label><input id="t-q" placeholder="สิ่งที่อยากรู้" /></div>
-            <button className="btn primary" onClick={() => call('tarot', document.getElementById('r-tarot'), {
-              url: '/v1/tarot/draw',
-              body: { name: 'คุณ', question: document.getElementById('t-q')?.value || '',
-                spread: 'three_card', lang: 'th',
-                birth: { date: '1997-05-19', time: '05:45', tz_offset_hours: 7, lat: 13.3633, lon: 100.9868, system: 'tropical' } }
-            })}>จั่วไพ่</button>
-            <canvas id="tarot3d" />
-            <div className="tarot-3d-hint">✦ ลากเพื่อหมุน · คลิกไพ่เพื่อพลิก ✦</div>
-            <div className="result" id="r-tarot" />
-          </div>
-        </section>
-
-        <section className={'view' + (view === 'synastry' ? ' active' : '')}>
-          <div className="form-wrap">
-            <h2>ดูคู่ · Synastry</h2>
-            <p className="sub">เมื่อดวงท่านไปพบดวงเขา หรือดวงเธอ — เราจะอ่าน aspect ที่ลากระหว่างสองดวง</p>
-            <div className="pair-grid">
-              <div className="pair-col">
-                <h4>ท่าน (A)</h4>
-                <div className="field"><label>ชื่อ</label><input id="s-a-name" defaultValue="คุณ" /></div>
-                <div className="field"><label>วันเกิด</label><input id="s-a-date" type="date" /></div>
-                <div className="field"><label>เวลาเกิด</label><input id="s-a-time" type="time" step="1" /></div>
-                <div className="field"><label>จังหวัด</label>
-                  <select id="s-a-prov">
-                    <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
-                    <option value="13.3633,100.9868">ชลบุรี</option>
-                    <option value="18.7883,98.9853">เชียงใหม่</option>
-                    <option value="7.8804,98.3923">ภูเก็ต</option>
-                  </select>
-                </div>
-              </div>
-              <div className="pair-col">
-                <h4>คู่ (B)</h4>
-                <div className="field"><label>ชื่อ</label><input id="s-b-name" defaultValue="เขา" /></div>
-                <div className="field"><label>วันเกิด</label><input id="s-b-date" type="date" /></div>
-                <div className="field"><label>เวลาเกิด</label><input id="s-b-time" type="time" step="1" /></div>
-                <div className="field"><label>จังหวัด</label>
-                  <select id="s-b-prov">
-                    <option value="13.7,100.5">กรุงเทพฯ/ใกล้เคียง</option>
-                    <option value="13.3633,100.9868">ชลบุรี</option>
-                    <option value="18.7883,98.9853">เชียงใหม่</option>
-                    <option value="7.8804,98.3923">ภูเก็ต</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <button className="btn primary" onClick={() => onSynastry()}>อ่านกระแสสองดวง</button>
-            <div className="result" id="r-synastry" />
-          </div>
-        </section>
-
-        <section className={'view' + (view === 'vedic' ? ' active' : '')}>
-          <div className="form-wrap">
-            <h2>เวดิก · Vedic</h2>
-            <p className="sub">มองผ่านตำราโบราณอินเดีย — ดาวเลื่อนไปตำแหน่ง sidereal ตามฤดูกาล (Lahiri)</p>
-            <div className="field"><label>ชื่อ</label><input id="v-name" defaultValue="คุณ" /></div>
-            <div className="field"><label>วันเกิด</label><input id="v-date" type="date" /></div>
-            <div className="field"><label>เวลาเกิด</label><input id="v-time" type="time" step="1" /></div>
-            <div className="field"><label>จังหวัด</label>
-              <select id="v-prov">
-                <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
-                <option value="13.3633,100.9868">ชลบุรี</option>
-                <option value="18.7883,98.9853">เชียงใหม่</option>
-                <option value="7.8804,98.3923">ภูเก็ต</option>
-              </select>
-            </div>
-            <button className="btn primary" onClick={() => onVedic()}>ดูดวงเวดิก</button>
-            <div className="result" id="r-vedic" />
-          </div>
-        </section>
-
-        <section className={'view' + (view === 'muhurta' ? ' active' : '')}>
-          <div className="form-wrap">
-            <h2>มูฮูร์ตะ · Muhurta</h2>
-            <p className="sub">มีเรื่องสำคัญจะทำใช่ไหม — เราจะหาชั่วโมงที่ดาวยืนรับรอง</p>
-            <div className="field"><label>เรื่องที่จะทำ</label>
-              <select id="m-action">
-                <option value="marriage">แต่งงาน (Marriage)</option>
-                <option value="business">เริ่มธุรกิจ (Business)</option>
-                <option value="contract">ทำสัญญา (Contract)</option>
-                <option value="travel">เดินทาง (Travel)</option>
-                <option value="moving">ย้ายบ้าน (Moving)</option>
-              </select>
-            </div>
-            <div className="field"><label>วันเริ่มหา (จากวันนี้)</label><input id="m-date" type="date" /></div>
-            <div className="field"><label>ระยะเวลาค้นหา (วัน)</label><input id="m-days" type="number" defaultValue="60" min="7" max="180" /></div>
-            <div className="field"><label>จังหวัด</label>
-              <select id="m-prov">
-                <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
-                <option value="13.3633,100.9868">ชลบุรี</option>
-                <option value="18.7883,98.9853">เชียงใหม่</option>
-                <option value="7.8804,98.3923">ภูเก็ต</option>
-              </select>
-            </div>
-            <button className="btn primary" onClick={() => onMuhurta()}>หาชั่วโมงมงคล</button>
-            <div className="result" id="r-muhurta" />
-          </div>
-        </section>
+        <div className="section">
+          <span className="eyebrow">{S.sections.vedic.eyebrow}</span>
+          <h2>{S.sections.vedic.title}<br /><span className="g">{S.sections.vedic.titleAccent}</span></h2>
+          <p>{S.sections.vedic.desc}</p>
+          <button className="btn primary" onClick={() => goView('vedic')}>{S.sections.vedic.cta}</button>
+        </div>
 
         <footer>
-          <div className="seal">A</div><br/>
-          Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร
+          <div className="seal">A</div>
+          <br />Astral · Est. MMXXVI · โหราศาสตร์ครบวงจร
         </footer>
-      </div>
+      </section>
 
-      {/* Orbit Galaxy detail panel (BlueYard — คลิกโหนดดูข้อมูล) */}
-      {orbitSel && (
-        <div className="orbit-panel">
-          <button className="orbit-close" onClick={() => setOrbitSel(null)} aria-label="ปิด">×</button>
-          <div className="orbit-dot" style={{ background: orbitSel.color, boxShadow: `0 0 18px ${orbitSel.color}` }} />
-          <h3>{orbitSel.label}</h3>
-          <p>{orbitSel.desc}</p>
-          <button className="btn primary" onClick={() => { const id = orbitSel.id; setOrbitSel(null); goView(id) }}>
-            เปิด {orbitSel.label}
-          </button>
+      {/* ── Natal Chart ── */}
+      <section className={`view ${view === 'natal' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ดูดวงชะตา</h2>
+          <p className="sub">วันเวลาและสถานที่เกิด — ดาวฤกษ์บอกอะไรคุณ</p>
+          <div className="field"><label>ชื่อ</label><input id="n-name" placeholder="ชื่อของคุณ" defaultValue="คุณ" /></div>
+          <div className="field"><label>วันเกิด</label><input id="n-date" type="date" /></div>
+          <div className="field"><label>เวลาเกิด</label><input id="n-time" type="time" step="1" /></div>
+          <div className="field"><label>จังหวัด</label><select id="n-prov">
+            <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+            <option value="13.3633,100.9868">ชลบุรี</option>
+            <option value="18.7883,98.9853">เชียงใหม่</option>
+            <option value="7.8804,98.3923">ภูเก็ต</option>
+          </select></div>
+          <div className="field"><label>ระบบ</label><select id="n-sys">
+            <option value="tropical">Tropical</option>
+            <option value="sidereal">Sidereal</option>
+          </select></div>
+          <button className="btn primary" onClick={onNatal}>ดูดวงชะตาของฉัน</button>
+          <div className="result" id="r-natal" />
         </div>
-      )}
+      </section>
 
-      {/* Enter transition: ซูมหลุมดำเมื่อกดเมนู */}
-      {bh && <BlackHole active={bh} onDone={onBhDone} />}
-
-      {/* tarot 3D overlay (แสดงเมื่อมีไพ่) */}
-      {view === 'tarot' && window.__tarotCards && window.__tarotCards.length > 0 && (
-        <div style={{ position: 'fixed', bottom: 20, left: 0, right: 0, height: 320, zIndex: 5, pointerEvents: 'none' }}>
-          <Tarot3D cards={window.__tarotCards} />
+      {/* ── Tarot ── */}
+      <section className={`view ${view === 'tarot' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ไพ่ทาโรต์</h2>
+          <p className="sub">สับไพ่แล้วให้ไพ่ตอบคำถามที่คุณอยากรู้</p>
+          <div className="field"><label>คำถามของคุณ</label><input id="t-q" placeholder="สิ่งที่อยากรู้..." /></div>
+          <button className="btn primary" onClick={onTarot}>เปิดไพ่</button>
+          <div className="result" id="r-tarot" />
         </div>
-      )}
+      </section>
 
-      {/* Intro: Cosmic BG (หน้าโหลด) → Glitter Wrap warp → หน้า landing */}
-      <Intro onDone={() => setIntroDone(true)} />
-    </>
+      {/* ── Synastry ── */}
+      <section className={`view ${view === 'synastry' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ดูคู่</h2>
+          <p className="sub">เปรียบเทียบดวงชะตาสองคน</p>
+          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:'24px',margin:'12px 0'}}>
+            <div>
+              <h4 style={{fontFamily:'Cinzel,serif',color:'var(--gold)',marginBottom:'10px'}}>คนที่ 1</h4>
+              <div className="field"><label>ชื่อ</label><input id="s-a-name" defaultValue="คุณ" /></div>
+              <div className="field"><label>วันเกิด</label><input id="s-a-date" type="date" /></div>
+              <div className="field"><label>เวลาเกิด</label><input id="s-a-time" type="time" step="1" /></div>
+              <div className="field"><label>จังหวัด</label><select id="s-a-prov">
+                <option value="13.7563,100.5018">กรุงเทพ</option>
+                <option value="13.3633,100.9868">ชลบุรี</option>
+              </select></div>
+            </div>
+            <div>
+              <h4 style={{fontFamily:'Cinzel,serif',color:'var(--gold)',marginBottom:'10px'}}>คนที่ 2</h4>
+              <div className="field"><label>ชื่อ</label><input id="s-b-name" defaultValue="เขา" /></div>
+              <div className="field"><label>วันเกิด</label><input id="s-b-date" type="date" /></div>
+              <div className="field"><label>เวลาเกิด</label><input id="s-b-time" type="time" step="1" /></div>
+              <div className="field"><label>จังหวัด</label><select id="s-b-prov">
+                <option value="13.7563,100.5018">กรุงเทพ</option>
+                <option value="13.3633,100.9868">ชลบุรี</option>
+              </select></div>
+            </div>
+          </div>
+          <button className="btn primary" onClick={() => {
+            const box = document.getElementById('r-synastry')
+            if (!box) return
+            box.classList.add('show')
+            box.innerHTML = '<div class="loading"><span></span>กำลังคำนวณความเข้ากัน...</div>'
+            const mk = (p) => {
+              const prov = (gv(`s-${p}-prov`) || '13.7563,100.5018').split(',').map(v => parseFloat(v) || 0)
+              return { name: gv(`s-${p}-name`) || ' ', date: gv(`s-${p}-date`), time: (gv(`s-${p}-time`) || '12:00') + ':00', tz_offset_hours: 7, lat: prov[0], lon: prov[1], system: 'tropical' }
+            }
+            Promise.all([
+              callApi('/v1/synastry/cross-aspects', { a: mk('a'), b: mk('b') }),
+              callApi('/v1/natal/compute', mk('a')),
+              callApi('/v1/natal/compute', mk('b')),
+            ]).then(([syn, ra, rb]) => {
+              if (!ra.bodies || !rb.bodies) { box.innerHTML = '<span style="color:#c44">คำนวณไม่สำเร็จ</span>'; return }
+              const ca = syn.cross_aspects || []
+              const rows = ca.slice(0, 12).map(x => `<tr><td>${x.body_a} × ${x.body_b}</td><td style="color:var(--gold)">${x.aspect}</td><td>${x.orb?.toFixed(2)}°</td></tr>`).join('')
+              box.innerHTML = `<div style="font-family:Cinzel,serif;font-size:18px;color:#2e2818;margin-bottom:12px">💞 กระแสสองดวง <b>${mk('a').name}</b> × <b>${mk('b').name}</b></div>
+              <table style="width:100%;border-collapse:collapse;font-size:14px;color:#3b3324">
+                <thead><tr><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">Aspect</th><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">ประเภท</th><th style="text-align:left;padding:8px;color:var(--gold);border-bottom:1px solid var(--gold-soft)">Orb</th></tr></thead>
+                <tbody>${rows}</tbody></table>`
+            }).catch(e => { box.innerHTML = '❌ ' + e.message })
+          }}>ดูคู่ของเรา</button>
+          <div className="result" id="r-synastry" />
+        </div>
+      </section>
+
+      {/* ── Vedic ── */}
+      <section className={`view ${view === 'vedic' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ดวงเวดิก</h2>
+          <p className="sub">โหราศาสตร์อินเดียโบราณ — Nakshatra, Dasha, Yoga</p>
+          <div className="field"><label>ชื่อ</label><input id="v-name" placeholder="ชื่อของคุณ" defaultValue="คุณ" /></div>
+          <div className="field"><label>วันเกิด</label><input id="v-date" type="date" /></div>
+          <div className="field"><label>เวลาเกิด</label><input id="v-time" type="time" step="1" /></div>
+          <div className="field"><label>จังหวัด</label><select id="v-prov">
+            <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+            <option value="13.3633,100.9868">ชลบุรี</option>
+            <option value="18.7883,98.9853">เชียงใหม่</option>
+          </select></div>
+          <button className="btn primary" onClick={onVedic}>ดูดวงเวดิก</button>
+          <div className="result" id="r-vedic" />
+        </div>
+      </section>
+
+      {/* ── Horary ── */}
+      <section className={`view ${view === 'horary' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ถามดวง · Horary</h2>
+          <p className="sub">ถามคำถาม แล้วดูดาวตอบจากจักรวาลตอนที่คุณถาม</p>
+          <div className="field"><label>คำถามของคุณ</label><input id="h-q" placeholder="เช่น ผมควรรักเขาไหม? หรือ งานนี้ไหวไหม?" /></div>
+          <div className="field"><label>จังหวัด</label><select id="h-prov">
+            <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+            <option value="13.3633,100.9868">ชลบุรี</option>
+          </select></div>
+          <button className="btn primary" onClick={onHorary}>ถามดาวตอบคุณ</button>
+          <div className="result" id="r-horary" />
+        </div>
+      </section>
+
+      {/* ── AI Reading ── */}
+      <section className={`view ${view === 'ai-reading' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>AI อ่านดวง</h2>
+          <p className="sub">AI วิเคราะห์ดวงชะตาอย่างลึกซึ้ง — ตรงบุคคล ไม่ซ้ำใคร</p>
+          <div className="field"><label>ชื่อ</label><input id="ai-name" placeholder="ชื่อของคุณ" defaultValue="คุณ" /></div>
+          <div className="field"><label>วันเกิด</label><input id="ai-date" type="date" /></div>
+          <div className="field"><label>เวลาเกิด</label><input id="ai-time" type="time" step="1" /></div>
+          <div className="field"><label>จังหวัด</label><select id="ai-prov">
+            <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+            <option value="13.3633,100.9868">ชลบุรี</option>
+            <option value="18.7883,98.9853">เชียงใหม่</option>
+          </select></div>
+          <button className="btn primary" onClick={onAiReading}>ให้ AI อ่านดวง</button>
+          <div className="result" id="r-ai" style={{ whiteSpace: 'pre-wrap', lineHeight: 1.8 }} />
+        </div>
+      </section>
+
+      {/* ── Life Report ── */}
+      <section className={`view ${view === 'life' ? 'active' : ''}`}>
+        <div className="form-wrap">
+          <h2>ชีวิตคุณ</h2>
+          <p className="sub">ดูดวงชะตาครบวงจร — Natal, Tarot, Transit, AI Reading</p>
+          <div className="field"><label>ชื่อ</label><input id="l-name" placeholder="ชื่อของคุณ" defaultValue="คุณ" /></div>
+          <div className="field"><label>วันเกิด</label><input id="l-date" type="date" /></div>
+          <div className="field"><label>เวลาเกิด</label><input id="l-time" type="time" step="1" /></div>
+          <div className="field"><label>จังหวัด</label><select id="l-prov">
+            <option value="13.7563,100.5018">กรุงเทพมหานคร</option>
+            <option value="13.3633,100.9868">ชลบุรี</option>
+            <option value="18.7883,98.9853">เชียงใหม่</option>
+          </select></div>
+          <button className="btn primary" onClick={() => {
+            const date = gv('l-date')
+            if (!date) { alert('กรุณาระบุวันเกิด'); return }
+            goView('natal')
+            setTimeout(() => {
+              const nDate = document.getElementById('n-date')
+              const nTime = document.getElementById('n-time')
+              const nName = document.getElementById('n-name')
+              const nProv = document.getElementById('n-prov')
+              if (nDate) nDate.value = date
+              if (nTime) nTime.value = gv('l-time') || '12:00'
+              if (nName) nName.value = gv('l-name') || 'คุณ'
+              if (nProv) nProv.value = gv('l-prov') || '13.7563,100.5018'
+              onNatal()
+            }, 300)
+          }}>ดูชีวิตฉัน</button>
+        </div>
+      </section>
+    </div>
   )
 }

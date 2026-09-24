@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\models\\tarot.py", "analysis": "BUGS: None  \nDEAD: None  \nRISK: `tz_offset_hours` uses float but should be int for timezone offset (e.g., +7, -5)  \nSMELL: Default values in `TarotBirthData` are hardcoded; consider config-based defaults  \nOK: CLEAN – well-structured models with clear purpose and type hints."}

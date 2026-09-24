@@ -35,3 +35,6 @@ Thumbs.db
 # secrets / config
 .env
 render.yaml
+
+# HF model cache (13GB local)
+.cache/

@@ -4,8 +4,9 @@ from pathlib import Path
 
 from skyfield.api import load
 
-# Anchor ephemeris file to repo root, regardless of cwd.
-_BSP_PATH = Path(__file__).resolve().parents[2] / "de421.bsp"
+# Anchor ephemeris file to repo root (C:/AI), regardless of cwd.
+# backend/src/services/ephemeris.py → parents[3] = repo root.
+_BSP_PATH = Path(__file__).resolve().parents[3] / "de421.bsp"
 
 # Try multiple mirrors because NASA endpoints rotate/404 unexpectedly.
 _BSP_URLS = [

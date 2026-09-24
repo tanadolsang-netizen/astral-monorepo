@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\caveat.py", "analysis": "**BUGS:** None  \n**DEAD:** None  \n**RISK:** Low — no sensitive data exposed.  \n**SMELL:** Poor naming — `CAVEAT` is a constant but named like a variable. Also, the f-string could be simplified.  \n**OK:** CLEAN — simple, clear, and consistent use of constants for multilingual caveats."}

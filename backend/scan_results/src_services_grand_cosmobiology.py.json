@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\grand\\cosmobiology.py", "analysis": "BUGS: None  \nDEAD: Unused `from __future__ import annotations` (no forward refs)  \nRISK: No obvious security/data-loss risks  \nSMELL: Redundant formatting in `midpoints` and `pictures`; could refactor into helper  \nOK: CLEAN — logic consistent with Ebertin COSI, no critical bugs or risks."}

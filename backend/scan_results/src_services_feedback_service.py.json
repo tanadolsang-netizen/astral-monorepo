@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\feedback_service.py", "analysis": "BUGS: None  \nDEAD: Unused import `uuid` and `Path` (used in DB_PATH but not elsewhere)  \nRISK: No transaction handling, could lose data on commit failure  \nSMELL: Hardcoded DB path; should use config or env var  \nOK: CLEAN — basic functionality with minimal logic errors"}

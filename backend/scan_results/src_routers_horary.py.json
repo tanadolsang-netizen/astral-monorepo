@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\horary.py", "analysis": "BUGS: None  \nDEAD: Unused `tz_offset_hours` in `compute_chart()` and `compute_dual_chart()` (passed but not used)  \nRISK: No risk identified  \nSMELL: Redundant code for moon lookup; could be refactored into helper function  \nOK: CLEAN — Well-structured, clear logic with proper error handling."}

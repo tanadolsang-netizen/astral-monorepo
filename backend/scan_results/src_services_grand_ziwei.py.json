@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\grand\\ziwei.py", "analysis": "BUGS: None  \nDEAD: Unused `_FROM_YIN` list (should be generated dynamically)  \nRISK: No obvious security/data-loss risks  \nSMELL: Hardcoded palace order; could use a more flexible structure  \nOK: CLEAN — minimal logic, clear separation of concerns, no critical bugs."}

@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\kb_loader.py", "analysis": "BUGS: None  \nDEAD: None  \nRISK: No risk  \nSMELL: DRY violation — repeated `_load` calls with similar names; could be refactored into a generic loader.  \nOK: CLEAN — simple, clear, and consistent structure with no logic or security issues."}

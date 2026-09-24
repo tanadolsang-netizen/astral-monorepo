@@ -1,76 +1,12 @@
-@font-face {
-  font-family: 'Cinzel';
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/Cinzel-Regular.ttf') format('truetype');
+:root{
+  --gold:#c9a84c; --gold-bright:#f6e4b0; --ink:#0a0712; --ivory:#f6f0e2;
 }
-@font-face {
-  font-family: 'Cinzel';
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/Cinzel-SemiBold.ttf') format('truetype');
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body,#root{width:100%;height:100%;background:#05030c;overflow:hidden;font-family:'Cinzel',serif;}
+#site-frame{
+  position:fixed; inset:0; width:100%; height:100%; border:0;
+  opacity:0; transition:opacity 1.2s ease;
 }
-@font-face {
-  font-family: 'Cinzel';
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-  src: url('/fonts/Cinzel-Bold.ttf') format('truetype');
-}
-
-:root {
-  --gold: #c9a84c;
-  --gold-bright: #f6e4b0;
-  --ink: #05030c;
-  --ivory: #f6f0e2;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html, body, #root {
-  width: 100%; height: 100%;
-  background: var(--ink);
-  overflow: hidden;
-  font-family: 'Cinzel', Georgia, 'Times New Roman', serif;
-}
-
-#site-frame {
-  position: fixed; inset: 0;
-  width: 100%; height: 100%; border: 0;
-  opacity: 0; transition: opacity 1.5s ease;
-}
-#site-frame.revealed { opacity: 1; }
-
-.intro-root {
-  position: fixed; inset: 0;
-  background: radial-gradient(ellipse at 50% 50%, #0d0820 0%, #05030c 70%);
-}
-.intro-root.gone {
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.8s ease;
-}
-
-.intro-overlay {
-  position: absolute; left: 0; right: 0; bottom: 6%;
-  text-align: center; color: var(--gold-bright);
-  letter-spacing: 6px; pointer-events: none;
-  opacity: 0; transform: translateY(10px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-.intro-overlay.show { opacity: 1; transform: translateY(0); }
-.intro-overlay-title {
-  font-size: 15px; font-weight: 600;
-  text-shadow: 0 0 18px rgba(246, 228, 176, 0.55);
-}
-.intro-overlay-sub {
-  font-size: 11px; font-weight: 400; opacity: 0.65;
-  margin-top: 8px; letter-spacing: 4px;
-}
-
-.intro-flash {
-  position: absolute; inset: 0; pointer-events: none;
-  background: radial-gradient(circle, #fff8e8 0%, #f6e4b0 35%, transparent 72%);
-  opacity: 0; mix-blend-mode: screen;
-  transition: opacity 0.9s ease;
-}
-.intro-flash.active { opacity: 1; }
+#site-frame.revealed{opacity:1;}
+.intro-root{position:fixed; inset:0;}
+.intro-root.gone{opacity:0; pointer-events:none; transition:opacity .6s ease;}

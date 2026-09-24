@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\muhurta.py", "analysis": "BUGS: None  \nDEAD: None  \nRISK: `tz_offset_hours` uses float but should be int for timezone offset (e.g., +7 not 7.0)  \nSMELL: `_ACTIONS` is hardcoded; consider moving to config or service layer  \nOK: CLEAN — valid schema, proper error handling, no obvious logic flaws"}

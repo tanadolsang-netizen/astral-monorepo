@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\integrations\\stripe_client.py", "analysis": "BUGS: None  \nDEAD: Unused `os` import (used in `stripe.api_key`)  \nRISK: No explicit validation of input parameters in `StripeCheckoutRequest`  \nSMELL: Hardcoded `\"subscription\"` mode; should be configurable  \nOK: CLEAN - Basic structure is sound, but minor improvements possible."}

@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\image_tools.py", "analysis": "BUGS: None  \nDEAD: Unused import `from __future__ import annotations`  \nRISK: No risk  \nSMELL: `_get_reader()` could be a class method or cached with `lru_cache` for better control  \nOK: CLEAN — functional, no critical issues, minor style improvements possible."}

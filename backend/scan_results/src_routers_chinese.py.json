@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\chinese.py", "analysis": "BUGS: None  \nDEAD: Unused `CAVEAT` import (should be defined elsewhere)  \nRISK: No risk detected  \nSMELL: Redundant error handling in all endpoints; consider refactoring into a helper function.  \nOK: CLEAN — File is logically consistent, with proper error handling and structure."}

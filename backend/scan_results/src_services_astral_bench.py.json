@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\astral_bench.py", "analysis": "BUGS: None  \nDEAD: Unused import `from datetime import datetime as _dt, timedelta as _td` inside `ground_truth`.  \nRISK: No clear risk.  \nSMELL: `score_interpretation` has complex logic; could be split into smaller functions.  \nOK: CLEAN — well-structured, consistent, and no critical issues."}

@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\db\\prediction_log_store.py", "analysis": "BUGS: None  \nDEAD: Unused `_lock` (used but not needed for file operations)  \nRISK: No risk  \nSMELL: `load_records` and `save_records` could be refactored into a single function with parameters.  \nOK: CLEAN – simple, functional, no logic errors or security risks."}

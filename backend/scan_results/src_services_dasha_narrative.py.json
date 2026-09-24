@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\dasha_narrative.py", "analysis": "BUGS: None  \nDEAD: Unused import `from __future__ import annotations`  \nRISK: No obvious security/data-loss risks  \nSMELL: Hardcoded language codes (`\"th\"` for Thai) could be moved to config or constants  \nOK: CLEAN — Functional, no logic errors, minimal code."}

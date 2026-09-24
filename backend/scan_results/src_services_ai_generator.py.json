@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\ai_generator.py", "analysis": "BUGS: None  \nDEAD: Unused import `src.services.narrative_engine.ai_generator` (imported but not used)  \nRISK: None  \nSMELL: Circular import or redundant import (ai_generator is both imported and used as a function)  \nOK: CLEAN — Minimal code with one unused import and potential circular dependency."}

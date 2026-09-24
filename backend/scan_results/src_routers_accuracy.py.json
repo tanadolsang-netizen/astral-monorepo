@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\accuracy.py", "analysis": "BUGS: None  \nDEAD: None  \nRISK: None  \nSMELL: `max_samples=4` is hardcoded; should be configurable.  \nOK: CLEAN — simple, clear API endpoints with no logic errors or security risks."}

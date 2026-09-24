@@ -59,9 +59,10 @@ def render_slides(script: dict, out_dir: str,
 
     os.makedirs(out_dir, exist_ok=True)
     font_path = None
+    _asset_font = Path(__file__).resolve().parents[2] / "assets" / "fonts"
     candidates = [
-        r"D:\AI\NEW-AI-REBORN\assets\fonts\Sarabun-Bold.ttf",
-        r"D:\AI\NEW-AI-REBORN\assets\fonts\Sarabun-Regular.ttf",
+        str(_asset_font / "Sarabun-Bold.ttf"),
+        str(_asset_font / "Sarabun-Regular.ttf"),
         "C:/Windows/Fonts/tahoma.ttf",
     ]
     for cand in candidates:

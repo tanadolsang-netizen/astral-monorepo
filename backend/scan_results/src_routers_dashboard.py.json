@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\dashboard.py", "analysis": "BUGS: None  \nDEAD: Unused `CAVEAT` import? (Assuming it's defined elsewhere)  \nRISK: No auth validation in `_require_user`; relies on exception handling.  \nSMELL: `RecentItem` uses `**row` which may fail if row keys mismatch.  \nOK: CLEAN - code is functional, but minor improvements for safety and clarity."}

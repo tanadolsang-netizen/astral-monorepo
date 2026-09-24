@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\classical_rag.py", "analysis": "BUGS: None  \nDEAD: Unused `_CORPUS_PATH` global (used in _load but not elsewhere)  \nRISK: No risk  \nSMELL: `_load()` is a helper that should be private, and `retrieve` could use better scoring logic (e.g., keyword weight).  \nOK: CLEAN — well-structured, clear purpose, no critical issues."}

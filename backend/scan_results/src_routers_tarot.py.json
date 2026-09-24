@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\tarot.py", "analysis": "BUGS: None  \nDEAD: Unused `CAVEAT` import (used as variable)  \nRISK: No risk  \nSMELL: `deck_completeness()` called twice; consider caching  \nOK: CLEAN - Well-structured, clear error handling, and logical flow."}

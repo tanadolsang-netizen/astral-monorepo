@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\models\\__init__.py", "analysis": "**BUGS**: None  \n**DEAD**: Unused imports/functions/vars (file is empty)  \n**RISK**: Low; no code to exploit  \n**SMELL**: Empty __init__.py may indicate incomplete model setup or unnecessary file  \n\n**CLEAN**: The file is intentionally empty, avoiding unused code and potential confusion."}

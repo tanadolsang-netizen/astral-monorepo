@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\notifications.py", "analysis": "BUGS: None  \nDEAD: Unused `Depends` import  \nRISK: No risk  \nSMELL: Hardcoded preferences in GET; should use a store  \nOK: CLEAN - Functional but could be improved with data persistence and dependency management."}

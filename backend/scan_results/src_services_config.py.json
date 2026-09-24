@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\config.py", "analysis": "BUGS: None  \nDEAD: Unused import `from __future__ import annotations`  \nRISK: No obvious security/data-loss risks  \nSMELL: `_deep_merge` is not tested; config loading could fail silently  \nOK: CLEAN — well-structured, but minor improvements possible."}

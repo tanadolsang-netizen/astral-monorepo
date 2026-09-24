@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\routers\\memory.py", "analysis": "BUGS: None  \nDEAD: Unused `_` in `get_summary` and `list_entries`  \nRISK: No obvious security risks; no data loss paths  \nSMELL: `_require_user` is a helper but not used elsewhere; could be moved to a utils file  \nOK: CLEAN - Well-structured, minimal logic with clear separation of concerns."}

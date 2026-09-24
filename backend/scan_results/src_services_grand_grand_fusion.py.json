@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\grand\\grand_fusion.py", "analysis": "BUGS: None  \nDEAD: Unused `tz_offset_hours` in `_varsha_brief` (passed but not used)  \nRISK: No risk  \nSMELL: `_reading` is long and complex; could be split into smaller functions for clarity  \nOK: CLEAN — well-structured, consistent logic with clear separation of concerns"}

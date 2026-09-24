@@ -1,0 +1,1 @@
+{"path": "C:\\AI\\backend\\src\\services\\asteroid_narrative.py", "analysis": "BUGS: None  \nDEAD: Unused import `from __future__ import annotations`  \nRISK: No obvious risks  \nSMELL: Redundant code in Chiron reading (duplicate logic for lang)  \nOK: CLEAN — minimal code with clear purpose, though could be refactored."}
