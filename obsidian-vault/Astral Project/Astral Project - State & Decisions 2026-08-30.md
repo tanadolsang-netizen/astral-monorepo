@@ -14,11 +14,11 @@
   (Added 2026-08-30.)
 
 ## Repos (live)
-- Backend: `C:/AI/NEW-AI-REBORN` (git `f02690d` → `2b49f0d` today)
+- Backend: `C:/AI/backend` (was `C:/AI/NEW-AI-REBORN` — repo renamed)
 - Frontend: `C:/AI/astral-expo` (git `5ee2c539` → `33649878` today)
 - Live vault: `C:/AI/obsidian-vault` (this file)
-- Specs: `C:/AI/research-astrology` (01–15)
-- Command Bus: `C:/AI/command/dispatch.py` (FORGE/ATLAS/ORACLE; port 8001)
+- Specs: `C:/AI/research-astrology` (01–18)
+- ~~Command Bus: `C:/AI/command/dispatch.py` (FORGE/ATLAS/ORACLE; port 8001)~~ — **REMOVED 2026-09-26** (Command Bus + Queen Bee hive + department system deleted; briefing scripts relocated to `astral-assets/briefing/`)
 
 ## Standing orders (user)
 - Speak 100% Thai, address as "นาย", tarot-reader warm voice.

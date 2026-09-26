@@ -2,6 +2,10 @@
 _scratch/
 workspace-scratch/
 .pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
 __pycache__/
 *.pyc
 
@@ -43,7 +47,9 @@ obsidian-vault/backups/obsidian-vault-backup/
 
 # secrets / config
 .env
-render.yaml
+
+# render.yaml is deploy config, not a secret — it MUST be committed or a fresh
+# clone cannot reproduce the deployment.
 
 # HF model cache (13GB local)
 .cache/
