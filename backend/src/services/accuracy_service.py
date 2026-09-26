@@ -9,22 +9,21 @@ from datetime import datetime
 
 from src.services.chart_service import compute_chart
 
-# Reference geocentric ecliptic longitudes (degrees) from JPL Horizons
-# (geometric, apparent-ish convention documented; tolerance absorbs the
-# ~53mas convention offset between SE and Horizons).
-# Format: ("YYYY-MM-DD", {"Sun": deg, "Moon": deg, "Mars": deg})
-# Reference geocentric ecliptic longitudes (degrees) — Swiss Ephemeris values
-# at 00:00 UT. Swiss Ephemeris agrees with JPL Horizons to well under 0.01°
-# for the Sun and ~0.05° for the Moon (convention-level differences only).
+# Reference geocentric ecliptic longitudes (degrees) — Swiss Ephemeris
+# 20230604, FLG_SWIEPH, apparent, equinox OF DATE, at 00:00 UT.
+# Regenerated 2026-09-27. The previous table was captured while the engine was
+# still returning J2000-referred longitudes, so every row was off by the
+# general precession (0.01397 deg/yr) — 0.14 deg at 1990, 0.33 deg at 2024 —
+# and the cross-validation below reported those offsets as engine error.
 _SAMPLES = [
-    ("1990-05-19", {"Sun": 57.906, "Moon": 342.464, "Mars": 351.064}),
-    ("1997-08-18", {"Sun": 145.134, "Moon": 318.692, "Mars": 212.283}),
-    ("2000-01-01", {"Sun": 279.869, "Moon": 217.3, "Mars": 327.583}),
-    ("2004-12-26", {"Sun": 274.492, "Moon": 87.63, "Mars": 240.164}),
-    ("2008-08-08", {"Sun": 135.71, "Moon": 216.276, "Mars": 172.675}),
-    ("2015-06-15", {"Sun": 83.397, "Moon": 63.326, "Mars": 83.305}),
-    ("2020-03-11", {"Sun": 350.605, "Moon": 188.618, "Mars": 285.961}),
-    ("2024-02-29", {"Sun": 339.555, "Moon": 208.086, "Mars": 311.812}),
+    ("1990-05-19", {"Sun": 57.769, "Moon": 342.332, "Mars": 350.931}),
+    ("1997-08-18", {"Sun": 145.095, "Moon": 318.664, "Mars": 212.247}),
+    ("2000-01-01", {"Sun": 279.859, "Moon": 217.293, "Mars": 327.575}),
+    ("2004-12-26", {"Sun": 274.553, "Moon": 87.703, "Mars": 240.227}),
+    ("2008-08-08", {"Sun": 135.828, "Moon": 216.399, "Mars": 172.794}),
+    ("2015-06-15", {"Sun": 83.608, "Moon": 63.537, "Mars": 83.516}),
+    ("2020-03-11", {"Sun": 350.876, "Moon": 188.901, "Mars": 286.236}),
+    ("2024-02-29", {"Sun": 339.886, "Moon": 208.426, "Mars": 312.143}),
 ]
 
 TOLERANCES = {"Sun": 0.05, "Moon": 0.30, "Mars": 0.10}  # degrees

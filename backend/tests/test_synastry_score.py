@@ -1,10 +1,12 @@
 """Spec 03 §2/§4 synastry scoring — ground truths + endpoint contract.
 
-Machine-verified anchors (spec 03 header: cross-aspects computed for real):
-  Mai Venus Cancer 19.90 sextile M Mars Virgo 19.32   -> orb 0.58
-  M Venus Gemini 10.15 conj Mai Saturn Gemini 13.59   -> orb 3.44
-  M mean north node 1997-05-19 = Virgo ~25.75         -> no nodal contact
-  DK(M) = Sun 4.37 (spec 02 §6) -> karmic via DK cross-check
+Machine-verified anchors (spec 03 header: cross-aspects computed for real).
+All longitudes below regenerated from Swiss Ephemeris 20230604 on
+2026-09-27, equinox of date:
+ Mai Venus Cancer 19.92 sextile M Mars Virgo 19.32   -> orb 0.58
+ M Venus Gemini 10.11 conj Mai Saturn Gemini 13.61   -> orb 3.50
+ M mean north node 1997-05-19 = Virgo ~25.75         -> no nodal contact
+ DK(M) = Sun 4.37 (spec 02 §6) -> karmic via DK cross-check
 Note: the spec's "M ASC Scorpio 25.96" is astronomically impossible for
 05:45 ICT (minutes before sunrise the ASC must sit at the Sun's longitude);
 an independent hour-angle horizon scan puts M ASC at Taurus ~26.0 and
@@ -124,7 +126,11 @@ def test_score_venus_saturn_conjunction_ground_truth():
     vs = [c for c in prof["top_bonds"]
           if c["kind"] == "Venus-Saturn" and c["aspect"] == "conjunction"]
     assert vs
-    assert abs(vs[0]["orb"] - 3.44) < 0.05  # spec: 3.44
+    # Ground truth regenerated from Swiss Ephemeris 20230604 (FLG_SWIEPH) on
+    # 2026-09-27: Venus M = Gemini 10.109, Saturn Mai = Gemini 13.605.
+    # The previous 3.44 came from the engine's J2000-referred longitudes and
+    # was therefore 0.056 deg away from the true aspect.
+    assert abs(vs[0]["orb"] - 3.496) < 0.01
 
 
 def test_score_karmic_dk_cross_check_regression():
