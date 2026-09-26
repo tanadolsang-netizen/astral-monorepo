@@ -32,6 +32,15 @@ dist/
 .DS_Store
 Thumbs.db
 
+# local-only SQLite cache (untracked by design; rebuilt from db/migrations + db/seeds)
+backend/astral.db
+backend/db/backups/
+
+# nested clone of this very repo (was a gitlink with no .gitmodules, which made
+# `git clone --recurse-submodules` fail and a fresh clone impossible to repair).
+# git history already backs the vault up; keep the directory local-only.
+obsidian-vault/backups/obsidian-vault-backup/
+
 # secrets / config
 .env
 render.yaml

@@ -21,5 +21,11 @@ jobs:
       - name: Install dependencies (incl. dev)
         run: uv sync --all-extras --dev
 
+      # astral.db is a local-only SQLite cache (untracked by design). Tests that
+      # touch src/integrations/local_db.py need it, so bootstrap it from
+      # db/migrations + db/seeds before collecting.
+      - name: Bootstrap local database
+        run: uv run python db/setup_local_db.py
+
       - name: Run tests
         run: uv run python -m pytest -q
