@@ -38,3 +38,8 @@ render.yaml
 
 # HF model cache (13GB local)
 .cache/
+
+# Hermes Agent (install, data, secrets, backups)
+hermes/
+hermes-backup-*/
+hermes-reinstall.log
