@@ -43,3 +43,4 @@ render.yaml
 hermes/
 hermes-backup-*/
 hermes-reinstall.log
+hermes-desktop-reinstall.log
