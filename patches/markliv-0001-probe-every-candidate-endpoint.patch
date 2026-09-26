@@ -1,0 +1,149 @@
+From 62ea2cf6c2c6fed4de4ad1f54b503cb89fe8da73 Mon Sep 17 00:00:00 2001
+From: Hermes <hermes@local>
+Date: Sat, 26 Sep 2026 14:53:56 +0700
+Subject: [PATCH] fix(audio): probe every candidate endpoint, not just the
+ first
+
+_transport_works only tested found[0]; on a host where MME listed a
+Realtek sink ahead of an Audient iD4, the dead-first endpoint passed
+its probe while consuming nothing and the working card was thrown
+away with the whole host API. Walk the full candidate list and keep
+the API if any endpoint is a real sink.
+
+Also fix .gitignore patterns that carried trailing # comments: git
+treats the whole line as the pattern, so config/api_keys.json  # note
+matched nothing and the secret was silently NOT ignored.
+---
+ .gitignore            | 20 ++++++++++++++------
+ core/audio_devices.py | 15 ++++++++++++---
+ core/gemini.py        | 13 ++++++++++---
+ run_markliv.bat       | 11 +++++++++++
+ setup.py              |  3 ++-
+ 5 files changed, 49 insertions(+), 13 deletions(-)
+ create mode 100644 run_markliv.bat
+
+diff --git a/.gitignore b/.gitignore
+index d0badd7..3069ff3 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -5,12 +5,20 @@
+ # never be.
+ 
+ # ── Secrets. Committing any of these publishes them. ──────────────────────────
+-config/api_keys.json          # your Gemini API key, plus per-plugin credentials
+-config/certs/                 # the dashboard's TLS private key and certificate
+-config/whatsapp_web/          # a LINKED WhatsApp session — committing it hands
+-                              # somebody your WhatsApp account, not just a key
+-**/token*.json                # Google OAuth tokens (Gmail / Calendar plugins)
+-**/client_secret*.json        # Google OAuth client secrets
++# NOTE: git does NOT support trailing `# comments` on a pattern line — the whole
++# line becomes the pattern verbatim, so `foo.json  # note` matches NOTHING and
++# the secret is silently NOT ignored. Every comment below sits on its own line.
++# your Gemini API key, plus per-plugin credentials
++config/api_keys.json
++# the dashboard's TLS private key and certificate
++config/certs/
++# a LINKED WhatsApp session — committing it hands somebody your whole WhatsApp
++# account, not just a key
++config/whatsapp_web/
++# Google OAuth tokens (Gmail / Calendar plugins)
++**/token*.json
++# Google OAuth client secrets
++**/client_secret*.json
+ *credentials*.json
+ .env
+ .env.*
+diff --git a/core/audio_devices.py b/core/audio_devices.py
+index c9c84ec..cd1f08b 100644
+--- a/core/audio_devices.py
++++ b/core/audio_devices.py
+@@ -297,16 +297,25 @@ def _query() -> dict[str, list[str]]:
+         # problems — on Windows the microphone works on DirectSound while the
+         # speakers only work on MME — and a single global choice cannot be right
+         # for both.
++        #
++        # The probe walks the whole candidate list, not just its head. It used to
++        # test found[0] and, on a miss, throw the entire host API away — but a
++        # dead first endpoint says nothing about the rest. On a machine with
++        # Realtek and an Audient iD4, MME listed the Realtek endpoint first, it
++        # opened without error while consuming nothing, and the card that could
++        # actually make a sound was discarded with it. Every candidate gets
++        # probed; the API survives if any one of them is a real sink.
+         for kind in ("input", "output"):
+             for api_filter in list(preferred) + [None]:
+                 found = _collect(api_filter, kind)
+                 if not found:
+                     continue
+-                # One probe per API per direction, cached, on this thread.
+-                if not _transport_works(found[0][0], kind, (api_filter, kind)):
++                working = [p for p in found
++                           if _transport_works(p[0], kind, (api_filter, kind, p[0]))]
++                if not working:
+                     continue
+                 _chosen_api[kind] = api_filter
+-                out[kind] = [_display_name(n, devices) for _i, n in found]
++                out[kind] = [_display_name(n, devices) for _i, n in working]
+                 break
+             if out[kind]:
+                 print(f"[Audio] {kind}: using "
+diff --git a/core/gemini.py b/core/gemini.py
+index 45c7bf1..78dacc6 100644
+--- a/core/gemini.py
++++ b/core/gemini.py
+@@ -114,12 +114,19 @@ SEARCH = "search"  # grounded search — REST only, see below
+ LIVE = "live"
+ 
+ _LADDERS = {
+-    FAST: (LIVE, "gemini-2.5-flash-lite", "gemini-2.5-flash"),
+-    SMART: (LIVE, "gemini-2.5-flash", "gemini-2.5-flash-lite"),
++    FAST: (LIVE, "gemini-3.8-flash", "gemini-flash-lite-latest"),
++    SMART: (LIVE, "gemini-3.8-flash", "gemini-flash-lite-latest"),
+     # Grounded search needs response.candidates[...].grounding_metadata, which a
+     # Live turn does not produce. REST only, and it says so rather than silently
+     # returning an answer with no sources behind it.
+-    SEARCH: ("gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"),
++    #
++    # Model names here must be ones the CURRENT key can actually reach.
++    # Google retired gemini-2.5-flash / -flash-lite for new projects: they
++    # return 404 "no longer available to new users" and burn a round trip on
++    # every call before the ladder moves on. `gemini-flash-latest` now resolves
++    # to gemini-3.8-flash, so it is the safe alias; flash-lite-latest is the
++    # cheap second rung.
++    SEARCH: ("gemini-flash-latest", "gemini-3.8-flash", "gemini-flash-lite-latest"),
+ }
+ 
+ # The Live model to use for one-shot calls. main.py owns the real one; this is
+diff --git a/run_markliv.bat b/run_markliv.bat
+new file mode 100644
+index 0000000..d7faf49
+--- /dev/null
++++ b/run_markliv.bat
+@@ -0,0 +1,11 @@
++@echo off
++REM MARK LIV launcher
++cd /d "%~dp0"
++if not exist ".venv\Scripts\python.exe" (
++  echo [MARK LIV] Virtualenv missing. Run:  py -3.11 -m venv .venv
++  echo           then:  .venv\Scripts\python.exe setup.py
++  pause
++  exit /b 1
++)
++start "" ".venv\Scripts\pythonw.exe" main.py
++exit /b 0
+diff --git a/setup.py b/setup.py
+index d7bba74..31b458d 100644
+--- a/setup.py
++++ b/setup.py
+@@ -96,7 +96,8 @@ def main() -> None:
+         try:
+             import win32com.client  # noqa: F401
+         except ImportError:
+-            postinstall = Path(sys.executable).parent / "Scripts" / "pywin32_postinstall.py"
++            # sys.executable already lives in the venv's Scripts/ dir on Windows
++            postinstall = Path(sys.executable).parent / "pywin32_postinstall.py"
+             print(
+                 "\n⚠️  pywin32 did not register correctly — desktop-shortcut "
+                 "creation will use a slower fallback. To fix it, run:\n"
+-- 
+2.53.0.windows.3
+
