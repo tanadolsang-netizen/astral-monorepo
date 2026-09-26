@@ -30,13 +30,11 @@ const generateStars = (count: number): Star[] => {
 };
 
 export default function Starfield() {
-  const starsRef = useRef<Star[]>(generateStars(200));
+  const starsRef = useRef<Star[]>(generateStars(120));
   const animValues = useRef(
     starsRef.current.map(() => ({
       y: new Animated.Value(Math.random() * SCREEN_HEIGHT),
       opacity: new Animated.Value(Math.random() * 0.8 + 0.2),
-      scale: new Animated.Value(Math.random() * 0.5 + 0.5),
-      xDrift: new Animated.Value(0),
     }))
   ).current;
 
@@ -78,43 +76,7 @@ export default function Starfield() {
       );
     });
 
-    const scaleAnimations = starsRef.current.map((star, index) => {
-      const anim = animValues[index];
-      return Animated.loop(
-        Animated.sequence([
-          Animated.timing(anim.scale, {
-            toValue: star.depth * 1.8,
-            duration: star.twinkleSpeed * 1.5,
-            useNativeDriver: true,
-          }),
-          Animated.timing(anim.scale, {
-            toValue: star.depth * 0.6,
-            duration: star.twinkleSpeed * 1.5,
-            useNativeDriver: true,
-          }),
-        ])
-      );
-    });
-
-    const driftAnimations = starsRef.current.map((star, index) => {
-      const anim = animValues[index];
-      return Animated.loop(
-        Animated.sequence([
-          Animated.timing(anim.xDrift, {
-            toValue: 15,
-            duration: star.twinkleSpeed * 2,
-            useNativeDriver: true,
-          }),
-          Animated.timing(anim.xDrift, {
-            toValue: -15,
-            duration: star.twinkleSpeed * 2,
-            useNativeDriver: true,
-          }),
-        ])
-      );
-    });
-
-    const allAnimations = [...animations, ...twinkleAnimations, ...scaleAnimations, ...driftAnimations];
+    const allAnimations = [...animations, ...twinkleAnimations];
     allAnimations.forEach(anim => anim.start());
 
     return () => {

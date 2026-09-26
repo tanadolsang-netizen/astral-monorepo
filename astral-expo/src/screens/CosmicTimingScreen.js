@@ -11,10 +11,10 @@ const t = (lang, key) => {
 };
 
 const TIMING = [
-  { dayKey: 'timing.today', vibe: 'Mercury sextile Jupiter — communication flows. Good for signing, learning, short trips.', color: '#80deea' },
-  { dayKey: 'timing.tomorrow', vibe: 'Moon trine Saturn — emotional stability. Focus on long-term planning and discipline.', color: '#ffcc80' },
-  { dayKey: 'timing.week', vibe: 'Sun enters your 5th house — creativity peaks. Romance and self-expression favored.', color: '#ff9800' },
-  { dayKey: 'timing.month', vibe: 'Full moon in your career sector — professional culmination. Public recognition possible.', color: '#ffcc80' },
+  { dayKey: 'timing.today', vibeKey: 'timing.vibeToday', color: '#80deea' },
+  { dayKey: 'timing.tomorrow', vibeKey: 'timing.vibeTomorrow', color: '#ffcc80' },
+  { dayKey: 'timing.week', vibeKey: 'timing.vibeWeek', color: '#ff9800' },
+  { dayKey: 'timing.month', vibeKey: 'timing.vibeMonth', color: '#ffcc80' },
 ];
 
 export default function CosmicTimingScreen({ navigation, lang }) {
@@ -35,13 +35,13 @@ export default function CosmicTimingScreen({ navigation, lang }) {
           {TIMING.map((tItem, i) => (
             <TouchableOpacity key={i} style={[styles.card, { borderColor: tItem.color }]} onPress={() => setSelected(tItem.dayKey)}>
               <Text style={[styles.cardTitle, { color: tItem.color }]}>{t(lang, tItem.dayKey)}</Text>
-              <Text style={styles.cardText}>{tItem.vibe}</Text>
+              <Text style={styles.cardText}>{t(lang, tItem.vibeKey)}</Text>
             </TouchableOpacity>
           ))}
           {selected && (
             <View style={styles.detail}>
               <Text style={styles.detailTitle}>{t(lang, selected)} Guidance</Text>
-              <Text style={styles.detailText}>{lang === 'th' ? 'ทำ cardiovascular สมควร: สนทนา วางแผน สร้างสรรค์ หลีกเลี่ยง: รีบร้อนในช่วง void moon ช่วง optimal: 9am-12pm และ 4pm-7pm' : 'Best actions: communicate, plan, create. Avoid: rushing decisions during void moon periods. Optimal hours: 9am-12pm and 4pm-7pm.'}</Text>
+              <Text style={styles.detailText}>{lang === 'th' ? 'ควรทำ: สนทนา วางแผน สร้างสรรค์ หลีกเลี่ยง: รีบร้อนในช่วงจันทร์ว่างเปล่า ช่วงเวลาที่เหมาะสม: 9 โมงเช้า-12 ทุ่ม และ 4 โมงเย็น-7 โมงเย็น' : 'Best actions: communicate, plan, create. Avoid: rushing decisions during void moon periods. Optimal hours: 9am-12pm and 4pm-7pm.'}</Text>
             </View>
           )}
           <TouchableOpacity style={styles.backBtn} onPress={() => navigation.goBack()}>
