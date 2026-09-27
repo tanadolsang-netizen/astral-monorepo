@@ -48,6 +48,8 @@ INPUT: วันเกิด + เวลาเกิด + พิกัด (+ tz 
 | `06-human-design-engine-spec.md` | Human Design | gate wheel (Gate 41 @ 02° Aquarius), Type/Authority/Profile, worked gates | ⚠️ pending verification |
 | `07-tarot-engine-spec.md` | ทาโรต์ | seeded RNG (Fisher–Yates), spreads, card JSON schema, astro-fusion — deterministic, ไม่พึ่ง ephemeris | ✅ |
 | `09-fixedstars-sabian-decans-lots-engine-spec.md` | ดาวฤกษ์+Sabian | Venus-Aldebaran hit, Lots computed (Marriage orb .1° w/ Mai Venus); ⚠️ Gienah รอ exact J2000 [VERIFY] | ✅ |
+| `16-parans-frame-validation.md` | Paran frame audit + PM | กรอบเทียบ SOFA/ERFA `pnm06a` = **0.0000″** · เพิ่ม proper motion จริง (Hipparcos vdl 2007) · ตำแหน่งดาวดีขึ้น 45.7″ → 0.0003″ · docstring เดิมผิด 1140 เท่า | ✅ |
+| `18-star-catalogue-consolidation.md` | รวมตารางดาวสองชุด → `star_catalogue` | **71/82 แถวผิด** (row misalignment) · cache เก่าผูก HIP ผิด 4 ดวง · α Cen ต้องแยก component · 7 ดวงไม่ผ่านการพิสูจน์ → ถอดออกจากสิ่งที่วาด · **19/19 ตรงค่า published ≤0.02″** | ✅ |
 | `10-asteroids-engine-spec.md` | ดาวเคราะห์น้อย | Swiss Ephemeris computed positions; M Juno sextile Mai Sun 0.01° | ✅ |
 | `11-numerology-engine-spec.md` | เลขศาสตร์ตะวันตก | LP5/BD1/PY26=7 worked + Thai cross-link | ✅ |
 | `12-iching-engine-spec.md` | อี้จิง 易經 | King Wen table + coin-probability casting | ✅ |
@@ -72,6 +74,20 @@ INPUT: วันเกิด + เวลาเกิด + พิกัด (+ tz 
 | `ephe/sepl_18.se1` | Swiss Ephemeris data — main planets | 10 |
 
 > ⚠️ ช่องว่างที่รู้ตัว: **ไม่มีไฟล์ spec 08** (Birth-time-unknown fallback — คิว wave 2) · spec 01 อ้าง `transit_week_scan.py` ซึ่ง**ยังไม่มีบนดิสก์** (มีแค่ `transit_hits.py` / `transit_hits2.py`)
+
+### 2b · `astral-energy/` — ชุดงานพลังจิต/พลังจักรวาล (6 ไฟล์ · ยังไม่ถูกลิงก์ที่ไหนเลยก่อนหน้านี้)
+
+| ไฟล์ | เนื้อหา | สถานะ |
+|---|---|---|
+| `astral-energy/01-astral-body-and-projection.md` | ร่างกายจักรวาล (aura) และการฉายภาพนอกกาย | 📄 |
+| `astral-energy/02-aura-chakra-subtle-energy.md` | aura · chakra · พลังจิตละเอียด | 📄 |
+| `astral-energy/03-astral-plane-cosmology.md` | จักรวาลเสมโน (astral plane) | 📄 |
+| `astral-energy/04-astrology-as-symbolic-cosmology.md` | โหราศาสตร์ในฐานะสัญลักษณ์เชิงจักรวาล | 📄 |
+| `astral-energy/05-planetary-environment-data-evidence.md` | ข้อมูลสภาพแวดล้อมดาวเคราะห์ + หลักฐาน | 📄 |
+| `astral-energy/06-astral-energy-apps-market-2026.md` | สภาพตลาดแอปพลังงาน 2026 | 📄 |
+
+> ⚠️ ชุดนี้เป็น **ความเชื่อ/ตำรา** ไม่ใช่ข้อมูลที่ verify ทางดาราศาสตร์ — แยกจากกลุ่ม engine spec ข้างบนตั้งใจ
+> ตัวเลขดาราศาสตร์ที่ถูกต้อง **ไม่ได้** ทำให้เนื้อหาเชิงสัญลักษณ์กลายเป็นข้อเท็จจริง (ดู `16-parans-frame-validation.md` §2.3)
 
 ## 3. กฎ FUSION — เมื่อหลายระบบบอกไม่ตรงกัน (draft v1)
 

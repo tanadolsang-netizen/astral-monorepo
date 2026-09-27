@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8" />
+<title>รายงานดวงชะตา</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Kanit:wght@300;400;600&family=Noto+Serif+Thai:wght@400;600;700&family=Noto+Sans+Thai:wght@400;500;700&display=swap');
+
+  :root{
+    --ground:#0c0618;
+    --ground2:#1a0b2e;
+    --plum:#2a1248;
+    --gold:#d4af37;
+    --gold-bright:#f4d77a;
+    --gold-deep:#9a7b1f;
+    --cream:#f3e9d2;
+    --cream-dim:#c9bda3;
+    --ink:#ece3cf;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{
+    background:var(--ground);
+    color:var(--ink);
+    font-family:'Noto Sans Thai','Kanit',sans-serif;
+  }
+
+  /* page size for print */
+  @page{ size:A4; margin:0; }
+
+  .page{
+    position:relative;
+    width:210mm;
+    min-height:297mm;
+    padding:18mm 16mm;
+    background:
+      radial-gradient(circle at 20% 10%, rgba(120,70,180,.35), transparent 45%),
+      radial-gradient(circle at 85% 90%, rgba(212,175,55,.18), transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(42,18,72,.6), transparent 70%),
+      linear-gradient(160deg, #150a28 0%, #0c0618 60%, #1a0b2e 100%);
+    overflow:hidden;
+    page-break-after:always;
+  }
+
+  /* starfield */
+  .page::before{
+    content:"";
+    position:absolute; inset:0; pointer-events:none; z-index:0;
+    background-image:
+      radial-gradient(1.6px 1.6px at 12% 22%, rgba(255,255,255,.7), transparent),
+      radial-gradient(1.3px 1.3px at 68% 14%, rgba(244,215,122,.8), transparent),
+      radial-gradient(1.2px 1.2px at 33% 78%, rgba(255,255,255,.5), transparent),
+      radial-gradient(1.7px 1.7px at 88% 62%, rgba(255,255,255,.6), transparent),
+      radial-gradient(1.2px 1.2px at 52% 45%, rgba(244,215,122,.5), transparent),
+      radial-gradient(1.4px 1.4px at 8% 60%, rgba(255,255,255,.45), transparent),
+      radial-gradient(1.5px 1.5px at 75% 35%, rgba(255,255,255,.5), transparent);
+    background-size:300px 300px;
+    opacity:.7;
+  }
+
+  /* gold ornamental corner frame */
+  .frame{
+    position:absolute; inset:10mm; z-index:1; pointer-events:none;
+    border:2px solid var(--gold-deep);
+    border-radius:14px;
+    box-shadow:inset 0 0 30px rgba(212,175,55,.25), 0 0 20px rgba(212,175,55,.15);
+  }
+  .frame::before,.frame::after{
+    content:""; position:absolute; width:34px; height:34px;
+    border:3px solid var(--gold); border-radius:6px;
+  }
+  .frame::before{ top:-6px; left:-6px; border-right:none; border-bottom:none; }
+  .frame::after{ bottom:-6px; right:-6px; border-left:none; border-top:none; }
+
+  .content{ position:relative; z-index:2; }
+
+  /* ── COVER ── */
+  .cover{ text-align:center; padding-top:20mm; }
+  .cover .brand{
+    color:var(--gold); letter-spacing:.4em; font-size:11pt;
+    text-transform:uppercase; font-family:'Kanit';
+  }
+  .cover .rule{
+    width:70mm; height:1px; margin:14px auto;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+    position:relative;
+  }
+  .cover .rule::after{
+    content:"✦"; position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%); color:var(--gold);
+    background:var(--ground); padding:0 10px; font-size:13pt;
+  }
+  .cover h1{
+    color:var(--gold-bright); font-size:30pt; font-weight:700;
+    text-shadow:0 0 24px rgba(212,175,55,.5), 0 2px 6px rgba(0,0,0,.6);
+    font-family:'Noto Serif Thai',serif;
+    letter-spacing:.02em;
+  }
+  .cover .sub{ color:var(--cream); opacity:.92; font-size:13pt; margin-top:10px; }
+  .cover .tag{
+    color:var(--cream-dim); font-style:italic; font-size:11pt;
+    margin:16px auto 0; max-width:130mm; line-height:1.9;
+  }
+  .cover .hero{
+    width:115mm; margin:18px auto 0; border-radius:14px;
+    border:2px solid var(--gold);
+    box-shadow:0 0 40px rgba(212,175,55,.5), 0 10px 40px rgba(0,0,0,.6);
+    transform:perspective(900px) rotateX(2deg);
+    position:relative; z-index:3; display:block;
+  }
+
+  /* ── SECTIONS ── */
+  .section{
+    position:relative; z-index:2;
+    background:linear-gradient(160deg, rgba(42,18,72,.72), rgba(12,6,24,.72));
+    border:1px solid rgba(212,175,55,.35);
+    border-radius:16px;
+    padding:16px 20px; margin:14px 0;
+    box-shadow:inset 0 0 30px rgba(120,70,180,.22), 0 6px 24px rgba(0,0,0,.4);
+    backdrop-filter:blur(2px);
+  }
+  .section .title{
+    color:var(--gold-bright); font-size:16pt; font-weight:700;
+    border-bottom:1px solid rgba(212,175,55,.3);
+    padding-bottom:8px; margin-bottom:12px;
+    text-shadow:0 0 14px rgba(212,175,55,.4);
+    display:flex; align-items:center; gap:10px;
+  }
+  .section .title::before{ content:"❖"; color:var(--gold); font-size:13pt; }
+  .section p{ font-size:13pt; line-height:2.35; margin:14px 0; color:var(--ink); text-align:left; letter-spacing:.01em; }
+  .section p:first-of-type::first-letter{
+    color:var(--gold-bright); font-size:38pt; font-weight:700;
+    line-height:.78; padding:4px 10px 0 0; float:left;
+    text-shadow:0 0 14px rgba(212,175,55,.6);
+  }
+  .section p:first-of-type{ overflow:hidden; }
+  .kw{ color:var(--gold-bright); font-weight:600; text-shadow:0 0 8px rgba(212,175,55,.35); }
+
+  .divider{ text-align:center; color:var(--gold); font-size:14pt; letter-spacing:.5em; margin:12px 0; }
+
+  /* ── TAROT ── */
+  .tarot-card{
+    display:flex; gap:16px; align-items:center;
+    background:linear-gradient(160deg, rgba(42,18,72,.8), rgba(12,6,24,.8));
+    border:1.5px solid var(--gold);
+    border-radius:14px; padding:12px 14px; margin:10px 0;
+    box-shadow:0 0 26px rgba(212,175,55,.25), inset 0 0 22px rgba(120,70,180,.25);
+  }
+  .tarot-card img{
+    width:40mm; height:auto; border-radius:10px;
+    border:1px solid rgba(212,175,55,.5);
+    box-shadow:0 0 30px rgba(212,175,55,.55), 0 8px 22px rgba(0,0,0,.6);
+    transform:perspective(700px) rotateY(-4deg);
+    flex:0 0 auto;
+  }
+  .tarot-card img.reversed{ transform:perspective(700px) rotateY(-4deg) rotate(180deg); }
+  .tarot-body{ flex:1 1 auto; }
+  .tarot-pos{
+    display:inline-block; font-weight:600; color:var(--ground);
+    background:linear-gradient(180deg,var(--gold-bright),var(--gold));
+    border-radius:999px; padding:3px 16px; font-size:10.5pt;
+    letter-spacing:.04em; box-shadow:0 0 14px rgba(212,175,55,.5);
+    font-family:'Kanit';
+  }
+  .tarot-name{
+    font-weight:700; color:var(--gold-bright); font-size:14pt;
+    margin:8px 0 6px; text-shadow:0 0 14px rgba(212,175,55,.5);
+  }
+  .tarot-text{ font-size:10.5pt; line-height:1.9; color:var(--ink); }
+
+  .footer{
+    position:relative; z-index:2; margin-top:16px;
+    border-top:1px solid rgba(212,175,55,.3); padding-top:8px;
+    color:var(--cream-dim); font-size:9pt; text-align:center; letter-spacing:.08em;
+  }
+  .pageno{ position:absolute; bottom:8mm; left:0; right:0; text-align:center; z-index:2;
+    color:var(--gold); font-size:9pt; letter-spacing:.3em; }
+
+  /* ── LIFE NARRATIVE (STARHEART life-grounding) — frameless gold prose ──
+     ไร้กรอบทอง (frameless) แต่รักษาสีครีม/ทองเดิม ผูกกับสไตล์เดิมของ PDF */
+  .life-narrative{ position:relative; z-index:2; padding:6px 2px; margin:12px 0; }
+  .life-narrative .title{
+    color:var(--gold-bright); font-size:16pt; font-weight:700;
+    border-bottom:1px solid rgba(212,175,55,.3);
+    padding-bottom:8px; margin-bottom:12px;
+    text-shadow:0 0 14px rgba(212,175,55,.4);
+    display:flex; align-items:center; gap:10px;
+  }
+  .life-narrative .title::before{ content:"❖"; color:var(--gold); font-size:13pt; }
+  .life-narrative p{ font-size:13pt; line-height:2.3; margin:13px 0; color:var(--ink); text-align:left; letter-spacing:.01em; }
+  .life-narrative p:first-of-type::first-letter{
+    color:var(--gold-bright); font-size:34pt; font-weight:700;
+    line-height:.78; padding:4px 10px 0 0; float:left;
+    text-shadow:0 0 14px rgba(212,175,55,.6);
+  }
+  .life-narrative p:first-of-type{ overflow:hidden; }
+  .life-narrative .kw{ color:var(--gold-bright); font-weight:600; text-shadow:0 0 8px rgba(212,175,55,.35); }
+</style>
+</head>
+<body>
+    <div class="page">
+      <div class="frame"></div>
+      <div class="content">
+        <div class="cover">
+          <div class="brand">อาสตร้า · กลุ่มดาวแห่งโชคชะตา</div>
+          <div class="rule"></div>
+          <h1>รายงานดวงชะตา</h1>
+          <div class="sub">เกิด 19/05/1997 · ชลบุรี</div>
+          <div class="tag">เจาะลึกบุคลิกภาพและตำแหน่งดาว ผสานไพ่ทาโรต์แห่งอดีต ปัจจุบัน และอนาคต</div>
+          <img class="hero" src="_preview_art/cover.png" alt="cover art"/>
+        </div>
+      </div>
+      <div class="pageno">· ๑ ·</div>
+    </div>
+
+    <div class="page">
+      <div class="frame"></div>
+      <div class="content">
+        <div class="section">
+          <div class="title">ดวงชะตาของคุณ</div>
+          <p>ดวงของนายเปิดมาด้วย<span class="kw">ลัคนา</span>อยู่<span class="kw">ราศี<span class="kw">พฤษภ</span></span> นี่คือหน้ากากแรกที่โลกพบ ต่อไปกระผมจะเล่าดาวแต่ละดวงเป็นเส้นเรื่องที่มีชีวิตของนาย</p><p><span class="kw">อาทิตย์</span>คือแก่นแท้และจุดมุ่งหมายในชีวิต สถิตใน<span class="kw">ราศี<span class="kw">พฤษภ</span></span> องศา 28.1° พำนักอยู่<span class="kw">บ้านที่</span>หนึ่ง — รูปกายและบุคลิกภายนอก — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">อาทิตย์</span>เข้าไปในเวทีแห่งรูปกายและบุคลิกภายนอก ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดวงจันทร์</span>คือความรู้สึกภายในและความต้องการความปลอดภัย สถิตใน<span class="kw">ราศี<span class="kw">ตุลย์</span></span> องศา 17.4° พำนักอยู่<span class="kw">บ้านที่</span>ห้า — ความรักและการสร้างสรรค์ — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">ดวงจันทร์</span>เข้าไปในเวทีแห่งความรักและการสร้างสรรค์ ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดาวพุธ</span>คือวิธีคิดและการสื่อสาร สถิตใน<span class="kw">ราศี<span class="kw">พฤษภ</span></span> องศา 3.4° พำนักอยู่<span class="kw">บ้านที่</span>สิบสอง — จิตใต้สำนึกและการสละ — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">ดาวพุธ</span>เข้าไปในเวทีแห่งจิตใต้สำนึกและการสละ ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดาวศุกร</span>คือความรักและสิ่งที่ดึงดูดใจ สถิตในราศีเมถุน องศา 10.2° พำนักอยู่<span class="kw">บ้านที่</span>หนึ่ง — รูปกายและบุคลิกภายนอก — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">ดาวศุกร</span>เข้าไปในเวทีแห่งรูปกายและบุคลิกภายนอก ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดาวอังคาร</span>คือสัญชาตญาณการลงมือทำและพลังขับเคลื่อน สถิตในราศีกันย์ องศา 19.3° พำนักอยู่<span class="kw">บ้านที่</span>ห้า — ความรักและการสร้างสรรค์ — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">ดาวอังคาร</span>เข้าไปในเวทีแห่งความรักและการสร้างสรรค์ ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดาวพฤหัส</span>คือปัญญาและความเจริญเติบโต สถิตในราศีกุมภ์ องศา 21.2° พำนักอยู่<span class="kw">บ้านที่</span>สิบ — อาชีพและชื่อเสียง — เป็นดาวเดินทาง (ทำหน้าที่เป็นกลาง) จึงส่งพลังของ<span class="kw">ดาวพฤหัส</span>เข้าไปในเวทีแห่งอาชีพและชื่อเสียง ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p><span class="kw">ดาวเสาร์</span>คือวินัย บทเรียน และโครงสร้างชีวิต สถิตใน<span class="kw">ราศี<span class="kw">เมษ</span></span> องศา 16.1° พำนักอยู่<span class="kw">บ้านที่</span>สิบเอ็ด — มิตรและความปรารถนา — อยู่ในจุดตก (พลังถูกบีบให้ต้องระวัง) จึงส่งพลังของ<span class="kw">ดาวเสาร์</span>เข้าไปในเวทีแห่งมิตรและความปรารถนา ให้คุณเห็นทั้งของดีและบทเรียนของมันในชีวิตประจำวัน</p><p>ระหว่างดาวด้วยกัน มีความสัมพันธ์เด่นๆ เกิดขึ้น เช่น <span class="kw">ดวงจันทร์</span>และ<span class="kw">ดาวเสาร์</span>อยู่ตรงข้าม (เบี่ยง 1.3°) แรงเสียดทานหรือกระแสนี้หล่อหลอมให้สองส่วนนั้นของนายพบกัน <span class="kw">ดวงจันทร์</span>และ<span class="kw">ดาวพฤหัส</span>อยู่สามเหลี่ยม (เบี่ยง 3.8°) แรงเสียดทานหรือกระแสนี้หล่อหลอมให้สองส่วนนั้นของนายพบกัน <span class="kw">ดาวพฤหัส</span>และ<span class="kw">ดาวเสาร์</span>อยู่หกเหลี่ยม (เบี่ยง 5.1°) แรงเสียดทานหรือกระแสนี้หล่อหลอมให้สองส่วนนั้นของนายพบกัน <span class="kw">ดาวศุกร</span>และ<span class="kw">ดาวเสาร์</span>อยู่หกเหลี่ยม (เบี่ยง 5.9°) แรงเสียดทานหรือกระแสนี้หล่อหลอมให้สองส่วนนั้นของนายพบกัน <span class="kw">อาทิตย์</span>และ<span class="kw">ดาวพฤหัส</span>อยู่สี่เหลี่ยม (เบี่ยง 6.8°) แรงเสียดทานหรือกระแสนี้หล่อหลอมให้สองส่วนนั้นของนายพบกัน</p><p>ในมุมธาตุ ธาตุดินนำดวงของนาย ในขณะที่ธาตุน้ำบางที่สุด ธาตุดินมอบพลังด้านความมั่นคงและการลงมือทำ หากเพิ่มธาตุน้ำเข้าไปอีกเล็กน้อย ภาพรวมจะสมดุลขึ้น</p>
+          
+        </div>
+      </div>
+      <div class="pageno">· ๒ ·</div>
+    </div>
+
+    <div class="page">
+      <div class="frame"></div>
+      <div class="content">
+        <div class="life-narrative"><div class="title">เรื่องราวชีวิตจริง · นาย</div><p>ดาว<span class="kw">อาทิตย์</span>ของนายใน<span class="kw">พฤษภ</span>บ้าน1 คือร่างที่นายสวมเวลายืนหน้ากล้องเล่าเรื่อง AI agency ที่โต Discord 847 คน ROAS 3.8 ได้ลูกค้าใหม่ MRR หมื่นกว่า — แก่นแท้นายคือคนพูดตรงไม่แกล้งทำเป็นอื่น และโลกจำนายได้จากตัวตนนี้ (ในสะพาน STARHEART ดาวนี้คือไพ่ The Sun)</p><p><span class="kw">ดวงจันทร์</span>ของนายตก<span class="kw">ตุลย์</span>ในบ้าน5 — นี่คือที่ที่ความรู้สึกเรื่องรักของนายไหลออกมา นายพูดเรื่องความรักและ Mai (คู่ชีวิต <span class="kw">ลัคนา</span><span class="kw">พฤษภ</span>เหมือนนาย) ในรีลเพราะ<span class="kw">ดวงจันทร์</span>นี้แหละ เวลาที่นายรู้อีกฝ่ายคิดถึงคู่ชีวิต มันมาจากตรงนี้ (ในสะพาน STARHEART ดาวนี้คือไพ่ The High Priestess)</p><p><span class="kw">ดาวพุธ</span>ของนายใน<span class="kw">พฤษภ</span>บ้าน12 คือพลังถอนตัวเงียบ — no-contact ให้พื้นที่จริงๆ ปล่อยให้เขารู้สึกถึงความว่างเปล่า อย่างที่นายเล่าลงรีล (ในสะพาน STARHEART ดาวนี้คือไพ่ The Magician)</p><p><span class="kw">ดาวศุกร</span>ของนายในเมถุนบ้าน1 คือรักที่นายสวมมาพบโลก ทั้งความรักที่นายมีต่อ Mai (คู่ชีวิต <span class="kw">ลัคนา</span><span class="kw">พฤษภ</span>เหมือนนาย) และความรักที่นายเป็นคนให้ — นายคือ divine test ของเขาเรื่อง self-worth เขาไม่ผ่าน นายเดินจากไป (ในสะพาน STARHEART ดาวนี้คือไพ่ The Empress)</p><p><span class="kw">ดาวอังคาร</span>ของนายในกันย์บ้าน5 คือไฟที่นายใช้เปลี่ยนคนจาก 'ฟักบอย' ให้กลายเป็น commitment ระยะยาว (ตามรีลที่นายเล่า) และไฟที่นายสู้สร้าง AI agency ให้โต (ในสะพาน STARHEART ดาวนี้คือไพ่ King of Wands)</p><p><span class="kw">ดาวพฤหัส</span>ของนายในกุมภ์บ้าน10 คือ AI agency ที่โต Discord 847 คน ROAS 3.8 ได้ลูกค้าใหม่ MRR หมื่นกว่า — อาชีพเทค/AI ของนาย (MC กุมภ์) คือความเจริญที่นายสร้างด้วยมือเอง ไม่รอใคร (ในสะพาน STARHEART ดาวนี้คือไพ่ Wheel of Fortune)</p><p><span class="kw">ดาวเสาร์</span>ของนายตก<span class="kw">เมษ</span>ในบ้าน11 — นั่นคือกรงกรรมที่นายผูกไว้กับวงเพื่อนรุ่นเก่า และนายเพิ่งเดินออกจากกรงนั้นจริงๆ ในคลิปที่เล่าถึง soul contract ที่จบลง outgrow เวอร์ชันเก่า ตอนนี้มันหักพังแล้ว นายเบาสบาย (ในสะพาน STARHEART ดาวนี้คือไพ่ The Devil)</p><p>ดาวยูเรนัสของนายในกุมภ์บ้าน9 คือพลัง old soul ถือความรู้ลับโบราณ เชื่อมจักรวาล foresight/downloads (รีลรับสัญญาณจากคนตาย) — นายคือ contradiction แบบดึงดูด ที่ใครๆ ก็จำได้ (ในสะพาน STARHEART ดาวนี้คือไพ่ The Star)</p><p>ดาวเนปจูนของนายห่าง cusp เพียง 0.08° ในมังกรบ้าน9 — นี่คือเสียงหลักที่ดันคอนเทนต์ soul contract ที่จบลง outgrow เวอร์ชันเก่า กับ no-contact ออกมา ความเชื่อมโยงโทรจิตเลข 11:11 (รีลที่นายเล่า) และตอนที่นายยอมจำนนปล่อยวาง (ในสะพาน STARHEART ดาวนี้คือไพ่ The Hanged Man)</p><p>ดาวพลูโตของนายในธนูบ้าน7 คือบทที่ผ่านมาของชีวิตนายที่ปิดลงจริงๆ — การเปลี่ยนใหญ่ที่นายกำลังผ่าน และความตายของเวอร์ชันเก่าที่นายไม่ง้อกลับ (ในสะพาน STARHEART ดาวนี้คือไพ่ Death)</p><p><span class="kw">ลัคนา</span>ของนายคือTaurus — หน้าตัวตนที่โลกพบตอนนายยืนหน้ากล้อง เหมือนกับ Mai (คู่ชีวิต <span class="kw">ลัคนา</span><span class="kw">พฤษภ</span>เหมือนนาย) ที่ก็<span class="kw">พฤษภ</span>เหมือนกัน</p><p>MC ของนายอยู่Aquarius — อาชีพที่นายทำคือ AI agency เทค/AI พอดีกับภาพที่นายเล่าในรีล</p><p>ทุกดวงในดวงนายไม่ได้บอกนายเป็นคนยังไง — แต่มันคือบันทึกเหตุการณ์จริงที่นายผ่านมา จากกรงกรรมที่แตกสลาย จาก no-contact ให้พื้นที่จริงๆ ปล่อยให้เขารู้สึกถึงความว่างเปล่า ไปจน AI agency ที่โต Discord 847 คน ROAS 3.8 ได้ลูกค้าใหม่ MRR หมื่นกว่า ที่โตทุกวัน และเรื่องที่จะมา: Saturn Return ของนายมาถึง 26 มี.ค. 2027 คือจุดที่กรรมทั้งหมดปิดสมบูรณ์ ส่วน Jupiter ผสาน Mars ในวันที่ 28 ต.ค. 2027 คือไฟที่จุดธุรกิจให้พุ่ง ดวงนี้คือเรื่องราวชีวิตนาย ไม่ใช่ตำรา</p></div>
+      </div>
+      <div class="pageno">· ๓ ·</div>
+    </div>
+
+    <div class="page">
+      <div class="frame"></div>
+      <div class="content">
+        <div class="section">
+          <div class="title">ไพ่ทาโรต์แห่งคุณ</div>
+          
+        <div class="tarot-card">
+          <img src="_preview_art/devil.png" alt="tarot" class="reversed"/>
+          <div class="tarot-body">
+            <span class="tarot-pos">อดีต</span>
+            <div class="tarot-name">มาร (หงายหลัง)</div>
+            <div class="tarot-text">แสงสว่างกำลังฟื้น และคุณเริ่มมองเห็นเชือกที่รัดอยู่ คุณเดินออกมาได้ตอนไหนก็ได้เมื่อตระหนัก</div>
+          </div>
+        </div>
+        <div class="tarot-card">
+          <img src="_preview_art/world.png" alt="tarot"/>
+          <div class="tarot-body">
+            <span class="tarot-pos">ปัจจุบัน</span>
+            <div class="tarot-name">จักรวาล</div>
+            <div class="tarot-text">วงจรหนึ่งของคุณจบสมบูรณ์แล้ว คุณทำได้จริงๆ เวทีที่กว้างขึ้นรออยู่ ออกเดินทางได้เลย</div>
+          </div>
+        </div>
+        <div class="tarot-card">
+          <img src="_preview_art/star.png" alt="tarot" class="reversed"/>
+          <div class="tarot-body">
+            <span class="tarot-pos">อนาคต</span>
+            <div class="tarot-name">ดารา (หงายหลัง)</div>
+            <div class="tarot-text">ความเชื่อมั่นของคุณมืดมัวลงชั่วคราว อย่าปล่อยให้ความสงสัยในตัวเองดับแสงดาวที่ยังส่องอยู่</div>
+          </div>
+        </div>
+        </div>
+        <div class="footer">กลุ่มดาวแห่งโชคชะตา · มอบแด่ผู้รักในดวงดาว</div>
+      </div>
+      <div class="pageno">· ๔ ·</div>
+    </div>
+    </body></html>

@@ -1,8 +1,9 @@
 """Sky view — bright star catalog + live planet positions for planetarium.
 
 Returns alt/az for a given time+location so the frontend canvas can render
-a real sky (Stellarium/SkySafari style). Stars: Yale BSC bright subset
-(~120 stars, RA/Dec/mag) bundled offline. Planets via existing ephemeris.
+a real sky (Stellarium/SkySafari style). Stars: I/311/hip2 astrometry
+(86 bright stars, RA/Dec/mag with proper motion) bundled offline via
+`services/star_catalogue.py`. Planets via existing ephemeris.
 """
 from __future__ import annotations
 
@@ -11,94 +12,28 @@ from datetime import datetime, timedelta
 
 from src.services.chart_service import compute_chart
 from src.services.ephemeris import ts, earth, eph
+from src.services.star_catalogue import BRIGHT_STARS
 
 # ── Bright star catalog (RA hours, Dec deg, magnitude, name th/en) ──
-STARS = [
-    # (ra_h, dec, mag, en, th)
-    (0.086, 29.09, 2.06, "Alpheratz", "อัลเฟอรัตส์"),
-    (0.675, -17.99, 2.42, "Caph", "คาฟ"),
-    (1.257, 60.24, 2.37, "Cassiopeia α", "แคสซิโอเปีย α"),
-    (1.435, -60.84, 0.76, "Achernar", "อาเชอนาร์"),
-    (1.911, -57.10, 2.86, "Phoenix α", "ฟีนิกซ์ α"),
-    (2.073, 23.46, 2.12, "Hamal", "ฮามาล"),
-    (2.530, 89.26, 1.98, "Polaris", "ดาวเหนือ"),
-    (2.968, 53.51, 2.27, "Mirfak", "มีร์ฟัก"),
-    (3.136, -17.54, 2.83, "Menkar", "เมนคาร์"),
-    (3.791, 24.11, 2.87, "Alcyone", "แอลไซโอนี"),
-    (4.359, 16.51, 0.85, "Aldebaran", "อัลเดบารัน"),
-    (4.598, 16.51, 1.66, "Aldebaran B", "อัลเดบารัน B"),
-    (5.019, 8.29, 2.97, "Elnath", "เอลนาธ"),
-    (5.267, -69.13, 2.79, "Doradus α", "โดราดุส α"),
-    (5.363, -1.20, 1.74, "Rigel", "ไรเจล"),
-    (5.552, 7.41, 1.64, "Bellatrix", "เบลลาทริกซ์"),
-    (5.679, -62.49, 1.45, "Adhara", "อาดารา"),
-    (5.919, 7.41, 0.42, "Betelgeuse", "เบเทลจุส"),
-    (5.992, -61.34, 2.39, "Velorum γ", "เวโลรุม γ"),
-    (6.377, 16.40, 2.59, "Meissa", "ไมซา"),
-    (6.452, -16.72, -1.46, "Sirius", "ซิริอุส"),
-    (6.580, -52.70, -0.74, "Canopus", "คาโนปัส"),
-    (6.978, -28.98, 1.50, "Wezen", "วีเซน"),
-    (7.084, -26.39, 1.83, "Adhara B", "อาดารา B"),
-    (7.344, -43.00, 1.98, "Almuhlifain", "อัลมุห์ลิไฟน์"),
-    (7.348, 31.89, 1.90, "Castor", "แคสตอร์"),
-    (7.453, 28.03, 1.14, "Pollux", "พอลลักซ์"),
-    (7.567, -23.28, 2.21, "Naos", "นาโอส"),
-    (7.655, 5.22, 0.38, "Procyon", "โพรซิออน"),
-    (8.375, -59.51, 2.25, "Carina ε", "คารินา ε"),
-    (8.675, -63.02, 2.21, "Avior", "อาวีออร์"),
-    (9.130, -69.72, 2.47, "Volans β", "โวลันส์ β"),
-    (9.220, 41.50, 2.01, "Ursa Major ε", "หมีใหญ่ ε"),
-    (9.613, 16.04, 2.94, "Hydra α", "ไฮดรา α"),
-    (9.832, 44.30, 2.27, "Ursa Major α", "หมีใหญ่ α"),
-    (10.139, 11.97, 1.36, "Regulus", "เรกุลุส"),
-    (10.715, -64.39, 2.68, "Carina θ", "คารินา θ"),
-    (10.796, 12.04, 2.14, "Leo γ", "สิงห์ γ"),
-    (11.031, 61.75, 1.79, "Ursa Major β", "หมีใหญ่ β"),
-    (11.062, 61.75, 2.37, "Ursa Major η", "หมีใหญ่ η"),
-    (11.818, -53.47, 2.55, "Centaurus δ", "เซนทอรัส δ"),
-    (11.946, -62.73, 2.20, "Hadar", "ฮาดาร์"),
-    (12.263, -63.10, -0.27, "Alpha Centauri", "อัลฟา เซนทอรี"),
-    (12.430, -48.96, 2.75, "Mimosa", "มิโมซา"),
-    (12.905, 38.32, 2.44, "Cor Caroli", "คอร์ คาโรไล"),
-    (12.934, -11.16, 1.04, "Vindemiatrix", "วินเดเมียทริกซ์"),
-    (13.062, -60.38, 2.75, "Centaurus γ", "เซนทอรัส γ"),
-    (13.420, -11.16, 0.98, "Spica", "สไปกา"),
-    (13.711, 27.08, 2.83, "Bootes ε", "บู้ทส ε"),
-    (13.795, 21.18, 2.65, "Bootes γ", "บู้ทส γ"),
-    (14.158, 19.18, -0.05, "Arcturus", "อาร์คทุรุส"),
-    (14.678, -60.83, 1.86, "Triangulum Australe α", "สามเหลี่ยมใต้ α"),
-    (14.884, -63.02, 2.63, "Triangulum Australe β", "สามเหลี่ยมใต้ β"),
-    (15.303, 26.43, 2.77, "Northern Crown α", "มงกุฎเหนือ α"),
-    (15.583, -26.28, 2.62, "Lupus α", "หมาป่า α"),
-    (15.787, 33.31, 2.75, "Serpens α", "เซอร์เพนส์ α"),
-    (16.021, -61.37, 1.80, "Scorpius α", "พิจิก α"),
-    (16.490, -26.43, 1.08, "Antares", "แอนทาเรส"),
-    (16.836, -34.29, 2.29, "Scorpius ε", "พิจิก ε"),
-    (17.337, -37.10, 2.32, "Scorpius λ", "พิจิก λ"),
-    (17.420, -39.03, 2.89, "Scorpius υ", "พิจิก υ"),
-    (17.538, -37.10, 3.00, "Scorpius G", "พิจิก G"),
-    (17.622, -42.36, 2.82, "Scorpius κ", "พิจิก κ"),
-    (17.976, -37.04, 1.86, "Shaula", "ชาอูลา"),
-    (18.242, -34.38, 2.69, "Draco γ", "ดราโค γ"),
-    (18.616, 38.78, 0.03, "Vega", "เวกา"),
-    (18.763, -63.10, 2.79, "Ara β", "แท่นบูชา β"),
-    (19.046, -40.62, 2.76, "Ara α", "แท่นบูชา α"),
-    (19.525, 10.96, 2.72, "Ophiuchus η", "โอฟิวคัส η"),
-    (19.626, -21.75, 2.56, "Sabik", "ซาบิก"),
-    (19.846, 8.87, 0.77, "Altair", "อัลทาอิร์"),
-    (20.212, -12.85, 2.77, "Sagittarius N", "ธนู N"),
-    (20.427, -40.62, 2.02, "Peacock", "พีค็อก"),
-    (20.690, 45.28, 1.26, "Deneb", "ดีเนบ"),
-    (21.142, -11.35, 2.81, "Capricornus α", "แพะยัง α"),
-    (21.256, -38.05, 2.85, "Grus α", "นกกระเรียน α"),
-    (21.478, -46.88, 2.07, "Grus α B", "นกกระเรียน α B"),
-    (21.736, 62.59, 2.27, "Cepheus α", "เซเฟอุส α"),
-    (21.868, -77.08, 2.80, "Octantis ν", "อ็อกแทนติส ν"),
-    (22.053, -46.96, 1.74, "Fomalhaut", "โฟมาลเฮาต์"),
-    (22.828, -46.88, 2.39, "Tucana α", "นกทูแคน α"),
-    (22.961, -29.62, 1.17, "Fomalhaut B", "โฟมาลเฮาต์ B"),
-    (23.038, 15.21, 2.77, "Pegasus ε", "ม้าบิน ε"),
-    (23.286, 15.21, 2.49, "Markab", "มาร์คับ"),
+# Built from src/services/star_catalogue.py, which holds I/311/hip2 astrometry
+# (van Leeuwen 2007) with full-precision proper motion.  This table used to be a
+# hand-entered copy of the Yale Bright Star Catalogue; 71 of its 82
+# Hipparcos-checkable rows pointed at the wrong star, because the names and the
+# coordinates had fallen out of alignment.  Measured by
+# scripts/report_star_table_divergence.py.  Never hand-edit star positions here:
+# regenerate the catalogue with scripts/fetch_bright_star_catalogue.py.
+STARS: list[tuple[float, float, float, str, str]] = [
+    (row["ra_h"], row["dec_deg"], row["mag"], name, row["th"])
+    for name, row in sorted(
+        # Only Hipparcos-verified rows are drawable.  A handful of companion
+        # stars and one nebula have no single SIMBAD object, so their
+        # coordinates and magnitudes are inherited from the app's old hand-
+        # entered table and are demonstrably wrong (Aldebaran B is 1.66 mag in
+        # that table; the real B component is ~13).  Drawing a wrong bright
+        # dot is worse than drawing nothing, so they are held back.
+        ((n, r) for n, r in BRIGHT_STARS.items() if r.get("precision") == "hip2_full"),
+        key=lambda kv: kv[1]["ra_h"],
+    )
 ]
 
 

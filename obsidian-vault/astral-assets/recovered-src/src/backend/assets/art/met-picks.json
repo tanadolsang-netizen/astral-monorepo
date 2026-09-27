@@ -1,0 +1,23 @@
+{
+ "venus_mars": {
+  "id": 437827,
+  "title": "Venus and the Lute Player",
+  "artist": "Titian",
+  "dept": "European Paintings",
+  "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-28918-001.jpg"
+ },
+ "diana": {
+  "id": 435622,
+  "title": "Diana and Cupid",
+  "artist": "Pompeo Batoni",
+  "dept": "European Paintings",
+  "img": "https://images.metmuseum.org/CRDImages/ep/original/DP-24221-001.jpg"
+ },
+ "cupid_psyche": {
+  "id": 188954,
+  "title": "Cupid and Psyche",
+  "artist": "Antonio Canova",
+  "dept": "European Sculpture and Decorative Arts",
+  "img": "https://images.metmuseum.org/CRDImages/es/original/DP248228.jpg"
+ }
+}

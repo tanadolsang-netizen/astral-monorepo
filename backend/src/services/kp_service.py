@@ -10,6 +10,7 @@ from __future__ import annotations
 import math
 from datetime import datetime
 
+from src.services.ayanamsa import ayanamsa_for
 from src.services.chart_service import compute_chart
 
 # Vimshottari dasha years (also the sub-division proportions)
@@ -27,16 +28,13 @@ SIGNS = ["Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo",
 
 
 def kp_ayanamsa(dt_utc: datetime) -> float:
-    """KP-Newcomb ayanamsa ≈ Lahiri − 6′.
+    """KP-Newcomb ayanamsa, in degrees.
 
-    Lahiri linear approx: 23°51'11\" at J2000 + 50.29"/yr.
-    Good to ±1′ across 1900-2100 — sufficient for sub-lord work with flags.
+    Previously a hand-rolled "Lahiri - 6'" linear approximation that was
+    25.9 arcsec off Swiss Ephemeris — enough to shift a KP star/lord
+    subdivision. Now sourced from the single ayanamsa module (Swiss-backed).
     """
-    j2000 = datetime(2000, 1, 1, 12)
-    dt_naive = dt_utc.replace(tzinfo=None) if dt_utc.tzinfo else dt_utc
-    years = (dt_naive - j2000).total_seconds() / (365.2422 * 86400)
-    lahiri = 23.853055 + years * (50.29 / 3600)
-    return lahiri - (6.0 / 60)
+    return ayanamsa_for("krishnamurti", dt_utc)
 
 
 def sidereal(lon_tropical: float, dt_utc: datetime) -> float:

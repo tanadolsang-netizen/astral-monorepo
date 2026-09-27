@@ -1,0 +1,13 @@
+[v1]
+prefix = "/v1"
+
+include_routers = [
+    "src.routers.health",
+    "src.routers.auth",
+    "src.routers.natal",
+    "src.routers.transit",
+    "src.routers.synastry",
+    "src.routers.branches",
+    "src.routers.dashboard",
+    "src.routers.payments",
+]

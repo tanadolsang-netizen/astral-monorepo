@@ -6,7 +6,8 @@ All longitudes below regenerated from Swiss Ephemeris 20230604 on
  Mai Venus Cancer 19.92 sextile M Mars Virgo 19.32   -> orb 0.58
  M Venus Gemini 10.11 conj Mai Saturn Gemini 13.61   -> orb 3.50
  M mean north node 1997-05-19 = Virgo ~25.75         -> no nodal contact
- DK(M) = Sun 4.37 (spec 02 §6) -> karmic via DK cross-check
+ DK(M) = Sun 4.19 (spec 02 §6; re-derived from Swiss 2026-09-27 — the old
+ 4.37 anchor was inflated by the pre-fix ayanamsa error) -> karmic via DK
 Note: the spec's "M ASC Scorpio 25.96" is astronomically impossible for
 05:45 ICT (minutes before sunrise the ASC must sit at the Sun's longitude);
 an independent hour-angle horizon scan puts M ASC at Taurus ~26.0 and
@@ -59,7 +60,12 @@ def test_darakaraka_owner_is_sun():
     dk = darakaraka(compute_chart(**M))
     assert dk is not None
     assert dk["planet"] == "Sun"          # spec 02 §6 verified
-    assert abs(dk["degree_in_sign"] - 4.37) < 0.15
+    # Anchor 4.19 re-derived 2026-09-27 from Swiss Ephemeris (set_sid_mode
+    # SIDM_LAHIRI): Sun tropical 58.0139 - ayanamsa 23.8205 = sidereal
+    # 34.1934 = Taurus 4.19. The previous 4.37 anchor came from the old
+    # hand-rolled ayanamsa, which was 487" (0.135 deg) too small — exactly
+    # the 0.18 deg drift this test caught.
+    assert abs(dk["degree_in_sign"] - 4.19) < 0.05
 
 
 def test_house_overlay_mutual_detection():

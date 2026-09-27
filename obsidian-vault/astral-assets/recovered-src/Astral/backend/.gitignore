@@ -1,0 +1,26 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.env
+node_modules/
+frontend/
+mobile/
+out/
+astral.db
+de421.bsp
+frontend_demo.html
+MOBILE_BUILD.md
+codemagic.yaml
+premium-sample.pdf
+synastry-Mark-mai.pdf
+supabase/
+docs/
+.data/
+de421.bsp
+
+# NEVER commit: personal birth-chart PDFs + build artifacts + vendored deps
+C:/AI/reports/
+reports/
+*.log
+vendor/

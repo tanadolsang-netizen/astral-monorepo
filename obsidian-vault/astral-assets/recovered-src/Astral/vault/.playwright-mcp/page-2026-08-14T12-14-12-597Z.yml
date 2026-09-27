@@ -1,0 +1,173 @@
+- generic [active] [ref=e1]:
+  - link "Skip to main content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - banner [ref=e6]:
+      - generic [ref=e8]:
+        - link "Home":
+          - /url: /
+          - img "Home" [ref=e9] [cursor=pointer]
+      - list [ref=e12]:
+        - listitem [ref=e13]:
+          - link "Twitter" [ref=e14] [cursor=pointer]:
+            - /url: http://www.twitter.com/wagnard
+        - listitem [ref=e15]:
+          - link "Facebook" [ref=e16] [cursor=pointer]:
+            - /url: http://www.facebook.com/ghislain.harvey
+        - listitem [ref=e17]:
+          - link "LinkedIn" [ref=e18] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/ghislain-harvey-32a330a0
+        - listitem [ref=e19]:
+          - link "Discord" [ref=e20] [cursor=pointer]:
+            - /url: https://discord.gg/JsSsKyqzjF
+    - navigation [ref=e22]:
+      - generic:
+        - generic:
+          - generic:
+            - list:
+              - listitem [ref=e25]:
+                - link "Home" [ref=e26] [cursor=pointer]:
+                  - /url: /
+              - listitem [ref=e28]:
+                - link "Software" [ref=e29] [cursor=pointer]:
+                  - /url: /software
+              - listitem [ref=e30]:
+                - link "Forums" [ref=e31] [cursor=pointer]:
+                  - /url: https://www.wagnardsoft.com/forums/
+              - listitem [ref=e33]:
+                - link "Shop" [ref=e34] [cursor=pointer]:
+                  - /url: https://shop.wagnardsoft.com
+              - listitem [ref=e35]:
+                - link "Contact Us" [ref=e36] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e38]:
+                - link "Privacy Policy" [ref=e39] [cursor=pointer]:
+                  - /url: /content/Privacy-Policy
+              - listitem [ref=e40]:
+                - link "About Us" [ref=e41] [cursor=pointer]:
+                  - /url: /content/About-Wagnardsoft
+    - generic [ref=e50]:
+      - img "Download Display Driver Uninstaller (DDU) 18.1.5.6" [ref=e54]
+      - generic:
+        - generic:
+          - generic [ref=e55]: "17"
+          - generic [ref=e56]: Jul
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - heading "Download Display Driver Uninstaller (DDU) 18.1.5.6" [level=1] [ref=e59]
+          - generic [ref=e61]:
+            - text: by
+            - link "Wagnard" [ref=e63] [cursor=pointer]:
+              - /url: /users/Wagnard
+        - generic [ref=e66]:
+          - paragraph [ref=e67]: Display Driver Uninstaller (DDU) is a driver removal utility that can help you completely uninstall AMD/NVIDIA/INTEL graphics card drivers and packages from your system, trying to remove all leftovers (including registry keys, folders and files, driver store). The AMD/NVIDIA/INTEL video drivers can normally be uninstalled from the Windows Control panel, this driver uninstaller program was designed to be used in cases where the standard driver uninstall fails, or when you need to thoroughly delete NVIDIA and ATI video card drivers. The current effect after you use this driver removal tool will be similar as if its the first time you install a new driver just like a fresh, clean install of Windows. As with any tool of this kind, we recommend creating a new system restore point before using it, so that you can revert your system at any time if you run into problems.
+          - paragraph [ref=e68]: If you have problem installing older driver or newer one, give it a try as there are some reports that it fix those problems.
+          - heading "RECOMMENDED USAGE :" [level=2] [ref=e69]
+          - paragraph [ref=e70]: "-The tool can be used in Normal mode but for absolute stability when using DDU, Safemode is always the best. -Make a backup or a system restore (but it should normally be pretty safe). -It is best to exclude the DDU folder completely from any security software to avoid issues. -You do NOT need to uninstall the driver prior using DDU."
+          - paragraph [ref=e71]
+          - paragraph [ref=e72]: Keep note that NVIDIA/AMD/INTEL did not have anything to do with this, I do not work at or for NVIDIA/AMD/INTEL and they should not be held responsible for anything that may go wrong with this application.
+          - paragraph [ref=e73]:
+            - text: If you need help for using DDU, check this
+            - link "GUIDE" [ref=e74] [cursor=pointer]:
+              - /url: https://www.wagnardsoft.com/content/ddu-guide-tutorial/
+          - heading "System Requirements:" [level=2] [ref=e75]
+          - paragraph [ref=e76]: .NET framework 4.8 Windows 7, 8, 8.1, 10, 11 (32/64 bits) (Insiders preview is at your own risk)
+          - paragraph [ref=e77]: "ChangeLog:"
+          - paragraph [ref=e78]
+          - paragraph [ref=e79]: "- Added : Support for LISUAN 7G100 series GPUs - Added \"MMDevices endpoint cleanup\" - PnpLockdownFiles removal improvements. - RemoveInstalledPfns improvement. - Added 'Reset to recommended' button for the Options."
+          - paragraph [ref=e80]
+          - heading "Known issues:" [level=3] [ref=e81]
+          - paragraph [ref=e82]: "-"
+          - paragraph [ref=e83]:
+            - text: Big thanks to the following
+            - link "Patreon" [ref=e84] [cursor=pointer]:
+              - /url: https://www.patreon.com/wagnardsoft
+            - text: and also those who aren't listed!
+          - paragraph [ref=e85]: "-honnmaguro (Since 2018-03-16) -ZaoDaDong (Since 2019-02-06) -Alberto Bursi (long time donator/supporter) -Kaseb (Since 2019-09-05) -Frank Brown (Since 2019-10-31) -James Tiller (Since 2021-04-03) -Paulo Henrique (Since 2021-04-19) -Graeme Small -SMiThaYe -Chris Ross -Fabio -Matti Metsikko -mikalonia - mika -ChaosNMNS -Eduardo Macias -Peter Le -Kater Willschie -Duke Hanson -Sam Gooding -Zero Chung -Remy Starshade -Lion-man"
+          - paragraph [ref=e87]:
+            - img "DDU" [ref=e88]
+          - generic [ref=e89]:
+            - link "DOWNLOAD & SUPPORT" [ref=e91] [cursor=pointer]:
+              - /url: https://www.wagnardsoft.com/forums/viewtopic.php?t=5633
+            - link "Support us on Patreon" [ref=e93] [cursor=pointer]:
+              - /url: https://www.patreon.com/wagnardsoft
+            - table [ref=e94]:
+              - rowgroup [ref=e95]:
+                - row [ref=e96]:
+                  - cell "If you like my applications and my work, feel free to encourage me with a little donation." [ref=e97]
+          - generic [ref=e99]:
+            - generic [ref=e100]: Enjoy our free tools?
+            - generic [ref=e101]: "Leave a tip to support development:"
+            - paragraph [ref=e102]:
+              - link "Tip via PayPal" [ref=e103] [cursor=pointer]:
+                - /url: https://www.paypal.com/donate/?hosted_button_id=S8H2QAS7KLV7N
+              - link "Tip with Stripe (Visa, MasterCard, UnionPay)" [ref=e104] [cursor=pointer]:
+                - /url: https://buy.stripe.com/6oU5kD8kpfvV799afcaAw00
+              - link "Visit Merch Shop (Best way to support us)" [ref=e105] [cursor=pointer]:
+                - /url: https://shop.wagnardsoft.com
+        - generic [ref=e106]:
+          - generic [ref=e107]: "Rating:"
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - link "Give Download Display Driver Uninstaller (DDU) 18.1.5.6 1/5" [ref=e117] [cursor=pointer]:
+                - /url: "#20"
+              - link "Give Download Display Driver Uninstaller (DDU) 18.1.5.6 2/5" [ref=e119] [cursor=pointer]:
+                - /url: "#40"
+              - link "Give Download Display Driver Uninstaller (DDU) 18.1.5.6 3/5" [ref=e121] [cursor=pointer]:
+                - /url: "#60"
+              - link "Give Download Display Driver Uninstaller (DDU) 18.1.5.6 4/5" [ref=e123] [cursor=pointer]:
+                - /url: "#80"
+              - link "Give Download Display Driver Uninstaller (DDU) 18.1.5.6 5/5" [ref=e125] [cursor=pointer]:
+                - /url: "#100"
+            - generic [ref=e127]:
+              - generic [ref=e128]: "Average: 3.9"
+              - generic [ref=e129]: (87 votes)
+  - contentinfo [ref=e132]:
+    - generic [ref=e133]:
+      - generic [ref=e137]:
+        - paragraph [ref=e138]
+        - paragraph [ref=e139]: We help, We support, We develop.
+      - generic [ref=e142]:
+        - heading "Contact Details" [level=2] [ref=e143]
+        - list [ref=e145]:
+          - listitem [ref=e146]:
+            - paragraph [ref=e148]:
+              - strong [ref=e149]: "Email:"
+              - link "info@wagnardsoft.com" [ref=e150] [cursor=pointer]:
+                - /url: "#"
+      - generic [ref=e155]:
+        - paragraph [ref=e156]: Offers from our partners.
+        - link [ref=e157] [cursor=pointer]:
+          - /url: https://www.drivereasy.com/update-display-drivers
+          - img "HTML tutorial" [ref=e158]
+        - paragraph [ref=e159]
+      - generic [ref=e164]:
+        - generic [ref=e165]: Enjoy our free tools?
+        - generic [ref=e166]: "Leave a tip to support development:"
+        - link "Tip via PayPal" [ref=e167] [cursor=pointer]:
+          - /url: https://www.paypal.com/donate/?hosted_button_id=S8H2QAS7KLV7N
+        - link "Tip with Stripe (Visa, MasterCard, UnionPay)" [ref=e168] [cursor=pointer]:
+          - /url: https://buy.stripe.com/6oU5kD8kpfvV799afcaAw00
+        - link "Visit Merch Shop (Best way to support us)" [ref=e169] [cursor=pointer]:
+          - /url: https://shop.wagnardsoft.com
+  - contentinfo [ref=e170]:
+    - generic [ref=e172]:
+      - generic:
+        - generic:
+          - generic:
+            - generic [ref=e174]:
+              - text: © Copyright 2026 by
+              - link "Wagnardsoft" [ref=e175] [cursor=pointer]:
+                - /url: http://www.wagnardsoft.com
+              - text: . All Rights Reserved.
+            - navigation [ref=e177]:
+              - list [ref=e178]:
+                - listitem [ref=e179]:
+                  - link "FAQ's" [ref=e180] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e181]:
+                  - link "Sitemap" [ref=e182] [cursor=pointer]:
+                    - /url: "#"
+                - listitem [ref=e183]:
+                  - link "Contact" [ref=e184] [cursor=pointer]:
+                    - /url: /contact

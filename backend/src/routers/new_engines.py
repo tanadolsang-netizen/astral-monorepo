@@ -475,12 +475,19 @@ br = APIRouter()
 
 
 class ParanIn(BaseModel):
+    """Brady parans request.
+
+    Defaults must mirror src.services.parans_service.brady_parans.  They used
+    to be hardcoded to lat/lon = Bangkok and orb=2 minutes, which pinned the
+    app to one chart and (because the old criterion needed both bodies on the
+    same angle) returned zero parans for almost nobody.
+    """
     birth_date: str = Field(pattern=r"^\d{4}-\d{2}-\d{2}$")
     birth_time: str = Field(pattern=r"^\d{2}:\d{2}$")
     tz: float = 7.0
     lat: float = 13.7563
     lon: float = 100.5018
-    orb_minutes: int = Field(default=2, ge=1, le=10)
+    orb_minutes: float = Field(default=4.0, ge=0.5, le=120.0)
 
 
 @br.post("/parans")

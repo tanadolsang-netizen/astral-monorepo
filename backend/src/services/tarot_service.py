@@ -8,6 +8,7 @@ Actual random draw implementation.
 
 from __future__ import annotations
 
+import hashlib
 import json
 import random
 from pathlib import Path
@@ -162,7 +163,11 @@ def draw_spread(
     size = SPREADS[resolved_spread]
 
     if seed is None:
-        seed = hash(name) % (2**31)
+        # ``hash()`` on str is salted per process (PYTHONHASHSEED), so it gave
+        # the same person a different spread on every page load.  sha256 is
+        # stable across runs, restarts and deployments.
+        digest = hashlib.sha256(name.encode("utf-8")).digest()
+        seed = int.from_bytes(digest[:8], "big") % (2**31)
 
     rng = random.Random(seed)
 
@@ -173,8 +178,14 @@ def draw_spread(
 
     drawn_names = rng.sample(weighted_deck, min(size, len(weighted_deck)))
     drawn_names = list(dict.fromkeys(drawn_names))[:size]
+    # Top up from the cards not already drawn.  Drawing blind from the whole
+    # deck let the spread repeat a card it already held, which is wrong for a
+    # celtic cross and exactly what the uniqueness test exists to catch.
     while len(drawn_names) < size:
-        drawn_names.append(rng.choice(ALL_CARDS))
+        remaining = [c for c in ALL_CARDS if c not in drawn_names]
+        if not remaining:
+            break
+        drawn_names.append(rng.choice(remaining))
 
     drawn = []
     for i, card_name in enumerate(drawn_names):

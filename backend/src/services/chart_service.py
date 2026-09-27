@@ -2,6 +2,7 @@ import math
 import logging
 from datetime import date, time, datetime, timedelta, timezone
 
+from src.services.ayanamsa import ayanamsa_for
 from src.services.ephemeris import earth, eph, ts, OBLIQUITY, mean_obliquity
 
 logger = logging.getLogger("astral.chart")
@@ -128,8 +129,7 @@ def _build_chart(name: str, dt_utc, lat: float, lon: float, system: str, house_s
         lat_ecl, lon_ecl, _ = pos.ecliptic_latlon(epoch=t)
         lon_deg = lon_ecl.degrees % 360
         if system == "sidereal":
-            year_frac = dt_utc.year + (dt_utc.timetuple().tm_yday / 365.2425)
-            lon_deg = (lon_deg - lahiri_ayanamsa(year_frac)) % 360
+            lon_deg = (lon_deg - ayanamsa_for("lahiri", dt_utc)) % 360
         sign, deg = _to_sign(lon_deg)
         
         # Retrograde detection with interpolation
@@ -251,8 +251,7 @@ def compute_ascendant(dt_utc, lat: float, lon: float, system: str = "tropical") 
     obl = mean_obliquity(jd_tt=t.tt)
     asc_deg = (_to_xy(ramc, lat, obl) + 180.0) % 360.0
     if system == "sidereal":
-        year_frac = dt_utc.year + (dt_utc.timetuple().tm_yday / 365.2425)
-        asc_deg = (asc_deg - lahiri_ayanamsa(year_frac)) % 360
+        asc_deg = (asc_deg - ayanamsa_for("lahiri", dt_utc)) % 360
     sign, deg = _to_sign(asc_deg)
     return {"body": "ASC", "sign": sign, "degree": round(deg, 4), "absolute_deg": round(asc_deg, 4)}
 
@@ -290,8 +289,7 @@ def compute_houses(
         cusps_trop = _placidus_cusps(ramc, lat, obl, asc_deg, mc_deg)
 
     if system == "sidereal":
-        year_frac = dt_utc.year + (dt_utc.timetuple().tm_yday / 365.2425)
-        ayanamsa = lahiri_ayanamsa(year_frac)
+        ayanamsa = ayanamsa_for("lahiri", dt_utc)
         cusps_trop = {house: (deg - ayanamsa) % 360 for house, deg in cusps_trop.items()}
         asc_deg = (asc_deg - ayanamsa) % 360
         mc_deg = (mc_deg - ayanamsa) % 360
@@ -486,4 +484,17 @@ def _to_xy(ramc: float, lat: float, obliquity_rad: float) -> float:
 
 
 def lahiri_ayanamsa(year_frac: float) -> float:
-    return 23.68 + (year_frac - 1997) * (50.29 / 3600)
+    """Lahiri ayanamsa in degrees for a fractional year.
+
+    Kept as a compatibility shim: the old hand-rolled linear formula
+    (23.68 + (y-1997)*50.29") was 487 arcsec / 8.1 minutes of arc off Swiss
+    Ephemeris. Now delegates to the single source of truth, so every caller
+    gets the same, Swiss-backed value.
+    """
+    import math as _math
+
+    year = int(math.floor(year_frac))
+    frac = year_frac - year
+    # Map the fractional year onto a real instant: Jan 1 + frac*365.2425 days.
+    dt = datetime(year, 1, 1, tzinfo=timezone.utc) + timedelta(days=frac * 365.2425)
+    return ayanamsa_for("lahiri", dt)

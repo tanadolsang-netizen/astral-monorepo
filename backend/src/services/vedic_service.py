@@ -6,11 +6,13 @@ Thai interpretive strings written in natural Thai-astrologer voice.
 """
 from __future__ import annotations
 
+from src.services.ayanamsa import ayanamsa_for
 from src.services.chart_service import compute_chart
 
-# Lahiri ayanamsa approximations per year (J2000=23.85°, drift ~50.29"/yr)
-_AYANAMSA_J2000 = 23.85
-_ARCSEC_PER_YEAR = 50.29
+# Ayanamsa mode used when the caller does not name one. The historical
+# Lahiri linear approximation (J2000=23.85 + 50.29"/yr) was 25.6 arcsec off
+# Swiss Ephemeris; ayanamsa.ayanamsa_for() is now the only source.
+_DEFAULT_AYANAMSA = "lahiri"
 
 RASHI_EN = [
     "Mesha", "Vrishabha", "Mithuna", "Karka", "Simha", "Kanya",
@@ -29,13 +31,12 @@ NAKSHATRA_TH = [
 ]
 
 
-def _ayanamsa(dt_utc) -> float:
-    year = dt_utc.year + (dt_utc.timetuple().tm_yday / 365.25)
-    return _AYANAMSA_J2000 + (year - 2000.0) * _ARCSEC_PER_YEAR / 3600.0
+def _ayanamsa(dt_utc, mode: str = _DEFAULT_AYANAMSA) -> float:
+    return ayanamsa_for(mode, dt_utc)
 
 
-def _sidereal(lon_tropical: float, dt_utc) -> float:
-    return (lon_tropical - _ayanamsa(dt_utc)) % 360.0
+def _sidereal(lon_tropical: float, dt_utc, mode: str = _DEFAULT_AYANAMSA) -> float:
+    return (lon_tropical - _ayanamsa(dt_utc, mode)) % 360.0
 
 
 def _rashi_index(sidereal_lon: float) -> int:
@@ -56,6 +57,7 @@ def compute_vedic(
     lon: float,
     tz_offset_hours: float = 7.0,
     person_name: str = "",
+    ayanamsa: str = _DEFAULT_AYANAMSA,
 ) -> dict:
     """birth_datetime_local: 'YYYY-MM-DDTHH:MM' (local time at birth place)."""
     from datetime import datetime, timedelta
@@ -67,9 +69,9 @@ def compute_vedic(
                           tz_offset_hours=0, lat=lat, lon=lon)
     planets = {p["body"]: p["absolute_deg"] for p in chart["bodies"]}
 
-    moon_sid = _sidereal(planets["Moon"], utc_dt)
-    sun_sid = _sidereal(planets["Sun"], utc_dt)
-    asc_sid = _sidereal(chart["ascendant"]["absolute_deg"], utc_dt)
+    moon_sid = _sidereal(planets["Moon"], utc_dt, ayanamsa)
+    sun_sid = _sidereal(planets["Sun"], utc_dt, ayanamsa)
+    asc_sid = _sidereal(chart["ascendant"]["absolute_deg"], utc_dt, ayanamsa)
 
     moon_rashi = _rashi_index(moon_sid)
     sun_rashi = _rashi_index(sun_sid)
@@ -78,7 +80,8 @@ def compute_vedic(
 
     result = {
         "system": "vedic",
-        "ayanamsa": round(_ayanamsa(utc_dt), 4),
+        "ayanamsa_mode": ayanamsa,
+        "ayanamsa": round(_ayanamsa(utc_dt, ayanamsa), 4),
         "lagna": {
             "index": asc_rashi,
             "sign_en": RASHI_EN[asc_rashi],
@@ -201,6 +204,7 @@ def compute_vedic_chart(
         lon=lon,
         tz_offset_hours=tz_offset_hours,
         person_name=name,
+        ayanamsa=ayanamsa,
     )
 
 
