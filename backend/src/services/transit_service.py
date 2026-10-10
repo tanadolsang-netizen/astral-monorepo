@@ -28,8 +28,12 @@ def _is_retrograde(body_name: str, target: str, now_utc: datetime, current_lon_d
     return bool(delta < 0)
 
 
-def compute_now(lat: float, lon: float, tz_offset_hours: float = 7.0) -> dict:
-    now_utc = datetime.now(timezone.utc)
+def _compute_bodies(now_utc: datetime) -> list:
+    """The shared, date-determined part: 10 planetary positions at now_utc.
+
+    This is what gets cached per (date, tz-group) — identical for every user
+    in the same tz bucket, which is Co-Star's key scale insight.
+    """
     t = ts.from_datetime(now_utc)
     bodies = []
     for name, target in {
@@ -55,6 +59,23 @@ def compute_now(lat: float, lon: float, tz_offset_hours: float = 7.0) -> dict:
             "absolute_deg": round(lon_deg, 4),
             "is_retrograde": _is_retrograde(name, target, now_utc, lon_deg),
         })
+    return bodies
+
+
+def compute_now(lat: float, lon: float, tz_offset_hours: float = 7.0) -> dict:
+    now_utc = datetime.now(timezone.utc)
+    # Shared state (same for all users in the same tz bucket) goes through
+    # the Redis cache; the per-user shell (lat/lon/tz) is assembled here.
+    from src.services.cache_service import get_or_compute, cache_key
+
+    key = cache_key(now_utc.date().isoformat(),
+                    f"UTC{int(round(tz_offset_hours)):+d}",
+                    "all", "position")
+    bodies = get_or_compute(
+        key,
+        lambda: _compute_bodies(now_utc),
+        ttl=3600,  # positions refresh hourly; Moon moves ~0.5deg/hour
+    )
     return {
         "now_utc": now_utc.isoformat(),
         "tz_offset_hours": tz_offset_hours,
@@ -84,3 +105,98 @@ def compute_dual_now(lat: float, lon: float, tz_offset_hours: float = 7.0) -> di
         "tropical": {"bodies": tropical["bodies"]},
         "sidereal": {"bodies": sidereal_bodies},
     }
+
+
+# Aspects transits can form to natal bodies, with orb and "karmic weight"
+_ASPECTS = {
+    "conjunction": 0.0,
+    "sextile": 60.0,
+    "square": 90.0,
+    "trine": 120.0,
+    "opposition": 180.0,
+}
+_ORB_DEG = {
+    "conjunction": 6.0,
+    "sextile": 4.0,
+    "square": 6.0,
+    "trine": 6.0,
+    "opposition": 6.0,
+}
+
+# Bodies that make big life impacts when they aspect natal points
+_SLOW_BODIES = {"Jupiter", "Saturn", "Uranus", "Neptune", "Pluto"}
+
+
+def _angular_diff(a: float, b: float) -> float:
+    return abs((a - b + 180) % 360 - 180)
+
+
+def compute_transits_to_natal(
+    natal_chart: dict, lat: float, lon: float, tz_offset_hours: float = 7.0
+) -> list[dict]:
+    """Find active transits to natal bodies right now.
+
+    Args:
+      natal_chart: output of compute_chart (bodies + ascendant)
+      lat, lon: user's current location (for house placement)
+
+    Returns:
+      List of contacts:
+        {transit, natal, aspect, orb, applying, sign, house, impact_weight}
+
+    This is the personalization engine: every user gets a different set
+    of contacts because their natal chart differs. Two people born on the
+    same day at the same tz still differ if their birth location moves
+    their Ascendant.
+    """
+    now = compute_now(lat=lat, lon=lon, tz_offset_hours=tz_offset_hours)
+
+    natal_bodies = []
+    for b in natal_chart["bodies"]:
+        natal_bodies.append({
+            "name": b["body"],
+            "abs_deg": b["absolute_deg"],
+            "sign": b["sign"],
+            "is_retrograde": b.get("is_retrograde", False),
+        })
+    # ASC as a contact point
+    natal_bodies.append({
+        "name": "ASC",
+        "abs_deg": natal_chart["ascendant"]["absolute_deg"],
+        "sign": natal_chart["ascendant"]["sign"],
+        "is_retrograde": False,
+    })
+
+    contacts = []
+    for transit_body in now["bodies"]:
+        tb_deg = transit_body["absolute_deg"]
+        tb_name = transit_body["body"]
+        tb_retro = transit_body.get("is_retrograde", False)
+
+        for natal in natal_bodies:
+            for aspect_name, aspect_deg in _ASPECTS.items():
+                orb = _angular_diff(tb_deg, natal["abs_deg"] + aspect_deg)
+                if orb > _ORB_DEG[aspect_name]:
+                    continue
+
+                # Impact weight: slow transiting body + tight orb + retrograde
+                weight = 1.0
+                if tb_name in _SLOW_BODIES:
+                    weight *= 2.5
+                weight *= max(0.1, 1.0 - (orb / _ORB_DEG[aspect_name]))
+                if tb_retro:
+                    weight *= 1.3  # retro transits linger
+
+                contacts.append({
+                    "transit": tb_name,
+                    "natal": natal["name"],
+                    "aspect": aspect_name,
+                    "orb": round(orb, 2),
+                    "impact_weight": round(weight, 3),
+                    "transit_sign": transit_body["sign"],
+                    "natal_sign": natal["sign"],
+                })
+
+    # sort by impact descending
+    contacts.sort(key=lambda c: c["impact_weight"], reverse=True)
+    return contacts

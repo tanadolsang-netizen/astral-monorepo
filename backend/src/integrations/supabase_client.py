@@ -2,7 +2,7 @@ import os
 from typing import TYPE_CHECKING, Any
 
 from dotenv import load_dotenv
-from fastapi import Depends
+from fastapi import Depends, Header
 from pydantic import BaseModel
 
 load_dotenv()
@@ -34,7 +34,7 @@ class User(BaseModel):
     email: str
 
 
-async def get_current_user(authorization: str = "") -> User:
+async def get_current_user(authorization: str = Header(default="")) -> User:
     if not _supabase:
         raise RuntimeError("Supabase not initialized")
     if not authorization.startswith("Bearer "):
