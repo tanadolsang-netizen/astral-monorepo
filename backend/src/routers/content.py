@@ -15,9 +15,10 @@ import logging
 from datetime import datetime, timezone
 from typing import Any
 
-from fastapi import APIRouter, Header, HTTPException
+from fastapi import APIRouter, Depends, Header, HTTPException
 from pydantic import BaseModel
 
+from src.integrations.supabase_client import get_current_user, User
 from src.services.content_engine import generate_daily
 from src.services.notification_service import (
     already_sent_today,
@@ -29,13 +30,19 @@ logger = logging.getLogger("astral.content_router")
 router = APIRouter()
 
 
-def _user_id_from_auth(authorization: str) -> str:
-    if not authorization.startswith("Bearer "):
-        raise HTTPException(status_code=401, detail="Missing Bearer token")
-    token = authorization.split(" ", 1)[1].strip()
-    if not token:
-        raise HTTPException(status_code=401, detail="Empty token")
-    return token
+async def _user_id_from_auth(
+    authorization: str = Header(default=""),
+) -> str:
+    """Resolve the authenticated user id from a Bearer token.
+
+    Uses the shared Supabase auth (single source of truth) — no longer
+    treats the raw token as the user_id.
+    """
+    try:
+        user: User = await get_current_user(authorization)
+        return user.id
+    except (ValueError, RuntimeError) as exc:
+        raise HTTPException(status_code=401, detail="Unauthorized") from exc
 
 
 # ---------------------------------------------------------------------------
@@ -51,7 +58,7 @@ async def get_daily(authorization: str = Header(default="")) -> dict[str, Any]:
     behavior weighting -> mood modulation) but WITHOUT sending a push.
     Returns the reading + metadata (which engines fired, mood, triggers).
     """
-    user_id = _user_id_from_auth(authorization)
+    user_id = await _user_id_from_auth(authorization)
     prefs = get_prefs(user_id)
     content = generate_daily(
         user_id=user_id,
@@ -73,7 +80,7 @@ async def refresh_daily(authorization: str = Header(default="")) -> dict[str, An
     Co-Star regenerates on pull-to-refresh; we do the same but keep the
     daily dedup for PUSH delivery (the feed can change, the push can't).
     """
-    user_id = _user_id_from_auth(authorization)
+    user_id = await _user_id_from_auth(authorization)
     prefs = get_prefs(user_id)
     content = generate_daily(
         user_id=user_id,
