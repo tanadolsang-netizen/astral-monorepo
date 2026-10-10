@@ -187,7 +187,7 @@ app.add_middleware(
 )
 
 # ── Routers (all API v1) ─────────────────────────────────────
-from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, vedic, muhurta, chat, accuracy, life, sky, research
+from .routers import natal, transit, synastry, branches, payments, health, auth, notifications, content, dashboard, memory, tarot, horary, western, fusion, fusion_profile, fusion_full, fusion_grand, bazi, chinese, vedic, muhurta, chat, accuracy, life, sky, research
 from .routers import new_engines, narrative_router, grand_narrative_router, ai_router, image_tools
 
 for router, prefix, tags in [
@@ -200,6 +200,7 @@ for router, prefix, tags in [
     (dashboard.router, "/v1/dashboard", ["dashboard"]),
     (payments.router, "/v1/payments", ["payments"]),
     (notifications.router, "/v1/notifications", ["notifications"]),
+    (content.router, "/v1/content", ["content"]),
     (memory.router, "/v1/memory", ["memory"]),
     (tarot.router, "/v1/tarot", ["tarot"]),
     (horary.router, "/v1/horary", ["horary"]),
